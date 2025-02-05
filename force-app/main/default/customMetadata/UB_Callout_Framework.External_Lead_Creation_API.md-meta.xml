@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>External Lead Creation API</label>
+    <protected>false</protected>
+    <values>
+        <field>Active__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>Auth_Token_c__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Body__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Certificate_Name__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Class_Name__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Endpoint__c</field>
+        <value xsi:type="xsd:string">https://utkmumulmsweb.utkarsh.bank/utkarshlmsconnector/create/createLeadOtherSource</value>
+    </values>
+    <values>
+        <field>Extra_Param_s__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>HTTP_Method__c</field>
+        <value xsi:type="xsd:string">POST</value>
+    </values>
+    <values>
+        <field>HeaderParams__c</field>
+        <value xsi:type="xsd:string">Content-Type:application/json</value>
+    </values>
+    <values>
+        <field>Host__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Mock_Response__c</field>
+        <value xsi:type="xsd:string">{&quot;status&quot;:&quot;success&quot;,&quot;data&quot;:{&quot;leadId&quot;:&quot;CAnjali20231214121622&quot;},&quot;successRule&quot;:&quot;y&quot;,&quot;response_message&quot;:&quot;Lead CAnjali20231214121622 Created Successfully&quot;,&quot;response_type&quot;:&quot;I&quot;}</value>
+    </values>
+    <values>
+        <field>Named_Credential__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Timeout_Time__c</field>
+        <value xsi:type="xsd:double">120000.0</value>
+    </values>
+    <values>
+        <field>URL_Parameters__c</field>
+        <value xsi:nil="true"/>
+    </values>
+</CustomMetadata>

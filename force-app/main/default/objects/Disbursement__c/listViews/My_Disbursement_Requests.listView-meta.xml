@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Disbursement_Requests</fullName>
+    <columns>NAME</columns>
+    <columns>Loan_Application__c</columns>
+    <columns>Vehicle__c</columns>
+    <columns>Stage__c</columns>
+    <columns>Status__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <columns>OWNER.FIRST_NAME</columns>
+    <filterScope>Mine</filterScope>
+    <label>My Disbursement Requests</label>
+</ListView>

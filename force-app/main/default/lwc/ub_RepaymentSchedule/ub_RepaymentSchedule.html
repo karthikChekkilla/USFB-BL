@@ -1,0 +1,84 @@
+<!--
+  @description       : 
+  @author            : Zafaruddin
+  @group             : 
+  @last modified on  : 06-14-2024
+-->
+<template>
+
+        <template if:true={showSpinner}>
+            <lightning-spinner alternative-text="Loading"></lightning-spinner>
+        </template>
+        <header class="slds-modal__header">
+            <h2  class="slds-text-heading_medium slds-hyphenate">Repayment Schedule</h2>
+        </header>
+        <lightning-card variant="Narrow"  >
+            <div class="slds-grid slds-gutters">
+                <lightning-layout vertical-align="start" class="slds-grid slds-wrap">
+                    <lightning-layout-item size="1" class="slds-col slds-size_1-of-12 slds-p-around_xx-small" >
+                     
+                    </lightning-layout-item>
+
+                    <lightning-layout-item size="4" class="slds-col slds-size_1-of-12 slds-p-around_xx-small" >
+                        <lightning-combobox  label="Select Vehicle" data-identifier="combobox" options={vehicleOptions} 
+                        name="vehicle" value={vehicleName} onchange={handleOptionChange}
+                        required>
+                    </lightning-combobox>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="3" class="slds-col slds-size_1-of-12 slds-p-around_xx-small">
+                        <lightning-input   name ="VehicleCost" value={selectedVehicle.vehicleCost}  onchange={handleInputChange}   type="number" label="Vehicle Cost"
+                        > </lightning-input>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="2" class="slds-col slds-size_1-of-12 slds-p-around_xx-small">
+                        <lightning-input value={selectedVehicle.tenure}    type="number" label="Tenure (in Months)"
+                        name="Tenure" onchange={handleInputChange}> </lightning-input>                        
+                    </lightning-layout-item>
+                    <lightning-layout-item size="2" class="slds-col slds-size_1-of-12 slds-p-around_xx-small">
+                            <lightning-input value={selectedVehicle.roi}   type="number" label="ROI"
+                            name="ROI" onchange={handleInputChange} maxlength="255" step="any"> </lightning-input> 
+                    </lightning-layout-item>
+      
+                </lightning-layout>
+
+            </div>
+            <template if:true={isRepaymentTableShow}>
+                <div class="slds-m-top_medium  slds-scrollable" >
+                    <div class="slds-p-around_medium lgc-bg">
+                    <div  style="height:10rem;width:100%">
+                        <template if:true={repaymentScheduleData}>
+                            <table class="slds-table slds-table_cell-buffer" role="grid" >
+                                <thead style="overflow: auto;position: sticky;top: 0;z-index: 4;">
+                                    <tr>
+                                        <th scope="col" height="22" >EMI No.</th>
+                                        <th scope="col" height="22">EMI Date</th>
+                                        <th scope="col" height="22">EMI</th>
+                                        <th scope="col" height="22">Interest</th>
+                                        <th scope="col" height="22">Principal</th>	
+                                        <th scope="col" height="22">Closing Balance</th> 
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <template for:each={repaymentScheduleData} for:item="rec">
+                                        <tr key={rec} class="slds-hint-parent ">
+                                            <td >{rec.emiNo}</td>
+                                            <td >{rec.emiDate}</td>
+                                            <td >{rec.emi}</td>
+                                            <td >{rec.interest}</td>
+                                            <td >{rec.principle}</td>
+                                            <td >{rec.closingBalance}</td>
+                                        </tr>
+                                    </template>
+                                </tbody>
+                            </table>
+                        </template>
+                        </div>
+                    </div>
+                </div>
+            </template>
+            <div slot="footer">
+                <lightning-button class="slds-p-around_x-small" label="Generate" variant="brand" slot="actions" onclick={handleSave}></lightning-button>
+                <lightning-button  onclick={closeQuickAction} label="Cancel"> </lightning-button>
+ 
+            </div>
+        </lightning-card>
+</template>

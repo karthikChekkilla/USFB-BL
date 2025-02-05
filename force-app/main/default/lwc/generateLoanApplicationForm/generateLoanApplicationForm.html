@@ -1,0 +1,26 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 06-13-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-spinner alternative-text="Loading" size="medium" if:true={showSpinner}></lightning-spinner>
+
+    <lightning-modal-header label="Generate Loan Application form"></lightning-modal-header>
+    <lightning-modal-body> 
+        <lightning-record-edit-form density="comfy"  object-api-name="Loan_Application__c" record-id={recordId} onsuccess={handleSuccess}>
+            <lightning-messages> </lightning-messages>
+            <div class="slds-var-m-top_medium slds-var-m-right_medium slds-m-bottom_x-small slds-text-align_center">
+                <lightning-button variant="brand" type="submit" label="View PDF" onclick={handleSubmit}></lightning-button>
+                &nbsp; &nbsp;
+                <lightning-button variant="brand" type="submit" label="Initiate E-Sign" onclick={callLegalityApi}></lightning-button>
+                &nbsp; &nbsp;
+                <lightning-button  onclick={closeQuickAction} label="Cancel"> </lightning-button>
+            </div>
+
+        </lightning-record-edit-form>
+    </lightning-modal-body>
+    
+</template>

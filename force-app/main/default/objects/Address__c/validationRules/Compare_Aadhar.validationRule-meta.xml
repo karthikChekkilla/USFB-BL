@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Compare_Aadhar</fullName>
+    <active>true</active>
+    <description>Compare aadhar cannot be change for permanent address.</description>
+    <errorConditionFormula>IF( AND(NOT($Setup.Bypass_Validations__c.Bypass_Validation__c),ISPickVal(Address_Type__c,&apos;Permanent Address&apos;), 
+									ISCHANGED(Compare_Address_with_Aadhar__c)) , 
+				true, false)</errorConditionFormula>
+    <errorDisplayField>Compare_Address_with_Aadhar__c</errorDisplayField>
+    <errorMessage>Compare address cannot be changed for a permanent address.</errorMessage>
+</ValidationRule>

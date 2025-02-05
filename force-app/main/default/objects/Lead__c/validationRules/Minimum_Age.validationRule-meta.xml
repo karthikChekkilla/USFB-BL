@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Minimum_Age</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF(OR(ISPICKVAL( Constitution__c , &apos;Individual&apos;),
+       ISPICKVAL( Constitution__c , &apos;Sole Proprietorship&apos;)
+       ) &amp;&amp;   Age__c &lt; 18 &amp;&amp; NOT($Setup.Bypass_Validations__c.Bypass_Validation__c)
+			, true, false)</errorConditionFormula>
+    <errorMessage>Age of the applicant is below than the policy norms.</errorMessage>
+</ValidationRule>

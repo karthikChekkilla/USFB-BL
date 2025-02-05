@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Subsub_category__c</fullName>
+    <externalId>false</externalId>
+    <label>Sub-sub category</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Sub_Category__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Crop Loans (1110)</fullName>
+                <default>false</default>
+                <label>Crop Loans (1110)</label>
+            </value>
+            <value>
+                <fullName>Loan for Investment Credit (1120)</fullName>
+                <default>false</default>
+                <label>Loan for Investment Credit (1120)</label>
+            </value>
+            <value>
+                <fullName>Loan for Allied Activities (1130)</fullName>
+                <default>false</default>
+                <label>Loan for Allied Activities (1130)</label>
+            </value>
+            <value>
+                <fullName>Other Agriculture Loans (1140)</fullName>
+                <default>false</default>
+                <label>Other Agriculture Loans (1140)</label>
+            </value>
+            <value>
+                <fullName>Loans_for_construction_of_storage_facilities_(Warehouses_market_yards_godowns)_cold_storage_(1210)</fullName>
+                <default>false</default>
+                <label>Loans for construction of storage facilities (Warehouses, market yards, godowns), cold storage (1210)</label>
+            </value>
+            <value>
+                <fullName>Loan for Soil conservation and watershed (1220)</fullName>
+                <default>false</default>
+                <label>Loan for Soil conservation and watershed (1220)</label>
+            </value>
+            <value>
+                <fullName>Loan for Plant tissue culture &amp; Agri Biotechnology (1230)</fullName>
+                <default>false</default>
+                <label>Loan for Plant tissue culture &amp; Agri Biotechnology (1230)</label>
+            </value>
+            <value>
+                <fullName>Seed Production (1240)</fullName>
+                <default>false</default>
+                <label>Seed Production (1240)</label>
+            </value>
+            <value>
+                <fullName>Production of Bio-Pesticide &amp; Bio Fertilizers, Vermi- Composting (1250)</fullName>
+                <default>false</default>
+                <label>Production of Bio-Pesticide &amp; Bio Fertilizers, Vermi- Composting (1250)</label>
+            </value>
+            <value>
+                <fullName>Loans to Co-operative Societies (1310)</fullName>
+                <default>false</default>
+                <label>Loans to Co-operative Societies (1310)</label>
+            </value>
+            <value>
+                <fullName>Loan for setting up Agri Clinics &amp;  Agri Business Centres (1320)</fullName>
+                <default>false</default>
+                <label>Loan for setting up Agri Clinics &amp;  Agri Business Centres (1320)</label>
+            </value>
+            <value>
+                <fullName>Loan for Food &amp; Agro Processing (Up to 100 Cr.) (1330)</fullName>
+                <default>false</default>
+                <label>Loan for Food &amp; Agro Processing (Up to 100 Cr.) (1330)</label>
+            </value>
+            <value>
+                <fullName>Loan to Manufacturing Enterprises [Investment upto 25 Lakh] (2110)</fullName>
+                <default>false</default>
+                <label>Loan to Manufacturing Enterprises [Investment upto 25 Lakh] (2110)</label>
+            </value>
+            <value>
+                <fullName>Loan to Service Enterprises  [Investment upto 10 Lakh] (2120)</fullName>
+                <default>false</default>
+                <label>Loan to Service Enterprises  [Investment upto 10 Lakh] (2120)</label>
+            </value>
+            <value>
+                <fullName>Advances to Khadi &amp; Village Industries Sector [KVI] (2130)</fullName>
+                <default>false</default>
+                <label>Advances to Khadi &amp; Village Industries Sector [KVI] (2130)</label>
+            </value>
+            <value>
+                <fullName>Overdraft upto 5000 in PMJDY accounts (2140)</fullName>
+                <default>false</default>
+                <label>Overdraft upto 5000 in PMJDY accounts (2140)</label>
+            </value>
+            <value>
+                <fullName>Loan to Manufacturing Enterprises [Investment &gt; 25 Lakh to 5 Cr.] (2210)</fullName>
+                <default>false</default>
+                <label>Loan to Manufacturing Enterprises [Investment &gt; 25 Lakh to 5 Cr.] (2210)</label>
+            </value>
+            <value>
+                <fullName>Loan to Service Enterprises [Investment &gt; 10 Lakh to 2 Cr.] (2220)</fullName>
+                <default>false</default>
+                <label>Loan to Service Enterprises [Investment &gt; 10 Lakh to 2 Cr.] (2220)</label>
+            </value>
+            <value>
+                <fullName>Loan to Manufacturing Enterprises [Investment &gt; 5 Cr to 10 Cr.] (2310)</fullName>
+                <default>false</default>
+                <label>Loan to Manufacturing Enterprises [Investment &gt; 5 Cr to 10 Cr.] (2310)</label>
+            </value>
+            <value>
+                <fullName>Loan to Service Enterprises [Investment &gt; 2 Cr to 5 Cr.] (2320)</fullName>
+                <default>false</default>
+                <label>Loan to Service Enterprises [Investment &gt; 2 Cr to 5 Cr.] (2320)</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Farm Credit (1100)</controllingFieldValue>
+            <valueName>Crop Loans (1110)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Farm Credit (1100)</controllingFieldValue>
+            <valueName>Loan for Investment Credit (1120)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Farm Credit (1100)</controllingFieldValue>
+            <valueName>Loan for Allied Activities (1130)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Farm Credit (1100)</controllingFieldValue>
+            <valueName>Other Agriculture Loans (1140)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Agriculture Infrastructure (1200)</controllingFieldValue>
+            <valueName>Loans_for_construction_of_storage_facilities_(Warehouses_market_yards_godowns)_cold_storage_(1210)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Agriculture Infrastructure (1200)</controllingFieldValue>
+            <valueName>Loan for Soil conservation and watershed (1220)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Agriculture Infrastructure (1200)</controllingFieldValue>
+            <valueName>Loan for Plant tissue culture &amp; Agri Biotechnology (1230)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Agriculture Infrastructure (1200)</controllingFieldValue>
+            <valueName>Seed Production (1240)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Agriculture Infrastructure (1200)</controllingFieldValue>
+            <valueName>Production of Bio-Pesticide &amp; Bio Fertilizers, Vermi- Composting (1250)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ancillary Activities (1300),</controllingFieldValue>
+            <valueName>Loans to Co-operative Societies (1310)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ancillary Activities (1300),</controllingFieldValue>
+            <valueName>Loan for setting up Agri Clinics &amp;  Agri Business Centres (1320)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ancillary Activities (1300),</controllingFieldValue>
+            <valueName>Loan for Food &amp; Agro Processing (Up to 100 Cr.) (1330)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Micro Enterprises (2100)</controllingFieldValue>
+            <valueName>Loan to Manufacturing Enterprises [Investment upto 25 Lakh] (2110)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Micro Enterprises (2100)</controllingFieldValue>
+            <valueName>Loan to Service Enterprises  [Investment upto 10 Lakh] (2120)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Micro Enterprises (2100)</controllingFieldValue>
+            <valueName>Advances to Khadi &amp; Village Industries Sector [KVI] (2130)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Micro Enterprises (2100)</controllingFieldValue>
+            <valueName>Overdraft upto 5000 in PMJDY accounts (2140)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Small Enterprises (2200)</controllingFieldValue>
+            <valueName>Loan to Manufacturing Enterprises [Investment &gt; 25 Lakh to 5 Cr.] (2210)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Small Enterprises (2200)</controllingFieldValue>
+            <valueName>Loan to Service Enterprises [Investment &gt; 10 Lakh to 2 Cr.] (2220)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Medium Enterprises (2300)</controllingFieldValue>
+            <valueName>Loan to Manufacturing Enterprises [Investment &gt; 5 Cr to 10 Cr.] (2310)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Medium Enterprises (2300)</controllingFieldValue>
+            <valueName>Loan to Service Enterprises [Investment &gt; 2 Cr to 5 Cr.] (2320)</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

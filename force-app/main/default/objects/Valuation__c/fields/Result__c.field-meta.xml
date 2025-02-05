@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Result__c</fullName>
+    <externalId>false</externalId>
+    <label>Result</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Positive</fullName>
+                <default>false</default>
+                <label>Positive</label>
+            </value>
+            <value>
+                <fullName>Refer to credit</fullName>
+                <default>false</default>
+                <label>Refer to credit</label>
+            </value>
+            <value>
+                <fullName>Refer to business</fullName>
+                <default>false</default>
+                <label>Refer to business</label>
+            </value>
+            <value>
+                <fullName>Profile decline</fullName>
+                <default>false</default>
+                <label>Profile decline</label>
+            </value>
+            <value>
+                <fullName>Document decline</fullName>
+                <default>false</default>
+                <label>Document decline</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

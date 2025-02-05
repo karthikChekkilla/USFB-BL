@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>CFR API</label>
+    <protected>false</protected>
+    <values>
+        <field>Active__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>Auth_Token_c__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Body__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Certificate_Name__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Class_Name__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Endpoint__c</field>
+        <value xsi:type="xsd:string">https://apiuat.utkarsh.bank/getData/v1.0.0/cfr-services</value>
+    </values>
+    <values>
+        <field>Extra_Param_s__c</field>
+        <value xsi:type="xsd:string">searchType:panNumber
+operatorType:IS</value>
+    </values>
+    <values>
+        <field>HTTP_Method__c</field>
+        <value xsi:type="xsd:string">POST</value>
+    </values>
+    <values>
+        <field>HeaderParams__c</field>
+        <value xsi:type="xsd:string">Content-Type:application/json
+partnerID:Techmatrix
+Accept:application/json</value>
+    </values>
+    <values>
+        <field>Host__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Mock_Response__c</field>
+        <value xsi:type="xsd:string">{
+  &quot;fraudCaseNumber&quot;: &quot;UJVN2101-0017&quot;,
+  &quot;nameOfBank&quot;: &quot;UJJIVAN SMALL FINANCE BANK LIMITED&quot;,
+  &quot;amountInvolvedRsInLakhs&quot;: &quot;1.98&quot;,
+  &quot;dateOfReporting&quot;: &quot;25/01/2021&quot;,
+  &quot;perpetratorOrPartnerOrDirectorAddress&quot;: &quot;NA&quot;,
+  &quot;perpetratorOrPartnerOrDirectorName&quot;: &quot;NA&quot;,
+  &quot;areaOfOperation&quot;: &quot;Cash&quot;,
+  &quot;perpetratorOrAccountAddress&quot;: &quot;Sakaldiha Bazar Chandauli Dist-Chandauli-232109&quot;,
+  &quot;natureOfFraud&quot;: &quot;Misappropriation and criminal breach of trust&quot;,
+  &quot;briefHistoryAndOtherDevelopements&quot;: &quot;When Credit team visited borrowers in negative customer list handled by the perpetrator, several OD/IOD borrowers informed that they had already paid their EMIs to the perpetrator. The perpetrator had collected the EMIs of borrowers but failed to deposit in their account. The perpetrator had deposited the EMI collected in the accounts of several non-starter borrower accounts in order to hide such cases and maintain the portfolio handled by him. Final Fraud amount and Recovery Updated Amount recovery updated. Amount recovery is updated. Staff side action, fraud amount with recovery and police complaint. Recovery amount update only.&quot;,
+  &quot;panOfPerpetrator&quot;: &quot;FPSPS0353Q&quot;,
+  &quot;nameOfPerpetrator&quot;: &quot;Shubham Shah&quot;,
+  &quot;partyOrAccountName&quot;: &quot;Group Loan Account&quot;,
+  &quot;modusOperandi&quot;: &quot;CRO Piyush Kumar Pandey collected EMI from borrowers in the month of April 2020 during the lockdown phase.  As the IOD numbers were very high at the time and due to the travel restrictions imposed in containment zone areas the borrowers could not be met at the time, he took advantage of the situation and deposited the EMIs collected in the accounts of other non-started borrowal accounts to hide such cases and maintain his portfolio. He partially misappropriated the EMI collected for personal use and made partial deposits in the non-starter accounts. He did not update CIT during field collection nor update loan cards and did not issue receipts as well.&quot;,
+  &quot;typeOfFraud&quot;: &quot;Staff - Embezzlement of Cash&quot;
+}</value>
+    </values>
+    <values>
+        <field>Named_Credential__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Timeout_Time__c</field>
+        <value xsi:type="xsd:double">120000.0</value>
+    </values>
+    <values>
+        <field>URL_Parameters__c</field>
+        <value xsi:nil="true"/>
+    </values>
+</CustomMetadata>

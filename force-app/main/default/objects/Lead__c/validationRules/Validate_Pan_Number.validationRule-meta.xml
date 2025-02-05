@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Pan_Number</fullName>
+    <active>false</active>
+    <errorConditionFormula>IF( RecordType.DeveloperName == &apos;LeMS_Lead&apos; &amp;&amp;  ISNEW(), 
+  false, 
+  NOT($Setup.Bypass_Validations__c.Bypass_Validation__c)
+&amp;&amp;
+AND(NOT(ISBLANK(PAN__c)), NOT( REGEX(PAN__c, &quot;[A-Z]{5}[0-9]{4}[A-Z]{1}&quot;) ))
+)</errorConditionFormula>
+    <errorDisplayField>PAN__c</errorDisplayField>
+    <errorMessage>Please enter a valid PAN number</errorMessage>
+</ValidationRule>

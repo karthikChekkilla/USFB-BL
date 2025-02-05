@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reject_Sub_Reason__c</fullName>
+    <externalId>false</externalId>
+    <label>Reject Sub Reason</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Reject_Reason__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Recent OD and High DPD in the current running accounts.</fullName>
+                <default>false</default>
+                <label>Recent OD and High DPD in the current running accounts.</label>
+            </value>
+            <value>
+                <fullName>SUB / SMA / High DPD / account in the closed loan of CV / CE</fullName>
+                <default>false</default>
+                <label>SUB / SMA / High DPD / account in the closed loan of CV / CE</label>
+            </value>
+            <value>
+                <fullName>Fleet Expansion Not As Per Norms</fullName>
+                <default>false</default>
+                <label>Fleet Expansion Not As Per Norms</label>
+            </value>
+            <value>
+                <fullName>FFR Norms not met</fullName>
+                <default>false</default>
+                <label>FFR Norms not met</label>
+            </value>
+            <value>
+                <fullName>Experience norms not met</fullName>
+                <default>false</default>
+                <label>Experience norms not met</label>
+            </value>
+            <value>
+                <fullName>Insufficient Credit History</fullName>
+                <default>false</default>
+                <label>Insufficient Credit History</label>
+            </value>
+            <value>
+                <fullName>Credit PD Negative</fullName>
+                <default>false</default>
+                <label>Credit PD Negative</label>
+            </value>
+            <value>
+                <fullName>Poor Repayment</fullName>
+                <default>false</default>
+                <label>Poor Repayment</label>
+            </value>
+            <value>
+                <fullName>Out of GEO Limit</fullName>
+                <default>false</default>
+                <label>Out of GEO Limit</label>
+            </value>
+            <value>
+                <fullName>Age norms not met</fullName>
+                <default>false</default>
+                <label>Age norms not met</label>
+            </value>
+            <value>
+                <fullName>Financial norms not met (Captive Profile)</fullName>
+                <default>false</default>
+                <label>Financial norms not met (Captive Profile)</label>
+            </value>
+            <value>
+                <fullName>Asking for lower Roi</fullName>
+                <default>false</default>
+                <label>Asking for lower Roi</label>
+            </value>
+            <value>
+                <fullName>Asking for Higher funding - Ltv / Loan amount</fullName>
+                <default>false</default>
+                <label>Asking for Higher funding - Ltv / Loan amount</label>
+            </value>
+            <value>
+                <fullName>Client withdrawal due to change in the plan</fullName>
+                <default>false</default>
+                <label>Client withdrawal due to change in the plan</label>
+            </value>
+            <value>
+                <fullName>Document does not complete by client</fullName>
+                <default>false</default>
+                <label>Document does not complete by client</label>
+            </value>
+            <value>
+                <fullName>Profile Decline</fullName>
+                <default>false</default>
+                <label>Profile Decline</label>
+            </value>
+            <value>
+                <fullName>Document Decline</fullName>
+                <default>false</default>
+                <label>Document Decline</label>
+            </value>
+            <value>
+                <fullName>FI Negative</fullName>
+                <default>false</default>
+                <label>FI Negative</label>
+            </value>
+            <value>
+                <fullName>Any other reasons</fullName>
+                <default>false</default>
+                <label>Any other reasons</label>
+            </value>
+            <value>
+                <fullName>Customer denied the consent</fullName>
+                <default>false</default>
+                <label>Customer denied the consent</label>
+            </value>
+            <value>
+                <fullName>Duplicate Record</fullName>
+                <default>false</default>
+                <label>Duplicate Record</label>
+            </value>
+            <value>
+                <fullName>Sanction Letter Expired</fullName>
+                <default>false</default>
+                <label>Sanction Letter Expired</label>
+            </value>
+            <value>
+                <fullName>CIBIL score below acceptable range</fullName>
+                <default>false</default>
+                <label>CIBIL score below acceptable range</label>
+            </value>
+            <value>
+                <fullName>Complete Documents not provided by the client</fullName>
+                <default>false</default>
+                <label>Complete Documents not provided by the client</label>
+            </value>
+            <value>
+                <fullName>Duplicate record rejected within 60 days</fullName>
+                <default>false</default>
+                <label>Duplicate record rejected within 60 days</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Derogatory CIBIL</controllingFieldValue>
+            <valueName>Recent OD and High DPD in the current running accounts.</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Derogatory CIBIL</controllingFieldValue>
+            <valueName>SUB / SMA / High DPD / account in the closed loan of CV / CE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Policy Norms not met</controllingFieldValue>
+            <valueName>Fleet Expansion Not As Per Norms</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Policy Norms not met</controllingFieldValue>
+            <valueName>FFR Norms not met</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Policy Norms not met</controllingFieldValue>
+            <valueName>Experience norms not met</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Policy Norms not met</controllingFieldValue>
+            <valueName>Insufficient Credit History</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Policy Norms not met</controllingFieldValue>
+            <valueName>Credit PD Negative</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Policy Norms not met</controllingFieldValue>
+            <valueName>Poor Repayment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Policy Norms not met</controllingFieldValue>
+            <valueName>Out of GEO Limit</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Policy Norms not met</controllingFieldValue>
+            <valueName>Age norms not met</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Policy Norms not met</controllingFieldValue>
+            <valueName>Financial norms not met (Captive Profile)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Customer not Interested</controllingFieldValue>
+            <valueName>Asking for lower Roi</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Customer not Interested</controllingFieldValue>
+            <valueName>Asking for Higher funding - Ltv / Loan amount</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Customer not Interested</controllingFieldValue>
+            <valueName>Client withdrawal due to change in the plan</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Customer not Interested</controllingFieldValue>
+            <valueName>Document does not complete by client</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>RCU Negative</controllingFieldValue>
+            <valueName>Profile Decline</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>RCU Negative</controllingFieldValue>
+            <valueName>Document Decline</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FI Negative by Agency</controllingFieldValue>
+            <valueName>FI Negative</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Any Other Reasons</controllingFieldValue>
+            <valueName>Any other reasons</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>System Reject</controllingFieldValue>
+            <valueName>Customer denied the consent</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>System Reject</controllingFieldValue>
+            <valueName>Duplicate Record</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>System Reject</controllingFieldValue>
+            <valueName>Sanction Letter Expired</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>System Reject</controllingFieldValue>
+            <valueName>CIBIL score below acceptable range</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>System Reject</controllingFieldValue>
+            <valueName>Complete Documents not provided by the client</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>System Reject</controllingFieldValue>
+            <valueName>Duplicate record rejected within 60 days</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

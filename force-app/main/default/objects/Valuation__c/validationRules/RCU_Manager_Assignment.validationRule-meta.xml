@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RCU_Manager_Assignment</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(NOT($Setup.Bypass_Validations__c.Bypass_Validation__c), 
+				ISCHANGED(OwnerId), $User.Id &lt;&gt; OwnerId,
+				OR(PRIORVALUE( Current_Owner__c ) =&apos;RCU Managers Queue&apos;, 
+						PRIORVALUE( Current_Owner__c ) =&apos;BL RCU Manager Queue&apos;
+						)
+			)</errorConditionFormula>
+    <errorMessage>You don&apos;t have access to assign to another user</errorMessage>
+</ValidationRule>

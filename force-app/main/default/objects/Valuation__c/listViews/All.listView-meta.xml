@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>RecordType_Name__c</columns>
+    <columns>Branch_Name__c</columns>
+    <columns>Applicant_Name__c</columns>
+    <columns>Current_Owner__c</columns>
+    <columns>Field_Agent__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RecordType_Name__c</field>
+        <operation>equals</operation>
+        <value>RCU</value>
+    </filters>
+    <label>All</label>
+</ListView>

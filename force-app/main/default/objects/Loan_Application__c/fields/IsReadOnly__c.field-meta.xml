@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IsReadOnly__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+AND(
+(ISPICKVAL(Loan_Application_Status__c, &apos;Inactive&apos;) ||
+ISPICKVAL(Loan_Application_Status__c, &apos;Disbursed&apos;) ||
+ISPICKVAL(Loan_Application_Status__c, &apos;Closed&apos;) ||
+ISPICKVAL(Loan_Application_Status__c, &apos;Cancelled&apos;) ||
+ISPICKVAL(Loan_Application_Status__c, &apos;Rejected&apos;) ||
+ISPICKVAL(Loan_Application_Status__c, &apos;Approved&apos;) ||
+ISPICKVAL(Loan_Application_Status__c, &apos;Revoke&apos;) ||
+$User.Id != OwnerId
+),
+NOT($Setup.Bypass_Validations__c.Bypass_Validation__c),
+NOT(
+AND(
+User_Role__c = &apos;Relationship Manager&apos;,
+ISPICKVAL(Loan_Application_Status__c, &apos;Rejected&apos;)
+) ||
+User_Role__c = &apos;RCU Manager&apos; ||
+User_Role__c = &apos;BL RCU Manager&apos;
+)
+),
+true,
+false
+)</formula>
+    <label>Is Read Only</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

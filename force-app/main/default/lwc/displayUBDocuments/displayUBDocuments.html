@@ -1,0 +1,84 @@
+<template>
+	<template if:true={showForOpportunityObject}>
+		<template if:false={hideNew}>
+		<!-- <template if:false={isReadonly}> -->
+			<div class="slds-float_right slds-m-left_xx-small">
+				<lightning-button variant="brand" label={buttonLabel} title="Primary action" onclick={handleClick}
+					disabled={isReadonly}></lightning-button>
+			</div>
+		</template>
+		<!--</template>-->
+		<template if:true={showDocumentDetails}>
+			<c-display-u-b-document-details lead-id={recordId} metadata={metadata} object-name={objectApiName}>
+			</c-display-u-b-document-details>
+		</template>
+
+		<template if:false={showDocumentDetails}>
+			<template if:true={isRecordFound}>
+				<lightning-tabset variant="scoped">
+					<template for:each={loanApplicantList} for:item="record">
+						<lightning-tab label={record.Name} key={record.Id} data-id={record.Id}
+							onactive={handleActiveTab}>
+							<c-display-u-b-document-details application-id={recordId} applicant-id={record.Id}
+								metadata={metadata} object-name={objectApiName}>
+							</c-display-u-b-document-details>
+						</lightning-tab>
+					</template>
+				</lightning-tabset>
+			</template>
+
+			<template if:false={isRecordFound}>
+				<div class="error-style">Application doesn't have Loan Applicant. Please Create Loan Applicant.</div>
+			</template>
+		</template>
+	</template>
+
+	<template if:false={showForOpportunityObject}>
+		<!-- <template if:false={hideNew}>
+			<div class="slds-float_right slds-m-left_xx-small">
+				<lightning-button variant="brand" label={buttonLabel} title="Primary action" onclick={handleClick}
+					disabled={isReadonly}></lightning-button>
+			</div>
+		</template> -->
+		<!--<div class="slds-float_right slds-m-left_xx-small">
+            <lightning-button variant="brand" label="New" title="Primary action" onclick= {handleClick} disabled={isreadonly} ></lightning-button>
+        </div>-->
+		<lightning-layout multiple-rows>
+			<!--<lightning-layout-item size="12"  small-device-size="12" medium-device-size="12" large-device-size="12" >
+                <div class={cssClass}>
+                    <lightning-button variant="brand" label="New" title="Primary action" onclick= {handleClick} disabled={isreadonly} ></lightning-button>
+                </div>
+            </lightning-layout-item>-->
+			<lightning-layout-item size="12" small-device-size="12" medium-device-size="12" large-device-size="12">
+				<c-display-u-b-document-details lead-id={recordId} object-name={objectApiName}
+					onclosedetail={handleClose1} pdd={PDD}> </c-display-u-b-document-details>
+			</lightning-layout-item>
+		</lightning-layout>
+	</template>
+	<template if:true={showDocumentModal}>
+		<section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-01"
+			class="slds-modal slds-fade-in-open slds-modal_medium">
+			<div class="slds-modal__container modal-width">
+				<button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"  onclick={handleClose}>
+                        <h1 class="slds-text-heading_medium">X</h1>
+                        <span class="slds-assistive-text">Cancel and close</span>
+                    </button>
+				<div class="slds-modal__content slds-p-around_medium">
+					<lightning-flow flow-api-name='Document_Information' flow-input-variables={inputVariables}
+						onstatuschange={handleStatusChange}>
+					</lightning-flow>
+				</div>
+			</div>
+		</section>
+		<div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+		<!--<c-generic-record-edit-form 
+            object-name="Document__c" 
+            record-id={recordId}
+            section-name={sectionName}
+            default-values={defaultValues}
+            record-type-name="Document"
+            onclose={handleClose}
+            onsave={handleSave}
+        ></c-generic-record-edit-form>-->
+	</template>
+</template>

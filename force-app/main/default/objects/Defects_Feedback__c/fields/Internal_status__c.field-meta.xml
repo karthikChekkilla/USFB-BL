@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Internal_status__c</fullName>
+    <externalId>false</externalId>
+    <label>Internal status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Dev Completed</fullName>
+                <default>false</default>
+                <label>Dev Completed</label>
+            </value>
+            <value>
+                <fullName>Ready For QA</fullName>
+                <default>false</default>
+                <label>Ready For QA</label>
+            </value>
+            <value>
+                <fullName>QA Passed</fullName>
+                <default>false</default>
+                <label>QA Passed</label>
+            </value>
+            <value>
+                <fullName>QA Fail</fullName>
+                <default>false</default>
+                <label>QA Fail</label>
+            </value>
+            <value>
+                <fullName>Ready for UAT</fullName>
+                <default>false</default>
+                <label>Ready for UAT</label>
+            </value>
+            <value>
+                <fullName>UAT Pass</fullName>
+                <default>false</default>
+                <label>UAT Pass</label>
+            </value>
+            <value>
+                <fullName>UAT Fail</fullName>
+                <default>false</default>
+                <label>UAT Fail</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

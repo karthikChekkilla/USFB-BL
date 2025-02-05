@@ -1,0 +1,87 @@
+<template>
+     <template if:true={showSpinner}>
+        <lightning-spinner alternative-text="Loading"></lightning-spinner>
+    </template>
+
+    <template if:true={isNewButtonVisible}>
+        <div class="slds-no-flex slds-card__footer" style="text-align: right;">
+            <lightning-button 
+                variant="brand" 
+                label="New Customer" 
+                name="Customer Button" 
+                onclick={handleClick}
+            ></lightning-button> 
+        </div>
+    </template>
+    <lightning-tabset active-tab-value={activetabContent}>
+        <lightning-tab label="Applicant" value="applicant">
+            <c-dynamic-related-list record-id={recordId} metadata-name="Applicants" onaction={handleAction} user-query="Loan_Application__c IN : IDS_SET AND Applicant_Type__c IN : IDS_SET" query-parameters="Applicant"></c-dynamic-related-list>
+        </lightning-tab>
+         <lightning-tab label="Co-Applicant" value="Co-Applicant">
+            <c-dynamic-related-list record-id={recordId} metadata-name="CoApplicant" onaction={handleAction} user-query="Loan_Application__c IN : IDS_SET AND Applicant_Type__c IN : IDS_SET AND Is_Deleted__c IN : IDS_SET" query-parameters="Co-Applicant;No"></c-dynamic-related-list>
+        </lightning-tab>
+         <lightning-tab label="Guarantor" value="Guarantor">
+            <c-dynamic-related-list record-id={recordId} metadata-name="Guarantor" onaction={handleAction} user-query="Loan_Application__c IN : IDS_SET AND Applicant_Type__c IN : IDS_SET AND Is_Deleted__c IN : IDS_SET" query-parameters="Guarantor;No"></c-dynamic-related-list>
+        </lightning-tab>
+       <!--Added by lakshya on 01-10-2024 USFBL-461 started-->
+        <template if:true={isBLModal}>
+            <lightning-tab label="Inactive Applicants" value="Inactive">
+                <c-dynamic-related-list record-id={recordId} metadata-name="InactiveApplicants" onaction={handleAction}
+                    user-query="Loan_Application__c IN : IDS_SET AND Is_Deleted__c IN : IDS_SET" query-parameters="Yes">
+                </c-dynamic-related-list>
+            </lightning-tab>
+        </template>
+        <!--Added by lakshya on 01-10-2024 USFBL-461 ended-->
+    </lightning-tabset>
+
+    <!-- Flow for CV/CE start -->
+    <template lwc:if={isFlowInvoked}>
+        <section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-01" class="slds-modal slds-fade-in-open slds-modal_medium">
+                <div class="slds-modal__container modal-width">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"  onclick={handleClose}>
+                        <!--<h1 class="slds-text-heading_medium">X</h1>
+                        <span class="slds-assistive-text">Cancel and close</span>-->
+                        <lightning-icon icon-name="utility:close"
+                            alternative-text="close"
+                            variant="filled"
+                            size="small" ></lightning-icon>
+                    </button>
+                    <div class="slds-modal__content slds-p-around_medium">
+                        <lightning-flow
+                                flow-api-name='Loan_Applicant_Screen'
+                                flow-input-variables={inputVariables}
+                                    onstatuschange={handleStatusChange}  
+                        > 
+                        </lightning-flow>
+                    </div>
+                </div>
+            </section>
+        <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+    </template>
+    <!-- Flow for CV/CE end -->
+    <!-- Flow for BL start-->
+    <template lwc:if={isFlowInvokedBL}>
+        <section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-01" class="slds-modal slds-fade-in-open slds-modal_medium">
+                <div class="slds-modal__container modal-width">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"  onclick={handleClose}>
+                        <!--<h1 class="slds-text-heading_medium">X</h1>
+                        <span class="slds-assistive-text">Cancel and close</span>-->
+                        <lightning-icon icon-name="utility:close"
+                            alternative-text="close"
+                            variant="filled"
+                            size="small" ></lightning-icon>
+                    </button>
+                    <div class="slds-modal__content slds-p-around_medium">
+                        <lightning-flow
+                                flow-api-name='BL_Loan_Applicant_Screen'
+                                flow-input-variables={inputVariables}
+                                    onstatuschange={handleStatusChange}  
+                        > 
+                        </lightning-flow>
+                    </div>
+                </div>
+            </section>
+        <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+    </template>
+    <!-- Flow for BL end-->
+</template>

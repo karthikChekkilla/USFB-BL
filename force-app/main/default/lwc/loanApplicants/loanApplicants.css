@@ -1,0 +1,15 @@
+@media (max-width: 767px) {
+  /* Styles for mobile devices */
+  .slds-grid.slds-wrap .slds-col {
+    width: 100% !important;
+    margin-bottom: 10px;
+  }
+}
+
+@media (min-width: 768px) {
+  /* Styles for laptop/desktop devices */
+  .slds-grid.slds-wrap .slds-col {
+    width: auto !important;
+    margin-right: 10px;
+  }
+}

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Cancel Reason</label>
+    <protected>false</protected>
+    <values>
+        <field>Cancel_Reason__c</field>
+        <value xsi:type="xsd:string">Post PD Query Not Resolved</value>
+    </values>
+    <values>
+        <field>Cancellation_Source__c</field>
+        <value xsi:type="xsd:string">Bank Induced</value>
+    </values>
+    <values>
+        <field>Invoke_From__c</field>
+        <value xsi:type="xsd:string">Cancel</value>
+    </values>
+    <values>
+        <field>LOB__c</field>
+        <value xsi:type="xsd:string">BL</value>
+    </values>
+    <values>
+        <field>Reject_Validity__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Rejection_Reason__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Rejection_Sub_Reason__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Rejection_Type__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>TemplateId__c</field>
+        <value xsi:nil="true"/>
+    </values>
+</CustomMetadata>

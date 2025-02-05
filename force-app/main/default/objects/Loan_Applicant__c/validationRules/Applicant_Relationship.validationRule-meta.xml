@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Applicant_Relationship</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF( AND(ISPICKVAL(Applicant_Type__c, &apos;Applicant&apos;),ISCHANGED(BL_Relationship_with_Applicant__c))  ,
+				true, 
+				false)</errorConditionFormula>
+    <errorDisplayField>BL_Relationship_with_Applicant__c</errorDisplayField>
+    <errorMessage>You cannot add applicant relationship in case of applicant type applicant.</errorMessage>
+</ValidationRule>

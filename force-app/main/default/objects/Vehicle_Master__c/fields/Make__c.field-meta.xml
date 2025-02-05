@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Make__c</fullName>
+    <externalId>false</externalId>
+    <label>Make</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Tata Motors Ltd</fullName>
+                <default>false</default>
+                <label>Tata Motors Ltd</label>
+            </value>
+            <value>
+                <fullName>Ashok Leyland</fullName>
+                <default>false</default>
+                <label>Ashok Leyland</label>
+            </value>
+            <value>
+                <fullName>Mahindra &amp; Mahindra Ltd</fullName>
+                <default>false</default>
+                <label>Mahindra &amp; Mahindra Ltd</label>
+            </value>
+            <value>
+                <fullName>Eicher Ltd</fullName>
+                <default>false</default>
+                <label>Eicher Ltd</label>
+            </value>
+            <value>
+                <fullName>Body Builder</fullName>
+                <default>false</default>
+                <label>Body Builder</label>
+            </value>
+            <value>
+                <fullName>JCB Ltd.</fullName>
+                <default>false</default>
+                <label>JCB Ltd.</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

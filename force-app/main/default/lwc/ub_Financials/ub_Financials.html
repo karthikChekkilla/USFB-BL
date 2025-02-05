@@ -1,0 +1,48 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 05-17-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    
+    <lightning-card>
+		<lightning-spinner alternative-text="Loading" size="medium" if:true={showSpinner}></lightning-spinner>
+        <div class="slds-scrollable text-size">
+            <table  class="slds-table slds-table_cell-buffer slds-table_bordered">
+                <tbody>
+                    <template for:each={financialData} for:item="yearData">
+                        <tr  key={yearData.row}>
+							<th><b>{yearData.label}</b></th>
+							<template for:each={yearData.labelwrapperList} for:item="lineData">
+								<template if:true={yearData.isFirstRow}>
+								<td   key={yearData.row} >	<lightning-combobox data-sequence={yearData.row} data-id={yearData.labelApiName} data-code={lineData.answerIndex}  value={lineData.answer}  name={yearData.label}   onchange={inputOnchange} options={FinancialTypeOptions}></lightning-combobox> </td>
+
+								</template>
+								<template if:true={yearData.isYearRow}>
+									
+									<td key={yearData.row} class="highlight">
+										<b> {lineData.answer}  </b>
+									</td> 
+								</template>
+								<template if:true={yearData.isotherRow}>
+									<td key={yearData.row} class="highlight">
+										<lightning-input 
+										type="number" data-sequence={yearData.row} data-id={yearData.labelApiName} data-code={lineData.answerIndex} variant="label-hidden" label="" name={yearData.label} onchange={inputOnchange}
+										maxlength="255" disabled={yearData.isReadonly} value={lineData.answer}>
+									</lightning-input>
+									</td>
+								</template>
+							</template>		
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </div>
+		<footer class="slds-modal__footer">
+			<lightning-button variant="brand" label="Save"  name="Create Financials"   onclick={clickHandler} class="slds-button slds-align_absolute-center" disabled={readonlyField}></lightning-button>
+		</footer> 
+    </lightning-card>
+    
+</template>

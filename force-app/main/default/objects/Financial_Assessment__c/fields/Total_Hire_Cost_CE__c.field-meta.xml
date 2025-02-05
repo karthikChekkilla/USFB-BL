@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Hire_Cost_CE__c</fullName>
+    <externalId>false</externalId>
+    <formula>(No_of_working_hours_in_a_day__c * No_working_days_in_month__c * Charge_per_hour__c) + (No_Of_working_Days__c * Fuel_Avg_in_LtrHr__c * Cost_of_Fuel_per_litre__c * No_of_hr_opearted_in_a_day__c) + (Drivers_Salary__c + CleanerOperator_Salary__c + Taxes_Permit__c + Maintenance_Cost__c + Misc_Exps__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Total Hire Cost</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

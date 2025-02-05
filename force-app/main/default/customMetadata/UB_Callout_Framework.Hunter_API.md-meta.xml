@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Hunter API</label>
+    <protected>false</protected>
+    <values>
+        <field>Active__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>Auth_Token_c__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Body__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Certificate_Name__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Class_Name__c</field>
+        <value xsi:type="xsd:string">UB_Hunter_API</value>
+    </values>
+    <values>
+        <field>Endpoint__c</field>
+        <value xsi:type="xsd:string">https://apiuat.utkarsh.bank/HunterAPI/v1.0.0/Online-Matching</value>
+    </values>
+    <values>
+        <field>Extra_Param_s__c</field>
+        <value xsi:type="xsd:string">CustomerID:118
+SubmissionLoad:1
+SchemeSetID:21
+SchemeSetID2:971
+PersistMatches:1
+WorklistInsert:1
+RsltCode:1
+ORIGINATOR:Utkarsh
+COUNT:1
+CLASSIFICATION:UNKNOWN
+CustomerName:Utkarsh
+IDENTIFIER:TestingUTKB-23012022-001
+PRODUCT:PL_IND
+DOC_TYP:AADHAR ID
+webusername:UTKB_SERVICES
+webpassword:Experian@123
+CTRY:India</value>
+    </values>
+    <values>
+        <field>HTTP_Method__c</field>
+        <value xsi:type="xsd:string">POST</value>
+    </values>
+    <values>
+        <field>HeaderParams__c</field>
+        <value xsi:type="xsd:string">Content-Type:application/json
+PartnerId:TCS</value>
+    </values>
+    <values>
+        <field>Host__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Mock_Response__c</field>
+        <value xsi:type="xsd:string">&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;
+    &lt;soap:Body&gt;
+        &lt;MatchResponse xmlns=&quot;http://www.mclsoftware.co.uk/HunterII/WebServices&quot;&gt;
+            &lt;MatchResult&gt;&amp;lt;ResultBlock&gt;&amp;lt;MatchSummary matches=&quot;1&quot;&gt;&amp;lt;TotalMatchScore&gt;420&amp;lt;/TotalMatchScore&gt;&amp;lt;Rules totalRuleCount=&quot;6&quot;&gt;&amp;lt;Rule ruleCount=&quot;3&quot;&gt;&amp;lt;RuleID&gt;UTKB_INC_PAN_BNK&amp;lt;/RuleID&gt;&amp;lt;Score&gt;70&amp;lt;/Score&gt;&amp;lt;/Rule&gt;&amp;lt;Rule ruleCount=&quot;3&quot;&gt;&amp;lt;RuleID&gt;UTKB_INC_PAN_TEL&amp;lt;/RuleID&gt;&amp;lt;Score&gt;70&amp;lt;/Score&gt;&amp;lt;/Rule&gt;&amp;lt;/Rules&gt;&amp;lt;MatchSchemes schemeCount=&quot;1&quot;&gt;&amp;lt;Scheme&gt;&amp;lt;SchemeID&gt;1118&amp;lt;/SchemeID&gt;&amp;lt;Score&gt;420&amp;lt;/Score&gt;&amp;lt;/Scheme&gt;&amp;lt;/MatchSchemes&gt;&amp;lt;/MatchSummary&gt;&amp;lt;ErrorWarnings&gt;&amp;lt;Errors errorCount=&quot;0&quot; /&gt;&amp;lt;Warnings warningCount=&quot;1&quot;&gt;&amp;lt;Warning&gt;&amp;lt;Number&gt;102009&amp;lt;/Number&gt;&amp;lt;Message&gt;Match schemes not used&amp;lt;/Message&gt;&amp;lt;Values&gt;&amp;lt;Value&gt;28&amp;lt;/Value&gt;&amp;lt;Value&gt;64&amp;lt;/Value&gt;&amp;lt;Value&gt;234&amp;lt;/Value&gt;&amp;lt;Value&gt;317&amp;lt;/Value&gt;&amp;lt;Value&gt;318&amp;lt;/Value&gt;&amp;lt;Value&gt;532&amp;lt;/Value&gt;&amp;lt;Value&gt;533&amp;lt;/Value&gt;&amp;lt;Value&gt;676&amp;lt;/Value&gt;&amp;lt;Value&gt;764&amp;lt;/Value&gt;&amp;lt;Value&gt;858&amp;lt;/Value&gt;&amp;lt;Value&gt;973&amp;lt;/Value&gt;&amp;lt;Value&gt;1167&amp;lt;/Value&gt;&amp;lt;Value&gt;1181&amp;lt;/Value&gt;&amp;lt;Value&gt;1262&amp;lt;/Value&gt;&amp;lt;Value&gt;1562&amp;lt;/Value&gt;&amp;lt;Value&gt;1563&amp;lt;/Value&gt;&amp;lt;Value&gt;1571&amp;lt;/Value&gt;&amp;lt;Value&gt;1597&amp;lt;/Value&gt;&amp;lt;Value&gt;1598&amp;lt;/Value&gt;&amp;lt;Value&gt;1637&amp;lt;/Value&gt;&amp;lt;Value&gt;1638&amp;lt;/Value&gt;&amp;lt;Value&gt;1659&amp;lt;/Value&gt;&amp;lt;Value&gt;1673&amp;lt;/Value&gt;&amp;lt;Value&gt;1674&amp;lt;/Value&gt;&amp;lt;Value&gt;1675&amp;lt;/Value&gt;&amp;lt;Value&gt;1727&amp;lt;/Value&gt;&amp;lt;Value&gt;1768&amp;lt;/Value&gt;&amp;lt;Value&gt;1780&amp;lt;/Value&gt;&amp;lt;Value&gt;1800&amp;lt;/Value&gt;&amp;lt;Value&gt;2054&amp;lt;/Value&gt;&amp;lt;Value&gt;2160&amp;lt;/Value&gt;&amp;lt;Value&gt;2161&amp;lt;/Value&gt;&amp;lt;Value&gt;2162&amp;lt;/Value&gt;&amp;lt;Value&gt;2163&amp;lt;/Value&gt;&amp;lt;Value&gt;2164&amp;lt;/Value&gt;&amp;lt;Value&gt;2165&amp;lt;/Value&gt;&amp;lt;Value&gt;2166&amp;lt;/Value&gt;&amp;lt;Value&gt;2167&amp;lt;/Value&gt;&amp;lt;Value&gt;2259&amp;lt;/Value&gt;&amp;lt;Value&gt;2260&amp;lt;/Value&gt;&amp;lt;Value&gt;2261&amp;lt;/Value&gt;&amp;lt;Value&gt;2270&amp;lt;/Value&gt;&amp;lt;Value&gt;2271&amp;lt;/Value&gt;&amp;lt;Value&gt;2272&amp;lt;/Value&gt;&amp;lt;Value&gt;2273&amp;lt;/Value&gt;&amp;lt;Value&gt;2274&amp;lt;/Value&gt;&amp;lt;Value&gt;2275&amp;lt;/Value&gt;&amp;lt;Value&gt;2276&amp;lt;/Value&gt;&amp;lt;Value&gt;1126&amp;lt;/Value&gt;&amp;lt;Value&gt;1127&amp;lt;/Value&gt;&amp;lt;Value&gt;1128&amp;lt;/Value&gt;&amp;lt;Value&gt;1129&amp;lt;/Value&gt;&amp;lt;Value&gt;1566&amp;lt;/Value&gt;&amp;lt;Value&gt;1567&amp;lt;/Value&gt;&amp;lt;Value&gt;1568&amp;lt;/Value&gt;&amp;lt;Value&gt;1569&amp;lt;/Value&gt;&amp;lt;Value&gt;1570&amp;lt;/Value&gt;&amp;lt;/Values&gt;&amp;lt;/Warning&gt;&amp;lt;/Warnings&gt;&amp;lt;/ErrorWarnings&gt;&amp;lt;/ResultBlock&gt;&lt;/MatchResult&gt;
+    &lt;/MatchResponse&gt;
+&lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;</value>
+    </values>
+    <values>
+        <field>Named_Credential__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Timeout_Time__c</field>
+        <value xsi:type="xsd:double">120000.0</value>
+    </values>
+    <values>
+        <field>URL_Parameters__c</field>
+        <value xsi:nil="true"/>
+    </values>
+</CustomMetadata>

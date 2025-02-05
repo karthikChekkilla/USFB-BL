@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Disbused_Status</fullName>
+    <active>false</active>
+    <errorConditionFormula>IF( AND(NOT(ISNEW()) , ISPICKVAL(Status__c, &apos;Disbursed&apos;))    , 
+					true, 
+					false)</errorConditionFormula>
+    <errorMessage>You cannot change once disbursed.</errorMessage>
+</ValidationRule>

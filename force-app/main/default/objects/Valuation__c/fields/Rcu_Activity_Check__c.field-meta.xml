@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rcu_Activity_Check__c</fullName>
+    <externalId>false</externalId>
+    <formula>AND(RecordType_Name__c = &apos;RCU&apos;, OR (ISPICKVAL(Status__c, &apos;Sampled&apos;), 
+								ISPICKVAL(Status__c, &apos;Screened&apos;)),  
+												ISPICKVAL(Vendor_Status__c, &apos;Completed&apos;),
+												NOT(ISBLANK(TEXT(Result__c)))
+								)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Rcu Activity Check</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

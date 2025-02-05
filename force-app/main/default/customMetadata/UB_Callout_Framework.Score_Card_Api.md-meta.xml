@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Score Card Api</label>
+    <protected>false</protected>
+    <values>
+        <field>Active__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>Auth_Token_c__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Body__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Certificate_Name__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Class_Name__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Endpoint__c</field>
+        <value xsi:type="xsd:string">https://apiuat.utkarsh.bank/strategyone/v1.0.0/S1Public</value>
+    </values>
+    <values>
+        <field>Extra_Param_s__c</field>
+        <value xsi:type="xsd:string">InquiryCode:123
+ProcessCode:SFDC_CV</value>
+    </values>
+    <values>
+        <field>HTTP_Method__c</field>
+        <value xsi:type="xsd:string">POST</value>
+    </values>
+    <values>
+        <field>HeaderParams__c</field>
+        <value xsi:type="xsd:string">Content-Type:application/json
+partnerID:TCS
+Accept:application/json</value>
+    </values>
+    <values>
+        <field>Host__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Mock_Response__c</field>
+        <value xsi:type="xsd:string">{
+  &quot;StrategyOneResponse&quot;: {
+    &quot;Header&quot;: {
+      &quot;InquiryCode&quot;: &quot;123&quot;,
+      &quot;ProcessCode&quot;: &quot;SFDC_CV&quot;,
+      &quot;OrganizationCode&quot;: &quot;&quot;,
+      &quot;ProcessVersion&quot;: 1,
+      &quot;LayoutVersion&quot;: 1
+    },
+    &quot;Body&quot;: {
+      &quot;APPLICATION&quot;: {
+        &quot;Variables&quot;: {
+          &quot;APPLICATION_ID&quot;: 6,
+          &quot;V1&quot;: 61,
+          &quot;V2&quot;: 71,
+          &quot;V3&quot;: 70,
+          &quot;V4&quot;: 66,
+          &quot;V5&quot;: 70,
+          &quot;V6&quot;: 66,
+          &quot;V7&quot;: 72,
+          &quot;V8&quot;: 64,
+          &quot;V9&quot;: 75,
+          &quot;FINAL_SCORE&quot;: 615
+        }
+      }
+    }
+  }
+}</value>
+    </values>
+    <values>
+        <field>Named_Credential__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Timeout_Time__c</field>
+        <value xsi:type="xsd:double">120000.0</value>
+    </values>
+    <values>
+        <field>URL_Parameters__c</field>
+        <value xsi:nil="true"/>
+    </values>
+</CustomMetadata>

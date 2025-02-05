@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Shared_with_Roles_and_Subordinates</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Shared with Roles and Subordinates</label>
+        <sharedTo>
+            <group>Roles_and_Subordinates</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>notEqual</operation>
+            <value>Login</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingOwnerRules>
+        <fullName>Shared_CPA_Queue_with_Credit_Users</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Shared CPA Queue with Credit Users</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>Committee</roleAndSubordinatesInternal>
+        </sharedTo>
+        <sharedFrom>
+            <queue>BL_CPA_Queue</queue>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Shared_with_Sales_User</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Shared with Sales User</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>Business_Head</roleAndSubordinatesInternal>
+        </sharedTo>
+        <sharedFrom>
+            <portalRole>AUserPartnerPersonAccount</portalRole>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BL_AddressTypeRestrictionNonIndividual</fullName>
+    <active>false</active>
+    <description>Address Type should be Office only is case for Non Individual Users.</description>
+    <errorConditionFormula>AND(Loan_Applicant__r.RecordType.Name == &apos;BL Non Individual&apos;, NOT( ISPICKVAL(Address_Type__c, &apos;Office Address&apos;)),NOT($Setup.Bypass_Validations__c.Bypass_Validation__c))</errorConditionFormula>
+    <errorMessage>Kindly select the address type as an office address for non-individual applicants.</errorMessage>
+</ValidationRule>

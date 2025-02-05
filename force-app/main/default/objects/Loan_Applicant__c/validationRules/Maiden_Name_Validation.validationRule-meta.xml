@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Maiden_Name_Validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(NOT($Setup.Bypass_Validations__c.Bypass_Validation__c),NOT(REGEX( Maiden_Name__c, &quot;[a-zA-Z ]*$&quot;)))</errorConditionFormula>
+    <errorDisplayField>Maiden_Name__c</errorDisplayField>
+    <errorMessage>Maiden Name allows letter only.</errorMessage>
+</ValidationRule>

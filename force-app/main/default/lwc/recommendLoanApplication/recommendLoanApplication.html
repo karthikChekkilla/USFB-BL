@@ -1,0 +1,32 @@
+<template>
+    <template if:true={showSpinner}>
+        <lightning-spinner alternative-text="Loading"></lightning-spinner>
+    </template>
+    <template if:true={isConfirmModel}>
+        <lightning-modal-header label="Recommend for Approval"></lightning-modal-header>
+        <lightning-modal-body>
+            <lightning-combobox
+                name="Authority"
+                label="Select Authority"
+                class="authority"
+                value={value}
+                placeholder="Select Authority"
+                options={options}
+                onchange={handleChange}  required=true>
+            </lightning-combobox>
+        </lightning-modal-body>
+        <lightning-modal-footer>
+            <lightning-button variant="brand" label="Submit" onclick={handleSave} ></lightning-button>
+        </lightning-modal-footer>
+    </template>
+    <template if:true={isValidation}>
+        <lightning-modal-header  label="Error" class="my-modal-header"></lightning-modal-header>
+                <lightning-modal-body>
+                <lightning-formatted-rich-text value={validationMsg}></lightning-formatted-rich-text>
+            </lightning-modal-body>
+            <lightning-modal-footer>
+                <lightning-button variant="destructive" label="OK" onclick={closeQuickAction} class="slds-m-left_x-small"></lightning-button>
+
+            </lightning-modal-footer>
+    </template>
+</template>

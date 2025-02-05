@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Details__c</fullName>
+    <externalId>false</externalId>
+    <label>Details</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Subsub_category__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Loan for Purchase of Agriculture Implements &amp; Machinery (1121)</fullName>
+                <default>false</default>
+                <label>Loan for Purchase of Agriculture Implements &amp; Machinery (1121)</label>
+            </value>
+            <value>
+                <fullName>Loans for Pre &amp; Post Harvest Activities (spraying, weeding, harvesting, sorting, grading, transporting etc.) (1122)</fullName>
+                <default>false</default>
+                <label>Loans for Pre &amp; Post Harvest Activities (spraying, weeding, harvesting, sorting, grading, transporting etc.) (1122)</label>
+            </value>
+            <value>
+                <fullName>Fisheries (1131)</fullName>
+                <default>false</default>
+                <label>Fisheries (1131)</label>
+            </value>
+            <value>
+                <fullName>Dairying (1132)</fullName>
+                <default>false</default>
+                <label>Dairying (1132)</label>
+            </value>
+            <value>
+                <fullName>Poultry (1133)</fullName>
+                <default>false</default>
+                <label>Poultry (1133)</label>
+            </value>
+            <value>
+                <fullName>Animal Husbandry (1134)</fullName>
+                <default>false</default>
+                <label>Animal Husbandry (1134)</label>
+            </value>
+            <value>
+                <fullName>Bee Keeping (1135)</fullName>
+                <default>false</default>
+                <label>Bee Keeping (1135)</label>
+            </value>
+            <value>
+                <fullName>Sericulture (1136)</fullName>
+                <default>false</default>
+                <label>Sericulture (1136)</label>
+            </value>
+            <value>
+                <fullName>Other Allied Activities (1137)</fullName>
+                <default>false</default>
+                <label>Other Allied Activities (1137)</label>
+            </value>
+            <value>
+                <fullName>Loans to farmers against pledge of agriculture product, warehouse receipt (1141)</fullName>
+                <default>false</default>
+                <label>Loans to farmers against pledge of agriculture product, warehouse receipt (1141)</label>
+            </value>
+            <value>
+                <fullName>Loans to distressed farmers (1142)</fullName>
+                <default>false</default>
+                <label>Loans to distressed farmers (1142)</label>
+            </value>
+            <value>
+                <fullName>Loans to small &amp; marginal farmers for purchase of land for agriculture purpose (1143)</fullName>
+                <default>false</default>
+                <label>Loans to small &amp; marginal farmers for purchase of land for agriculture purpose (1143)</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Loan for Investment Credit (1120)</controllingFieldValue>
+            <valueName>Loan for Purchase of Agriculture Implements &amp; Machinery (1121)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Loan for Investment Credit (1120)</controllingFieldValue>
+            <valueName>Loans for Pre &amp; Post Harvest Activities (spraying, weeding, harvesting, sorting, grading, transporting etc.) (1122)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Loan for Allied Activities (1130)</controllingFieldValue>
+            <valueName>Fisheries (1131)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Loan for Allied Activities (1130)</controllingFieldValue>
+            <valueName>Dairying (1132)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Loan for Allied Activities (1130)</controllingFieldValue>
+            <valueName>Poultry (1133)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Loan for Allied Activities (1130)</controllingFieldValue>
+            <valueName>Animal Husbandry (1134)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Loan for Allied Activities (1130)</controllingFieldValue>
+            <valueName>Bee Keeping (1135)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Loan for Allied Activities (1130)</controllingFieldValue>
+            <valueName>Sericulture (1136)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Loan for Allied Activities (1130)</controllingFieldValue>
+            <valueName>Other Allied Activities (1137)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other Agriculture Loans (1140)</controllingFieldValue>
+            <valueName>Loans to farmers against pledge of agriculture product, warehouse receipt (1141)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other Agriculture Loans (1140)</controllingFieldValue>
+            <valueName>Loans to distressed farmers (1142)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other Agriculture Loans (1140)</controllingFieldValue>
+            <valueName>Loans to small &amp; marginal farmers for purchase of land for agriculture purpose (1143)</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,35 @@
+<template>
+     <template if:true={showSpinner}>
+        <lightning-spinner alternative-text="Loading"></lightning-spinner>
+    </template>
+    <div>
+        <lightning-modal-header label="Cancel Application"></lightning-modal-header>
+        <lightning-modal-body>
+            <lightning-record-edit-form density="comfy" onsubmit={handleSubmit} object-api-name={objectApiName} record-id={recordId} onsuccess={handleSuccess}>
+                <lightning-messages></lightning-messages>
+                <lightning-combobox
+                    name="cancellationSource"
+                    label="Cancellation Source"
+                    value={cancellationSource}
+                    placeholder="Select Cancellation Source"
+                    options={cancellationSourceOptions}
+                    onchange={handleCancellationSourceChange} required>
+                </lightning-combobox>
+                <lightning-combobox
+                    name="cancelReason"
+                    label="Cancel Reason"
+                    value={cancelReason}
+                    placeholder="Select Cancel Reason"
+                    options={cancelReasonOptions}
+                    onchange={handleCancelReasonChange}
+                    required>
+                </lightning-combobox>
+                <div class="slds-var-m-top_medium slds-var-m-right_medium slds-m-bottom_x-small slds-text-align_right">
+                    <lightning-button variant="brand"  type="submit" label="Save"></lightning-button>
+                    &nbsp; &nbsp;
+                    <lightning-button variant="brand" onclick={closeQuickAction} label="Cancel"></lightning-button>
+                </div>
+            </lightning-record-edit-form>
+        </lightning-modal-body>
+    </div>
+</template>

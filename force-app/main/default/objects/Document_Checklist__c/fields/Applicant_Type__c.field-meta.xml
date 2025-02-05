@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Applicant_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Applicant Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Applicant</fullName>
+                <default>false</default>
+                <label>Applicant</label>
+            </value>
+            <value>
+                <fullName>Co-Applicant</fullName>
+                <default>false</default>
+                <label>Co-Applicant</label>
+            </value>
+            <value>
+                <fullName>Director</fullName>
+                <default>false</default>
+                <label>Director</label>
+            </value>
+            <value>
+                <fullName>Main Director</fullName>
+                <default>false</default>
+                <label>Main Director</label>
+            </value>
+            <value>
+                <fullName>Partner</fullName>
+                <default>false</default>
+                <label>Partner</label>
+            </value>
+            <value>
+                <fullName>Main Promoter</fullName>
+                <default>false</default>
+                <label>Main Promoter</label>
+            </value>
+            <value>
+                <fullName>Promotor</fullName>
+                <default>false</default>
+                <label>Promotor</label>
+            </value>
+            <value>
+                <fullName>Division</fullName>
+                <default>false</default>
+                <label>Division</label>
+            </value>
+            <value>
+                <fullName>Shareholder</fullName>
+                <default>false</default>
+                <label>Shareholder</label>
+            </value>
+            <value>
+                <fullName>Holding Company</fullName>
+                <default>false</default>
+                <label>Holding Company</label>
+            </value>
+            <value>
+                <fullName>Subsidiary Company</fullName>
+                <default>false</default>
+                <label>Subsidiary Company</label>
+            </value>
+            <value>
+                <fullName>Proprietor</fullName>
+                <default>false</default>
+                <label>Proprietor</label>
+            </value>
+            <value>
+                <fullName>Trustee</fullName>
+                <default>false</default>
+                <label>Trustee</label>
+            </value>
+            <value>
+                <fullName>Karta</fullName>
+                <default>false</default>
+                <label>Karta</label>
+            </value>
+            <value>
+                <fullName>Co Parceners</fullName>
+                <default>false</default>
+                <label>Co Parceners</label>
+            </value>
+            <value>
+                <fullName>Others</fullName>
+                <default>false</default>
+                <label>Others</label>
+            </value>
+            <value>
+                <fullName>Guarantor</fullName>
+                <default>false</default>
+                <label>Guarantor</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

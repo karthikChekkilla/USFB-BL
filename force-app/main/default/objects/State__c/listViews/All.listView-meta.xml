@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>Cibil_State_Code__c</columns>
+    <columns>Country__c</columns>
+    <columns>Stamp_Duty_Amount__c</columns>
+    <columns>Stamp_Duty_Applicable__c</columns>
+    <columns>State_Code__c</columns>
+    <columns>Sherlock_State_Code__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+</ListView>

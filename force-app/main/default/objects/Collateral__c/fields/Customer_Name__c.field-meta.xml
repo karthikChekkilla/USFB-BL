@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customer_Name__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <label>Customer Name</label>
+    <lookupFilter>
+        <active>true</active>
+        <booleanFilter>1 AND 2</booleanFilter>
+        <filterItems>
+            <field>Loan_Applicant__c.Applicant_Type__c</field>
+            <operation>notContain</operation>
+            <value>Guarantor</value>
+        </filterItems>
+        <filterItems>
+            <field>Loan_Applicant__c.Loan_Application__c</field>
+            <operation>equals</operation>
+            <valueField>$Source.Loan_Application__c</valueField>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Loan_Applicant__c</referenceTo>
+    <relationshipLabel>Collateral</relationshipLabel>
+    <relationshipName>Collateral</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

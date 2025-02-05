@@ -1,0 +1,1667 @@
+<!--
+@description       : 
+@author            : ChangeMeIn@UserSettingsUnder.SFDoc
+@group             : 
+@last modified on  : 06-21-2024
+@last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<apex:page docType="html-5.0" showHeader="false" sidebar="false"  extensions="UB_VehicleEquipmentHelper"
+           action="{!getPDF}"  standardController="Loan_Application__c"    standardStylesheets="false" applyBodyTag="false" applyHtmlTag="true"  language="en-IN" contentType="text/html;charset=UTF-8" renderAs="pdf">
+    <head>
+        <style > 
+            
+            /* Start Section */
+            .slds-section { margin-top: 8px;margin-bottom: 8px; width: 100%}
+            .slds-section__title{display: flex;align-items: center;font-size: 16px;line-height: 30px;border: 1px solid transparent;border-radius: 4px;text-align: center;}
+            .slds-theme_shade { background-color: #583c87; }
+            .slds-p-horizontal_small {padding-left: 12px;padding-right: 12px;}
+            .slds-text-color_inverse{color:#fff}
+            .slds-section__content { padding-top: 8px; overflow: visible; visibility: visible; opacity: 1; height: auto; }
+            /* End Section */
+            
+            body {
+            background-color: #fee7ff; /* Replace with your desired color */
+            }
+            
+            h1 { color: #373435; font-family:"Trebuchet MS", sans-serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 18pt; }
+            /* Begin Custom Grid System */
+            .clearfix {
+            clear: both;
+            }
+            .row {
+            display: block;
+            border:1px solid;
+            }
+            .col {
+            float: left;
+            border:1px solid;
+            }
+            .slds-size_1-of-12 {
+            width: 8.3333333333%;
+            }
+            .slds-size_2-of-12 {
+            width: 16.6666666667%;
+            }
+            
+            .slds-size_3-of-12 {
+            width: 25%;
+            }
+            
+            .slds-size_4-of-12 {
+            width: 33.3333333333%;
+            }
+            
+            .slds-size_5-of-12 {
+            width: 41.6666666667%;
+            }
+            
+            .slds-size_6-of-12 {
+            width: 50%;
+            }
+            
+            .slds-size_7-of-12 {
+            width: 58.3333333333%;
+            }
+            
+            .slds-size_8-of-12 {
+            width: 66.6666666667%;
+            }
+            
+            .slds-size_9-of-12 {
+            width: 75%;
+            }
+            
+            .slds-size_10-of-12 {
+            width: 83.3333333333%;
+            }
+            
+            .slds-size_11-of-12 {
+            width: 91.6666666667%;
+            }
+            
+            .slds-size_12-of-12 {
+            width: 100%;
+            }
+            
+            
+            /* End Custom Grid System */
+            table{
+            width:100%;table-layout: fixed; 
+            }
+            .slds-text-body { font-size: 14px; }
+            .label-style{
+            font-size: 14px;font-family:"BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol", font-style: normal;  text-decoration: none;display:inline-block
+            }
+            .slds-div-style{width:90%;margin-top: 5px;}
+            .value-style{
+            font-size: 16px;font-family:"BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol", font-style: normal;  text-decoration: none;display:inline-block
+            }
+            .pageBreak{
+            page-break-inside:auto;page-break-inside:avoid; page-break-after:auto;
+            }
+            .pageClass :{
+            background-color : #eec; 
+            }
+            .input-class{
+            width : 2rem;
+            }
+            .td-h1{
+            font-size: initial;
+            }
+            .col-tab-1{
+            width : 10%; 
+            }
+            
+            .col-tab-2{
+            width : 200px; 
+            }
+            
+            .col-tab-3{
+            width : 300px; 
+            }
+            
+            .col-tab-4{
+            width : 40%; 
+            }
+            
+            .col-tab-5{
+            width : 50%; 
+            }
+            
+            .col-tab-6{
+            width : 60% !importent; 
+            }
+            
+            .col-tab-8{
+            width : 80% !importent; 
+            }
+            .grid-container {
+            display: grid;
+            align-content: center;
+            grid-template-columns: auto auto auto;
+            gap: 10px;
+            background-color: #2196F3;
+            padding: 10px;
+            }
+            .grid-item {
+            border: 1px solid rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            font-size: 30px;
+            text-align: center;
+            }
+            
+            .align-center{
+            align-content: center;
+            }
+            
+            .text-align{
+            text-align: center;
+            }
+            
+            .textSize{
+            font-size : 12px; 
+            }
+            .imageStyle{
+            width:50%;
+            text-align: right;
+            }
+            
+        </style>
+    </head>
+    <body >
+        <apex:form >
+            
+            <table border="1">
+                <tr>
+                    <td class="col-tab-1" >
+                        <apex:image id="theImage1" value="{!$Resource.UBLogo}" width="120" height="110" alt="Description of image here"/>
+                    </td>
+                    <td class="col-tab-5" >
+                        <div >
+                            <table class="align-center" >
+                                <tr>
+                                    <td class="text-align"  ><h3> Vehicle &amp; Equipment Loans </h3></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-align" > 
+                                        <input type="date"/> 
+                                    </td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td class="text-align" style="text-align: right;" >
+                                        Please Select:  <input type="checkbox"/> MUDRA <input type="checkbox"/> STAND-UP INDIA 
+                                    </td> 
+                                </tr>
+                            </table>
+                            <br/> 
+                        </div>
+                    </td>
+                    <td class="col-tab-4" > 
+                        <div >
+                            <table class="textSize" >
+                                <tr>
+                                    <td class="text-align"  ></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-align" > 
+                                        Sourcing  <input type="checkbox"/> Business Channel <input type="checkbox"/> Direct Sales Team <input type="checkbox"/> Branch ({!loanApplication.Lead__r.Branch__r.Name}) 
+                                    </td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td class="text-align"  >
+                                        Channel Code / Employee Code  <input type="text" /> / <input type="text"/> 
+                                    </td> 
+                                </tr>
+                                <tr>
+                                    <td class="text-align"  >
+                                        Application Number  {!loanApplication.Name}
+                                    </td> 
+                                </tr>
+                            </table>
+                        </div>
+                        
+                    </td>
+                </tr>
+            </table>
+            <div class="slds-section">
+                <h3 class="slds-section__title slds-theme_shade">
+                    <span class="slds-p-horizontal_small slds-text-color_inverse slds-text-align_center">PRELIMINARY CREDIT FACILITY APPLICATION FORM</span>
+                </h3>
+                <table style="font-size:12px;" >
+                    <tr>
+                        <td>
+                            <div class="slds-text-body">
+                                <div style="padding:0px;" >Important Instructions:</div>
+                                <div style="padding:0px;" >A) Fields marked with* are mandatory fields. </div>
+                                <div style="padding:0px;" >B) Please fill the form in English and in BLOCK letters.</div>
+                                <div style="padding:0px;" >C) Additional applicationform for multiple co applicant/guarantor </div>
+                                <div style="padding:0px;" >For office use only</div>
+                                <table>
+                                    <tr colspan="12"> 
+                                        <td ><div class="label-style">
+                                            <b  style = "margin-right: 8px;">Application Type: </b> 
+                                            </div>
+                                            <div class="value-style">
+                                                <label for="monthly"> New </label>
+                                                <img src="{!IF(loanApplication.Application_Type__c == 'New','/img/checkbox_checked.gif','/img/checkbox_unchecked.gif')}"/>
+                                                <label for="monthly"> Used</label>
+                                                <img src="{!IF(loanApplication.Application_Type__c == 'Used','/img/checkbox_checked.gif','/img/checkbox_unchecked.gif')}"/>
+                                            </div>
+                                        </td>
+                                    </tr> 
+                                    <tr> 
+                                        <td > <div class="label-style"><b>Product : </b> </div>  <div class="value-style">{!wrapper.product} </div></td>
+                                    </tr> 
+                                    <tr> 
+                                        <td > <div class="label-style"><b>CB Customer Category : </b> </div>  <div class="value-style"> {!wrapper.customerCategory} </div></td>
+                                    </tr> 
+                                </table>
+                            </div>
+                        </td>
+                        
+                    </tr>
+                </table>
+            </div>
+            <!-- ------------------------------------------ Applicant Individual-------------------------------------------  -->
+            
+            <apex:outputPanel rendered="{!If(wrapper.isApplicantIndividual,true,false)}">
+                <h3 class="slds-section__title slds-theme_shade">
+                    <span class="slds-p-horizontal_small slds-text-color_inverse slds-text-align_center">DETAILS OF APPLICANT [INDIVIDUAL] </span>
+                </h3>
+                <table>
+                    <tr>
+                        <td>
+                            <b class="label-style">Name* (Same as id Proof)</b> <p class="value-style">{!applicant.Account_Name__c}</p>
+                            <b class="label-style">Father/Spouse Name* :</b> <p class="value-style">{!applicant.Father_Spouse_Name__c}</p>
+                            <b class="label-style"> Date of Birth:</b> <p class="value-style"><apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+                            <apex:param value="{!applicant.Date_of_Birth__c}" /> 
+                            </apex:outputText></p>
+                            <b class="label-style">Gender:</b> <p class="value-style"> {!applicant.Gender__c}</p>
+                            <b class="label-style">Religion:</b> <p class="value-style"> {!applicant.Religion__c}</p>
+                        </td>
+                        
+                        <td>
+                            <b class="label-style">Maiden Name (If any*): </b> <p class="value-style">{!applicant.Maiden_Name__c}</p>
+                            <b class="label-style"> Mother Name: </b> <p class="value-style">{!applicant.Mother_Name__c}</p>
+                            <b class="label-style">Category* :</b> <p class="value-style"> {!applicant.Category__c}</p>
+                            <b class="label-style"> Merital Status*:</b> <p class="value-style"> {!applicant.Marital_Status__c}</p>
+                            <b class="label-style"></b> <p class="value-style"> </p>
+                        </td>
+                        <td>
+                            <div style="display:inline-block;width:100%; height :100%;margin-top:10px;">
+                                <apex:outputPanel rendered="{!applicantPhotoMap[applicant.Id] != '0' }">
+                                    <apex:image url="{!applicantPhotoMap[applicant.Id]}"   width="140" height="120" alt="Description of image here" style="margin-left:60px;"/>
+                                </apex:outputPanel>
+                            </div>
+                            
+                        </td>
+                    </tr>
+                </table>
+                
+                <table>
+                    <tr>
+                        <td > <div class="label-style"><b>Residential Status* </b> </div>  <div class="value-style">{!applicant.Residential_Status__c}</div></td>
+                        <td > <div class="label-style"><b>PAN Card : </b> </div>  <div class="value-style">{!applicant.Pan_Number__c}</div></td>
+                        <td > <div class="label-style"><b>Name of Spouse: </b> </div>  <div class="value-style"> {!applicant.Father_Spouse_Name__c}</div></td>
+                    </tr>
+                    <tr>
+                        <td > <div class="label-style"><b>Date of Birth Of Spouse: </b> </div>  <div class="value-style">  <apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+                            <apex:param value="{!applicant.Date_of_birth_of_Spouse__c}" /> 
+                            </apex:outputText> </div></td>
+                        <td > <div class="label-style"><b>PAN No. of Spouse: </b> </div>  <div class="value-style">{!applicant.Pan_Number_Spouse__c}</div></td>
+                        <td > <div class="label-style"><b>Education* </b> </div>  <div class="value-style">{!applicant.Education__c}</div></td>
+                    </tr>
+                    
+                </table> 
+                <p class="textSize">In case customer does not have PAN card or have applied for the same.
+                    Form 60 duly signed need to be collected from customer and submitted along with other requisite documents.</p>
+                <br/>
+                <br/>
+                <div 
+                     class="textSize" height="20px" style="background-color:#D8B4FE;color:black;text-align:left;" >
+                    PROOF OF IDENTITY (Pol)* (Certified copy of any one of the following Proof of Identity [Pol] needs to be submitted) 
+                </div>
+                <table>
+                    <tr>
+                        <td > <div class="label-style"><b>PROOF OF IDENTITY: </b> </div>  <div class="value-style">{!applicant.KYC_Document_Type__c }</div></td>
+                        <td > <div class="label-style"><b>Identification Number if Other : </b> </div>  <div class="value-style">{!wrapper.identificationNumber} </div></td>
+                        <td > <div class="label-style"><b>(any document notified by the central government): </b> </div>  <div class="value-style"> </div></td>
+                    </tr>
+                </table>
+                <div 
+                     class="textSize" height="20px" style="background-color:#D8B4FE;color:black;text-align:left;" >
+                    PROOF OF ADDRESS (PoA)* (Certified copy of any one of the following Proof of Address [PoA] needs to be submitted) 
+                </div>
+                <table>
+                    <tr >
+                        <td > <div class="label-style"><b>Address Type: </b> </div>  <div class="value-style">{!applicant.Address_Type__c}</div></td>
+                        <td > <div class="label-style"><b>Proof of Address: </b> </div>  <div class="value-style">{!applicant.Proof_of_Address__c}</div></td>
+                        <td > <div class="label-style"> </div>  <div class="value-style"></div></td>
+                    </tr>
+                </table>
+                <br/>
+                <apex:outputPanel rendered="{!If(wrapper.isApplicantCurrentAdd,true,false)}">
+                    <div   class="textSize" height="20px" style="background-color:#D8B4FE;color:black;text-align:left;" >
+                        Current Residence Address 
+                    </div>
+                </apex:outputPanel>
+                <table> 
+                    <apex:repeat value="{!applicantCurrentAddressList }" var="address">
+                        <tr>
+                            <td > <div class="label-style"><b>Address Line 1 : </b> </div>  <div class="value-style">{!address.Name}</div></td>
+                            <td > <div class="label-style"><b>Floor:  </b> </div>  <div class="value-style">{!address.Floor__c}</div></td>
+                            <td > <div class="label-style"><b>Address Line 2: </b> </div>  <div class="value-style">{!address.Address_Line_2__c}</div></td>
+                        </tr>
+                        <tr>
+                            <td > <div class="label-style"><b>Sector/Locality:  </b> </div>  <div class="value-style">{!address.Sector_Localty__c}</div></td>
+                            <td > <div class="label-style"><b>Address Line 3: </b> </div>  <div class="value-style">{!address.Address_Line_3__c}</div></td>
+                            <td > <div class="label-style"><b> City/Town/Village*: </b> </div>  <div class="value-style">{!address.City__c}</div></td>
+                        </tr>
+                        <tr>
+                            <td > <div class="label-style"><b> Landmark: </b> </div>  <div class="value-style">{!address.Landmark__c}</div></td>
+                            <td > <div class="label-style"><b>District*: </b> </div>  <div class="value-style"> {!address.District__c}</div></td>
+                            <td > <div class="label-style"><b>Pin/Post Code: </b> </div>  <div class="value-style">{!address.Pincode__r.Name}</div></td>
+                        </tr>
+                        <tr>
+                            <td > <div class="label-style"><b>State*:  </b> </div>  <div class="value-style"> {!address.State__c}</div></td>
+                            <td > <div class="label-style"><b> </b> </div>  <div class="value-style"></div></td>
+                            <td > <div class="label-style"><b> </b> </div>  <div class="value-style"></div></td>
+                        </tr>
+                    </apex:repeat>
+                </table> 
+                <table> 
+                    <apex:repeat value="{!applicantCurrentAddressList }" var="address">
+                        <tr>
+                            <td > <div class="label-style"><b>Residence Is*: </b> </div>  <div class="value-style">{!address.Residence_is__c}</div></td>
+                            <td > <div class="label-style"><b>Residence Type*: </b> </div>  <div class="value-style">{!address.Residence_Type__c}</div></td>
+                            <td > <div class="label-style"><b> </b> </div>  <div class="value-style"></div></td>
+                        </tr>
+                    </apex:repeat>
+                </table> 
+                <apex:outputPanel rendered="{!If(wrapper.isApplicantPermamentAdd,true,false)}">
+                    <div  class="textSize" height="20px" style="background-color:#D8B4FE;color:black;text-align:left;" >
+                        Permanent Address
+                    </div> 
+                </apex:outputPanel>
+                
+                <table> 
+                    <apex:repeat value="{!applicantpermamentAddressList }" var="address">
+                        <tr>
+                            <td > <div class="label-style"><b>Address Line 1: </b> </div>  <div class="value-style">{!address.Name}</div></td>
+                            <td > <div class="label-style"><b> Floor: </b> </div>  <div class="value-style">{!address.Floor__c}</div></td>
+                            <td > <div class="label-style"><b>Address Line 2: </b> </div>  <div class="value-style">{!address.Address_Line_2__c}</div></td>
+                        </tr>
+                        <tr>
+                            <td > <div class="label-style"><b>Sector/Locality: </b> </div>  <div class="value-style">{!address.Sector_Localty__c}</div></td>
+                            <td > <div class="label-style"><b>Address Line 3: </b> </div>  <div class="value-style">{!address.Address_Line_3__c}</div></td>
+                            <td > <div class="label-style"><b> City/Town/Village*: </b> </div>  <div class="value-style">{!address.City__c}</div></td>
+                        </tr>
+                        <tr>
+                            <td > <div class="label-style"><b>Landmark: </b> </div>  <div class="value-style">{!address.Landmark__c}</div></td>
+                            <td > <div class="label-style"><b> District*:  </b> </div>  <div class="value-style">{!address.District__c}</div></td>
+                            <td > <div class="label-style"><b>Pin/Post Code: </b> </div>  <div class="value-style">{!address.Pincode__r.Name}</div></td>
+                        </tr>
+                        <tr>
+                            <td > <div class="label-style"><b> State*:  </b> </div>  <div class="value-style">{!address.State__c}</div></td>
+                            <td > <div class="label-style"><b> </b> </div>  <div class="value-style"></div></td>
+                            <td > <div class="label-style"><b> </b> </div>  <div class="value-style"></div></td>
+                        </tr>
+                    </apex:repeat>
+                </table> 
+                
+                <br/> 
+                <div  class="textSize" height="20px" style="background-color:#D8B4FE;color:black;text-align:left;" >
+                    Occupation Details 
+                </div> 
+                <table> 
+                    <tr>
+                        <td > <div class="label-style"><b> Occupation Type: </b> </div>  <div class="value-style">{!applicant.Occupation_Type__c}</div></td>
+                        <td > <div class="label-style"><b>Official Email Id: </b> </div>  <div class="value-style">{!applicant.Email__c}</div></td>
+                        <td > <div class="label-style"><b>Company Name: </b> </div>  <div class="value-style">{!applicant.Company_Name__c}</div></td>
+                    </tr> 
+                    <tr>
+                        <td > <div class="label-style"><b>Employer Detail: </b> </div>  <div class="value-style">{!applicant.Employer_Detail__c}</div></td>
+                        <td > <div class="label-style"><b>Type of Profession: </b> </div>  <div class="value-style">{!applicant.Type_Of_Profession_Name__c}</div></td>
+                        <td > <div class="label-style"><b> Registration / Membership No.:</b> (Doctor, CA, Architect, ICWA) </div>  <div class="value-style">{!applicant.Registration_Number__c}</div></td>
+                    </tr>
+                    <tr>
+                        
+                        <td > <div class="label-style"><b>Department: </b> </div>  <div class="value-style">{!applicant.Department__c}</div></td>
+                        <td > <div class="label-style"><b>Designation: </b> </div>  <div class="value-style">{!applicant.Designation__c}</div></td>
+                        <td > <div class="label-style"><b>No. of years at current job:  </b> </div>  <div class="value-style">{!applicant.No_of_years_at_current_job__c}</div></td><td colspan="6" style="width:50%;"><b>Employee Id:</b> &nbsp; {!applicant.Employee_ID__c}</td> 
+                    </tr>
+                    
+                    <tr>
+                        <td > <div class="label-style"><b> Name of Previous Organisation: </b> </div>  <div class="value-style">{!applicant.Name_of_Previous_Organisation__c}</div></td>
+                        <td > <div class="label-style"><b>Total work experience: </b> </div>  <div class="value-style">{!applicant.Total_Work_Experience__c}</div></td>
+                        <td > <div class="label-style"><b>Nature of business: </b> </div>  <div class="value-style">{!applicant.Nature_of_Business__c}</div></td>
+                    </tr>
+                    <tr>
+                        <td > <div class="label-style"><b>Industry Type: </b> </div>  <div class="value-style">{!applicant.Industry_Type__c}</div></td>
+                        <td > <div class="label-style"><b>Net Annual Income: </b> </div>  <div class="value-style">{!applicant.Net_Annual_Income__c}</div></td>
+                        <td > <div class="label-style"><b>Gross Annual Income: </b> </div>  <div class="value-style">{!applicant.Gross_Annual_Income__c}</div></td>
+                    </tr>
+                    <tr>
+                        <td > <div class="label-style"><b>Income from other resources: </b> </div>  <div class="value-style">{!applicant.Income_from_other_sources__c}</div></td>
+                        <td > <div class="label-style"><b>Income from Agriculture: </b> </div>  <div class="value-style">{!applicant.Income_from_Agriculture__c} </div></td>
+                        <td > <div class="label-style"><b>  </b> </div>  <div class="value-style"></div></td>
+                    </tr>
+                </table> 
+                <apex:outputPanel rendered="{!If(wrapper.isApplicantOfficeAdd,true,false)}">
+                    <div class="textSize" height="20px" style="background-color:#D8B4FE;color:black;text-align:left;" >
+                        Company Office Address 
+                    </div>
+                </apex:outputPanel>
+                <table style="width:100%;font-size:12px; " > 
+                    <apex:repeat value="{!applicantOfficeAddressList }" var="address">
+                        <tr>
+                            <td > <div class="label-style"><b>Address Line 1:  </b> </div>  <div class="value-style">{!address.Name}</div></td>
+                            <td > <div class="label-style"><b>Floor: </b> </div>  <div class="value-style"> {!address.Floor__c}</div></td>
+                            <td > <div class="label-style"><b>Address Line 2: </b> </div>  <div class="value-style">{!address.Address_Line_2__c}</div></td>
+                        </tr>
+                        <tr>
+                            <td > <div class="label-style"><b>Sector/Locality: </b> </div>  <div class="value-style">{!address.Sector_Localty__c}</div></td>
+                            <td > <div class="label-style"><b>Address Line 3: </b> </div>  <div class="value-style">{!address.Address_Line_3__c}</div></td>
+                            <td > <div class="label-style"><b>City/Town/Village*: </b> </div>  <div class="value-style">{!address.City__c}</div></td>
+                        </tr>
+                        <tr>
+                            <td > <div class="label-style"><b> Landmark: </b> </div>  <div class="value-style">{!address.Landmark__c}</div></td>
+                            <td > <div class="label-style"><b> District*: </b> </div>  <div class="value-style"> {!address.District__c}</div></td>
+                            <td > <div class="label-style"><b>Pin/Post Code: </b> </div>  <div class="value-style">{!address.Pincode__r.Name}</div></td>
+                        </tr>
+                        <tr>
+                            <td > <div class="label-style"><b>State*: </b> </div>  <div class="value-style">{!address.State__c}</div></td>
+                            <td > <div class="label-style"><b>   </b> </div>  <div class="value-style"></div></td>
+                            <td > <div class="label-style"><b>  </b> </div>  <div class="value-style"></div></td>
+                        </tr>
+                    </apex:repeat>
+                </table>
+                <br/> 
+                <div  class="textSize" height="20px" style="background-color:#D8B4FE;color:black;text-align:left;" >
+                    Preferred Mailing/Correspondence Address 
+                </div> 
+                <table> 
+                    <tr>
+                        <td>  {!applicant.Address_Type__c} 
+                        </td>
+                    </tr> 
+                    <tr>
+                        <td > <div class="label-style"><b>GST registration number: </b> </div>  <div class="value-style"> {!applicant.GST_Registration_Number__c}</div></td>
+                        <td > <div class="label-style"><b> Beneficiery of GST Benefit: </b> </div>  <div class="value-style"> <img src="{!IF(applicant.Beneficiery_of_GST_Benefit__c,'/img/checkbox_checked.gif','/img/checkbox_unchecked.gif')}"/></div></td>
+                        <td > <div class="label-style"><b>Is applicant a related party to USFBL: </b> </div>  <div class="value-style">{!applicant.Is_Related_Party__c}  </div></td>
+                    </tr>
+                </table>
+                <table style="width:100%;border:1px solid;" > 
+                    <tr>
+                        <th rowspan="2" style="width:50%;border:1px solid;">a. Details of relationship, if any with any director/ senior officer of USFBL</th>
+                        <td style="width:100%;border:1px solid;">Name of the Director/ Senior Officer - &nbsp; {!applicant.Name_of_the_Director_Senior_Officer__c}</td>
+                    </tr> 
+                    <tr>
+                        <td style="width:100%;border:1px solid;">Relationship with Director/ Senior Officer - &nbsp; {!applicant.Relationship_with_Director_Senior_Offic__c}</td>
+                        
+                    </tr>
+                    <tr>
+                        <th rowspan="2" style="width:50%;border:1px solid;">b. Details of relationship, if any with any director of other Bank / Subsidiary of the Bank / Trustees of Mutual Fund/ Venture Capital Fund set by USFBL or any other bank</th>
+                        <td style="border:1px solid;">Name of the Director- &nbsp; {!applicant.Name_of_the_Director__c}</td>
+                    </tr> 
+                    <tr>
+                        <td style="border:1px solid;">Name of the Bank- &nbsp; {!applicant.Name_of_the_Bank__c}</td>
+                    </tr>
+                    <tr>
+                        <th rowspan="2" style="width:50%;border:1px solid;">c. Details of the director of the company or its subsidiary company or its holding company, who are also on the board of USFBL.</th>
+                        <td style="border:1px solid;">Name of the Director- &nbsp; {!applicant.Name_of_the_Director__c}</td>
+                    </tr> 
+                    <tr>
+                        <td style="border:1px solid;">Relationship with Director/ Senior Officer - &nbsp; {!applicant.Relationship_with_Director_Senior_Offic__c}</td>
+                    </tr>
+                </table>
+                <br/>
+            </apex:outputPanel>
+            <!--  ----------------------------------------Applicant non individual--------------------------------------- -->
+            
+            <apex:outputPanel rendered="{!If(wrapper.isApplicantIndividual,false,true)}">
+                
+                <h3 class="slds-section__title slds-theme_shade">
+                    <span class="slds-p-horizontal_small slds-text-color_inverse slds-text-align_center"> DETAIL OF THE APPLICANT [NON INDIVIDUAL]</span>
+                </h3>
+                
+                <table>
+                    <tr>
+                        <td>
+                            <div class="slds-div-style"><div class="label-style"> <b >Entity Name</b></div><br/>
+                                <div class="value-style">  {!applicant.Entity_Name__c}</div>
+                            </div> 
+                            <div class="slds-div-style" >
+                                
+                                <div class="label-style"> <b>Registration Number</b> </div>
+                                <br/> <div class="value-style">{!applicant.Registration_Number__c}</div> </div>
+                        </td>
+                        <td>
+                            <div class="slds-div-style" >
+                                
+                                <div class="label-style"><b>Date of Incorporation</b></div> <br/> <div class="value-style"> <apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+                                <apex:param value="{!applicant.Date_Of_Incorporation__c}" /> 
+                                </apex:outputText></div>
+                            </div>
+                            <div class="slds-div-style" >
+                                <div class="label-style"><b>Constitution </b> </div> <br/><div class="value-style"> {!applicant.Constitution__c}</div></div>
+                        </td>
+                        <td>
+                            <div style="display:inline-block;width:100%; height :100%;margin-top:10px;">
+                                <apex:outputPanel rendered="{!applicantPhotoMap[applicant.Id] != '0' }">
+                                    <apex:image url="{!applicantPhotoMap[applicant.Id]}" width="140" height="120" alt="Description of image here" style="margin-left:60px;"/>
+                                </apex:outputPanel>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                
+                <apex:outputPanel rendered="{!If(wrapper.isApplicantTrustee,true,false)}">
+                    <div class="value-style slds-div-style"><b>Names of partners/trustees/directors/adult members of the HUF*  </b>  
+                    </div> 
+                    <br/>
+                </apex:outputPanel>
+                <table>
+                    <apex:repeat value="{!applicantReferenceMemberList }" var="reference">
+                        <tr >
+                            <td >  <div class="slds-div-style"> <div class="label-style"><b>Type  </b></div>  <br/> <div class="value-style">{!reference.Type__c} </div></div></td>
+                            <td > <div class="slds-div-style"> <div class="label-style"><b>Name </b></div> <br/> <div class="value-style">
+                                {!reference.First_Name__c} {!reference.Middle_Name__c} {!reference.Last_Name__c}</div></div></td>
+                            <td > <div class="slds-div-style"> <div class="label-style"><b>Designation  </b></div> <br/><div class="value-style"> {!reference.Designation__c}</div></div></td>
+                        </tr>
+                        <tr >
+                            <td > <div class="slds-div-style"><div class="label-style"><b>Nationality  </b> </div><br/> <div class="value-style">{!reference.Nationality__c}</div></div></td>
+                            <td > <div class="slds-div-style"><div class="label-style"><b>Date of Birth </b></div> <br/><div class="value-style"><apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+                                <apex:param value="{!reference.Date_of_birth__c}" /> 
+                                </apex:outputText> </div></div></td>
+                            <td > <div class="slds-div-style"> <div class="label-style"><b>Type of Profession  </b> </div><br/><div class="value-style">{!reference.Type_of_Profession__c}</div> </div></td>
+                        </tr>
+                        <tr>
+                            <td > <div class="slds-div-style"><div class="label-style">
+                                <b>Address  </b></div> <br/> <div class="value-style">{!reference.Address__Street__s} {!reference.Address__city__s}  {!reference.Address__PostalCode__s}</div></div></td>
+                            <td > <div ><b></b> </div>  <div></div></td>
+                            <td > <div ><b> </b> </div>  <div > </div></td>
+                        </tr> 
+                    </apex:repeat>
+                </table> 
+                <apex:outputPanel rendered="{!If(wrapper.isApplicantOfficeAdd,true,false)}">
+                    <br/> 
+                    <div  class="value-style slds-div-style"><b>Principal Office/ Regd. Office Address </b>  
+                    </div> 
+                    <br/>
+                </apex:outputPanel>
+                <table>
+                    <apex:repeat value="{!applicantOfficeAddressList }" var="address">
+                        <tr>
+                            <td> <div class="slds-div-style"> <div class="label-style"><b>PIN  </b> </div><br/><div class="value-style"> {!address.Pincode__r.Name}</div> </div></td>
+                            <td> <div class="slds-div-style"> <div class="label-style"><b>City </b> </div><br/><div class="value-style">{!address.City__c}</div> </div></td>
+                            <td><div class="slds-div-style"> <div class="label-style"><b>State  </b> </div><br/><div class="value-style">{!address.State__c}</div> </div></td>
+                        </tr>
+                        <tr>
+                            <td> <div class="slds-div-style"> <div class="label-style"><b>Landmark  </b> </div><br/><div class="value-style"> {!address.Landmark__c}</div> </div></td>
+                            <td > <div class="label-style"><b></b> </div>  <div class="value-style"></div></td>
+                            <td > <div class="label-style"><b> </b> </div>  <div class="value-style"> </div></td>
+                        </tr>
+                    </apex:repeat>
+                </table>
+                 <apex:outputPanel rendered="{!If(wrapper.isApplicantCurrentAdd,true,false)}">
+                    <br/> 
+                    <div  class="value-style slds-div-style"><b>Branch or Local Office Address </b>  
+                    </div> 
+                    <br/>
+                </apex:outputPanel>
+                <table>
+                    <apex:repeat value="{!applicantCurrentAddressList }" var="address">
+                        <tr>
+                            <td> <div class="slds-div-style"> <div class="label-style"><b>PIN  </b> </div><br/><div class="value-style"> {!address.Pincode__r.Name}</div> </div></td>
+                            <td> <div class="slds-div-style"> <div class="label-style"><b>City </b> </div><br/><div class="value-style">{!address.City__c}</div> </div></td>
+                            <td><div class="slds-div-style"> <div class="label-style"><b>State  </b> </div><br/><div class="value-style">{!address.State__c}</div> </div></td>
+                        </tr>
+                        <tr>
+                            <td> <div class="slds-div-style"> <div class="label-style"><b>Landmark  </b> </div><br/><div class="value-style"> {!address.Landmark__c}</div> </div></td>
+                            <td > <div class="label-style"><b></b> </div>  <div class="value-style"></div></td>
+                            <td > <div class="label-style"><b> </b> </div>  <div class="value-style"> </div></td>
+                        </tr>
+                    </apex:repeat>
+                </table>
+                
+                <apex:outputPanel rendered="{!If(wrapper.isApplicantPermamentAdd,true,false)}">
+                    <br/> 
+                    <div class="value-style slds-div-style"><b> Residential Address</b>  
+                    </div> 
+                    <br/>
+                </apex:outputPanel>
+                <table >
+                    <apex:repeat value="{!applicantpermamentAddressList }" var="address">
+                         <tr>
+                            <td> <div class="slds-div-style"> <div class="label-style"><b>PIN  </b> </div><br/><div class="value-style"> {!address.Pincode__r.Name}</div> </div></td>
+                            <td> <div class="slds-div-style"> <div class="label-style"><b>City </b> </div><br/><div class="value-style">{!address.City__c}</div> </div></td>
+                            <td><div class="slds-div-style"> <div class="label-style"><b>State  </b> </div><br/><div class="value-style">{!address.State__c}</div> </div></td>
+                        </tr>
+                    </apex:repeat>
+                </table>
+                <table >
+                    <tr>
+                            <td> <div class="slds-div-style"> <div class="label-style"><b>Industry Type  </b> </div><br/><div class="value-style"> {!applicant.Industry_Type__c}</div> </div></td>
+                            <td> <div class="slds-div-style"> <div class="label-style"><b>Type of Profession </b> </div><br/><div class="value-style">{!applicant.Type_Of_Profession__c}</div> </div></td>
+                            <td><div class="slds-div-style"> <div class="label-style"><b>No. of Years in previous business  </b> </div><br/><div class="value-style">{!applicant.No_of_Years_in_previous_business__c}</div> </div></td>
+                       </tr>
+                    <tr>
+                        <td> <div class="slds-div-style"> <div class="label-style"><b>No. of Years in current business  </b> </div><br/><div class="value-style"> {!applicant.No_of_Years_in_current_business__c}</div> </div></td>
+                            <td> <div class="slds-div-style"> <div class="label-style"><b>Gross Annual Turnover </b> </div><br/><div class="value-style">{!applicant.Gross_Annual_Turnover__c}</div> </div></td>
+                            <td><div class="slds-div-style"> <div class="label-style"><b>Gross Annual Income  </b> </div><br/><div class="value-style">{!applicant.Gross_Annual_Income__c}</div> </div></td>
+                    </tr>
+                    <tr>
+                        <td> <div class="slds-div-style"> <div class="label-style"><b>Nature of business  </b> </div><br/><div class="value-style"> {!applicant.Nature_of_Business__c}</div> </div></td>
+                            <td> <div class="slds-div-style"> <div class="label-style"><b>Industry Details  </b> </div><br/><div class="value-style">{!applicant.Industry_Type__c}</div> </div></td>
+                            <td><div class="slds-div-style"> <div class="label-style"><b>Annual Turnover  </b> </div><br/><div class="value-style">{!applicant.Annual_Turnover__c}</div> </div></td>
+                       </tr>
+                    <tr>
+                        <td> <div class="slds-div-style"> <div class="label-style"><b>Income from Agriculture  </b> </div><br/><div class="value-style"> {!applicant.Income_from_Agriculture__c}</div> </div></td>
+                            <td> <div class="slds-div-style"> <div class="label-style"><b>Income from other Sources </b> </div><br/><div class="value-style">{!applicant.Income_from_other_sources__c}</div> </div></td>
+                            <td><div class="slds-div-style"> <div class="label-style"><b>Net Annual Income  </b> </div><br/><div class="value-style">{!applicant.Net_Annual_Income__c}</div> </div></td>
+                    </tr>
+                    <tr>
+                        <td> <div class="slds-div-style"> <div class="label-style"><b>PAN No. of Applicant  </b> </div><br/><div class="value-style"> {!applicant.Pan_Number__c}</div> </div></td>
+                            <td> <div class="slds-div-style"> <div class="label-style"><b>Beneficiery of GST Benefit </b> </div><br/><div class="value-style"><img src="{!IF(applicant.Beneficiery_of_GST_Benefit__c,'/img/checkbox_checked.gif','/img/checkbox_unchecked.gif')}"/></div> </div></td>
+                            <td><div class="slds-div-style"> <div class="label-style"><b>GST registration number  </b> </div><br/><div class="value-style">{!applicant.GST_Registration_Number__c}</div> </div></td>
+                    </tr>
+                </table>
+            </apex:outputPanel>
+            <br/>
+            <!--  ----------------------------------------Coapplicantand gaurantor  individual------------------------------- -->
+            
+            <apex:outputPanel rendered="{!If(wrapper.iscoApplicantGaurantorIndividual,true,false)}">
+                
+                <apex:repeat value="{!coApplicantGaurantorIndividualList }" var="data">
+                    <h3 class="slds-section__title slds-theme_shade">
+                    <span class="slds-p-horizontal_small slds-text-color_inverse slds-text-align_center">DETAILS OF THE {!data.Applicant_Type__c} [FOR INDIVIDUALS/SOLE PROPRIETARY CONCERNS] </span>
+                </h3>
+                    <table>
+                        <tr>
+                            <td>
+                                 <div class="slds-div-style"><div class="label-style"> <b >Maiden Name (If any*)</b></div><br/>
+                                <div class="value-style">  {!data.Maiden_Name__c}</div>
+                            </div> 
+                                 <div class="slds-div-style"><div class="label-style"> <b >Father/Spouse Name</b></div><br/>
+                                <div class="value-style">{!data.Maiden_Name__c}</div>
+                            </div> 
+                                 <div class="slds-div-style"><div class="label-style"> <b >Date of Birth</b></div><br/>
+                                <div class="value-style">  <apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+                                <apex:param value="{!data.Date_of_Birth__c}" /> 
+                                </apex:outputText></div>
+                            </div> 
+                                 <div class="slds-div-style"><div class="label-style"> <b >Gender</b></div><br/>
+                                <div class="value-style"> {!data.Gender__c}</div>
+                            </div> 
+                                
+                            </td>
+                            <td>
+                                 <div class="slds-div-style"><div class="label-style"> <b >Name* (Same as id Proof)</b></div><br/>
+                                <div class="value-style">  {!data.First_Name__c} {!data.Middle_Name__c} {!data.Last_Name__c}</div></div> 
+                                 <div class="slds-div-style"><div class="label-style"> <b >Mother Name</b></div><br/>
+                                <div class="value-style"> {!data.Mother_Name__c}</div></div> 
+                                 <div class="slds-div-style"><div class="label-style"> <b >Category</b></div><br/>
+                                <div class="value-style">  {!data.Category__c}</div></div> 
+                                 <div class="slds-div-style"><div class="label-style"> <b >Merital Status</b></div><br/>
+                                <div class="value-style">  {!data.Marital_Status__c}</div></div> 
+                            </td>
+                            <td>
+                                <div style="display:inline-block;width:100%; height :100%;margin-top:10px;">
+                                    <apex:outputPanel rendered="{!applicantPhotoMap[data.Id] != '0' }">
+                                        <apex:image url="{!applicantPhotoMap[data.Id]}"   width="140" height="120" alt="Description of image here" style="margin-left:60px;"/>
+                                    </apex:outputPanel>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    
+                    <table >
+                        <tr>
+                            <td> <div class="slds-div-style"> <div class="label-style"><b>Residential Status  </b> </div><br/><div class="value-style"> {!data.Residential_Status__c}</div> </div></td>
+                            <td> <div class="slds-div-style"> <div class="label-style"><b>Religion </b> </div><br/><div class="value-style">{!data.Religion__c}</div> </div></td>
+                            <td><div class="slds-div-style"> <div class="label-style"><b>Name of Spouse  </b> </div><br/><div class="value-style">{!data.Father_Spouse_Name__c}</div> </div></td>
+                         
+                        </tr>
+                        <tr>
+                            <td> <div class="slds-div-style"> <div class="label-style"><b>Date of Birth Of Spouse  </b> </div><br/><div class="value-style"><apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+                                <apex:param value="{!data.Date_of_birth_of_Spouse__c}" /> 
+                                </apex:outputText></div> </div></td>
+                            <td> <div class="slds-div-style"> <div class="label-style"><b>PAN No. of Spouse </b> </div><br/><div class="value-style">{!data.Pan_Number_Spouse__c}</div> </div></td>
+                            <td><div class="slds-div-style"> <div class="label-style"><b>Education  </b> </div><br/><div class="value-style">{!data.Education__c}</div> </div></td>
+                           
+                        </tr>
+                        <tr>
+                            <td> <div class="slds-div-style"> <div class="label-style"><b>PAN Card  </b> </div><br/><div class="value-style">{!data.Pan_Number__c}</div> </div></td>
+                            <td> <div class="slds-div-style"> <div class="label-style"><b> </b> </div><br/><div class="value-style"></div> </div></td>
+                            <td><div class="slds-div-style"> <div class="label-style"><b>  </b> </div><br/><div class="value-style"></div> </div></td>
+                           
+                        </tr>
+                    </table> 
+                    <div class="value-style">In case customer does not have PAN card or have applied for the same.
+                        Form 60 duly signed need to be collected from customer and submitted along with other requisite documents. </div>
+                    <br/>
+                    <br/>
+                    <h3 class="slds-section__title slds-theme_shade">
+                        <span class="slds-p-horizontal_small slds-text-color_inverse slds-text-align_center">PROOF OF IDENTITY (Pol)* (Certified copy of any one of the following Proof of Identity [Pol] needs to be submitted)  </span>
+                    </h3>
+                    <table>
+                        <tr>
+                            <td> <div class="slds-div-style"> <div class="label-style"><b>PROOF OF IDENTITY  </b> </div><br/><div class="value-style">{!data.KYC_Document_Type__c }</div> </div></td>
+                            <td> <div class="slds-div-style"> <div class="label-style"><b> </b> </div><br/><div class="value-style"></div> </div></td>
+                            <td><div class="slds-div-style"> <div class="label-style"><b>  </b> </div><br/><div class="value-style"></div> </div></td>
+                        </tr>
+                    </table>
+                    <br/>
+                    <div 
+                         class="textSize" height="20px" style="background-color:#D8B4FE;color:black;text-align:left;" >
+                        PROOF OF ADDRESS (PoA)* (Certified copy of any one of the following Proof of Address [PoA] needs to be submitted) 
+                    </div>
+                    <table>
+                        <tr >
+                            <td > <div class="label-style"><b>Address Type: </b> </div>  <div class="value-style"> {!data.Address_Type__c}</div></td>
+                            <td > <div class="label-style"><b>Proof of Address: </b> </div>  <div class="value-style"> {!data.Proof_of_Address__c}</div></td>
+                            <td > <div class="label-style"></div>  <div class="value-style"></div></td>
+                        </tr>
+                    </table>
+                    <br/>
+                    <!-------------------------------Current Residence Address---------------------------------------->
+                    
+                    <div class="textSize" height="20px" style="background-color:#D8B4FE;color:black;text-align:left;" >
+                        Current Residence Address 
+                    </div>
+                    <table> 
+                        <apex:repeat value="{!data.Addresses__r }"  var="address">
+                            <tbody style="display: {!IF(address.Address_Type__c !='Residence Address', 'none', 'table-body')};">
+                                <tr >
+                                    <td > <div class="label-style"><b>Address Line 1 : </b> </div>  <div class="value-style">{!address.Name}</div></td>
+                                    <td > <div class="label-style"><b>Floor: </b> </div>  <div class="value-style">{!address.Floor__c}</div></td>
+                                    <td > <div class="label-style"><b>Address Line 2: </b> </div>  <div class="value-style">{!address.Address_Line_2__c}</div></td>
+                                </tr>
+                                <tr>
+                                    <td > <div class="label-style"><b>Sector/Locality: </b> </div>  <div class="value-style">{!address.Sector_Localty__c}</div></td>
+                                    <td > <div class="label-style"><b>Address Line 3: </b> </div>  <div class="value-style">{!address.Address_Line_3__c}</div></td>
+                                    <td > <div class="label-style"><b>City/Town/Village*: </b> </div>  <div class="value-style">{!address.City__c}</div></td>
+                                </tr>
+                                <tr>
+                                    <td > <div class="label-style"><b>Landmark: </b> </div>  <div class="value-style"> {!address.Landmark__c}</div></td>
+                                    <td > <div class="label-style"><b>District*: </b> </div>  <div class="value-style">{!address.District__c}</div></td>
+                                    <td > <div class="label-style"><b>Pin/Post Code: </b> </div>  <div class="value-style">{!address.Pincode__r.Name}</div></td>
+                                </tr>
+                                <tr>
+                                    <td > <div class="label-style"><b>State*: </b> </div>  <div class="value-style">{!address.State__c}</div></td>
+                                    <td > <div class="label-style"><b>Residence Is*: </b> </div>  <div class="value-style">{!address.Residence_is__c}</div></td>
+                                    <td > <div class="label-style"><b>Residence Type*: </b> </div>  <div class="value-style">{!address.Residence_Type__c}</div></td>
+                                </tr>
+                            </tbody>
+                        </apex:repeat>
+                    </table> 
+                    <br/>  
+                    
+                    <!-------------------------------Permanent Address--------------------------------------->
+                    
+                    <div  class="textSize" height="20px" style="background-color:#D8B4FE;color:black;text-align:left;" >
+                        Permanent Address
+                    </div> 
+                    
+                    <table >
+                        <apex:repeat value="{!data.Addresses__r }"  var="address">
+                            <tbody style="display: {!IF(address.Address_Type__c !='Permanent Address', 'none', 'table-body')};">
+                                <tr>
+                                    <td > <div class="label-style"><b>Address Line 1: </b> </div>  <div class="value-style">{!address.Name}</div></td>
+                                    <td > <div class="label-style"><b>Floor: </b> </div>  <div class="value-style">{!address.Floor__c}</div></td>
+                                    <td > <div class="label-style"><b>Address Line 2: </b> </div>  <div class="value-style">{!address.Address_Line_2__c}</div></td>
+                                </tr>
+                                <tr>
+                                    <td > <div class="label-style"><b>Sector/Locality: </b> </div>  <div class="value-style">{!address.Sector_Localty__c}</div></td>
+                                    <td > <div class="label-style"><b>Address Line 3: </b> </div>  <div class="value-style">{!address.Address_Line_3__c}</div></td>
+                                    <td > <div class="label-style"><b>City/Town/Village*: </b> </div>  <div class="value-style">{!address.City__c}</div></td>
+                                </tr>
+                                <tr>
+                                    <td > <div class="label-style"><b>District*: </b> </div>  <div class="value-style">{!address.District__c}</div></td>
+                                    <td > <div class="label-style"><b>Landmark: </b> </div>  <div class="value-style">{!address.Landmark__c}</div></td>
+                                    <td > <div class="label-style"><b>Pin/Post Code: </b> </div>  <div class="value-style">{!address.Pincode__r.Name}</div></td>
+                                </tr>
+                                <tr>
+                                    <td > <div class="label-style"><b>State*: </b> </div>  <div class="value-style">{!address.State__c}</div></td>
+                                    <td > <div class="label-style"><b> </b> </div>  <div class="value-style"> </div></td>
+                                    <td > <div class="label-style"><b> </b> </div>  <div class="value-style"> </div></td>
+                                </tr>
+                            </tbody>
+                        </apex:repeat>
+                    </table> 
+                    <br/>
+                    <!------------------------------Occupation Details :------------------------------------->
+                    <div class="textSize" height="20px" style="background-color:#D8B4FE;color:black;text-align:left;" >
+                        Occupation Details
+                    </div>
+                    
+                    <table>
+                        <tr >
+                            <td > <div class="label-style"><b>Occupation Type: </b> </div>  <div class="value-style">{!data.Occupation_Type__c}</div></td>
+                            <td > <div class="label-style"><b>Official Email Id: </b> </div>  <div class="value-style">{!data.Email__c}</div></td>
+                            <td > <div class="label-style"><b>Company Name:  </b> </div>  <div class="value-style">{!data.Company_Name__c}</div></td>
+                        </tr>
+                        <tr>
+                            <td > <div class="label-style"><b>Registration / Membership No.: </b>(Doctor, CA, Architect, ICWA) </div>  <div class="value-style">{!data.Registration_Number__c} </div></td>
+                            <td > <div class="label-style"><b>Employee Id: </b> </div>  <div class="value-style">{!data.Employee_ID__c}</div></td>
+                            <td > <div class="label-style"><b>Department: </b> </div>  <div class="value-style">{!data.Department__c}</div></td>
+                        </tr>
+                        <tr>
+                            <td > <div class="label-style"><b>Nature of business: </b> </div>  <div class="value-style">{!data.Nature_of_Business__c}</div></td>
+                            <td > <div class="label-style"><b>Industry Type: </b> </div>  <div class="value-style">{!data.Industry_Type__c}</div></td>
+                            <td > <div class="label-style"><b> Net Annual Income: </b> </div>  <div class="value-style">{!data.Net_Annual_Income__c}</div></td>
+                        </tr>
+                        <tr>
+                            <td > <div class="label-style"><b>Gross Annual Income: </b> </div>  <div class="value-style">{!data.Gross_Annual_Income__c}</div></td>
+                            <td > <div class="label-style"><b>Income from other resources: </b> </div>  <div class="value-style">{!data.Income_from_other_sources__c}</div></td>
+                            <td > <div class="label-style"><b>Income from Agriculture: </b> </div>  <div class="value-style">{!data.Income_from_Agriculture__c} </div></td>
+                        </tr>
+                    </table>
+                    
+                    <br/>
+                    <!-----------------------------Company Office Address------------------------------------->
+                    <div  class="textSize" style="text-align:left;font-size:12px;" >
+                        <b>Company Office Address </b>
+                    </div>
+                    
+                    <table> 
+                        <apex:repeat value="{!data.Addresses__r }"  var="address">
+                            <tbody style="display: {!IF(address.Address_Type__c !='Office Address', 'none', 'table-body')};">
+                                <tr>
+                                    <td > <div class="label-style"><b>Address Line 1: </b> </div>  <div class="value-style">{!address.Name}</div></td>
+                                    <td > <div class="label-style"><b>Floor: </b> </div>  <div class="value-style">{!address.Floor__c}</div></td>
+                                    <td > <div class="label-style"><b>Address Line 2: </b> </div>  <div class="value-style">{!address.Address_Line_2__c}</div></td>
+                                </tr>
+                                <tr>
+                                    <td > <div class="label-style"><b> Sector/Locality: </b> </div>  <div class="value-style">{!address.Sector_Localty__c}</div></td>
+                                    <td > <div class="label-style"><b>Address Line 3:  </b> </div>  <div class="value-style">{!address.Address_Line_3__c}</div></td>
+                                    <td > <div class="label-style"><b>City/Town/Village*: </b> </div>  <div class="value-style"> {!address.City__c}</div></td>
+                                </tr>
+                                <tr>
+                                    <td > <div class="label-style"><b>District*: </b> </div>  <div class="value-style">{!address.District__c}</div></td>
+                                    <td > <div class="label-style"><b>Landmark: </b> </div>  <div class="value-style">{!address.Landmark__c}</div></td>
+                                    <td > <div class="label-style"><b> Pin/Post Code: </b> </div>  <div class="value-style">{!address.Pincode__r.Name}</div></td>
+                                </tr>
+                                <tr>
+                                    <td > <div class="label-style"><b>State*: </b> </div>  <div class="value-style">{!address.State__c}</div></td>
+                                    <td > <div class="label-style"></div>  <div class="value-style"></div></td>
+                                    <td > <div class="label-style"></div>  <div class="value-style"></div></td>
+                                </tr>
+                            </tbody>
+                        </apex:repeat>
+                    </table>
+                    <br/> 
+                    <!----------------------------- Preferred Mailing/Correspondence Address ---------------------------------------------------->
+                    <div  class="textSize" height="20px" style="background-color:#D8B4FE;color:black;text-align:left;" >
+                        Preferred Mailing/Correspondence Address 
+                    </div> 
+                    <table>
+                        <tr>
+                            <td > <div class="label-style"> {!data.Address_Type__c} </div>  <div class="value-style"></div></td>
+                            <td > <div class="label-style"><b> </b> </div>  <div class="value-style"></div></td>
+                            <td > <div class="label-style"><b> </b> </div>  <div class="value-style"></div></td>
+                        </tr> 
+                        <tr >
+                            <td > <div class="label-style"><b>Beneficiery of GST Benefit: </b> </div>  <div class="value-style"> <img src="{!IF(applicant.Beneficiery_of_GST_Benefit__c,'/img/checkbox_checked.gif','/img/checkbox_unchecked.gif')}"/> </div></td>
+                            <td > <div class="label-style"><b>GST registration number: </b> </div>  <div class="value-style">{!data.GST_Registration_Number__c}</div></td>
+                            <td > <div class="label-style"><b>Is applicant a related party to USFBL: </b> </div>  <div class="value-style">{!data.Is_Related_Party__c} </div></td>
+                        </tr>
+                    </table>
+                </apex:repeat>
+            </apex:outputPanel>
+            <br/>
+            <!--  ----------------------------------------Coapplicant and gaurantor non individula------------------------------- -->
+            
+            <apex:outputPanel rendered="{!If(wrapper.iscoApplicantGaurantorNonIndividual,true,false)}">
+                
+                <apex:repeat value="{!coApplicantGaurantorNonIndividualList }" var="data">
+                    <div class="pageBreak">
+                        <div   style="background-color:#583c87;color:white;text-align:center;font-size:12px;text-transform:uppercase;" >
+                            DETAILS OF THE {!data.Applicant_Type__c}  [NON INDIVIDUAL] 
+                        </div>
+                        <table>
+                            <tr>
+                                <td>
+                                    <b class="label-style1">Entity Name: </b> <p class="value-style">{!data.Entity_Name__c}</p>
+                                    <b class="label-style1">Registration Number :</b> <p class="value-style">{!data.Registration_Number__c}</p>
+                                </td>
+                                
+                                <td>
+                                    <b class="label-style">Date of Incorporation:</b> <p class="value-style"><apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+                                    <apex:param value="{!data.Date_Of_Incorporation__c}" /> 
+                                    </apex:outputText></p>
+                                    <b class="label-style">Constitution: </b> <p class="value-style"> {!data.Constitution__c}</p>
+                                </td>
+                                <td>
+                                    <div style="display:inline-block;width:100%; height :100%;margin-top:10px;">
+                                        <apex:outputPanel rendered="{!applicantPhotoMap[data.Id] != '0' }">
+                                            <apex:image url="{!applicantPhotoMap[data.Id]}"  width="140" height="120" alt="Description of image here" style="margin-left:60px;"/>
+                                        </apex:outputPanel>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div  class="textSize"><b>Names of partners/trustees/directors/adult members of the HUF* </b>    
+                    </div> 
+                    <apex:repeat value="{!data.Reference_Members__r }" var="reference">
+                        <table >
+                            <tr>
+                                <td > <div class="label-style"><b>Type : </b> </div>  <div class="value-style"> {!reference.Type__c}</div></td>
+                                <td > <div class="label-style"><b> Nationality: </b> </div>  <div class="value-style">{!reference.Nationality__c}</div></td>
+                                <td > <div class="label-style"><b>Name: </b> </div>  <div class="value-style"> {!reference.First_Name__c} {!reference.Middle_Name__c} {!reference.Last_Name__c}</div></td>
+                            </tr>
+                            <tr>
+                                <td > <div class="label-style"><b>Designation: </b> </div>  <div class="value-style">{!reference.Designation__c}</div></td>
+                                <td > <div class="label-style"><b>Date of Birth: </b> </div>  <div class="value-style"><apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+                                    <apex:param value="{!reference.Date_of_birth__c}" /> 
+                                    </apex:outputText></div></td>
+                                <td > <div class="label-style"><b>Type of Profession: </b> </div>  <div class="value-style">{!reference.Type_of_Profession__c}</div></td>
+                            </tr>
+                            <tr >
+                                <td > <div class="label-style"><b>Address: </b> </div>  <div class="value-style">{!reference.Address__Street__s} {!reference.Address__city__s}  {!reference.Address__PostalCode__s}</div></td>
+                                <td > <div class="label-style"> </div>  <div class="value-style"></div></td>
+                                <td > <div class="label-style"> </div>  <div class="value-style"></div></td>
+                            </tr> 
+                        </table> 
+                    </apex:repeat>
+                    <br/>
+                    
+                    <div  class="textSize"><b>Principal Office/ Regd. Office Address* </b>    
+                    </div> 
+                    
+                    <apex:repeat value="{!data.Addresses__r }"  var="address">
+                        <apex:outputPanel rendered="{!address.Address_Type__c ='Office Address'}">
+                            <table>
+                                <tr>
+                                    <td > <div class="label-style"><b>PIN: </b> </div>  <div class="value-style">{!address.Pincode__r.Name}</div></td>
+                                    <td > <div class="label-style"><b>City:  </b> </div>  <div class="value-style"> {!address.City__c}</div></td>
+                                    <td > <div class="label-style"><b>State: </b> </div>  <div class="value-style">{!address.State__c}</div></td>
+                                </tr>
+                                <tr>
+                                    <td > <div class="label-style"><b>Landmark: </b> </div>  <div class="value-style"> {!address.Landmark__c}</div></td>
+                                    <td > <div class="label-style"></div>  <div class="value-style"></div></td>
+                                    <td > <div class="label-style"></div>  <div class="value-style"></div></td>
+                                </tr>
+                            </table>
+                        </apex:outputPanel>
+                    </apex:repeat>
+                    <br/>
+                    
+                    <div  class="textSize"><b>Branch or Local Office Address* </b>    
+                    </div>
+                    <apex:repeat value="{!data.Addresses__r }"  var="address">
+                        <apex:outputPanel rendered="{!address.Address_Type__c ='Residence Address'}">
+                            <table>
+                                <tr>
+                                    <td > <div class="label-style"><b>PIN: </b> </div>  <div class="value-style"> {!address.Pincode__r.Name}</div></td>
+                                    <td > <div class="label-style"><b> City: </b> </div>  <div class="value-style">{!address.City__c} </div></td>
+                                    <td > <div class="label-style"><b> State: </b> </div>  <div class="value-style"> {!address.State__c} </div></td>
+                                </tr>
+                                <tr>
+                                    <td > <div class="label-style"><b>Landmark: </b> </div>  <div class="value-style">{!address.Landmark__c}</div></td>
+                                    <td > <div class="label-style"></div>  <div class="value-style"></div></td>
+                                    <td > <div class="label-style"></div>  <div class="value-style"></div></td>
+                                </tr>
+                            </table> 
+                        </apex:outputPanel>
+                    </apex:repeat>
+                    <br/>
+                    <div  class="textSize"><b>Residential Address*: </b>    
+                    </div>
+                    <apex:repeat value="{!data.Addresses__r }"  var="address">
+                        <apex:outputPanel rendered="{!address.Address_Type__c ='Permanent Address'}">
+                            <table  >
+                                <tr>
+                                    <td > <div class="label-style"><b>City: </b> </div>  <div class="value-style">{!address.City__c} </div></td>
+                                    <td > <div class="label-style"><b>State: </b> </div>  <div class="value-style">{!address.State__c}</div></td>
+                                    <td > <div class="label-style"><b>PIN: </b> </div>  <div class="value-style">{!address.Pincode__r.Name}</div></td>
+                                </tr>
+                            </table>
+                        </apex:outputPanel>
+                    </apex:repeat>
+                    <table >
+                        <tr>
+                            <td > <div class="label-style"><b>Industry Type: </b> </div>  <div class="value-style"> {!data.Industry_Type__c} </div></td>
+                            <td > <div class="label-style"><b>Type of Profession : </b> </div>  <div class="value-style">{!data.Type_Of_Profession__c}</div></td>
+                            <td > <div class="label-style"><b>No. of Years in previous business: </b> </div>  <div class="value-style"> {!data.No_of_Years_in_previous_business__c}</div></td>
+                        </tr>
+                        <tr>
+                            <td > <div class="label-style"><b>No. of Years in current business: </b> </div>  <div class="value-style">{!data.No_of_Years_in_current_business__c}</div></td>
+                            <td > <div class="label-style"><b>Gross Annual Turnover: </b> </div>  <div class="value-style">{!data.Gross_Annual_Turnover__c}</div></td>
+                            <td > <div class="label-style"><b> Gross Annual Income*: </b> </div>  <div class="value-style">{!data.Gross_Annual_Income__c}</div></td>
+                        </tr>
+                        <tr>
+                            <td > <div class="label-style"><b>Income from Agriculture*: </b> </div>  <div class="value-style">{!data.Income_from_Agriculture__c}</div></td>
+                            <td > <div class="label-style"><b>Income from other Sources: </b> </div>  <div class="value-style">{!data.Income_from_other_sources__c}</div></td>
+                            <td > <div class="label-style"><b>Net Annual Income*: </b> </div>  <div class="value-style">{!data.Net_Annual_Income__c}</div></td>
+                        </tr>
+                        <tr>
+                            <td > <div class="label-style"><b>Nature of business: </b> </div>  <div class="value-style"> {!data.Nature_of_Business__c} </div></td>
+                            <td > <div class="label-style"><b> Industry Details: </b> </div>  <div class="value-style">{!data.Industry_Type__c}</div></td>
+                            <td > <div class="label-style"><b>Annual Turnover:  </b> </div>  <div class="value-style"> {!data.Annual_Turnover__c}</div></td>
+                        </tr>
+                        <tr>
+                            <td > <div class="label-style"><b>PAN No. of Applicant: </b> </div>  <div class="value-style">{!data.Pan_Number__c}</div></td>
+                            <td > <div class="label-style"><b>GST registration number: </b> </div>  <div class="value-style"> {!data.GST_Registration_Number__c}</div></td>
+                            <td > <div class="label-style"><b>Beneficiery of GST Benefit: </b> </div>  <div class="value-style"><img src="{!IF(data.Beneficiery_of_GST_Benefit__c,'/img/checkbox_checked.gif','/img/checkbox_unchecked.gif')}"/></div></td>
+                        </tr>
+                    </table> 
+                    <br/>
+                </apex:repeat> 
+            </apex:outputPanel>
+            
+            <!------------------------- TRADE REFERENCES / REFERENCES --------------------------------------->
+            
+            <apex:outputPanel rendered="{!If(wrapper.isApplicationTradeReference,true,false)}">
+                <div class="textSize" height="20px" style="background-color:#583c87;color:white;text-align:center;font-size:12px;" >
+                    V. TRADE REFERENCES / REFERENCES 
+                </div>
+            </apex:outputPanel>
+            <table >
+                <apex:repeat value="{!applicationReferenceMemberList }"  var="reference">
+                    <tr>
+                        <td > <div class="label-style"><b>Name: </b> </div>  <div class="value-style"> {!reference.First_Name__c} {!reference.Middle_Name__c} {!reference.Last_Name__c}</div></td>
+                        <td > <div class="label-style"><b>Address: </b> </div>  <div class="value-style"> {!reference.Address__Street__s} {!reference.Address__city__s}  {!reference.Address__PostalCode__s}</div></td>
+                        <td > <div class="label-style"><b>PIN: </b> </div>  <div class="value-style">{!reference.Pincode_Name__c}</div></td>
+                    </tr>
+                    <tr>
+                        <td > <div class="label-style"><b>Mobile: </b> </div>  <div class="value-style">{!reference.Mobile__c}</div></td>
+                        <td > <div class="label-style"><b> </b> </div>  <div class="value-style"> </div></td>
+                        <td > <div class="label-style"><b></b> </div>  <div class="value-style"></div></td>
+                    </tr>
+                </apex:repeat>
+            </table>
+            <br/>
+            <!---------------------Product details---------------------------------------------------------------------->
+            
+            <div class="textSize" height="20px" style="background-color:#583c87;color:white;text-align:center;font-size:12px;" >
+                VI. DETAILS OF PRODUCTS (to be purchased/against which the Credit Facility is required) AND CREDIT FACILITY
+            </div>
+            <table style="width:100%;font-size:12px;" >                
+                <tr>
+                    <td >Product is for  </td> 
+                    
+                    <td><input style="border:1px solid #007ACC;width:15px;height:10px;" disabled="true" type="checkbox" name="name"/> Personal use </td>
+                    <td><input style="border:1px solid #007ACC;width:15px;height:10px;" disabled="true" type="checkbox" name="name"/>Commercial use </td>
+                    <td><input style="border:1px solid #007ACC;width:15px;height:10px;" disabled="true" type="checkbox" name="name"/> Captive use </td>
+                    <td><input style="border:1px solid #007ACC;width:15px;height:10px;" disabled="true" type="checkbox" name="name"/> Market Load Operator (MLO) </td>
+                </tr>
+                <tr>
+                    <td > 1. Product Description:</td> 
+                </tr>
+                <tr>
+                    <td colspan="2"> 2. Manufacturer/Seller/Dealer:  </td> 
+                    <td colspan="2"> 3. Model No./Version:  </td> 
+                    <td colspan="1"> 4. Registration No for used Vehicle:  </td> 
+                </tr>
+                <tr>
+                    <td colspan="9"> 5. Werein the segmentation of the asset needs to be captured:</td> 
+                </tr>
+                <tr>
+                    <td colspan="9"> 6. For Medical equipment, the product segmentation are:</td> 
+                </tr>
+                <tr>
+                    <td colspan="9">7.  For Construction equipment, the product segmentation are:</td> 
+                </tr>
+                <tr>
+                    <td >8. Product is:</td> 
+                    <td><input style="border:1px solid #007ACC;width:15px;height:10px;" disabled="true" type="checkbox" name="name"/> To be purchased </td>
+                    <td><input style="border:1px solid #007ACC;width:15px;height:10px;" disabled="true" type="checkbox" name="name"/>Already owned by the Applicant</td>
+                </tr>
+                <tr>
+                    <td colspan="10" >9. Invoice/Valuation amount: Rs. <input style="border-bottom:1px solid #007ACC;width:30%;height:10px;" type="text" name="name"/>  (where Product is to be purchased using the Credit Facility)  </td> 
+                </tr>
+                <tr>
+                    <td colspan="2">Credit Facility Amount: Rs . <input style="border-bottom:1px solid #007ACC;width:30%;height:10px;" type="text" name="name"/>   </td> 
+                    <td colspan="2"> * Tenure of the Credit Facility  </td> 
+                </tr>
+                <tr>
+                    <td colspan="9">10. Rate of Interest   %</td> 
+                </tr>
+                <tr>
+                    <td >11. Product is charged in favour of any person/bank/entity</td> 
+                    <td><input style="border:1px solid #007ACC;width:15px;height:10px;" disabled="true" type="checkbox" name="name"/> Yes </td>
+                    <td><input style="border:1px solid #007ACC;width:15px;height:10px;" disabled="true" type="checkbox" name="name"/>No</td>
+                </tr>
+                <tr>
+                    <td colspan="12">12. Address where Product is already kept/fixed/located OR is to be kept/fixed/located : </td> 
+                </tr>
+                <tr>
+                    <td colspan="12">13. Stamp duty Charges collected in addition to Processing Fee, if any: Rs. <input style="border-bottom:1px solid #007ACC;width:30%;height:10px;" type="text" name="name"/>  </td> 
+                </tr>
+                <tr>
+                    <td colspan="12">14. Non refundable processing fee:Rs <input style="border-bottom:1px solid #007ACC;width:30%;height:10px;" type="text" name="name"/> (Rupees <input style="border-bottom:1px solid #007ACC;width:30%;height:10px;" type="text" name="name"/>Only) </td> 
+                </tr>
+                <tr>
+                    <td colspan="12"> (Taxes, other government levies, etc., will be applicable as per prevailing rates in addition)</td>
+                </tr>
+                <tr>
+                    <td colspan="12">15. Non refundable Documentation Charges Rs. <input style="border-bottom:1px solid #007ACC;width:30%;height:10px;" type="text" name="name"/> (Taxes, other government levies, etc., will be applicable as per prevailing rates in addition)  </td> 
+                </tr>
+                <tr>
+                    <td colspan="12">16. Non refundable Credit Information Report (CIR) Copy Charges Rs. <input style="border-bottom:1px solid #007ACC;width:30%;height:10px;" type="text" name="name"/> (Taxes, other government levies, etc., will be applicable as per prevailing rates in addition) Request you to kindly ish the copy of the Credit Information Report (CIR) to me <input style="border-bottom:1px solid #007ACC;width:30%;height:10px;" type="text" name="name"/> </td> 
+                </tr>
+                <tr>
+                    <td colspan="12">17. For Commercial Vehicle Loan, non-refundable Registration Certificate (RC) Collection Fees Rs <input style="border-bottom:1px solid #007ACC;width:30%;height:10px;" type="text" name="name"/> (Taxes, other government levies, etc., will be applicable as per prevailing rates in addition) </td> 
+                </tr>
+                <tr>
+                    <td colspan = "12"><b>Note:</b> The processing fee is a one time non refundable fee, and is collected by UTKARSH SMALL FINANCE BANK LTD. for the purpose of appraising the Application for the Facility and the same is independent of outcome/result of such appraisal.</td>
+                </tr>
+                <tr>
+                    <td colspan = "12"><b>* In order to make the payment of Charges and fees mentioned above : (Tick the appropriate box):</b> </td>
+                </tr>
+                <tr>
+                    <td colspan = "12" style = "margin-left: 10px;">
+                        <input style="margin-left:10px;margin-right: 7px;border:1px solid #007ACC;width:15px;height:10px;" disabled="true" type="checkbox" name="name"/>
+                        I/We hereby authorize UTKARSH SMALL FINANCE BANK LTD. to debit the amount from the disbursal amount;</td> 
+                </tr>
+            </table>
+            <br/>
+            <!----------------------------------------------BANK DETAILS ------------------------------------------>
+            
+            <apex:outputPanel rendered="{!If(wrapper.isBankDetailList,true,false)}">
+                <div class="textSize" height="20px" style="background-color:#583c87;color:white;text-align:center;font-size:12px;" >
+                    VII. BANK DETAILS 
+                </div>
+                <table >                
+                    <tr >
+                        <td>   <div class="label-style"><b>Name of Bank: </b> </div>  <div class="value-style">{!bankDetailList[0].Bank_Name__c}</div></td>
+                        <td > <div class="label-style"><b>Branch:  </b> </div>  <div class="value-style">{!bankDetailList[0].Branch_Name__c}</div></td>
+                        <td > <div class="label-style"><b>A/c No: </b> </div>  <div class="value-style">{!bankDetailList[0].Account_Number__c}</div></td>
+                    </tr>
+                    <tr >
+                        <td><div class="label-style"><b>Account Type: </b> </div>  <div class="value-style">{!bankDetailList[0].Account_Type__c}</div></td>
+                        <td > <div class="label-style"><b>Active Since:  </b> </div>  <div class="value-style"> {!bankDetailList[0].Active_Since__c}</div></td>
+                        <td > <div class="label-style"><b> </b> </div>  <div class="value-style"></div></td>
+                    </tr>
+                </table>
+            </apex:outputPanel>
+            <br/>
+            <!------------------------------------------other old Vehicles---------------------------------------------------->
+            
+            <apex:outputPanel rendered="{!If(wrapper.isOldVehicleDetailList,true,false)}">
+                <div class="textSize" height="20px" style="background-color:#583c87;color:white;text-align:center;font-size:12px;" >
+                    VIII. DETAILS OF OTHER VEHICLES / PRODUCTS OWNED
+                </div>
+                
+                <apex:repeat value="{!oldVehicleDetailList}" var="oldVehicleData">
+                    <table>   
+                        <tr >
+                            <td > <div class="label-style"><b>Name of the applicant: </b> </div>  <div class="value-style">{!oldVehicleData.Loan_Applicant__r.Account_Name__c}</div></td>
+                            <td > <div class="label-style"><b>Relationship: </b> </div>  <div class="value-style">{!oldVehicleData.Relationship__c}</div></td>
+                            <td > <div class="label-style"><b>Asset Make : </b> </div>  <div class="value-style">{!oldVehicleData.Asset_Make__c}</div></td>
+                        </tr>
+                        <tr >
+                            <td > <div class="label-style"><b>Model: </b> </div>  <div class="value-style">{!oldVehicleData.Model__c}</div></td>
+                            <td > <div class="label-style"><b>Vehicle Regn No: </b> </div>  <div class="value-style">{!oldVehicleData.Vehicle_Regn_No__c}</div></td>
+                            <td > <div class="label-style"><b>RC date / Transfer Date: </b> </div>  <div class="value-style">{!oldVehicleData.RC_date_Transfer_Date__c}</div></td>
+                        </tr>
+                        <tr >
+                            <td > <div class="label-style"><b> New / Used </b> </div>  <div class="value-style">{!oldVehicleData.New_Used__c}</div></td>
+                            <td > <div class="label-style"><b>Free / Fin: </b> </div>  <div class="value-style">{!oldVehicleData.Free_Fin__c}</div></td>
+                            <td > <div class="label-style"><b>Financier Name: </b> </div>  <div class="value-style">{!oldVehicleData.Financier_Name__c}</div></td>
+                        </tr>
+                        <tr>
+                            <td > <div class="label-style"><b> Total EMI Paid: </b> </div>  <div class="value-style">{!oldVehicleData.Total_EMI_Paid__c}</div></td>
+                            <td > <div class="label-style"><b>EMI Amount: </b> </div>  <div class="value-style">{!oldVehicleData.EMI_Amount__c}</div></td>
+                            <td > <div class="label-style"><b>Loan Amount: </b> </div>  <div class="value-style">{!oldVehicleData.Loan_Amount__c}</div></td>
+                        </tr>
+                    </table>
+                    <br/>
+                </apex:repeat>
+            </apex:outputPanel>
+            
+            <apex:outputPanel rendered="{!If(wrapper.isVerification,true,false)}">
+                <div class="textSize" height="20px" style="background-color:#583c87;color:white;text-align:center;font-size:12px;" >
+                    IX. EXISTING RELATIONSHIPS WITH UTKARSH SMALL FINANCE BANK LTD. GROUP
+                </div>
+                
+                <p style="font-size : 11px;"> <b> Do you have any relationship with UTKARSH SMALL FINANCE BANK LTD. ( Home Loan/Auto Loan/PL/Bank a/c/ CV/CE others): </b><br/> <label for="monthly"> Yes </label> <img src="/img/checkbox_checked.gif"/> <label for="monthly"> No </label>  <img src="/img/checkbox_unchecked.gif"/>    </p>
+                <table >  
+                    <tr >
+                        <td > <div class="label-style"><b>If yes, LAN: </b> </div>  <div class="value-style">{!verifications[0].CIF__c} </div></td>
+                        <td > <div class="label-style"><b>Bank Account: </b> </div>  <div class="value-style">{!applicant.Account_Number__c}</div></td>
+                        <td > <div class="label-style"><b>Others: </b> </div>  <div class="value-style">-------</div></td>
+                    </tr>
+                </table>
+            </apex:outputPanel>
+            <br/>
+            <div class="textSize" height="20px" style="background-color:#583c87;color:white;text-align:center;font-size:12px;" >
+                X. DECLARATION FOR INFORMATION SHARING
+            </div>
+            <table style="width:100%;font-size:10px;" >                
+                <tr>
+                    <td colspan = "12" style = "margin-left: 10px;">
+                        <b style = "margin-right: 10px;">1.</b> I/We have no objection to UTKARSH SMALL FINANCE BANK LTD., its group companies, agents/representatives to provide me/us information on various products, offers and services
+                        provided by UTKARSH SMALL FINANCE BANK LTD. / its group companies through any mode (including without limitation through telephone calls / SMSs/ emails) and authorise
+                        UTKARSH SMALL FINANCE BANK LTD. its group companies, agents / representatives for the above purpose.
+                        
+                    </td> 
+                </tr>
+                <tr>
+                    <td colspan = "12" style = "margin-left: 10px;">
+                        Please tick Yes or No, as acceptable 
+                        <input style="margin-left:10px;margin-right: 7px;border:1px solid #007ACC;width:15px;height:10px;" disabled="true" type="checkbox" name="name"/>Yes
+                        <input style="margin-left:10px;margin-right: 7px;border:1px solid #007ACC;width:15px;height:10px;" disabled="true" type="checkbox" name="name"/>No
+                    </td> 
+                </tr>
+                <tr>
+                    <td style="width=50%">Signature of the Applicant:  <input style="border-bottom:1px solid #007ACC;width:40%;height:10px;" type="text" name="name"/> </td> 
+                    <td style="width=50%">Signature of the Co-Applicant / Guarantor:<input style="border-bottom:1px solid #007ACC;width:20%;height:10px;" type="text" name="name"/></td>
+                </tr>
+                <tr>
+                    <td style="width=50%">Name:<input style="border-bottom:1px solid #007ACC;width:70%;height:10px;" type="text" name="name"/> </td> 
+                    <td style="width=50%">Name:<input style="border-bottom:1px solid #007ACC;width:70%;height:10px;" type="text" name="name"/></td>
+                </tr>
+                <tr>
+                    <td colspan = "12">In case of partnership/ HUF/ association of persons: For and on behalf of <input style="border-bottom:1px solid #007ACC;width:50%;height:10px;" type="text" name="name"/>and</td>
+                </tr>
+                <tr>   
+                    <td>each of the following partners/members of the firm/HUF/association:</td>
+                </tr>
+            </table>
+            
+            <table style="width:100%;  font-size : 11px">
+                <tr >
+                    <th colspan="4" style="width:33%;"><b> Name</b></th>
+                    <th colspan="4" style="width:33%;"><b> Type</b></th>
+                    <th colspan="4" style="width:33%;"><b> Signature</b></th>
+                </tr>
+                <!--------------------------------------for Applicant ------------------------------>
+                <apex:outputPanel rendered="{!If(wrapper.isApplicantIndividual,false,true)}">
+                    <table style="width:100%;">
+                        <tr >
+                            <td colspan="4" style="width:33%;">{!applicant.Account_Name__c}</td> 
+                            <td  colspan="4" style="width:33%;">{!applicant.Applicant_Type__c}</td>
+                            <td  colspan="4" style="width:33%;">need Signature</td> 
+                        </tr>
+                    </table>
+                </apex:outputPanel>
+                <apex:outputPanel rendered="{!If(wrapper.isApplicantIndividual,true,false)}">
+                    <table style="width:100%;">
+                        <tr >
+                            <td colspan="4" style="width:33%;">{!applicant.Account_Name__c}</td> 
+                            <td  colspan="4" style="width:33%;">{!applicant.Applicant_Type__c}</td>
+                            <td  colspan="4" style="width:33%;">need Signature</td> 
+                        </tr>
+                    </table>
+                </apex:outputPanel>
+                <!-------------------------------------for Co-Applicant/ Guarantor --------------------------------->
+                <apex:outputPanel rendered="{!If(wrapper.iscoApplicantGaurantorIndividual,true,false)}">
+                    <apex:repeat value="{!coApplicantGaurantorIndividualList }" var="data">
+                        <table style="width:100%;">
+                            <tr colspan="12" style="width:100%;">
+                                <td colspan="4" style="width:33%;">{!data.Account_Name__c}</td> 
+                                <td  colspan="4" style="width:33%;">{!data.Applicant_Type__c}</td>
+                                <td  colspan="4" style="width:33%;">need Signature</td> 
+                            </tr>
+                        </table>
+                    </apex:repeat>
+                </apex:outputPanel>
+                <apex:outputPanel rendered="{!If(wrapper.iscoApplicantGaurantorNonIndividual,true,false)}">
+                    <apex:repeat value="{!coApplicantGaurantorNonIndividualList }" var="data">
+                        <table style="width:100%;">
+                            <tr colspan="12" style="width:100%;">
+                                <td colspan="4" style="width:33%;">{!data.Account_Name__c}</td> 
+                                <td  colspan="4" style="width:33%;">{!data.Applicant_Type__c}</td>
+                                <td  colspan="4" style="width:33%;">need Signature</td> 
+                            </tr>
+                        </table>
+                    </apex:repeat>
+                </apex:outputPanel>
+                
+            </table>
+            <table>
+                <tr>
+                    <td colspan="12">‘Names of all partners/members to be specified.</td>
+                </tr>
+                <tr>
+                    <td colspan="12">‘’ Signature by all the Partners/members is required unless a letter of authority is executed by all partners/members in favour of the signatories]</td>
+                </tr>
+                <tr>
+                    <td colspan="12"><b>In case of company/society/ trust</b></td>
+                </tr>
+                <tr>
+                    <td colspan="12">For and on behalf of <input style="border-bottom:1px solid #007ACC;width:70%;height:10px;" type="text" name="name"/></td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <td > <div class="label-style"><b>Name of the Authorised Signatory: (Applicant) </b> </div>  <div class="value-style"><input style="border-bottom:1px solid #007ACC;width:70%;height:10px;" type="text" name="name"/></div></td>
+                    <td > <div class="label-style"><b>Name of the Authorised Signatory: (Co-Applicant / Gurantor) </b> </div>  <div class="value-style"><input style="border-bottom:1px solid #007ACC;width:70%;height:10px;" type="text" name="name"/></div></td>
+                </tr>
+                <tr>
+                    <td > <div class="label-style">Designation:  </div>  <div class="value-style"><input style="border-bottom:1px solid #007ACC;width:70%;height:10px;" type="text" name="name"/></div></td>
+                    <td > <div class="label-style">Designation:  </div>  <div class="value-style"><input style="border-bottom:1px solid #007ACC;width:70%;height:10px;" type="text" name="name"/></div></td>
+                </tr>
+                <tr>
+                    <td > <div class="label-style">Signature: </div>  <div class="value-style"><input style="border-bottom:1px solid #007ACC;width:70%;height:10px;" type="text" name="name"/></div></td>
+                    <td > <div class="label-style">Signature: </div>  <div class="value-style"><input style="border-bottom:1px solid #007ACC;width:70%;height:10px;" type="text" name="name"/></div></td>
+                </tr>
+                <tr>
+                    <td > <div class="label-style">Date:  </div>  <div class="value-style"><input style="border-bottom:1px solid #007ACC;width:70%;height:10px;" type="text" name="name"/></div></td>
+                    <td > <div class="label-style">Date:  </div>  <div class="value-style"><input style="border-bottom:1px solid #007ACC;width:70%;height:10px;" type="text" name="name"/></div></td>
+                </tr>
+                <tr>
+                    <td > <div class="label-style">Place: </div>  <div class="value-style"><input style="border-bottom:1px solid #007ACC;width:70%;height:10px;" type="text" name="name"/></div></td>
+                    <td > <div class="label-style">Place: </div>  <div class="value-style"><input style="border-bottom:1px solid #007ACC;width:70%;height:10px;" type="text" name="name"/></div></td>
+                </tr>
+            </table>
+            <p style="font-size:11px">
+                Date and details of the authority letters or resolutions, if any, authorising the borrowing and/or execution of this Application Form:
+            </p>
+            <table>
+                <tr>
+                    <td > <div class="label-style">Date: </div>  <div class="value-style"><input style="border-bottom:1px solid #007ACC;width:70%;height:10px;" type="text" name="name"/></div></td>
+                    <td > <div class="label-style">Passed/issuedby: </div>  <div class="value-style"><input style="border-bottom:1px solid #007ACC;width:70%;height:10px;" type="text" name="name"/></div></td>
+                </tr>
+                <tr>
+                    <td > <div class="label-style">Date: </div>  <div class="value-style"><input style="border-bottom:1px solid #007ACC;width:70%;height:10px;" type="text" name="name"/></div></td>
+                    <td > <div class="label-style">Passed/issuedby: </div>  <div class="value-style"><input style="border-bottom:1px solid #007ACC;width:70%;height:10px;" type="text" name="name"/></div></td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <td colspan = "12">2 For individuals/sole proprietors</td>
+                </tr>
+                <tr>
+                    <td colspan = "12">3 For individuals</td>
+                </tr>
+                <tr>
+                    <td colspan = "12">4 Name of the partnership firm/ HUF/ association of persons</td>
+                </tr> 
+            </table>
+            <br/>
+            <!---------------------------------------------------Declaration------------------------------------------------------->
+            <div class="pageBreak">
+                
+                
+                <div class="textSize" height="20px" style="background-color:#583c87;color:white;text-align:center;font-size:12px;" >
+                    XI. DECLARATION
+                </div>
+                <table style="width:100%;font-size:10px;" >                
+                    <tr>
+                        <td colspan="12"><b Style = "margin-right: 5px;">1.</b> I/We declare that all the particulars and information and details given/filled in this application form are true, correct, complete and up-to-date in all respects and that I/We have not withheld
+                            any information whatsoever. I/We understand that certain particulars given by me/us are required by the operational guidelines governing banking companies </td> 
+                    </tr>
+                    <tr>
+                        <td colspan="12"> <b Style = "margin-right: 5px;">2.</b>I/we confirm that no insolvency proceedings or suits for recovery of outstanding dues or monies whosoever or for attachment of my/our assets or properties and/or any criminal
+                            proceedings have been initiated and/or are pending against me/us and that I/We have never been adjudicated insolvent by any court or other authority.
+                        </td> 
+                    </tr>
+                    <tr>
+                        <td colspan="12"><b Style = "margin-right: 5px;">3.</b> No action nor other steps have been taken or legal proceedings started or against me/us in any court of law/other authorities for winding up, dissolution, administration or re-organization or
+                            for the appointment of a receiver, administrative receiver, trustee or similar officer or for my / our assets.</td> 
+                    </tr>
+                    <tr>
+                        <td colspan="12"><b Style = "margin-right: 5px;">4.</b> I/We authorize UTKARSH SMALL FINANCE BANK LTD. (UTKARSH SMALL FINANCE BANK LTD.) and all its group companies and their agents to exchange, share or part with all the
+                            information and details relating to my/our existing loans and/or repayment history to other UTKARSH SMALL FINANCE BANK LTD. group companies, banks, financial institutions, credit
+                            bureaus, agencies, statutory bodies etc. as may be required or as they may deem fit and shall not hold UTKARSH SMALL FINANCE BANK LTD. (or any of its group companies or its/their
+                            agents/representatives) liable for use/sharing of this information</td> 
+                    </tr>
+                    <tr>
+                        <td colspan="12"> <b Style = "margin-right: 5px;">5.</b>I/We understand and acknowledge that UTKARSH SMALL FINANCE BANK LTD. shall have the absolute discretion, without assigning any reasons (unless required by applicable law), to
+                            reject my/our application and that UTKARSH SMALL FINANCE BANK LTD. shall not be responsible/liable in any manner whatsoever to me/us for such rejection or any delay in notifying
+                            me/us of such rejection and any costs, losses, damages or expenses, or other consequences, caused by reason of such rejection, or any delay in notifying me/us of such rejection, of our
+                            application.</td> 
+                    </tr>
+                    <tr>
+                        <td colspan="12"><b Style = "margin-right: 5px;">6.</b>UTKARSH SMALL FINANCE BANK LTD. / its Group Companies reserves the right to retain the photographs and documents submitted with the photo-card application and will not return the
+                            same to the applicant. </td> 
+                    </tr>
+                    <tr>
+                        <td colspan="12"><b Style = "margin-right: 5px;">7.</b> Except to the extent disclosed to UTKARSH SMALL FINANCE BANK LTD., no director or a relative/near relation (as specified by RBI) of a director of a banking company (including
+                            UTKARSH SMALL FINANCE BANK LTD.) of a relative/near relation (as specified by RBI) of a senior officer of UTKARSH SMALL FINANCE BANK LTD. (as specified by RBI) is a partner of our
+                            concern, or a trustee, member, director, manager, employee of our concern, or of our subsidiary, or our holding company, or a guarantor on my/our behalf, or holds substantial interest in our
+                            concern or my/our subsidiary or holding company.</td> 
+                    </tr>
+                    <tr>
+                        <td colspan="12"><b Style = "margin-right: 7px;">B)</b><b>  Central KYC Declaration</b> </td> 
+                    </tr>
+                    <tr>
+                        <td colspan="12">I hereby declare that the details furnished above are true and correct to the best of my knowledge and belief and I undertake to inform you of arty changes therein, immediately In case any
+                            of the above information is found to be false or untrue or misleading or misrepresenting, I am aware that I may be held liable for it.
+                        </td> 
+                    </tr>
+                    <tr>
+                        <td colspan="12"> I hereby consent to receiving information from Central KYC Registry through SMS/Emall on the above registered number/email address. </td> 
+                    </tr>
+                    <tr>
+                        <td style="width=50%">Name of the Applicant: </td>
+                        <td style="width=50%">Name of the Co-Applicant/guarantor:</td>
+                    </tr>
+                    <tr>
+                        <td style="width=50%"><input style="border-bottom:1px solid #007ACC;width:70%;height:10px;" type="text" name="name"/></td>
+                        <td style="width=50%"><input style="border-bottom:1px solid #007ACC;width:70%;height:10px;" type="text" name="name"/></td>
+                    </tr>
+                    <tr>
+                        <td style="width:50%;">
+                            <input style="margin-top: 15px;border: 1px solid black;border-collapse: collapse; width:70%; height:50px;" type="text" placeholder="ABC- Test" name="name"/>
+                        </td>
+                        <td style="width:50%;">
+                            <input style="  float: right;margin-top: 15px;border: 1px solid black;border-collapse: collapse; width:70%; height:50px;" type="text" name="name" placeholder="ABC- Test" />
+                        </td>   
+                    </tr>
+                    <tr>
+                        <td colspan="10"><b Style = "margin-right: 5px;"> C) </b><b>Purpose of the Loan :</b> </td> 
+                    </tr>
+                </table>
+                <table >
+                    <tr>
+                        <td > <div class="label-style">Utilisation District:</div>  <div class="value-style"></div></td>
+                        <td > <div class="label-style"> Utilisation Taiuka: </div>  <div class="value-style"></div></td>
+                        <td > <div class="label-style">Occupation: </div>  <div class="value-style"></div></td>
+                    </tr>
+                    <tr>
+                        <td > <div class="label-style">Division:</div>  <div class="value-style"></div></td>
+                        <td > <div class="label-style"> Sub Division: </div>  <div class="value-style"></div></td>
+                        <td > <div class="label-style">Activity: </div>  <div class="value-style"></div></td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <td colspan = "12"><b>D) Asset category :</b>
+                            <input style="margin-left:10px;margin-right: 7px;border:1px solid #007ACC;width:15px;height:10px;" disabled="true" type="checkbox" name="name"/>Own use (Agri) 
+                            <input style="margin-left:10px;margin-right: 7px;border:1px solid #007ACC;width:15px;height:10px;" disabled="true" type="checkbox" name="name"/>Own use (Non-agri) 
+                            <input style="margin-left:10px;margin-right: 7px;border:1px solid #007ACC;width:15px;height:10px;" disabled="true" type="checkbox" name="name"/>Hiring/Lease (Agri use)
+                            <input style="margin-left:10px;margin-right: 7px;border:1px solid #007ACC;width:15px;height:10px;" disabled="true" type="checkbox" name="name"/>Hiring/Lease (Non-agri use)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="12">** Terms and Conditions apply. All loans are granted at the sole discretion of UTKARSH SMALL FINANCE BANK LTD. </td> 
+                    </tr>
+                    <tr>
+                        <td colspan="10"><b Style = "margin-right: 7px;"> E) </b><b>  Agri Land Details *</b> </td> 
+                    </tr>
+                    <tr>
+                        <td colspan="12">Acreage of land holding___acres (1 hectare=2.5 acres)___ (Land holding to be reported in acres)</td> 
+                    </tr>
+                    <tr>
+                        <td colspan = "12">
+                            <input style="margin-right: 7px;border:1px solid #007ACC;width:15px;height:10px;" disabled="true" type="checkbox" name="name"/>Landless Laborers
+                            <input style="margin-left:10px;margin-right: 7px;border:1px solid #007ACC;width:15px;height:10px;" disabled="true" type="checkbox" name="name"/>Tenant Farmers
+                            <input style="margin-left:10px;margin-right: 7px;border:1px solid #007ACC;width:15px;height:10px;" disabled="true" type="checkbox" name="name"/>Share Croppers 
+                            <input style="margin-left:10px;margin-right: 7px;border:1px solid #007ACC;width:15px;height:10px;" disabled="true" type="checkbox" name="name"/>Others
+                        </td>                
+                    </tr>
+                    <tr>
+                        <td colspan = "12"> Investment in Plant and Machinery less than 20 Million
+                            <input style="margin-left:10px;margin-right: 7px;border:1px solid #007ACC;width:15px;height:10px;" disabled="true" type="checkbox" name="name"/>Yes
+                            <input style="margin-left:10px;margin-right: 7px;border:1px solid #007ACC;width:15px;height:10px;" disabled="true" type="checkbox" name="name"/>No
+                        </td>                
+                    </tr>
+                    <tr>
+                        <td colspan="10"><b Style = "margin-right: 7px;"> F) </b><b> MSME Categorization, </b>Please tick the appropriate option (effective from July 01, 2020): </td> 
+                    </tr>
+                    <tr>
+                        <td colspan = "12">
+                            <input style="margin-right: 7px;border:1px solid #007ACC;width:15px;height:10px;" disabled="true" type="checkbox" name="name"/>I/We am/are entrepreneur running a Micro Enterprise (where the Investment in Plant &amp; Machinery or Equipment is up to Rupees 1 Crore and Turnover is up to Rupees 5 Crores).
+                        </td>                
+                    </tr>
+                    <tr>
+                        <td colspan = "12">
+                            <input style="margin-right: 7px;border:1px solid #007ACC;width:15px;height:10px;" disabled="true" type="checkbox" name="name"/>I/We am/are entrepreneur running a Small Enterprise (where the Investment in Plant &amp; Machinery or Equipment is More than Rupees 1 Crore but does not exceed Rupees 10
+                            Crores and Turnover is More than Rupees 5 Crores but does not exceed Rupees 50 Crores)
+                        </td>                
+                    </tr>
+                    <tr>
+                        <td colspan = "12">
+                            <input style="margin-right: 7px;border:1px solid #007ACC;width:15px;height:10px;" disabled="true" type="checkbox" name="name"/>I/We am/are entrepreneur running a Medium Enterprise (where the Investment in Plant &amp; Machinery or Equipment is More than Rupees 10 Crore but does not exceed Rupees
+                            50 Crores and Turnover is More than Rupees 50 Crores but does not exceed Rupees 250 Crores)
+                        </td>                
+                    </tr>
+                    <tr>
+                        <td colspan="12">
+                            <input style=" float: right;margin-top: 15px;border: 1px solid black;border-collapse: collapse; width:35%; height:50px;" type="text" placeholder="ABC- Test" name="name"/>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <br/>
+            <!------------------------------------------------------office use only--------------------------------------->
+            
+            <div class="textSize" height="20px" style="background-color:#6d187c;color:white;text-align:center;font-size:12px;" >
+                For Office Use Only
+            </div>
+            <table style="width:100%;font-size:10px;" >                
+                <tr>
+                    <td colspan="12"><b>For UTKARSH SMALL FINANCE BANK LTD. Use only - KYC - Addendum - To be Filled in by the Bank official/sourcing Agent</b> </td> 
+                </tr>
+                <tr>
+                    <td colspan="12">I <input style="border-bottom:1px solid #007ACC;width:30%;height:10px;" type="text" name="name"/>
+                        with employee ID <input style="border-bottom:1px solid #007ACC;width:30%;height:10px;" type="text" name="name"/>
+                        do hereby confirm that I have met the Applicant/Authorised Signatory In person at his/her </td> 
+                </tr>
+                <tr>
+                    <td colspan="12">office/ residence on <input style="border-bottom:1px solid #007ACC;width:30%;height:10px;" type="text" name="name"/>
+                        (mention date) and confirm that I have verified the copies of the documents (as applicable) against original as produced by the applicant. I also confirm that Applicant(s) have signed the application form in my presence.
+                    </td> 
+                </tr>
+                <tr>
+                    <td colspan = "12"> <b>Nature of Facility :</b>
+                        <input style="margin-left:10px;margin-right: 7px;border:1px solid #007ACC;width:15px;height:10px;" disabled="true" type="checkbox" name="name"/>PSL
+                        <input style="margin-left:10px;margin-right: 7px;border:1px solid #007ACC;width:15px;height:10px;" disabled="true" type="checkbox" name="name"/>Non-PSL
+                    </td>                
+                </tr>
+                <tr>
+                    <td colspan = "12"> <b>PSL (Priority Sector Lending) Classification</b>
+                    </td>                
+                </tr>
+                <tr>
+                    <td colspan = "12"> <b style="margin-right:30px;">PSL</b>
+                        Yes<input style="margin-left:10px;margin-right: 7px;border:1px solid #007ACC;width:15px;height:10px;" disabled="true" type="checkbox" name="name"/>
+                        NO<input style="margin-left:10px;margin-right: 30px;border:1px solid #007ACC;width:15px;height:10px;" disabled="true" type="checkbox" name="name"/>
+                        <!--PSL Category <input style="margin-left:10px; margin-top: 15px;border: 1px solid black;border-collapse: collapse; width:20%; height:12px;" type="text" placeholder="ABC- Test" name="name"/> -->
+                        PSL Category<input style="border-bottom:1px solid #007ACC;width:30%;height:10px;" type="text" name="name"/>
+                    </td>                
+                </tr>
+                <tr>
+                    <td colspan = "12">
+                        PSL Sub-Category <input style="border-bottom:1px solid #007ACC;width:30%;height:10px;" type="text" name="name"/>
+                        Sub-Sub Category <input style="border-bottom:1px solid #007ACC;width:30%;height:10px;" type="text" name="name"/>
+                    </td>                
+                </tr>
+                <tr>
+                    <td colspan = "12">
+                        Activity Code/Details <input style="border-bottom:1px solid #007ACC;width:30%;height:10px;" type="text" name="name"/>
+                    </td>                
+                </tr>
+                <tr>
+                    <td style="width:50%;">
+                        <input style="margin-top: 15px;border: 1px solid black;border-collapse: collapse; width:70%; height:50px;" type="text" placeholder="ABC- Test" name="name"/>
+                    </td>
+                    <td style="width:50%;">
+                        <input style=" float: right;margin-top: 15px;border: 1px solid black;border-collapse: collapse; width:70%; height:50px;" type="text" name="name" placeholder="ABC- Test" />
+                    </td>   
+                </tr>
+            </table>
+            <br/>
+            <div style="width:100%;  display: flex;flex-direction: row;">
+                <div style=" position: absolute;">
+                    <apex:image id="Scissors_Icon" value="{!$Resource.Scissors_Icon}" width="30" height="30"/> 
+                </div>
+                <div style="margin-left:10px">
+                    ----------------------------------------------------------------------------------------------------------------------------------------
+                </div>
+            </div>
+            <br/>
+            <br/>
+            <br/>
+            <div class="textSize" height="20px" style="background-color:#6d187c;color:white;text-align:center;font-size:12px;" >
+                UTKARSH SMALL FINANCE BANK LTD. Commercial Vehicle Loans/ Equipment Loans/Two Wheeler/ Car/Tractor
+            </div>
+            <p style="font-size:12px">
+                <b>Sr No.<br/>Dear Sir/Madam,</b>
+            </p>
+            <p style="font-size:12px">
+                This is to acknowledge receipt of your Preliminary Credit Facility Application (No. 
+                <input style="border-bottom:1px solid #007ACC;width:20%;height:10px;" type="text" name="name"/>
+                dated <input style="border-bottom:1px solid #007ACC;width:20%;height:10px;" type="text" name="name"/>) and thank you for the same.If 
+                considered, our representatives shall be in touch with you in connection with the same. The application will be disposed off within a period of 15 days*<br/>
+                <br/> Time frame for Disposal of Loan Application Form (MSME Borrower) is as below : (from the date of receipt, provided your application is complete in all respects and is 
+                accompanied by documents as per 'check list' provided)
+            </p>
+            <table  >                
+                <tr>
+                    <td > <div class="label-style"><b>Direct Sales team Signature: </b> </div>  <div class="value-style"><input style="border-bottom:1px solid #007ACC;width:40%;height:10px;" type="text" name="name"/></div></td>
+                    <td > <div class="label-style"><b>Business Partner : </b> </div>  <div class="value-style"><input style="border-bottom:1px solid #007ACC;width:40%;height:10px;" type="text" name="name"/></div></td>
+                </tr>
+                <tr>
+                    <td > <div class="label-style"><b>DSE Name: </b> </div>  <div class="value-style"><input style="border-bottom:1px solid #007ACC;width:40%;height:10px;" type="text" name="name"/></div></td>
+                    <td > <div class="label-style"><b>SE Phone: </b> </div>  <div class="value-style"><input style="border-bottom:1px solid #007ACC;width:40%;height:10px;" type="text" name="name"/></div></td>
+                </tr>
+                <tr>
+                    <td > <div class="label-style"><b>Location: </b> </div>  <div class="value-style"><input style="border-bottom:1px solid #007ACC;width:40%;height:10px;" type="text" name="name"/></div></td>
+                    <td > <div class="label-style"><b>Business Partner Stamp : </b> </div>  <div class="value-style"><input style="border-bottom:1px solid #007ACC;width:40%;height:10px;" type="text" name="name"/></div></td>
+                </tr>
+            </table>
+            <p style="font-size:12px">
+                Subject to submission of documents by the applicant/s, to the satisfaction of UTKARSH SMALL FINANCE BANK LTD.
+            </p>
+            <!------------------------------------------------------------------PSL Section---------------------------------->
+            <div class="pageBreak">
+                <div class="textSize" height="20px" style="background-color:#6d187c;color:white;text-align:center;font-size:12px;" >
+                    PSL
+                </div>
+                
+                <table >
+                    <tr >
+                        <td > <div class="label-style"> <b>PSL / Non PSL: </b></div>  <div class="value-style">{!loanApplication.PSL_Non_PSL__c}</div></td>
+                        <td > <div class="label-style"> <b>PSL Category:  </b></div>  <div class="value-style">{!loanApplication.PSL_Category__c}</div></td>
+                        <td > <div class="label-style"><b>Sub Category:  </b></div>  <div class="value-style">{!loanApplication.Sub_Category__c}</div></td>
+                        
+                    </tr>
+                    <tr>
+                        <td > <div class="label-style"><b>Sub-sub category: </b> </div>  <div class="value-style"> {!loanApplication.Subsub_category__c} </div></td>
+                        <td > <div class="label-style"><b>Details: </b> </div>  <div class="value-style"> {!loanApplication.Details__c}</div></td>
+                        <td > <div class="label-style"><b> </b> </div>  <div class="value-style"></div></td>
+                    </tr>
+                </table>
+            </div>
+            <!--     <table style="width:100%;font-size:10px;" class="table-1" >                
+<tr style="width:100%;">
+<td   rowspan="6" style="width:50%;"><b>PSL / Non PSL</b></td>
+<td    rowspan="6" style="width:50%;"class="th2"><b>Sub category</b></td>
+</tr>
+<tr style="width:100%;">
+<td   rowspan="6" style="width:50%;"><b>PSL / Non PSL</b></td>
+<td    rowspan="6" style="width:50%;"class="th2"><b>Sub category</b></td>
+</tr>
+<tr style="width:100%;">
+<td    rowspan="6" style="width:50%;"><b>Sub-sub category </b></td>
+<td > </td>
+
+</tr >
+<tr style="width:100%;">
+<td class="th3"><b>Details</b></td>
+</tr>
+</table>--->
+        </apex:form> 
+    </body> 
+    <script> window.print() </script>
+    
+    </apex:page>

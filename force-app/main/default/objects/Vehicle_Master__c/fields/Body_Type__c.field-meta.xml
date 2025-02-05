@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Body_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Body Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Open Body</fullName>
+                <default>false</default>
+                <label>Open Body</label>
+            </value>
+            <value>
+                <fullName>Closed (Container)</fullName>
+                <default>false</default>
+                <label>Closed (Container)</label>
+            </value>
+            <value>
+                <fullName>MS Tanker</fullName>
+                <default>false</default>
+                <label>MS Tanker</label>
+            </value>
+            <value>
+                <fullName>SS Tanker</fullName>
+                <default>false</default>
+                <label>SS Tanker</label>
+            </value>
+            <value>
+                <fullName>Milk Tanker</fullName>
+                <default>false</default>
+                <label>Milk Tanker</label>
+            </value>
+            <value>
+                <fullName>Bulker</fullName>
+                <default>false</default>
+                <label>Bulker</label>
+            </value>
+            <value>
+                <fullName>Open Flat Body</fullName>
+                <default>false</default>
+                <label>Open Flat Body</label>
+            </value>
+            <value>
+                <fullName>Refrigerated Container</fullName>
+                <default>false</default>
+                <label>Refrigerated Container</label>
+            </value>
+            <value>
+                <fullName>Tipper</fullName>
+                <default>false</default>
+                <label>Tipper</label>
+            </value>
+            <value>
+                <fullName>Route Bus</fullName>
+                <default>false</default>
+                <label>Route Bus</label>
+            </value>
+            <value>
+                <fullName>Staff Bus</fullName>
+                <default>false</default>
+                <label>Staff Bus</label>
+            </value>
+            <value>
+                <fullName>Semi Luxury Bus</fullName>
+                <default>false</default>
+                <label>Semi Luxury Bus</label>
+            </value>
+            <value>
+                <fullName>Luxury Bus</fullName>
+                <default>false</default>
+                <label>Luxury Bus</label>
+            </value>
+            <value>
+                <fullName>AC Sleeper</fullName>
+                <default>false</default>
+                <label>AC Sleeper</label>
+            </value>
+            <value>
+                <fullName>Non-AC Sleeper</fullName>
+                <default>false</default>
+                <label>Non-AC Sleeper</label>
+            </value>
+            <value>
+                <fullName>Trailer</fullName>
+                <default>false</default>
+                <label>Trailer</label>
+            </value>
+            <value>
+                <fullName>Tip-Trailer</fullName>
+                <default>false</default>
+                <label>Tip-Trailer</label>
+            </value>
+            <value>
+                <fullName>BHL</fullName>
+                <default>false</default>
+                <label>BHL</label>
+            </value>
+            <value>
+                <fullName>Excavator</fullName>
+                <default>false</default>
+                <label>Excavator</label>
+            </value>
+            <value>
+                <fullName>Compactor</fullName>
+                <default>false</default>
+                <label>Compactor</label>
+            </value>
+            <value>
+                <fullName>Generator</fullName>
+                <default>false</default>
+                <label>Generator</label>
+            </value>
+            <value>
+                <fullName>Loader</fullName>
+                <default>false</default>
+                <label>Loader</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>5</visibleLines>
+</CustomField>

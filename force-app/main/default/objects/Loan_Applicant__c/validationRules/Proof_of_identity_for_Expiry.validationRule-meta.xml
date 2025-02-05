@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Proof_of_identity_for_Expiry</fullName>
+    <active>true</active>
+    <errorConditionFormula>if(AND( NOT(ISBLANK(Text(BL_Proof_of_Identity__c))),
+							OR(ISPICKVAL(BL_Proof_of_Identity__c, &apos;Passport&apos;), 
+										ISPICKVAL(BL_Proof_of_Identity__c, &apos;Driving License&apos;)),
+							OR(ISBLANK(Expiry_Date__c) )), 
+			true, false)</errorConditionFormula>
+    <errorMessage>In case of Passport or DL, Expiry date is mandatory</errorMessage>
+</ValidationRule>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Permanent_Address_Check_for_office_addre</fullName>
+    <active>true</active>
+    <description>Permanent Address Same As Residence cannot be change for office address.</description>
+    <errorConditionFormula>IF( AND(NOT($Setup.Bypass_Validations__c.Bypass_Validation__c),ISPickVal(Address_Type__c,&apos;Office Address&apos;),
+ISCHANGED(BL_PermanentAddressSameAsResidence__c)) ,
+true, false)</errorConditionFormula>
+    <errorMessage>Residence fields cannot be change for office address.</errorMessage>
+</ValidationRule>

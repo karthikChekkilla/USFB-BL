@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>TOL / TNW, should be &lt;/=6</label>
+    <protected>false</protected>
+    <values>
+        <field>Field_Api_Name__c</field>
+        <value xsi:type="xsd:string">TOL_TNW_should_be_6__c</value>
+    </values>
+    <values>
+        <field>Formula__c</field>
+        <value xsi:type="xsd:string">{!39}</value>
+    </values>
+    <values>
+        <field>IsReadOnly__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>LabelName__c</field>
+        <value xsi:type="xsd:string">TOL / TNW, should be &lt;/=6</value>
+    </values>
+    <values>
+        <field>Row__c</field>
+        <value xsi:type="xsd:double">47.0</value>
+    </values>
+</CustomMetadata>

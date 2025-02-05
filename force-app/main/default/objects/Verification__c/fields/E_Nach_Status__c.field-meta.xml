@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>E_Nach_Status__c</fullName>
+    <externalId>false</externalId>
+    <label>E-Nach Status</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Initiated</fullName>
+                <default>false</default>
+                <label>Initiated</label>
+            </value>
+            <value>
+                <fullName>Progressed By User</fullName>
+                <default>false</default>
+                <label>Progressed By User</label>
+            </value>
+            <value>
+                <fullName>Rejected By NPCI</fullName>
+                <default>false</default>
+                <label>Rejected By NPCI</label>
+            </value>
+            <value>
+                <fullName>Authorization Request Rejected</fullName>
+                <default>false</default>
+                <label>Authorization Request Rejected</label>
+            </value>
+            <value>
+                <fullName>Authorized</fullName>
+                <default>false</default>
+                <label>Authorized</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

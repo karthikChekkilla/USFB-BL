@@ -1,0 +1,185 @@
+<template>
+    <template if:true={isShowModal}>
+        <template if:true={isLoading}>
+            <lightning-spinner alternative-text="Loading" size="xx-small"></lightning-spinner>
+        </template>
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+            aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open slds-backdrop slds-backdrop_open">
+            <div class="slds-modal__container customModal">
+                <!-- modal header start -->
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={handleCloseMethod}>
+                        <lightning-icon icon-name="utility:close"
+                            alternative-text="close"
+                            variant="filled"
+                            size="small" ></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <template if:true={recordId}>
+                        <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Edit Product</h2>
+                    </template>
+                    <template if:false={recordId}>
+                        <h2 id="modal-heading-02" class="slds-text-heading_medium slds-hyphenate">New Product</h2>
+                    </template>
+                </header>
+                <!-- modal body start -->
+                <lightning-card variant="narrow" class="slds-scrollable">
+                    <template if:true={showNumberOfVehicle}>
+                        <template if:true={productDetails.disableCatCombobox}>
+                            <template if:false={recordId}>
+                                <div class="slds-align_absolute-center">
+                                    <h3 class="slds-text-heading_x-small slds-hyphenate" style="color: red;">Please select same product
+                                        schemes if adding two products. </h3>
+                                </div>
+                            </template>
+                        </template>
+                    </template>
+                    <!-- <div class="slds-grid slds-gutters">-->
+                    <lightning-layout multiple-rows>
+                        <lightning-layout-item size="12" padding="around-small" small-device-size="12" medium-device-size="6"
+                            large-device-size="6">
+                            <div >
+                                <lightning-combobox name="category" label="Product Category" value={productDetails.category}
+                                    options={categoryValues} onchange={handleChangeEvent} disabled={productDetails.disableCatCombobox}
+                                    required="true"></lightning-combobox>
+                            </div>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="12" padding="around-small" small-device-size="12" medium-device-size="6"
+                            large-device-size="6">
+                            <div >
+                                <lightning-combobox name="sub_category" label={dynamicSubCategory} value={productDetails.subCategory}
+                                    options={sub_categoryValues} onchange={handleChangeEvent}
+                                    disabled={productDetails.disableSubCombobox} required="true"></lightning-combobox>
+                            </div>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                    <lightning-layout multiple-rows>
+                        <lightning-layout-item size="12" padding="around-small" small-device-size="12" medium-device-size="6"
+                            large-device-size="6">
+                            <div >
+                                <lightning-combobox name="schemes" label={dynamicSchemes} value={productDetails.scheme}
+                                    options={schemeValues} onchange={handleChangeEvent} disabled={productDetails.disableScheme}
+                                    required="true"></lightning-combobox>
+                            </div>
+                        </lightning-layout-item>
+                        <template if:true={showNumberOfVehicle}>
+                            <lightning-layout-item size="12" padding="around-small" small-device-size="12" medium-device-size="6"
+                                large-device-size="6">
+                                <div>
+                                    <lightning-input type="number" label="Number of Vehicles" value={productDetails.numberOfVehicle}
+                                        name="numberOfVehicles" onchange={handleChangeEvent}></lightning-input>
+                                </div>
+                            </lightning-layout-item>
+                        </template>
+                        <template if:true={showBLTemplate}>
+                            <lightning-layout-item size="12" padding="around-small" small-device-size="12" medium-device-size="6"
+                                large-device-size="6">
+                                <div>
+                                    <lightning-input type="number" label="Applied Loan Amount" value={productDetails.loanAmount}
+                                        name="loanAmount" onchange={handleChangeEvent} step=".01" formatter="currency">
+                                    </lightning-input>
+                                </div>
+                            </lightning-layout-item>
+                        </template>
+                
+                    </lightning-layout>
+                    <template if:true={showBLTemplate}>
+                        <lightning-layout multiple-rows>
+                            <lightning-layout-item size="12" padding="around-small" small-device-size="12" medium-device-size="6"
+                                large-device-size="6">
+                                <div>
+                                    <lightning-input type="number" label="Loan Tenure(in months)" value={productDetails.loanTenure}
+                                        name="loanTenure" onchange={handleChangeEvent}></lightning-input>
+                                </div>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="12" padding="around-small" small-device-size="12" medium-device-size="6"
+                                large-device-size="6">
+                                <div>
+                                    <lightning-combobox name="balanceTransferApplicable" value={productDetails.balanceTransferApplicable}
+                                        label="Balance Transfer Applicable" options={balanceTransferOptions} onchange={handleChangeEvent}>
+                                    </lightning-combobox>
+                                </div>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <lightning-layout multiple-rows>
+                            <lightning-layout-item size="12" padding="around-small" small-device-size="12" medium-device-size="6"
+                                large-device-size="6">
+                                <div >
+                                    <lightning-combobox name="loanPurpose" label="Purpose of Loan" value={productDetails.loanPurpose}
+                                        options={loanPurposeOptions} onchange={handleChangeEvent} required="true"></lightning-combobox>
+                                </div>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="12" padding="around-small" small-device-size="12" medium-device-size="6"
+                                large-device-size="6">
+                                <div >
+                                    <lightning-input type="text" label="Product Vertical" value={productDetails.vertical}
+                                        name="vertical" onchange={handleChangeEvent} disabled=true></lightning-input>
+                                </div>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <lightning-layout multiple-rows>
+                            <lightning-layout-item size="12" padding="around-small" small-device-size="12" medium-device-size="6"
+                                large-device-size="6">
+                                <div>
+                                    <lightning-combobox name="interestType" label="Interest Type" value={productDetails.interestType}
+                                        options={interestTypeOptions} onchange={handleChangeEvent} required="true"></lightning-combobox>
+                                </div>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="12" padding="around-small" small-device-size="12" medium-device-size="6"
+                                large-device-size="6">
+                                <div>
+                                    <lightning-input type="number" label="Rate of Interest(%)" value={productDetails.rateOfInterest}
+                                        name="rateOfInterest" onchange={handleChangeEvent} step=".01" required="true"
+                                        disabled={productDetails.disableInterest}></lightning-input>
+                                </div>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <lightning-layout multiple-rows>
+                            <lightning-layout-item size="12" padding="around-small" small-device-size="12" medium-device-size="6"
+                                large-device-size="6">
+                                <div>
+                                    <lightning-input type="number" label="Moratorium Period (Month)" value={productDetails.moratoriumPeriod}
+                                        name="moratoriumPeriod" onchange={handleChangeEvent} step=".01"></lightning-input>
+                                </div>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="12" padding="around-small" small-device-size="12" medium-device-size="6"
+                                large-device-size="6">
+                                <template if:true={isInterestTypeFloating}>
+                                    <div>
+                                        <lightning-input type="number" label="Index Rate (%)" value={productDetails.indexRate} name="indexRate"
+                                            onchange={handleChangeEvent} step=".01" required="true" disabled="true">
+                                        </lightning-input>
+                                    </div>
+                                </template>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <template if:true={isInterestTypeFloating}>
+                            <lightning-layout multiple-rows>
+                                <lightning-layout-item size="12" padding="around-small" small-device-size="12" medium-device-size="6"
+                                    large-device-size="6">
+                                    <div>
+                                        <lightning-combobox name="rateCode" label="Rate Code" value={productDetails.rateCode}
+                                            options={rateCodeOptions} onchange={handleChangeEvent} required="true"></lightning-combobox>
+                                    </div>
+                                </lightning-layout-item>
+                                <lightning-layout-item size="12" padding="around-small" small-device-size="12" medium-device-size="6"
+                                    large-device-size="6">
+                                    <div>
+                                        <lightning-input type="number" label="Spread (%)" value={productDetails.spread} name="spread"
+                                            onchange={handleChangeEvent} step=".01" required="true"></lightning-input>
+                                    </div>
+                                </lightning-layout-item>
+                            </lightning-layout>
+                        </template>
+                        
+                    </template>
+                   <!-- </div>-->
+                    <div slot="footer">
+                        <lightning-button class="slds-p-around_x-small" label="Cancel" slot="actions" onclick={handleCloseMethod}></lightning-button>
+                        <lightning-button class="slds-p-around_x-small" label="Save" variant="brand" slot="actions" onclick={handleSaveMethod}></lightning-button>
+                    </div>
+                </lightning-card>
+            </div>    
+        </section>
+    </template>
+</template>

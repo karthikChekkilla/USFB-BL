@@ -1,0 +1,771 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Disbursement_Initiated</fullName>
+    <active>true</active>
+    <label>Disbursement Initiated</label>
+    <picklistValues>
+        <picklist>Application_Type__c</picklist>
+        <values>
+            <fullName>New</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New%2FUsed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Used</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>BL_Business_Type__c</picklist>
+        <values>
+            <fullName>Exporter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Importer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NA</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>BL_Cancellation_Reasons__c</picklist>
+        <values>
+            <fullName>Cancellation due to high ROI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Change in Applicant%2FCo-Applicant%2FGuarantor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer not Interested</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Duplicate Record</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Post PD Query not Resolved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wrong Data Entry</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>BL_Cancellation_Source__c</picklist>
+        <values>
+            <fullName>Bank Induced</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Induced</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>BL_IEC_Importer_Exporter_Code__c</picklist>
+        <values>
+            <fullName>A</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>B</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>BL_Negotiation_Approval_Status__c</picklist>
+        <values>
+            <fullName>Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rejected</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>BL_Program__c</picklist>
+        <values>
+            <fullName>Banking Surrogate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cash Profit Margin</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GST</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gross Profit Margin</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gross Profit Receipts</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>BL_Reject_Type__c</picklist>
+        <values>
+            <fullName>Hard</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Soft</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>BL_Repayment_Mode__c</picklist>
+        <values>
+            <fullName>NACH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SI from USFB</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>BL_Whether_MSME_unit_is_ZED_rated__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>CB_Customer_Category__c</picklist>
+        <values>
+            <fullName>FTU%2FFTB</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Institutional Strategic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>One Vehicle Owner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Retail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Strategic</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Cancel_Reason__c</picklist>
+        <values>
+            <fullName>Any other reasons not covered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Change in Applicant%2C Co- Applicant or Guarantor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Credit Decline</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer withdrawal Application</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Duplicate Lead</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FFR%2C Expansion %26 Bouncing Norms</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>False Information given by Borrower</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fast Expansion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>High DPD or OD for Close relative as per defined Group</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ID stuck in System</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Negative findings during PD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other reason</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Political Links</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Poor CIBIL History</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Poor Repayment History</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Query not resolved in 15 days</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RCU Declined</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ROI Issue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Third Party Funding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wrong data entry</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Cancel_Sub_Reason__c</picklist>
+        <values>
+            <fullName>1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Details__c</picklist>
+        <values>
+            <fullName>Animal Husbandry %281134%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bee Keeping %281135%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dairying %281132%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fisheries %281131%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loan for Purchase of Agriculture Implements %26 Machinery %281121%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loans for Pre %26 Post Harvest Activities %28spraying%2C weeding%2C harvesting%2C sorting%2C grading%2C transporting etc%2E%29 %281122%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loans to distressed farmers %281142%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loans to farmers against pledge of agriculture product%2C warehouse receipt %281141%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loans to small %26 marginal farmers for purchase of land for agriculture purpose %281143%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other Allied Activities %281137%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Poultry %281133%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sericulture %281136%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Is_Moratorium_required__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>LOB__c</picklist>
+        <values>
+            <fullName>BL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CV</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Loan_Application_Stage__c</picklist>
+        <values>
+            <fullName>Assigned to Credit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CIBIL Initiation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Credit Assessment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DDE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disbursal In Progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disbursed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Document Verification</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KYC Validation %26 Dedupe Pending</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>LAF Generation %26 Consent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PD in Progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partially Disbursed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Recommended for Approval</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Loan_Application_Status__c</picklist>
+        <values>
+            <fullName>Active</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cancelled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disbursed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Query Raised</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rejected</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Revoke</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Moratorium_Period_Month__c</picklist>
+        <values>
+            <fullName>1 Month</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2 Months</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>PSL_Category__c</picklist>
+        <values>
+            <fullName>Agriculture %281000%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Education Loans %284000%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Export Credit %283000%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MSME %282000%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non PSL %289000%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>PSL_Non_PSL__c</picklist>
+        <values>
+            <fullName>Non PSL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PSL_Category</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Product__c</picklist>
+        <values>
+            <fullName>Commercial Vehicle Loan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Construction Equipment Loan</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Reject_Reason__c</picklist>
+        <values>
+            <fullName>Any Other Reasons</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer not Interested</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Derogatory CIBIL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FI Negative by Agency</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Policy Norms not met</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RCU Negative</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>System Reject</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Reject_Sub_Reason__c</picklist>
+        <values>
+            <fullName>Age norms not met</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Any other reasons</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Asking for Higher funding - Ltv %2F Loan amount</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Asking for lower Roi</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CIBIL score below acceptable range</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client withdrawal due to change in the plan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Complete Documents not provided by the client</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Credit PD Negative</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer denied the consent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Document Decline</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Document does not complete by client</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Duplicate Record</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Duplicate record rejected within 60 days</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Experience norms not met</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FFR Norms not met</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FI Negative</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Financial norms not met %28Captive Profile%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet Expansion Not As Per Norms</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Insufficient Credit History</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Out of GEO Limit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Poor Repayment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Profile Decline</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Recent OD and High DPD in the current running accounts%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SUB %2F SMA %2F High DPD %2F account in the closed loan of CV %2F CE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sanction Letter Expired</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Sourcing__c</picklist>
+        <values>
+            <fullName>Branch %28MB%2FGB%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Business Channel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Direct Sales Team</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Sub_Category__c</picklist>
+        <values>
+            <fullName>Agriculture Infrastructure %281200%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ancillary Activities %281300%29%2C</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Education Loans upto 10 Lakh %284100%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Farm Credit %281100%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium Enterprises %282300%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Micro Enterprises %282100%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Post Shipment Export Credit %283200%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pre Shipment Export Credit %283100%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Small Enterprises %282200%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Subsub_category__c</picklist>
+        <values>
+            <fullName>Advances to Khadi %26 Village Industries Sector %5BKVI%5D %282130%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Crop Loans %281110%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loan for Allied Activities %281130%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loan for Food %26 Agro Processing %28Up to 100 Cr%2E%29 %281330%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loan for Investment Credit %281120%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loan for Plant tissue culture %26 Agri Biotechnology %281230%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loan for Soil conservation and watershed %281220%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loan for setting up Agri Clinics %26  Agri Business Centres %281320%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loan to Manufacturing Enterprises %5BInvestment %3E 25 Lakh to 5 Cr%2E%5D %282210%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loan to Manufacturing Enterprises %5BInvestment %3E 5 Cr to 10 Cr%2E%5D %282310%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loan to Manufacturing Enterprises %5BInvestment upto 25 Lakh%5D %282110%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loan to Service Enterprises  %5BInvestment upto 10 Lakh%5D %282120%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loan to Service Enterprises %5BInvestment %3E 10 Lakh to 2 Cr%2E%5D %282220%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loan to Service Enterprises %5BInvestment %3E 2 Cr to 5 Cr%2E%5D %282320%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loans to Co-operative Societies %281310%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loans_for_construction_of_storage_facilities_%28Warehouses_market_yards_godowns%29_cold_storage_%281210%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other Agriculture Loans %281140%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Overdraft upto 5000 in PMJDY accounts %282140%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Production of Bio-Pesticide %26 Bio Fertilizers%2C Vermi- Composting %281250%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Seed Production %281240%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

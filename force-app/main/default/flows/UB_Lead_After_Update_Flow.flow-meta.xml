@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>Apex Record Sharing for Lead Object</description>
+        <name>Apex_Record_Sharing</name>
+        <label>Apex Record Sharing</label>
+        <locationX>50</locationX>
+        <locationY>755</locationY>
+        <actionName>UB_CommonUtil</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Update_Lead</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>recordAccessLevel</name>
+            <value>
+                <stringValue>Read</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recordId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>userOrGroupId</name>
+            <value>
+                <elementReference>$Record__Prior.OwnerId</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <description>Fetch Direct &amp; Indirect Manager IDs</description>
+        <name>FetchManagerIDs</name>
+        <label>FetchManagerIDs</label>
+        <locationX>50</locationX>
+        <locationY>431</locationY>
+        <actionName>UB_FetchIndirectManagerIds</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Owner_ID_Collection</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>ownerID</name>
+            <value>
+                <elementReference>$Record.OwnerId</elementReference>
+            </value>
+        </inputParameters>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <apiVersion>60.0</apiVersion>
+    <assignments>
+        <description>Store Owner ID in a collection to pass as a Recipient ID to the custom notification sub-flows.</description>
+        <name>Owner_ID_Collection</name>
+        <label>Owner ID Collection</label>
+        <locationX>50</locationX>
+        <locationY>539</locationY>
+        <assignmentItems>
+            <assignToReference>RecordOwnerID</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>$Record.OwnerId</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Send_Custom_Notification</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>This decision helps to validate multiple scenarios for record triggered flow.</description>
+        <name>Record_Decision</name>
+        <label>Record Decision</label>
+        <locationX>182</locationX>
+        <locationY>323</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Record_OwnerID_is_updated</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.OwnerId</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>FetchManagerIDs</targetReference>
+            </connector>
+            <label>Record OwnerID is updated</label>
+        </rules>
+    </decisions>
+    <description>UB_Lead After Update Flow</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>ManagerIds</name>
+        <dataType>String</dataType>
+        <expression>{!FetchManagerIDs}</expression>
+    </formulas>
+    <interviewLabel>UB_Lead After Update Flow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>UB_Lead After Update Flow</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Lead</name>
+        <label>Update Lead</label>
+        <locationX>50</locationX>
+        <locationY>863</locationY>
+        <inputAssignments>
+            <field>Manager_IDs__c</field>
+            <value>
+                <elementReference>ManagerIds</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Record_Decision</targetReference>
+        </connector>
+        <object>Lead__c</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <description>Send Custom Notification on Lead Assignment</description>
+        <name>Send_Custom_Notification</name>
+        <label>Send Custom Notification</label>
+        <locationX>50</locationX>
+        <locationY>647</locationY>
+        <connector>
+            <targetReference>Apex_Record_Sharing</targetReference>
+        </connector>
+        <flowName>UB_Custom_Notification_Flow</flowName>
+        <inputAssignments>
+            <name>CustomNotificationDeveloperName</name>
+            <value>
+                <stringValue>Lead_Owner_Change</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>NotificationBody</name>
+            <value>
+                <elementReference>NotificationBody</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>NotificationTitle</name>
+            <value>
+                <stringValue>Lead Assignment</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>RecipientIDs</name>
+            <value>
+                <elementReference>RecordOwnerID</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>TargetID</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+    <variables>
+        <description>Custom Notification Body</description>
+        <name>NotificationBody</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <value>
+            <stringValue>You have been assigned a new {!$Record.Name}. </stringValue>
+        </value>
+    </variables>
+    <variables>
+        <description>RecordOwnerID</description>
+        <name>RecordOwnerID</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+</Flow>

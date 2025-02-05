@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>Fetch Direct &amp; Indirect Manager IDs</description>
+        <name>FetchManagerIDs</name>
+        <label>FetchManagerIDs</label>
+        <locationX>182</locationX>
+        <locationY>431</locationY>
+        <actionName>UB_FetchIndirectManagerIds</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Partner_Portal_Lead_created</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>ownerID</name>
+            <value>
+                <elementReference>$Record.OwnerId</elementReference>
+            </value>
+        </inputParameters>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <actionCalls>
+        <description>This flow will invoke the UB_SyncLeadService- class for callouts to create a lead to the external system.</description>
+        <name>SyncLeadServiceAPI</name>
+        <label>SyncLeadServiceAPI</label>
+        <locationX>50</locationX>
+        <locationY>647</locationY>
+        <actionName>UB_SyncLeadService</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Update_DSA_User</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>leadIdSet</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <apiVersion>60.0</apiVersion>
+    <decisions>
+        <description>This will validate if the Lead is only created with the Partner portal record type.</description>
+        <name>Partner_Portal_Lead_created</name>
+        <label>Partner Portal Lead created</label>
+        <locationX>182</locationX>
+        <locationY>539</locationY>
+        <defaultConnector>
+            <targetReference>Update_Lead</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Validate_Partner_Portal_Lead_Created</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>IsPartnerPortalLeadCreated</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SyncLeadServiceAPI</targetReference>
+            </connector>
+            <label>Validate Partner Portal Lead Created</label>
+        </rules>
+    </decisions>
+    <description>This flow is used to perform actions after saving into Salesforce.</description>
+    <environments>Default</environments>
+    <formulas>
+        <description>Formula will returns true if the Lead is only created with Partner Portal Lead record type.</description>
+        <name>IsPartnerPortalLeadCreated</name>
+        <dataType>Boolean</dataType>
+        <expression>IF( AND( ISNEW(), OR({!$Record.RecordType.Name} = &apos;Partner Portal Lead&apos;, {!$Record.RecordType.Name} = &apos;BL Partner Portal Lead&apos;)), true, false)</expression>
+    </formulas>
+    <formulas>
+        <name>ManagerIds</name>
+        <dataType>String</dataType>
+        <expression>{!FetchManagerIDs}</expression>
+    </formulas>
+    <formulas>
+        <name>TAT</name>
+        <dataType>Number</dataType>
+        <expression>Now() - {!$Record.LastModifiedDate}</expression>
+        <scale>0</scale>
+    </formulas>
+    <interviewLabel>UB_Lead After Create Flow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>UB_Lead After Create Flow</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Activity_History</name>
+        <label>Activity History</label>
+        <locationX>182</locationX>
+        <locationY>323</locationY>
+        <connector>
+            <targetReference>FetchManagerIDs</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>From_User__c</field>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Lead__c</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>TAT__c</field>
+            <value>
+                <elementReference>TAT</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>To_Stage__c</field>
+            <value>
+                <elementReference>$Record.Lead_Stage__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Activity_History__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordUpdates>
+        <description>Update DSA User that will be used while converting to Loan Application.</description>
+        <name>Update_DSA_User</name>
+        <label>Update DSA User</label>
+        <locationX>50</locationX>
+        <locationY>755</locationY>
+        <inputAssignments>
+            <field>DSA__c</field>
+            <value>
+                <elementReference>$Record.OwnerId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Manager_IDs__c</field>
+            <value>
+                <elementReference>ManagerIds</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Lead</name>
+        <label>Update Lead</label>
+        <locationX>314</locationX>
+        <locationY>647</locationY>
+        <inputAssignments>
+            <field>Manager_IDs__c</field>
+            <value>
+                <elementReference>ManagerIds</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Activity_History</targetReference>
+        </connector>
+        <object>Lead__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

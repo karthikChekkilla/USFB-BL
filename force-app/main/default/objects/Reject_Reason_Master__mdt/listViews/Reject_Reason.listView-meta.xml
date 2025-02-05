@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reject_Reason</fullName>
+    <columns>MasterLabel</columns>
+    <columns>Rejection_Reason__c</columns>
+    <columns>Rejection_Sub_Reason__c</columns>
+    <columns>Reject_Validity__c</columns>
+    <columns>Rejection_Type__c</columns>
+    <columns>LOB__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>Reject Reason</label>
+</ListView>

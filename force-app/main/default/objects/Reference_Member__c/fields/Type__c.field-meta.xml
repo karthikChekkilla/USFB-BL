@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Authorised Signatory</fullName>
+                <default>false</default>
+                <label>Authorised Signatory</label>
+            </value>
+            <value>
+                <fullName>Partner</fullName>
+                <default>false</default>
+                <label>Partner</label>
+            </value>
+            <value>
+                <fullName>Directo</fullName>
+                <default>false</default>
+                <label>Directo</label>
+            </value>
+            <value>
+                <fullName>Trustee</fullName>
+                <default>false</default>
+                <label>Trustee</label>
+            </value>
+            <value>
+                <fullName>HUF Member</fullName>
+                <default>false</default>
+                <label>HUF Member</label>
+            </value>
+            <value>
+                <fullName>Trade References</fullName>
+                <default>false</default>
+                <label>Trade References</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

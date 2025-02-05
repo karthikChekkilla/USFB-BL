@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Current_Owner__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( 
+  ISBLANK(Owner:Queue.Id),
+  Owner:User.FirstName &amp; &quot; &quot; &amp; Owner:User.LastName,
+  Owner:Queue.QueueName
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Current Owner</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

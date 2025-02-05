@@ -1,0 +1,301 @@
+<template>
+	<template if:true={isLoading} class="slds-is-relative">
+		<lightning-spinner alternative-text="Loading" size="medium" variant="brand"></lightning-spinner>
+	</template>
+	<template if:true={isShowModal}>
+		<section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+			aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+			<div class="slds-modal__container" style="">
+				<!-- modal header start -->
+				<header class="slds-modal__header">
+					<button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={handleCloseMethod}>
+                        <lightning-icon icon-name="utility:close"
+                            alternative-text="close"
+                            variant="filled"
+                            size="small" ></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+					<h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Address Record</h2>
+				</header>
+				<!-- modal body start -->
+				<lightning-card variant="narrow">
+					<lightning-record-edit-form record-id={recordId} object-api-name="Address__c" density="comfy"
+						onsuccess={handleSuccess} onsubmit={handleSubmit} onerror={handleError}>
+						<div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1"
+							style="height:22rem;">
+							<lightning-layout multiple-rows="true">
+								<lightning-layout-item size="12" large-device-size="6" small-device-size="4"
+									padding="around-small">
+
+									<div>
+										<lightning-input-field field-name="Address_Type__c"
+											onchange={handleAddressTypeChange} field-level-help="Residence address is Current address" required>
+										</lightning-input-field>
+									</div>
+								</lightning-layout-item>
+								<template if:true={blRecordType}>
+									<lightning-layout-item size="12" large-device-size="6" small-device-size="12"
+										padding="around-small">
+										<div>
+											<!--<lightning-input-field field-name="Customer_Type__c" required>
+											</lightning-input-field>-->
+											<lightning-input-field field-name="BL_Residence_Type__c" value={addressObj.BLResidenceType} required disabled={residenceTypeEnablity} onchange={handleResidenceType}>
+											</lightning-input-field>
+										</div>
+									</lightning-layout-item>
+								</template>
+								<template if:false={blRecordType}>
+									<lightning-layout-item size="12" large-device-size="6" small-device-size="12"
+										padding="around-small">
+										<div>
+											<!--<lightning-input-field field-name="Customer_Type__c" required>
+											</lightning-input-field>-->
+											<lightning-input-field field-name="Residence_Type__c" required disabled={residenceTypeEnablity}>
+											</lightning-input-field>
+										</div>
+									</lightning-layout-item>
+								</template>
+							</lightning-layout>
+
+							<lightning-layout multiple-rows="true">
+								<lightning-layout-item size="12" large-device-size="6" small-device-size="4"
+									padding="around-small">
+									<div>
+										<lightning-input-field field-name="Name" required></lightning-input-field>
+									</div>
+								</lightning-layout-item>
+
+								<lightning-layout-item size="12" large-device-size="6" small-device-size="12"
+									padding="around-small">
+									<div>
+										<!--<lightning-input-field field-name="Customer_Type__c" required>
+                                        </lightning-input-field>-->
+										<lightning-input-field field-name="Address_Line_2__c" required>
+										</lightning-input-field>
+									</div>
+								</lightning-layout-item>
+
+							</lightning-layout>
+
+							<lightning-layout multiple-rows>
+								<lightning-layout-item size="12" large-device-size="6" small-device-size="4"
+									padding="around-small">
+									<div>
+
+										<lightning-input-field field-name="Address_Line_3__c">
+										</lightning-input-field>
+									</div>
+								</lightning-layout-item>
+								<lightning-layout-item size="12" large-device-size="6" small-device-size="12"
+									padding="around-small">
+									<div>
+										<!--<lightning-input-field field-name="Customer_Type__c" required>
+                                        </lightning-input-field>-->
+										<lightning-input-field field-name="Landmark__c" required>
+										</lightning-input-field>
+									</div>
+								</lightning-layout-item>
+							</lightning-layout>
+							<lightning-layout multiple-rows>
+								<lightning-layout-item size="12" large-device-size="6" small-device-size="12"
+									padding="around-small">
+									<div>
+										<lightning-input-field field-name="Sector_Localty__c">
+										</lightning-input-field>
+									</div>
+								</lightning-layout-item>
+								<lightning-layout-item size="12" large-device-size="6" small-device-size="12"
+									padding="around-small">
+									<div>
+										<lightning-input-field field-name="Floor__c" >
+										</lightning-input-field>
+									</div>
+								</lightning-layout-item>
+							</lightning-layout>
+							<lightning-layout multiple-rows>
+								<lightning-layout-item size="12" large-device-size="6" small-device-size="12"
+									padding="around-small">
+									<div>
+										<lightning-input-field field-name="Pincode__c" onchange={handleChange} name="pincode" required>
+										</lightning-input-field>
+
+									</div>
+								</lightning-layout-item>
+								<template if:true={blRecordType}>
+									<lightning-layout-item size="12" large-device-size="6" small-device-size="12" padding="around-small">
+										<div>
+											<!--<lightning-input-field field-name="City__c"
+								                                        value={addressObj.City}></lightning-input-field>-->
+											<lightning-input type="text" label="City" value={addressObj.City} name="City" disabled></lightning-input>
+											<!--<lightning-input-field field-name="City1__c"
+																				></lightning-input-field>-->
+										</div>
+									</lightning-layout-item>
+								</template>
+								<template if:false={blRecordType}>
+									<lightning-layout-item size="12" large-device-size="6" small-device-size="12" padding="around-small">
+										<div>
+											<!--<lightning-input-field field-name="City__c"
+								                                        value={addressObj.City}></lightning-input-field>-->
+											<!--<lightning-input type="text" label="City" value={addressObj.City} name="City"
+																			disabled></lightning-input>-->
+											<lightning-input-field field-name="City1__c"></lightning-input-field>
+										</div>
+									</lightning-layout-item>
+								</template>
+							</lightning-layout>
+							<lightning-layout multiple-rows>
+								<lightning-layout-item size="12" large-device-size="6" small-device-size="12"
+									padding="around-small">
+									<div>
+										<!--<lightning-input-field field-name="District__c"
+                                        value={addressObj.District}></lightning-input-field>-->
+										<lightning-input type="text" label="District" value={addressObj.District}
+											name="District" disabled></lightning-input>
+									</div>
+								</lightning-layout-item>
+								<lightning-layout-item size="12" large-device-size="6" small-device-size="12"
+									padding="around-small">
+									<div>
+										<!--<lightning-input-field field-name="State__c"
+                                        value={addressObj.State}></lightning-input-field>-->
+										<lightning-input type="text" label="State" value={addressObj.State} name="State"
+											disabled></lightning-input>
+									</div>
+								</lightning-layout-item>
+							</lightning-layout>
+							<lightning-layout multiple-rows>
+								<lightning-layout-item size="12" large-device-size="6" small-device-size="12"
+									padding="around-small">
+									<div>
+										<lightning-input type="text" label="Country" value='India' name="Country"
+											disabled></lightning-input>
+									</div>
+								</lightning-layout-item>
+								<template lwc:if={addressObj.Lead}>
+									<lightning-layout-item size="12" large-device-size="6" small-device-size="12"
+										padding="around-small">
+										<div>
+
+											<lightning-input-field field-name="Lead__c" value={addressObj.Lead}
+												disabled></lightning-input-field>
+										</div>
+									</lightning-layout-item>
+								</template>
+								<template lwc:if={addressObj.loanApplicant}>
+									<lightning-layout-item size="12" large-device-size="6" small-device-size="12"
+										padding="around-small">
+										<div>
+											<lightning-input-field field-name="Loan_Applicant__c"
+												value={addressObj.loanApplicant} disabled></lightning-input-field>
+										</div>
+									</lightning-layout-item>
+								</template>
+								<template lwc:if={addressObj.Customer}>
+									<lightning-layout-item size="12" large-device-size="6" small-device-size="12"
+										padding="around-small">
+										<div>
+											<lightning-input-field field-name="Customer__c" value={addressObj.Customer}
+												disabled></lightning-input-field>
+										</div>
+									</lightning-layout-item>
+
+								</template>
+							</lightning-layout>
+							<lightning-layout multiple-rows>
+								<lightning-layout-item size="12" large-device-size="6" small-device-size="12"
+									padding="around-small">
+									<div>
+										<lightning-input-field field-name="Is_Communication__c" required>
+										</lightning-input-field>
+									</div>
+								</lightning-layout-item>
+
+								<lightning-layout-item size="12" large-device-size="6" small-device-size="12"
+									padding="around-small">
+									<div>
+										<lightning-input-field field-name="Residence_is__c" required>
+										</lightning-input-field>
+									</div>
+								</lightning-layout-item>
+									<!--<template if:true={notOfficeAdd}>
+								<lightning-layout-item size="12" large-device-size="6" small-device-size="12"
+									padding="around-small">
+									<div>
+										<lightning-input-field field-name="BL_Under_Residence_Status__c"  onchange={handleChange} name="underResidenceStatus"  required>
+										</lightning-input-field>
+									</div>
+								</lightning-layout-item>
+								</template>-->
+
+								<template if:true={otherStatus}>
+								<lightning-layout-item size="12" large-device-size="6" small-device-size="12"
+									padding="around-small">
+									<div>
+										<lightning-input-field field-name="Other__c" required>
+										</lightning-input-field>
+									</div>
+								</lightning-layout-item>
+								</template>
+
+							</lightning-layout>
+							<!--Added by Manjeet on 03July2024 for BL-->
+							<template if:true={blRecordType}>
+								<template if:true={addressTypeResidence}>
+									<lightning-layout multiple-rows>
+										<lightning-layout-item size="12" large-device-size="6" small-device-size="12"
+											padding="around-small">
+											<div>
+												<lightning-input-field field-name="BL_Number_of_years_at_residence__c"
+													required>
+												</lightning-input-field>
+											</div>
+										</lightning-layout-item>
+
+										<lightning-layout-item size="12" large-device-size="6" small-device-size="12"
+											padding="around-small">
+											<div>
+												<lightning-input-field field-name="BL_Under_Residence_Status__c"
+													required>
+												</lightning-input-field>
+											</div>
+										</lightning-layout-item>
+									</lightning-layout>
+								</template>
+								<lightning-layout multiple-rows>
+									<lightning-layout-item size="12" padding="around-small" small-device-size="12" medium-device-size="6" large-device-size="6" >
+										<div>
+											<lightning-input-field field-name="BL_PermanentAddressSameAsResidence__c" value={addressObj.PermanentAddressSameAsResidence} onchange={handleAddressCheckbox} required disabled={residenceTypeEnablity}>
+											</lightning-input-field>
+										</div>
+									</lightning-layout-item>
+									<!--added by lakshya on 30-09-2024 USFBL-399 started-->
+									<template if:true={otherResidenceType}>
+										<lightning-layout-item size="12" padding="around-small" small-device-size="12" medium-device-size="6"
+											large-device-size="6">
+											<div>
+												<lightning-input-field field-name="BL_Other_Residence_Type__c" value={addressObj.OtherResidenceType} required>
+												</lightning-input-field>
+											</div>
+										</lightning-layout-item>
+									</template>
+									<!--added by lakshya on 30-09-2024 USFBL-399 ended-->
+								</lightning-layout>
+							</template>
+							<!--Added by Manjeet on 03July2024-->
+						</div>
+						<footer class="slds-modal__footer">
+							<lightning-button class="slds-m-top_small" name="cancel" label="Cancel"
+								style="margin-right: 0.8rem;" onclick={handleCloseMethod}></lightning-button>
+							<lightning-button class="slds-m-top_small" disabled={isDisableSave} variant="brand"
+								type="submit" name="save" label="Save" style="margin-right: 0.8rem;">
+							</lightning-button>
+						</footer>
+					</lightning-record-edit-form>
+				</lightning-card>
+			</div>
+		</section>
+	</template>
+	<div class="slds-backdrop slds-backdrop_open"></div>
+</template>
+</template>

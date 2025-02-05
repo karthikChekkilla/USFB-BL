@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Stage__c</fullName>
+    <defaultValue>&apos;Pre-Disbursal Document Collection&apos;</defaultValue>
+    <externalId>false</externalId>
+    <label>Stage</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Negotiation</fullName>
+                <default>true</default>
+                <label>Negotiation</label>
+            </value>
+            <value>
+                <fullName>Pre-Disbursal Document Collection</fullName>
+                <default>false</default>
+                <label>Pre-Disbursal Document Collection</label>
+            </value>
+            <value>
+                <fullName>Documents Review</fullName>
+                <default>false</default>
+                <label>Documents Review</label>
+            </value>
+            <value>
+                <fullName>E-Nach Pending</fullName>
+                <default>false</default>
+                <label>E-Nach Pending</label>
+            </value>
+            <value>
+                <fullName>Disbursement Maker</fullName>
+                <default>false</default>
+                <label>Disbursement Maker</label>
+            </value>
+            <value>
+                <fullName>Disbursement Checker</fullName>
+                <default>false</default>
+                <label>Disbursement Checker</label>
+            </value>
+            <value>
+                <fullName>PDD</fullName>
+                <default>false</default>
+                <label>PDD</label>
+            </value>
+            <value>
+                <fullName>Closed</fullName>
+                <default>false</default>
+                <label>Closed</label>
+            </value>
+            <value>
+                <fullName>Disbursement Process Initiated</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Disbursement Process Initiated</label>
+            </value>
+            <value>
+                <fullName>Documents sent to CPC</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Documents sent to CPC</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

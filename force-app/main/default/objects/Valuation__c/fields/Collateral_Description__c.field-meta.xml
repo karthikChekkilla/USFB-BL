@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Collateral_Description__c</fullName>
+    <externalId>false</externalId>
+    <label>Collateral Description</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Self-Occupied Residential</fullName>
+                <default>false</default>
+                <label>Self-Occupied Residential</label>
+            </value>
+            <value>
+                <fullName>Self-Occupied Commercial</fullName>
+                <default>false</default>
+                <label>Self-Occupied Commercial</label>
+            </value>
+            <value>
+                <fullName>Mixed Usage Property (Self occupied)</fullName>
+                <default>false</default>
+                <label>Mixed Usage Property (Self occupied)</label>
+            </value>
+            <value>
+                <fullName>Mixed Usage Property (Partly self-occupied)</fullName>
+                <default>false</default>
+                <label>Mixed Usage Property (Partly self-occupied)</label>
+            </value>
+            <value>
+                <fullName>Commercial Rented</fullName>
+                <default>false</default>
+                <label>Commercial Rented</label>
+            </value>
+            <value>
+                <fullName>Residential Rented</fullName>
+                <default>false</default>
+                <label>Residential Rented</label>
+            </value>
+            <value>
+                <fullName>Under construction Residential</fullName>
+                <default>false</default>
+                <label>Under construction Residential</label>
+            </value>
+            <value>
+                <fullName>Under construction Commercial</fullName>
+                <default>false</default>
+                <label>Under construction Commercial</label>
+            </value>
+            <value>
+                <fullName>Vacant Residential</fullName>
+                <default>false</default>
+                <label>Vacant Residential</label>
+            </value>
+            <value>
+                <fullName>Vacant Commercial</fullName>
+                <default>false</default>
+                <label>Vacant Commercial</label>
+            </value>
+            <value>
+                <fullName>Plot</fullName>
+                <default>false</default>
+                <label>Plot</label>
+            </value>
+            <value>
+                <fullName>Self-occupied Industrial Property</fullName>
+                <default>false</default>
+                <label>Self-occupied Industrial Property</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

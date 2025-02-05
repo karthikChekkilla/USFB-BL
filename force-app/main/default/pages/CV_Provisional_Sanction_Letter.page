@@ -1,0 +1,84 @@
+<apex:page docType="html-5.0" showHeader="false" sidebar="false"  extensions="Ub_Sanction_Letter_Template_Controller" action="{!getPDF}"
+           standardController="Loan_Application__c"    standardStylesheets="false" applyBodyTag="false" applyHtmlTag="true"  language="en-IN" contentType="text/html;charset=UTF-8" renderAs="pdf">
+    <head>
+        <style > 
+            @page {
+            size: A4;
+            margin-top: 0cm;
+            margin-bottom: 3cm;
+            margin-left: 2cm;
+            margin-right: 2cm;
+            @top-center {
+            content: element(header);
+            }
+            @bottom-left {
+            content: element(footer);
+            }
+            }
+            div.footer {
+           
+            display: block;
+            position: running(footer);
+            }
+            .pagenumber:before {
+            content: counter(page);
+            }
+            .pagecount:before {
+            content: counter(pages);
+            }
+            .text-size{
+            font-size: 11pt;
+            }
+            table, td, th {
+            border: 1px solid;
+            }
+            table {
+            width: 100%;
+            border-collapse: collapse;
+            }
+            .value-style{
+            width:50%;
+            text-align: center;
+            }
+            .label-style{
+            width:50%;
+            }
+            .text-justification{
+            text-align: justify;
+            text-align-last: justify;
+            text-justify: inter-word;
+            font-size: 11pt;
+            }
+            <apex:outputPanel layout="none">
+                .watermark {
+                background-repeat: repeat;
+                background-image: url("{!URLFOR($Resource.Sanction_Letter_Watermark)}");
+                }
+            </apex:outputPanel>
+            .logo{
+            place-items: center;  padding-left: 230px;}
+        </style>
+    </head>
+    <body class="watermark" style="hight:250">
+        <div class="footer">
+            <div style=" background-color:#583c87; text-align:center; font-size:11px; color:white">
+                <b> Registered And Corporate Office:</b><br/>
+                Utkarsh Tower,
+                NH-31(Airport Road),
+                Sehmalpur, Kazi Sarai,
+                Harhua, Varanasi,
+                PIN – 221105, Uttar Pradesh<br/>
+                CIN: U65992UP2016PLC082804 | Tel: 0542-6605555 | Website: www.utkarsh.bank
+            </div>
+                 <div style="font-size:11px">   Page <span class="pagenumber"/> of <span class="pagecount"/>  </div>
+        </div>
+        <div class="content text-size">
+            <div class="logo">
+                <div style=" mix-blend-mode: multiply;background-image:none">
+                    <apex:image value="{!$Resource.Sanction_Letter_Logo}" width="140" height="80"  />
+                </div>
+            </div>
+        <apex:outputText value="{!plainHTML}" escape="false" />
+     </div>
+    </body>
+</apex:page>

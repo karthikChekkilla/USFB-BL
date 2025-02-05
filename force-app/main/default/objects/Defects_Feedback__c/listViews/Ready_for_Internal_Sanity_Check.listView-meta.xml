@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ready_for_Internal_Sanity_Check</fullName>
+    <columns>NAME</columns>
+    <columns>Bug_Type__c</columns>
+    <columns>Bug_Status__c</columns>
+    <columns>Internal_status__c</columns>
+    <columns>Modules__c</columns>
+    <columns>Subject__c</columns>
+    <columns>Severity__c</columns>
+    <columns>Assigned_to_User__c</columns>
+    <columns>RCA_and_Solution__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Internal_status__c</field>
+        <operation>equals</operation>
+        <value>Ready for UAT</value>
+    </filters>
+    <label>Ready for Internal Sanity Check</label>
+    <sharedTo>
+        <group>Admin_Users</group>
+    </sharedTo>
+</ListView>

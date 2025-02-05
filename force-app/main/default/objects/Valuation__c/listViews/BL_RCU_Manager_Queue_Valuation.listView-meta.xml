@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BL_RCU_Manager_Queue_Valuation</fullName>
+    <columns>NAME</columns>
+    <columns>Loan_Application__c</columns>
+    <filterScope>Queue</filterScope>
+    <label>BL RCU Manager Queue</label>
+    <queue>BL_RCU_Manager_Queue</queue>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+        <role>BL_RCU_Manager</role>
+    </sharedTo>
+</ListView>

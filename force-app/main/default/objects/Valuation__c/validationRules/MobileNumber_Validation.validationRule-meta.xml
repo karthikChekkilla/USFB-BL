@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MobileNumber_Validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(NOT(REGEX( Mobile_No__c , &quot;^[6-9]{1}[0-9]{9}$&quot;)),
+ NOT( ISBLANK(Mobile_No__c ) ), 
+(RecordType.DeveloperName = &quot;Property_Valuation&quot;), NOT(ISNEW()) )</errorConditionFormula>
+    <errorDisplayField>Mobile_No__c</errorDisplayField>
+    <errorMessage>Mobile Number should be 10 Digit starting with 6,7,8,9</errorMessage>
+</ValidationRule>

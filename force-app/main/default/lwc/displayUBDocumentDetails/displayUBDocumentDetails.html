@@ -1,0 +1,177 @@
+<template> 
+    <template if:true={showSpinner}>
+		<lightning-spinner alternative-text="Loading"></lightning-spinner>
+	</template>
+	<template if:true={documentList}>
+		<template if:true={showBulkVerifyButton}>
+			<div class="slds-grid slds-p-top_xx-small slds-p-bottom_xx-small" if:true={showBulkVerifyButton}>			
+					<div class="slds-col slds-size_11-of-12 ">
+						<lightning-button variant="brand" label="Initiate RCU to Vendor" title="Initiate RCU to Vendor" onclick={handleRCUInitiateToVendors}
+							style="float:right;margin-top: -3px;" disabled={isRCUInitiateDisbale} ></lightning-button>
+					</div>
+					<div class="slds-col slds-size_1-of-12">
+						<lightning-button variant="brand" label="Acknowledge" title="Acknowledge" onclick={handleAcknowledge}
+							style="float:right;margin-top: -3px;"></lightning-button>
+					</div>
+			</div>
+		</template>
+		<template if:true={showSubmitButton}>
+			<div class="slds-grid slds-p-top_xx-small slds-p-bottom_xx-small" if:true={showSubmitButton}>			
+					<div class="slds-col slds-size_11-of-12 ">
+
+					</div>
+					<div class="slds-col slds-size_1-of-12">
+						<lightning-button variant="brand" label="Submitted to CPC" title="Submitted to CPC" onclick={handleAcknowledge}
+							style="float:right;margin-top: -3px;"></lightning-button>
+					</div>
+			</div>
+		</template>
+		<div style="border-top: 1px solid rgb(201, 201, 201)">
+			<div class="slds-grid">
+				<div class="slds-col slds-size_12-of-12 slds-box slds-box_xx-small"
+					>
+					<lightning-datatable key-field="Id" data={recordsToDisplay} 
+										columns={columns} onrowaction={handleRowAction} 
+										min-column-width="100"
+										max-column-width="1000"
+										onrowselection={getSelectedAction} 
+										style="display: block;" 
+										sorted-by={sortBy}
+                                     	sorted-direction={sortDirection} 
+										onsort={handleSortAccountData}
+						 ></lightning-datatable>
+						<div class="slds-clearfix slds-m-top_small">
+							<div class="slds-float_right">
+								<!--<span class="slds-badge"> Total Records: {totalRecords}</span>-->
+								<lightning-button-icon disabled={bDisableFirst} icon-name="utility:jump_to_left" label="First" class="slds-p-horizontal_x-small" alternative-text="first page" onclick={firstPage}></lightning-button-icon>
+								<lightning-button-icon disabled={bDisableFirst} icon-name="utility:chevronleft" label="Previous" alternative-text="Previous" onclick={previousPage}></lightning-button-icon>
+								<span>&nbsp;&nbsp; Page {pageNumber} &nbsp;/&nbsp; {totalPages} &nbsp;&nbsp;</span>
+								<lightning-button-icon disabled={bDisableLast} icon-name="utility:chevronright" label="Next" alternative-text="Next" onclick={nextPage} class="slds-p-horizontal_x-small" icon-position="right"></lightning-button-icon>
+								<lightning-button-icon disabled={bDisableLast} icon-name="utility:jump_to_right" label="Last" alternative-text="last page" onclick={lastPage} icon-position="right"></lightning-button-icon>
+							</div>
+						</div>
+				</div>
+			</div>
+		</div>
+	</template>
+	
+	<template if:true={showPreviewModal}>
+		<c-file-preview-modal dms-document-id={dmsDocumentIdSelected}
+			onclosemodal={closePreviewModal} object-name={objectName} application-id={applicationId} lead-id={leadId} ></c-file-preview-modal>
+	</template>
+
+	<template if:true={isDialogVisible}>
+		<!-- Start: Confirmation Modal Will Show & Hide From It Self Side-->
+		<c-confirmation-dialog title={title} message={message} confirm-label='Submit' cancel-label='Cancel'
+			 original-message='confirmationModal' name="confirmModal" theme="success"
+			object-name={objectName} onclickdialog={handleConfirmationClick} metadata={metadata} document-id={documentId}>
+		</c-confirmation-dialog>
+		<!-- End: Confirmation Modal-->
+	</template>
+
+	<template if:true={showModal}>
+		<c-upload-document onclosemodal={closeModal} document-id={documentId}></c-upload-document>
+	</template>
+	
+	<template if:true={isPDD}>
+        <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <!-- Modal/Popup Header -->
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal1}>
+                        <lightning-icon icon-name="utility:close" alternative-text="close" size="small"></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 class="slds-text-heading_medium">Upload Document & Details</h2>
+                </header>
+
+                <!-- Modal/Popup Body -->
+                <div class="slds-modal__content slds-p-around_medium">
+                    <template if:true={isPDD}>
+                        <!-- File upload section -->
+                        <lightning-file-upload
+                            label="Upload Document"
+                            name="DocumentInput"
+                            accept={acceptedFormats}
+                            record-id={documentId}
+                            class="requiredField"
+                            onuploadfinished={handleFileUpload}
+                            required="true"
+                        >
+                        </lightning-file-upload>
+                        <div>{fileData.filename}</div>
+
+                        <!-- AWB and Courier Details -->
+                        <div class="slds-p-around_medium">
+                            <lightning-input
+                                label="AWB Number"
+                                value={awbNumber}
+                                onchange={handleInputChange}
+                                data-id="awbNumber"
+                            ></lightning-input>
+
+                            <lightning-input
+                                label="Courier Number"
+                                value={courierNumber}
+                                onchange={handleInputChange}
+                                data-id="courierNumber"
+                            ></lightning-input>
+
+                            <lightning-input
+                                label="Dispatch Date"
+                                type="date"
+                                value={dispatchDate}
+                                onchange={handleInputChange}
+                                data-id="dispatchDate"
+								max={todayDate}
+                            ></lightning-input>
+                        </div>
+                    </template>
+                </div>
+
+                <!-- Modal/Popup Footer -->
+                <footer class="slds-modal__footer">
+                    <lightning-button label="Cancel" onclick={closeModal1}></lightning-button>
+                    <lightning-button label="Submit" variant="brand" onclick={handleSubmit}></lightning-button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+
+	<template lwc:false={documentList}>
+		No Records Found!!
+	</template>
+
+	<template if:true={isConfirmModelRCU}>
+		<template if:true={showSpinner}>
+			<lightning-spinner alternative-text="Loading"></lightning-spinner>
+		</template>
+        <section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-01" class="slds-modal slds-fade-in-open slds-modal_medium">
+			<div class="slds-modal__container modal-width">
+				<button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"  onclick={handleCloseRCUModel}>
+					<h1 class="slds-text-heading_medium">X</h1>
+					<span class="slds-assistive-text">Cancel and close</span>
+				</button>
+				<div class="slds-modal__content slds-p-around_medium">
+					<lightning-combobox
+						name="RCU Vendors"
+						label="Select RCU Vendors"
+						class="rcuvendors"
+						placeholder="Select RCU Vendors"
+						options={rcuVendorsOptions}
+						onchange={handleChange}  required=true>
+					</lightning-combobox>
+					<lightning-textarea label="Suspicious Triggers" value={comment} onchange={handleChangeTrigger} required></lightning-textarea>
+					<div class="slds-m-top_small slds-float_right">
+						<lightning-button variant="brand" label="Submit" title="Submit" class="slds-m-aruond_x-small"  onclick={handleSave}></lightning-button> 
+						&nbsp;&nbsp;&nbsp;
+						<lightning-button variant="brand" label="Cancel" title="Cancel" class="slds-m-aruond_x-small"   onclick={handleCloseRCUModel}></lightning-button>
+					</div>
+				</div>
+			</div>
+		</section>
+		<div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+
+    </template>
+</template>

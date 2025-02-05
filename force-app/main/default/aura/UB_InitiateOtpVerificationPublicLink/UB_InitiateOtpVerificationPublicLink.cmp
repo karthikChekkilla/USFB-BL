@@ -1,0 +1,72 @@
+<aura:component implements="flexipage:availableForRecordHome,flexipage:availableForAllPageTypes,force:hasRecordId,lightning:isUrlAddressable" controller="UB_Aadhaar_API" access="global" >
+	<!-- ************************ Handler Methods ********************** -->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <!--<aura:handler name="render" value="{!this}" action="{!c.onRender}"/>-->
+    
+    <!-- ************************ Aura Attributes ********************** -->
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="consent" type="boolean" default="FALSE"/>   
+    <aura:attribute name="showUI" type="boolean" default="FALSE"/>   
+    <aura:attribute name="spinner" type="boolean" default="FALSE"/>
+    <aura:attribute name="pageMessage" type="String" />
+    <aura:attribute name="iconName" type="String" />
+    <aura:attribute name="variantType" type="String"/>
+    
+    <aura:renderIf isTrue="{!v.showUI == False}">
+        <div class="slds-grid" aura:id="pageMessageBackground">
+            <div class="slds-col  slds-size_1-of-3  slds-medium-size_2-of-12 slds-large-size_2-of-12  ">            
+            </div>
+            <div class="slds-col  slds-size_1-of-2  slds-medium-size_8-of-12 slds-large-size_8-of-12">
+                
+                <div class="slds-align_absolute-center" style="margin-top:15rem">
+                    <lightning:icon iconName="{!v.iconName}" size="large" variant="{!v.variantType}"></lightning:icon>
+                </div>
+                <br/>
+                <div  id="Get-Started" style="font-size: x-large;font-weight: bold;font: size 40rem;display: flex; align-items: center; justify-content: center; background-size: auto !important;">
+                    <p >{!v.pageMessage}</p>
+                </div>
+            </div>
+            <div class="slds-col  slds-size_1-of-3  slds-medium-size_2-of-12 slds-large-size_2-of-12  ">
+            </div>
+        </div>
+    </aura:renderIf>
+    
+    <aura:renderIf isTrue="{!v.showUI == TRUE}">
+        <div aura:id="formBackground">
+            <aura:html tag="style">
+                .cuf-content{
+                padding:0px !important;
+                }
+            </aura:html>
+            
+            <!-- Spinner -->
+            <aura:if isTrue="{!v.spinner}">
+                <lightning:spinner alternativeText="Loading" size="large" variant="brand"/>
+            </aura:if>
+            
+            <div class="container" >
+                <header>
+                    <img  src="{!$Resource.UBLogo}" />
+                </header>
+                <h4>Enter OTP Code</h4>
+                <form action="#">
+                    
+                    <div class="input-field">
+                        <input type="text" maxlength="1"  onchange="{!c.inputOTPSelect}" />
+                        <input type="text" maxlength="1"  onchange="{!c.inputOTPSelect}"  />
+                        <input type="text" maxlength="1"  onchange="{!c.inputOTPSelect}"/>
+                        <input type="text" maxlength="1"  onchange="{!c.inputOTPSelect}"/>
+                        <input type="text" maxlength="1"  onchange="{!c.inputOTPSelect}" />
+                        <input type="text" maxlength="1"  onchange="{!c.inputOTPSelect}" />
+                    </div>
+                    <!-- SUBMIT BUTTON -->
+                    <!--button type="button" >Verify OTP</button-->
+                    <button aura:id="button" type="button" title="Verify OTP"  onclick="{! c.handleSubmit }" >Verify OTP</button>
+                    <!-- CONSENT CHECKBOX -->
+                    <lightning:input type="checkbox" aura:id="boxPack" label="By checking this customer gives his/her consent to proceed with the loan application" value="{!!v.consent}" onchange="{!c.checkboxSelect}"/>
+                    <!--style="margin-top: 2px;width: 60%;margin-bottom:10px;" --> 
+                </form>
+            </div>
+        </div>
+    </aura:renderIf>
+</aura:component>

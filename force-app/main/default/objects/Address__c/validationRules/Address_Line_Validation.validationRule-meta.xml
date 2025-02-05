@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Address_Line_Validation</fullName>
+    <active>true</active>
+    <description>Address Line 1 must have minimum 5 character</description>
+    <errorConditionFormula>AND(NOT($Setup.Bypass_Validations__c.Bypass_Validation__c), LEN(Name)&lt; 5
+|| 
+AND( (LEN( Address_Line_2__c ) &lt; 5),  NOT(ISBLANK(Address_Line_2__c )))
+||
+AND( (LEN(  Address_Line_3__c ) &lt; 5), 
+NOT( ISBLANK(Address_Line_3__c ))))</errorConditionFormula>
+    <errorMessage>Address Lines must have minimum 5 character</errorMessage>
+</ValidationRule>

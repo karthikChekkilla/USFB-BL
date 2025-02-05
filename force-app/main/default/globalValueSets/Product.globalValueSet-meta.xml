@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Commercial Vehicle Loan</fullName>
+        <default>false</default>
+        <label>Commercial Vehicle Loan</label>
+    </customValue>
+    <customValue>
+        <fullName>Construction Equipment Loan</fullName>
+        <default>false</default>
+        <label>Construction Equipment Loan</label>
+    </customValue>
+    <customValue>
+        <fullName>Tractor Loan</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Tractor Loan</label>
+    </customValue>
+    <customValue>
+        <fullName>Three Wheeler Loan</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Three Wheeler Loan</label>
+    </customValue>
+    <customValue>
+        <fullName>Car Loan</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Car Loan</label>
+    </customValue>
+    <customValue>
+        <fullName>Office Equipment</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Office Equipment</label>
+    </customValue>
+    <customValue>
+        <fullName>Medical Equipment</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Medical Equipment</label>
+    </customValue>
+    <customValue>
+        <fullName>Two Wheeler Loan</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Two Wheeler Loan</label>
+    </customValue>
+    <masterLabel>Product</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

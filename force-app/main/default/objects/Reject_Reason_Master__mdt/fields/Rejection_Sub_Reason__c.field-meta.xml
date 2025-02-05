@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rejection_Sub_Reason__c</fullName>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Rejection Sub Reason</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Eligibility issue</fullName>
+                <default>true</default>
+                <label>Eligibility issue</label>
+            </value>
+            <value>
+                <fullName>Policy norms not met</fullName>
+                <default>false</default>
+                <label>Policy norms not met</label>
+            </value>
+            <value>
+                <fullName>Poor CIBIL history</fullName>
+                <default>false</default>
+                <label>Poor CIBIL history</label>
+            </value>
+            <value>
+                <fullName>RCU Reject</fullName>
+                <default>false</default>
+                <label>RCU Reject</label>
+            </value>
+            <value>
+                <fullName>Unsatisfactory PD</fullName>
+                <default>false</default>
+                <label>Unsatisfactory PD</label>
+            </value>
+            <value>
+                <fullName>PEP Case</fullName>
+                <default>false</default>
+                <label>PEP Case</label>
+            </value>
+            <value>
+                <fullName>Others</fullName>
+                <default>false</default>
+                <label>Others</label>
+            </value>
+            <value>
+                <fullName>LOS Dedupe</fullName>
+                <default>false</default>
+                <label>LOS Dedupe</label>
+            </value>
+            <value>
+                <fullName>Pending Documents</fullName>
+                <default>false</default>
+                <label>Pending Documents</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

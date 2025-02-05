@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sub_Category__c</fullName>
+    <externalId>false</externalId>
+    <label>Sub Category</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>PSL_Category__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Farm Credit (1100)</fullName>
+                <default>false</default>
+                <label>Farm Credit (1100)</label>
+            </value>
+            <value>
+                <fullName>Agriculture Infrastructure (1200)</fullName>
+                <default>false</default>
+                <label>Agriculture Infrastructure (1200)</label>
+            </value>
+            <value>
+                <fullName>Ancillary Activities (1300),</fullName>
+                <default>false</default>
+                <label>Ancillary Activities (1300),</label>
+            </value>
+            <value>
+                <fullName>Micro Enterprises (2100)</fullName>
+                <default>false</default>
+                <label>Micro Enterprises (2100)</label>
+            </value>
+            <value>
+                <fullName>Small Enterprises (2200)</fullName>
+                <default>false</default>
+                <label>Small Enterprises (2200)</label>
+            </value>
+            <value>
+                <fullName>Medium Enterprises (2300)</fullName>
+                <default>false</default>
+                <label>Medium Enterprises (2300)</label>
+            </value>
+            <value>
+                <fullName>Pre Shipment Export Credit (3100)</fullName>
+                <default>false</default>
+                <label>Pre Shipment Export Credit (3100)</label>
+            </value>
+            <value>
+                <fullName>Post Shipment Export Credit (3200)</fullName>
+                <default>false</default>
+                <label>Post Shipment Export Credit (3200)</label>
+            </value>
+            <value>
+                <fullName>Education Loans upto 10 Lakh (4100)</fullName>
+                <default>false</default>
+                <label>Education Loans upto 10 Lakh (4100)</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Agriculture (1000)</controllingFieldValue>
+            <valueName>Farm Credit (1100)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Agriculture (1000)</controllingFieldValue>
+            <valueName>Agriculture Infrastructure (1200)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Agriculture (1000)</controllingFieldValue>
+            <valueName>Ancillary Activities (1300),</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MSME (2000)</controllingFieldValue>
+            <valueName>Micro Enterprises (2100)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MSME (2000)</controllingFieldValue>
+            <valueName>Small Enterprises (2200)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MSME (2000)</controllingFieldValue>
+            <valueName>Medium Enterprises (2300)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Export Credit (3000)</controllingFieldValue>
+            <valueName>Pre Shipment Export Credit (3100)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Export Credit (3000)</controllingFieldValue>
+            <valueName>Post Shipment Export Credit (3200)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Education Loans (4000)</controllingFieldValue>
+            <valueName>Education Loans upto 10 Lakh (4100)</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

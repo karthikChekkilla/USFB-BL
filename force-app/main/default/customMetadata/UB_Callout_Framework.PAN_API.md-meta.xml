@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>PAN API</label>
+    <protected>false</protected>
+    <values>
+        <field>Active__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>Auth_Token_c__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Body__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Certificate_Name__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Class_Name__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Endpoint__c</field>
+        <value xsi:type="xsd:string">https://apiuat.utkarsh.bank/karzapan/v1.0.0/pan-authentication</value>
+    </values>
+    <values>
+        <field>Extra_Param_s__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>HTTP_Method__c</field>
+        <value xsi:type="xsd:string">POST</value>
+    </values>
+    <values>
+        <field>HeaderParams__c</field>
+        <value xsi:type="xsd:string">x-karza-key:3qZQkZKDwXDCXsJo
+Content-Type:application/json
+partnerID:TCS
+Accept:application/json</value>
+    </values>
+    <values>
+        <field>Host__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Mock_Response__c</field>
+        <value xsi:type="xsd:string">{&quot;result&quot;:{&quot;status&quot;:&quot;Active&quot;,&quot;dobMatch&quot;:true,&quot;duplicate&quot;:null,&quot;nameMatch&quot;:false},&quot;request_id&quot;:&quot;73751c7b-6a47-44d3-a1bf-3253c96c6c12&quot;,&quot;status-code&quot;:&quot;101&quot;,&quot;clientData&quot;:{&quot;caseId&quot;:&quot;123456&quot;}}</value>
+    </values>
+    <values>
+        <field>Named_Credential__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Timeout_Time__c</field>
+        <value xsi:type="xsd:double">120000.0</value>
+    </values>
+    <values>
+        <field>URL_Parameters__c</field>
+        <value xsi:nil="true"/>
+    </values>
+</CustomMetadata>

@@ -1,0 +1,37 @@
+<apex:component controller="ub_RejectEmailTemplateController" access="global" >
+   
+   <apex:attribute name="applicationId" assignTo="{!loanApplicationId}" type="Id" description="Loan ApplicationId"/>
+ 
+    <apex:repeat value="{!LoanDetails}" var="rec" >
+   
+   <div style="width:98%; margin-left:3%"> 
+        <div style="width:100%; display:inline-block;;flex-direction:row">
+            <div style="display:inline-block;width:60%">REF NO <b>{!rec.Name} </b> </div>
+            <div style="display:inline-block;">	Date: <b><apex:outputText value="{0, date,dd MMM yyyy}"><apex:param value="{!Today()}"/>
+                </apex:outputText> </b> </div>
+        </div><br/>
+        <p>To, <br/>
+           <b>{!applicantDetail.Applicant_Name__c}</b> <br/>
+             <apex:repeat value="{!addressDetail}" var="address" >
+            <b> {!address.Name} {!address.Address_Line_2__c} {!address.Address_Line_3__c}
+                {!address.City__c} {!address.State__c} {!address.Pincode__r.Name} {!address.Country__c} </b><br/><br/><br/></apex:repeat>
+            Sub: Your Application for <b></b> Loan – Application No.<b>{!rec.Name} </b> <br/><br/>
+            Dear Sir/Madam,<br/><br/>
+            We thank you for your interest in our <apex:repeat value="{!productDetail}" var="product" ><b> {!product.Product_Category__c}</b></apex:repeat> Loan. This has reference to your Loan/facilty 
+            application no. <b>{!rec.Name}</b> dated <b>
+            <apex:outputText value="{0, date,dd MMM yyyy}"><apex:param value="{!rec.Lead__r.CreatedDate}"/></apex:outputText> 
+            </b>. After examining the<br/>
+            various data and details given by you, the competent authority of the bank has decided not 
+            to consider your loan application due to bank  <b>Policies and norms are not being met</b><br/><br/>
+            Please be assured that our Bank's decision is not a reflection on your credit standing and 
+            stability. <br/> <br/> We sincerely hope to able to meet your requirements to a better extent in future and thank you<br/> 
+            in anticipation of your kind understanding.<br/><br/>
+            Thanking You,<br/><br/>
+            Your Faithfully,<br/><br/>
+            For UTKARSH Small Finance Bank Limited,<br/><br/><br/>
+            Authorized Signatory
+            <br/><br/>
+            TL/CM </p>
+    </div> 
+        </apex:repeat>
+</apex:component>

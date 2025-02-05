@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>FTU/FTB</fullName>
+        <default>false</default>
+        <label>FTU/FTB</label>
+    </customValue>
+    <customValue>
+        <fullName>Retail</fullName>
+        <default>false</default>
+        <label>Retail</label>
+    </customValue>
+    <customValue>
+        <fullName>Strategic</fullName>
+        <default>false</default>
+        <label>Strategic</label>
+    </customValue>
+    <customValue>
+        <fullName>Institutional Strategic</fullName>
+        <default>false</default>
+        <label>Institutional Strategic</label>
+    </customValue>
+    <customValue>
+        <fullName>One Vehicle Owner</fullName>
+        <default>false</default>
+        <label>One Vehicle Owner</label>
+    </customValue>
+    <masterLabel>CB Customer Category</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

@@ -1,0 +1,680 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Photo</fullName>
+        <default>false</default>
+        <label>Photo</label>
+    </customValue>
+    <customValue>
+        <fullName>Passport</fullName>
+        <default>false</default>
+        <label>Passport</label>
+    </customValue>
+    <customValue>
+        <fullName>Driving License</fullName>
+        <default>false</default>
+        <label>Driving License</label>
+    </customValue>
+    <customValue>
+        <fullName>MNREGA Job Card</fullName>
+        <default>false</default>
+        <label>MNREGA Job Card</label>
+    </customValue>
+    <customValue>
+        <fullName>National Population Register</fullName>
+        <default>false</default>
+        <label>National Population Register</label>
+    </customValue>
+    <customValue>
+        <fullName>Utility or Electricity Bill</fullName>
+        <default>false</default>
+        <label>Utility or Electricity Bill</label>
+    </customValue>
+    <customValue>
+        <fullName>Property or Municipal tax receipt</fullName>
+        <default>false</default>
+        <label>Property or Municipal tax receipt</label>
+    </customValue>
+    <customValue>
+        <fullName>Pension or family pension payment orders (PPOs)</fullName>
+        <default>false</default>
+        <label>Pension or family pension payment orders (PPOs)</label>
+    </customValue>
+    <customValue>
+        <fullName>Letter of allotment</fullName>
+        <default>false</default>
+        <label>Letter of allotment</label>
+    </customValue>
+    <customValue>
+        <fullName>Marriage Certificate</fullName>
+        <default>false</default>
+        <label>Marriage Certificate</label>
+    </customValue>
+    <customValue>
+        <fullName>Registry Copy</fullName>
+        <default>false</default>
+        <label>Registry Copy</label>
+    </customValue>
+    <customValue>
+        <fullName>GPA</fullName>
+        <default>false</default>
+        <label>GPA</label>
+    </customValue>
+    <customValue>
+        <fullName>Banking</fullName>
+        <default>false</default>
+        <label>Banking</label>
+    </customValue>
+    <customValue>
+        <fullName>Municipal Charges Bill [RCU Verified Document only]</fullName>
+        <default>false</default>
+        <label>Municipal Charges Bill [RCU Verified Document only]</label>
+    </customValue>
+    <customValue>
+        <fullName>Purchase deed sale agreement [including sale through POA]</fullName>
+        <default>false</default>
+        <label>Purchase deed sale agreement [including sale through POA]</label>
+    </customValue>
+    <customValue>
+        <fullName>Residential Society Allotment Certificate</fullName>
+        <default>false</default>
+        <label>Residential Society Allotment Certificate</label>
+    </customValue>
+    <customValue>
+        <fullName>Bank verification Proof</fullName>
+        <default>false</default>
+        <label>Bank verification Proof</label>
+    </customValue>
+    <customValue>
+        <fullName>RC Copy</fullName>
+        <default>false</default>
+        <label>RC Copy</label>
+    </customValue>
+    <customValue>
+        <fullName>Insurances</fullName>
+        <default>false</default>
+        <label>Insurances</label>
+    </customValue>
+    <customValue>
+        <fullName>Invoices</fullName>
+        <default>false</default>
+        <label>Invoices</label>
+    </customValue>
+    <customValue>
+        <fullName>Permit copy of commercial Vehicles</fullName>
+        <default>false</default>
+        <label>Permit copy of commercial Vehicles</label>
+    </customValue>
+    <customValue>
+        <fullName>Contract Copy</fullName>
+        <default>false</default>
+        <label>Contract Copy</label>
+    </customValue>
+    <customValue>
+        <fullName>Title Deed</fullName>
+        <default>false</default>
+        <label>Title Deed</label>
+    </customValue>
+    <customValue>
+        <fullName>GST Certificate</fullName>
+        <default>false</default>
+        <label>GST Certificate</label>
+    </customValue>
+    <customValue>
+        <fullName>Partnership Deed</fullName>
+        <default>false</default>
+        <label>Partnership Deed</label>
+    </customValue>
+    <customValue>
+        <fullName>Commencement of Business Certificate</fullName>
+        <default>false</default>
+        <label>Commencement of Business Certificate</label>
+    </customValue>
+    <customValue>
+        <fullName>IT Return Challan</fullName>
+        <default>false</default>
+        <label>IT Return Challan</label>
+    </customValue>
+    <customValue>
+        <fullName>Form 16</fullName>
+        <default>false</default>
+        <label>Form 16</label>
+    </customValue>
+    <customValue>
+        <fullName>ITR Showing Business Income</fullName>
+        <default>false</default>
+        <label>ITR Showing Business Income</label>
+    </customValue>
+    <customValue>
+        <fullName>Documents of Karta</fullName>
+        <default>false</default>
+        <label>Documents of Karta</label>
+    </customValue>
+    <customValue>
+        <fullName>Property Tax</fullName>
+        <default>false</default>
+        <label>Property Tax</label>
+    </customValue>
+    <customValue>
+        <fullName>Certificate of Incorporation [Pvt Ltd &amp; LTD]</fullName>
+        <default>false</default>
+        <label>Certificate of Incorporation [Pvt Ltd &amp; LTD]</label>
+    </customValue>
+    <customValue>
+        <fullName>Registration Certificate</fullName>
+        <default>false</default>
+        <label>Registration Certificate</label>
+    </customValue>
+    <customValue>
+        <fullName>MOA, AOA, COI</fullName>
+        <default>false</default>
+        <label>MOA, AOA, COI</label>
+    </customValue>
+    <customValue>
+        <fullName>Form 32</fullName>
+        <default>false</default>
+        <label>Form 32</label>
+    </customValue>
+    <customValue>
+        <fullName>List of Directors</fullName>
+        <default>false</default>
+        <label>List of Directors</label>
+    </customValue>
+    <customValue>
+        <fullName>Certificate of Commencement of Business [Ltd]</fullName>
+        <default>false</default>
+        <label>Certificate of Commencement of Business [Ltd]</label>
+    </customValue>
+    <customValue>
+        <fullName>Pan Card</fullName>
+        <default>false</default>
+        <label>Pan Card</label>
+    </customValue>
+    <customValue>
+        <fullName>Bank Statement or Financier Receipt</fullName>
+        <default>false</default>
+        <label>Bank Statement or Financier Receipt</label>
+    </customValue>
+    <customValue>
+        <fullName>Six Month Latest Banking</fullName>
+        <default>false</default>
+        <label>Six Month Latest Banking</label>
+    </customValue>
+    <customValue>
+        <fullName>WIH/ CIH</fullName>
+        <default>false</default>
+        <label>WIH/ CIH</label>
+    </customValue>
+    <customValue>
+        <fullName>Work Completion Certificate</fullName>
+        <default>false</default>
+        <label>Work Completion Certificate</label>
+    </customValue>
+    <customValue>
+        <fullName>Tractor [For Agri Funding Only]</fullName>
+        <default>false</default>
+        <label>Tractor [For Agri Funding Only]</label>
+    </customValue>
+    <customValue>
+        <fullName>Latest Sanction Letters of Facilities Availed from Financiers</fullName>
+        <default>false</default>
+        <label>Latest Sanction Letters of Facilities Availed from Financiers</label>
+    </customValue>
+    <customValue>
+        <fullName>Credit References</fullName>
+        <default>false</default>
+        <label>Credit References</label>
+    </customValue>
+    <customValue>
+        <fullName>2 FY ITR with Computation</fullName>
+        <default>false</default>
+        <label>2 FY ITR with Computation</label>
+    </customValue>
+    <customValue>
+        <fullName>2 FY Balance Sheet</fullName>
+        <default>false</default>
+        <label>2 FY Balance Sheet</label>
+    </customValue>
+    <customValue>
+        <fullName>Form 26AS for Current year post balance sheet taken</fullName>
+        <default>false</default>
+        <label>Form 26AS for Current year post balance sheet taken</label>
+    </customValue>
+    <customValue>
+        <fullName>Work Order Details from Site Using assigned Login id and Password</fullName>
+        <default>false</default>
+        <label>Work Order Details from Site Using assigned Login id and Password</label>
+    </customValue>
+    <customValue>
+        <fullName>CA certified Networth Certificate [Director or Partner of firm]</fullName>
+        <default>false</default>
+        <label>CA certified Networth Certificate [Director or Partner of firm]</label>
+    </customValue>
+    <customValue>
+        <fullName>GST Return</fullName>
+        <default>false</default>
+        <label>GST Return</label>
+    </customValue>
+    <customValue>
+        <fullName>Customer TVR</fullName>
+        <default>false</default>
+        <label>Customer TVR</label>
+    </customValue>
+    <customValue>
+        <fullName>Dealer TVR</fullName>
+        <default>false</default>
+        <label>Dealer TVR</label>
+    </customValue>
+    <customValue>
+        <fullName>Viability Sheet</fullName>
+        <default>false</default>
+        <label>Viability Sheet</label>
+    </customValue>
+    <customValue>
+        <fullName>Hire vs Buy</fullName>
+        <default>false</default>
+        <label>Hire vs Buy</label>
+    </customValue>
+    <customValue>
+        <fullName>Fleet List CV</fullName>
+        <default>false</default>
+        <label>Fleet List CV</label>
+    </customValue>
+    <customValue>
+        <fullName>RC and Insurance for proposed assets (For used)</fullName>
+        <default>false</default>
+        <label>RC and Insurance for proposed assets (For used)</label>
+    </customValue>
+    <customValue>
+        <fullName>Fleet List CE</fullName>
+        <default>false</default>
+        <label>Fleet List CE</label>
+    </customValue>
+    <customValue>
+        <fullName>Repayment Schedule with Banking</fullName>
+        <default>false</default>
+        <label>Repayment Schedule with Banking</label>
+    </customValue>
+    <customValue>
+        <fullName>Quotation with USFBL HPA</fullName>
+        <default>false</default>
+        <label>Quotation with USFBL HPA</label>
+    </customValue>
+    <customValue>
+        <fullName>RC of Proposed Asset in Used Case</fullName>
+        <default>false</default>
+        <label>RC of Proposed Asset in Used Case</label>
+    </customValue>
+    <customValue>
+        <fullName>Insurance of Proposed Asset in Used Case</fullName>
+        <default>false</default>
+        <label>Insurance of Proposed Asset in Used Case</label>
+    </customValue>
+    <customValue>
+        <fullName>Loan Calculation Sheet</fullName>
+        <default>false</default>
+        <label>Loan Calculation Sheet</label>
+    </customValue>
+    <customValue>
+        <fullName>IRR Sheet</fullName>
+        <default>false</default>
+        <label>IRR Sheet</label>
+    </customValue>
+    <customValue>
+        <fullName>Track Of Other Financiers/Credit References</fullName>
+        <default>false</default>
+        <label>Track Of Other Financiers/Credit References</label>
+    </customValue>
+    <customValue>
+        <fullName>RC of vehicle if customer is one vehicle owner</fullName>
+        <default>false</default>
+        <label>RC of vehicle if customer is one vehicle owner</label>
+    </customValue>
+    <customValue>
+        <fullName>LAF Form - signed</fullName>
+        <default>false</default>
+        <label>LAF Form - signed</label>
+    </customValue>
+    <customValue>
+        <fullName>LAF Form - Unsigned</fullName>
+        <default>false</default>
+        <label>LAF Form - Unsigned</label>
+    </customValue>
+    <customValue>
+        <fullName>Billing Details on Letter Head Post Balance Sheet Date</fullName>
+        <default>false</default>
+        <label>Billing Details on Letter Head Post Balance Sheet Date</label>
+    </customValue>
+    <customValue>
+        <fullName>Public Sector Undertakings</fullName>
+        <default>false</default>
+        <label>Public Sector Undertakings</label>
+    </customValue>
+    <customValue>
+        <fullName>Municipal Tax</fullName>
+        <default>false</default>
+        <label>Municipal Tax</label>
+    </customValue>
+    <customValue>
+        <fullName>Deed Of Declaration</fullName>
+        <default>false</default>
+        <label>Deed Of Declaration</label>
+    </customValue>
+    <customValue>
+        <fullName>Aadhar Card</fullName>
+        <default>false</default>
+        <label>Aadhar Card</label>
+    </customValue>
+    <customValue>
+        <fullName>Voter Id</fullName>
+        <default>false</default>
+        <label>Voter Id</label>
+    </customValue>
+    <customValue>
+        <fullName>Provisional Sanction Letter</fullName>
+        <default>false</default>
+        <label>Provisional Sanction Letter</label>
+    </customValue>
+    <customValue>
+        <fullName>Sanction Letter</fullName>
+        <default>false</default>
+        <label>Sanction Letter</label>
+    </customValue>
+    <customValue>
+        <fullName>Repayment Schedule</fullName>
+        <default>false</default>
+        <label>Repayment Schedule</label>
+    </customValue>
+    <customValue>
+        <fullName>Signature Proof</fullName>
+        <default>false</default>
+        <label>Signature Proof</label>
+    </customValue>
+    <customValue>
+        <fullName>Last 12 Months</fullName>
+        <default>false</default>
+        <label>Last 12 Months</label>
+    </customValue>
+    <customValue>
+        <fullName>Last 6 Months</fullName>
+        <default>false</default>
+        <label>Last 6 Months</label>
+    </customValue>
+    <customValue>
+        <fullName>FATCA Declaration</fullName>
+        <default>false</default>
+        <label>FATCA Declaration</label>
+    </customValue>
+    <customValue>
+        <fullName>ESG Declaration</fullName>
+        <default>false</default>
+        <label>ESG Declaration</label>
+    </customValue>
+    <customValue>
+        <fullName>Fund Utilization Declaration</fullName>
+        <default>false</default>
+        <label>Fund Utilization Declaration</label>
+    </customValue>
+    <customValue>
+        <fullName>End Use Monitoring</fullName>
+        <default>false</default>
+        <label>End Use Monitoring</label>
+    </customValue>
+    <customValue>
+        <fullName>Beneficiary Owner Declaration</fullName>
+        <default>false</default>
+        <label>Beneficiary Owner Declaration</label>
+    </customValue>
+    <customValue>
+        <fullName>1 FY ITR with Computation</fullName>
+        <default>false</default>
+        <label>1 FY ITR with Computation</label>
+    </customValue>
+    <customValue>
+        <fullName>Last 2 Yrs Audited/CA Certified Financial Statements</fullName>
+        <default>false</default>
+        <label>Last 2 Yrs Audited/CA Certified Financial Statements</label>
+    </customValue>
+    <customValue>
+        <fullName>Last 2 years ITR form, if filed under u/s 44AD or 44ADA or 44 AE</fullName>
+        <default>false</default>
+        <label>Last 2 years ITR form, if filed under u/s 44AD or 44ADA or 44 AE</label>
+    </customValue>
+    <customValue>
+        <fullName>Copy of Provisional Financials</fullName>
+        <default>false</default>
+        <label>Copy of Provisional Financials</label>
+    </customValue>
+    <customValue>
+        <fullName>Rent  Agreement/Receipt of Rental Income in Bank SOA during last 6 months</fullName>
+        <default>false</default>
+        <label>Rent  Agreement/Receipt of Rental Income in Bank SOA during last 6 months</label>
+    </customValue>
+    <customValue>
+        <fullName>Pension(Copy of Pension Order,Form16, Password with Pension Credits)</fullName>
+        <default>false</default>
+        <label>Pension(Copy of Pension Order,Form16, Password with Pension Credits)</label>
+    </customValue>
+    <customValue>
+        <fullName>Proof of ownership of Agricultural Land for Agri Income(Ownership Document)</fullName>
+        <default>false</default>
+        <label>Proof of ownership of Agricultural Land for Agri Income(Ownership Document)</label>
+    </customValue>
+    <customValue>
+        <fullName>Certificates</fullName>
+        <default>false</default>
+        <label>Certificates</label>
+    </customValue>
+    <customValue>
+        <fullName>Change in Directors</fullName>
+        <default>false</default>
+        <label>Change in Directors</label>
+    </customValue>
+    <customValue>
+        <fullName>Incorporation Documents</fullName>
+        <default>false</default>
+        <label>Incorporation Documents</label>
+    </customValue>
+    <customValue>
+        <fullName>Charge Documents</fullName>
+        <default>false</default>
+        <label>Charge Documents</label>
+    </customValue>
+    <customValue>
+        <fullName>Annual Returns and Balance Sheet eForms</fullName>
+        <default>false</default>
+        <label>Annual Returns and Balance Sheet eForms</label>
+    </customValue>
+    <customValue>
+        <fullName>LLP Forms(Conversion of company to LLP)</fullName>
+        <default>false</default>
+        <label>LLP Forms(Conversion of company to LLP)</label>
+    </customValue>
+    <customValue>
+        <fullName>Other eForm Documents</fullName>
+        <default>false</default>
+        <label>Other eForm Documents</label>
+    </customValue>
+    <customValue>
+        <fullName>Other Attachments</fullName>
+        <default>false</default>
+        <label>Other Attachments</label>
+    </customValue>
+    <customValue>
+        <fullName>FI Permanent Address</fullName>
+        <default>false</default>
+        <label>FI Permanent Address</label>
+    </customValue>
+    <customValue>
+        <fullName>FI Residence Address</fullName>
+        <default>false</default>
+        <label>FI Residence Address</label>
+    </customValue>
+    <customValue>
+        <fullName>FI Office Address</fullName>
+        <default>false</default>
+        <label>FI Office Address</label>
+    </customValue>
+    <customValue>
+        <fullName>RCU Report</fullName>
+        <default>false</default>
+        <label>RCU Report</label>
+    </customValue>
+    <customValue>
+        <fullName>CIBIL</fullName>
+        <default>false</default>
+        <label>CIBIL</label>
+    </customValue>
+    <customValue>
+        <fullName>Consent Form</fullName>
+        <default>false</default>
+        <label>Consent Form</label>
+    </customValue>
+    <customValue>
+        <fullName>Banking Analysis</fullName>
+        <default>false</default>
+        <label>Banking Analysis</label>
+    </customValue>
+    <customValue>
+        <fullName>GST Analysis</fullName>
+        <default>false</default>
+        <label>GST Analysis</label>
+    </customValue>
+    <customValue>
+        <fullName>Udyam Certificate</fullName>
+        <default>false</default>
+        <label>Udyam Certificate</label>
+    </customValue>
+    <customValue>
+        <fullName>Deed of Guarantee</fullName>
+        <default>false</default>
+        <label>Deed of Guarantee</label>
+    </customValue>
+    <customValue>
+        <fullName>Board Resolution</fullName>
+        <default>false</default>
+        <label>Board Resolution</label>
+    </customValue>
+    <customValue>
+        <fullName>Debit Authorization Form</fullName>
+        <default>false</default>
+        <label>Debit Authorization Form</label>
+    </customValue>
+    <customValue>
+        <fullName>Letter of Submission of Security Post Dated(SPDCS)</fullName>
+        <default>false</default>
+        <label>Letter of Submission of Security Post Dated(SPDCS)</label>
+    </customValue>
+    <customValue>
+        <fullName>End-Use Undertaking By Borrower</fullName>
+        <default>false</default>
+        <label>End-Use Undertaking By Borrower</label>
+    </customValue>
+    <customValue>
+        <fullName>FATCA</fullName>
+        <default>false</default>
+        <label>FATCA</label>
+    </customValue>
+    <customValue>
+        <fullName>Declaration confirming Place of Utilization of Bank Funds</fullName>
+        <default>false</default>
+        <label>Declaration confirming Place of Utilization of Bank Funds</label>
+    </customValue>
+    <customValue>
+        <fullName>Other Address Proofs</fullName>
+        <default>false</default>
+        <label>Other Address Proofs</label>
+    </customValue>
+    <customValue>
+        <fullName>AOA</fullName>
+        <default>false</default>
+        <label>AOA</label>
+    </customValue>
+    <customValue>
+        <fullName>MOA</fullName>
+        <default>false</default>
+        <label>MOA</label>
+    </customValue>
+    <customValue>
+        <fullName>Shareholding Pattern</fullName>
+        <default>false</default>
+        <label>Shareholding Pattern</label>
+    </customValue>
+    <customValue>
+        <fullName>Declaration for Signing in Vernacular(On Plain Paper)</fullName>
+        <default>false</default>
+        <label>Declaration for Signing in Vernacular(On Plain Paper)</label>
+    </customValue>
+    <customValue>
+        <fullName>Partnership Authority Letter</fullName>
+        <default>false</default>
+        <label>Partnership Authority Letter</label>
+    </customValue>
+    <customValue>
+        <fullName>RBI Willful Defaulter Report</fullName>
+        <default>false</default>
+        <label>RBI Willful Defaulter Report</label>
+    </customValue>
+    <customValue>
+        <fullName>Stability Proof</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Stability Proof</label>
+    </customValue>
+    <customValue>
+        <fullName>Experience proof</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Experience proof</label>
+    </customValue>
+    <customValue>
+        <fullName>Billing Details on Letter Head  Post Balance Sheet Date</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Billing Details on Letter Head  Post Balance Sheet Date</label>
+    </customValue>
+    <customValue>
+        <fullName>Address Proof</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Address Proof</label>
+    </customValue>
+    <customValue>
+        <fullName>Signature Verification Proof</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Signature Verification Proof</label>
+    </customValue>
+    <customValue>
+        <fullName>Relationship Proof</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Relationship Proof</label>
+    </customValue>
+    <customValue>
+        <fullName>RC of a vehicle if the customer is one vehicle owner</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>RC of a vehicle if the customer is one vehicle owner</label>
+    </customValue>
+    <customValue>
+        <fullName>Owned House Proof</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Owned House Proof</label>
+    </customValue>
+    <customValue>
+        <fullName>ID Proof</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>ID Proof</label>
+    </customValue>
+    <customValue>
+        <fullName>HUF Deed Of Declaration [HUF]</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>HUF Deed Of Declaration [HUF]</label>
+    </customValue>
+    <masterLabel>Document Sub Type</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

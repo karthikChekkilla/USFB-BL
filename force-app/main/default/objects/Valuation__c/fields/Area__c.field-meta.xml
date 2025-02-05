@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Area__c</fullName>
+    <externalId>false</externalId>
+    <label>Area</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Greater than 1000 sqft</fullName>
+                <default>false</default>
+                <label>Greater than 1000 sqft</label>
+            </value>
+            <value>
+                <fullName>Lesser than 1000 sqft</fullName>
+                <default>false</default>
+                <label>Lesser than 1000 sqft</label>
+            </value>
+            <value>
+                <fullName>Lesser than 200 sqft</fullName>
+                <default>false</default>
+                <label>Lesser than 200 sqft</label>
+            </value>
+            <value>
+                <fullName>Lesser than 500 sqft</fullName>
+                <default>false</default>
+                <label>Lesser than 500 sqft</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

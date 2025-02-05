@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Residence_FI</fullName>
+    <active>true</active>
+    <label>Residence FI</label>
+    <picklistValues>
+        <picklist>Address_Confirmation__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Address_Trace__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Agricultural_Land__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Applicant_Met_Status__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Area__c</picklist>
+        <values>
+            <fullName>Greater than 1000 sqft</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lesser than 1000 sqft</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lesser than 200 sqft</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lesser than 500 sqft</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Boundaries_Matching__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Class_Of_Locality__c</picklist>
+        <values>
+            <fullName>Lower Middle Class</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Middle Class</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Poor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Posh</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Collateral_Description__c</picklist>
+        <values>
+            <fullName>Commercial Rented</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mixed Usage Property %28Partly self-occupied%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mixed Usage Property %28Self occupied%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Plot</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Residential Rented</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Self-Occupied Commercial</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Self-Occupied Residential</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Self-occupied Industrial Property</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Under construction Commercial</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Under construction Residential</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vacant Commercial</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vacant Residential</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Detail_of_Vehicle__c</picklist>
+        <values>
+            <fullName>Bike</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Car</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Document_Type__c</picklist>
+        <values>
+            <fullName>Current Title Deed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Draft Agreement Copy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other Documents</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Permissions And Approvals</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prior Title Deed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Revenue Records</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Title Search Report%2F No Encumbrance Certificate</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Door_Photo_With_Name_Plate__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Family_Type__c</picklist>
+        <values>
+            <fullName>Joint</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nuclear</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Insurance_Policy_Attachment__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Office_Locality__c</picklist>
+        <values>
+            <fullName>Factory</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gala</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Godown</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Independent Office</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Resi-cum-office</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Shop</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Showroom</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Warehouse</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Proof_Seen__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Qualification__c</picklist>
+        <values>
+            <fullName>Graduate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Post-Graduate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Professional</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Under-graduate</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RC_Copy_Attachment__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Referred_to_Credit__c</picklist>
+        <values>
+            <fullName>Test1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>test2</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Report_Status__c</picklist>
+        <values>
+            <fullName>Clear %26 Marketable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Scrutiny</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Report_Type__c</picklist>
+        <values>
+            <fullName>Legal Evaluation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Title Search</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Result__c</picklist>
+        <values>
+            <fullName>Document decline</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Positive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Profile decline</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Refer to business</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Refer to credit</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Query Raised</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sampled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Screened</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type_Of_Structure__c</picklist>
+        <values>
+            <fullName>Kaccha</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pucca</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Semi-Kaccha</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Semi-Pucca</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type_of_Property__c</picklist>
+        <values>
+            <fullName>Commercial Rented</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mixed Usage Property %28Partly self-occupied%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mixed Usage Property %28Self occupied%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Plot</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Residential Rented</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Self-Occupied Commercial</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Self-Occupied Residential</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Self-occupied Industrial Property</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Under construction Commercial</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Under construction Residential</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vacant Commercial</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vacant Residential</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Vendor_Status__c</picklist>
+        <values>
+            <fullName>Completed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Within_Geo_Limit__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

@@ -1,0 +1,1718 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BL_Non_Individual</fullName>
+    <active>true</active>
+    <label>BL Non Individual</label>
+    <picklistValues>
+        <picklist>Address_Type__c</picklist>
+        <values>
+            <fullName>Office Address</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Permanent Address</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Residence Address</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Applicant_Type__c</picklist>
+        <values>
+            <fullName>Applicant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Co-Applicant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Guarantor</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>BL_Actively_involved_in_Business__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>BL_Business_Type__c</picklist>
+        <values>
+            <fullName>Exporter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Importer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NA</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>BL_Consider_for_obligation__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>BL_Customer_Type__c</picklist>
+        <values>
+            <fullName>Existing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>BL_GST_Applicable__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>BL_Gradation_obtained_by_MSME__c</picklist>
+        <values>
+            <fullName>Bronze</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Diamond</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gold</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Platinum</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Silver</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>BL_Income_Considered__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>BL_PSL_Category__c</picklist>
+        <values>
+            <fullName>Agriculture</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Education Loans</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Export Credit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Housing Loan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MSME</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non-PSL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Others</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Renewable Energy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Social Infrastructure</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>BL_PSL_Sub_Category__c</picklist>
+        <values>
+            <fullName>Agri Finc to farmers for Pre%2Fpost harvest%28NTBU%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Agriculture Infrastructure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Agriculture loand for Land Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ancillary Activities</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bank Loans for Housing projects for construction</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bank Loans to government agency for construction</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bank loans Upto a limit of 5 crore per borrower</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bank loans upto a limit of 15 crore per borrower</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bill Purchased</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bus loans%28NTBU%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Car %2F Sumo loans</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cmrc Real Estate to Blds%2F Land Dev%2FColonizers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Commercial Real Estate Property</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Commercial real Estate for Infra Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Commercial real Estate- others%28NTBU%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Const%2Frunning of cold strg%2CGdws etc %26 not an SME</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Consumer loans</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cr for fin of fertilizers%2Fpesicides%2Cseeds%28NTBU%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Crop Loans</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DRI Advances</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Direct AgriFin to other for Pre%2FPost harv%28NTBU%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Education Loans for studies in India</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Education Loans for studies in abroad</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Education Loans upto 10 Lakh</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FASTAG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Farm Credit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>General Credit Card%28GCC%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gold Loans</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gold Loans to Farmers for Agriculture Purpose</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Home Loan Plus</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Housing Loans for repairs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Housing Loans%28Purchase and Construction%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Housing Loans%28for purchase and Const%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JLG Loans</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Khadi %26 Village Industries Sector</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Large Enterprises-Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loan against warehouse receipt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loan for Agriculture Equipmnets</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loans against Deposit%2FSecurity%2FNSCs%2FKVPs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loans to SHGs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loans to distress persons</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loans to distressed farmers%28Debt Swap%2FRelief%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loans to food %26 Agro based processing units</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loans upto 50000 per borrower to individuals</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loans%2FLimit fin CattleFeed%2CPoultryFeed%28NTBU%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loans%2FLimits upto Rs 50%2C000</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loans%2Flimits to artiyas%2Fcommission agents</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medical Practitioners%28NTBU%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium Enterprises</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium Enterprises- Mfg</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium Enterprises-Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Micro Enterprises</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Micro Mfg Entrp %28Invt In P %26 M upto Rs25%2E00 Lac%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Micro Srvc Entrps %28Invt In P %26 M upto Rs10 L%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NHome Loan Plus</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non PSL Agriculture and Allied Activity %289100%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non PSL Education Loans %289300%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non PSL Housing Loans %289400%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non PSL MSME %289200%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non Priority Sector Lending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OD againt Salary- Staff</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OD againt Salary- other than Staff</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OD in Basic Banking Deposit A%2FC%28PMJDY%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other Non Priority</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other Non-PSL %289600%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other Service Enterprises%28NTBU%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Others</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PSL %28Priority Sector Lending%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Personal Loans</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Personal Loans %289500%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Plnttn hoctl dairy%2C fisheries%2C poultry%2C piggery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Post Shipment Export Credit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pre Shipment Export Credit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Priority Sector Lending-Direct Agriculture</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Private Retail traders upto Rs20%2E00 Lac</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Professional %26 Self Employed%28NTBU%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Purchase%2F Construction of a dwelling unit at Metro</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Purchase%2F Construction of a dwelling unit at Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Real Estate Adv- Secured By resd Mort</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Repair to damaged dwelling unit at Metro Centres</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Retail Traders dealing in essential commodities</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Small Business%28NTBU%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Small Enterprises</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Small Mfg Entrp %28Invt In P %26 M upto Rs5%2E00 Cr%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Small Rd%26Water Transport%28Fleet of not excdg 10%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Small service Entrp%28Invt In P%26M upto Rs2%2E00 Cr%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Staff Housing Loans</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tractor Loans</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trading advances %28Non Priority%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transport Vehicles%28beyond fleet of 10%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Two Whealer loans</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vehicle Loans for transporting agriculture input</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>large Enterprises- Mfg</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>BL_Proof_of_Identity__c</picklist>
+        <values>
+            <fullName>Driving License</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MNREGA Job Card</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>National Population Register %28NPR%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Others</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Passport</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UID %28Aadhaar%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Voter ID</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>BL_Purpose_of_Loan__c</picklist>
+        <values>
+            <fullName>Balance Transfer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Business expansion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Debt consolidation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>General credit needs of the existing business</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Purchase of machinery or equipment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Repairs%2C renovation or extension of the existing business unit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Working capital requirements of the existing business</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>BL_RBI_Willful_Defaulter_Check__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>BL_Relationship_with_Applicant__c</picklist>
+        <values>
+            <fullName>Brother</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Children%28Male Children Only%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Director</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Parents</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sibling%28Except Sister%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Spouse</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>BL_Sub_Industry__c</picklist>
+        <values>
+            <fullName>Agri Products</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Car Carrier</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cardiology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Concrete and Road Construction Equipment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dentistry</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Earth Moving</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HLEMP EWS%2FLIG%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HLEMP MIG I</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HLEMP MIG II</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HLEMP NORMAL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HLNEMP EWS%2FLIG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HLNEMP MIG I</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HLNEMP MIG II</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HLNEMP NORMAL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Haulage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mammograph</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Material Handling %26 Processing Machinery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oil %26 Gas</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Opthalamic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Others</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pathology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Radiology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Surgical</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>BL_Sub_Sub_Category__c</picklist>
+        <values>
+            <fullName>Advances to Khadi %26 Village Industries Sector %5BKVI%5D</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bank Loans for Housing projects for construction of houses for Economically Weaker Section %28EWS%295500</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bank Loans to government agency for construction of dwelling units for slum above1 million%2Fu %289440%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bank Loans to government agency for construction of dwelling units for slum subject to a ceil%285400%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bank loans Upto a limit of 5 crore per borrower for building school%2C health care facilities%287100%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bank loans upto a limit of 15 crore per borrower for renewable energy %286100%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Corporate farmers%2C Farmer Producer Organisations %281150%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Crop Loans</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Crop loans to farmers%2C Medium and long-term loans for agriculture and allied activities%2C Loans%289120%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Education Loans upto 10 Lakh %284100%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Investment in Plant %26 Machinery or Equipment is %3E 1 crore but does not exceed 10 crore and%282230%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Investment in Plant %26 Machinery or Equipment is %3E 10 crore but does not exceed 50 crore an%282330%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Investment in Plant %26 Machinery or Equipment is upto 1 crore and turnover is upto 5 crore %282150%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loan for Allied Activities</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loan for Food Agro Processing %28Up to 100 Cr%2E%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loan for Investment Credit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loan for Plant tissue culture Agri Biotechnology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loan for Soil conservation and watershed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loan for setting up Agri Clinics %26 Agri Business Centres</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loan to Manufacturing Enterprises %5BInvestment %3E 25 Lakh to 5 Cr%2E%5D</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loan to Manufacturing Enterprises %5BInvestment %3E 5 Cr to 10 Cr%2E%5D</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loan to Manufacturing Enterprises %5BInvestment upto 25 Lakh%5D</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loan to Service Enterprises %5BInvestment %3E 10 Lakh to 2 Cr%2E%5D</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loan to Service Enterprises %5BInvestment %3E 2 Cr to 5 Cr%2E%5D</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loan to Service Enterprises %5BInvestment upto 10 Lakh%5D</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loans above 5 crore per borrowing entity to FPOs%2FFPCs %289130%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loans for construction of storage facilities %28Warehouses%2C market yards%2Cgodowns%29%2C cold storage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loans to Co-operative Societies</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loans to distress persons %288200%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loans to farmers against pledge of agriculture product%2C Includes NWR for a period exceeding 12%289110%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loans upto 50000 per borrower to individuals and their SHG%2FJLG provided the individual borro%288100%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non PSL Education Loans above 10 Lakh %289310%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non PSL MSME %289210%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other Agriculture Loans</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other Non-PSL %289610%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Overdraft upto 5000 in PMJDY accounts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Personal Loans %289510%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Post Shipment Export Credit %283200%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pre Shipment Export Credit %283100%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Production of Bio-Pesticide Bio Fertilisers%2C Vermi Composting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Purchase%2F Construction of a dwelling unit at Metro Centres %5Bupto 35 Lakh%5D %285100%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Purchase%2F Construction of a dwelling unit at Metro Centres above 35 Lakh %289410%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Purchase%2F Construction of a dwelling unit at Other Centres %5Bupto 25 Lakh%5D %285200%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Purchase%2FConstruction of a dwelling unit at Other Centres above 25 Lakh %289420%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Repair to damaged dwelling unit at Metro Centres above 10 Lakh and other Centres above 6L%289430%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Repair to damaged dwelling unit at Metro Centres upto 10 Lakh and other Centres upto 6 Lakh%285300%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Seed Production</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TReDS %282160%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TReDS %282240%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TReDS %282340%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wholesale and retail trade %28Udyam registration mandatory%29 %282170%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wholesale and retail trade %28Udyam registration mandatory%29 %282250%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wholesale and retail trade %28Udyam registration mandatory%29 %282350%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>BL_Type_of_Enterprise__c</picklist>
+        <values>
+            <fullName>Manufacturing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Micro</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Small</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trade</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>BL_Udyam_available__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>BL_Weaker_Section__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>BL_Whether_MSME_unit_is_ZED_rated__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>BL_Women_Involved_Actively_In_Business__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>BL_Women_Owned_Buisness__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>BL_Women_as__c</picklist>
+        <values>
+            <fullName>Director</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partnership</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Proprietor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Shareholder</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Category__c</picklist>
+        <values>
+            <fullName>General</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Minority</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other Backward Caste%28OBC%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Scheduled Caste %28SC%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Scheduled Tribe %28ST%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Constitution__c</picklist>
+        <values>
+            <fullName>Govt Body%2FStatutory Body</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HUF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Limited Liability Partnership</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Others</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partnership</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Private Ltd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Public Ltd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Section 25 Company</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Society</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trust</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Education__c</picklist>
+        <values>
+            <fullName>Graduate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Post-Graduate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Professional</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Under-Graduate</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Employer_Detail__c</picklist>
+        <values>
+            <fullName>Central Government%28CTG%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Multinational%28MNC%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Others%28OTR%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partnership%28PAR%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Proprietorship%28POR%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Public Ltd Co%28PUB%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Public Sector%28PSU%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pvt Ltd%2FLtd%28PVT%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>State Government%28STG%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Gender__c</picklist>
+        <values>
+            <fullName>Female</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Male</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transgender</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Industry_Type__c</picklist>
+        <values>
+            <fullName>Advertising Agency</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Agricultural Commodities</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Auto Finance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Automobile</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Broking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cement%2FPaint</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chit Fund</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Coal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Construction</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Consultancy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Consumer Durables</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contractor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dairy%2FFood Processing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Education</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Electronics%2FComputer Hardware</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Engineering Goods</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fast Moving Consumer Goods %28 FMCG%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fertilizer%2FChemicals%2Fseeds%2Fpesticides</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fisheries %2F Poultry</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Forex Dealer %2F Bullion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Furniture%2Ftimber</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hospital%2FNursing Home %2FClinic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hotels %2F Resort</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Housing Finance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IT%2FSoftware%2FBPO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Issue %26 Portfolio Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Leasing %26 Hire Purchase</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marble %2F Granite</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Money Lender</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NBFC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OIL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Others</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Petrol Pump</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pharmaceutical</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Printing%2FPublishing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Restaurant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Retail Jewellery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Shroff</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Steel %2F Hardware</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Term Lending Institution</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Textiles%2FGarment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transportation%2Flogistics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Travel%2FTour Agency</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>media%2FEntertainment</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Is_Deleted__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Is_Related_Party__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>KYC_Document_Type__c</picklist>
+        <values>
+            <fullName>Driving Licence</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MNREGA Job Card</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>National Population Register %28NPR%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Others</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Passport</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Voter Identity Card</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Marital_Status__c</picklist>
+        <values>
+            <fullName>Married</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unmarried</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Nationality__c</picklist>
+        <values>
+            <fullName>Indian</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Nature_of_Business__c</picklist>
+        <values>
+            <fullName>SPECIALISED CONSTRUCTION</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Occupation_Type__c</picklist>
+        <values>
+            <fullName>Agriculturist</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Government</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Housewife</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Categorized</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Private Sector</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Professional</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Public Sector</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Retired</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Self Employed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Student</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unorganized Sector</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Platform__c</picklist>
+        <values>
+            <fullName>Other Source</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Politically_Exposed_Person__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Product_Name__c</picklist>
+        <values>
+            <fullName>Business Loan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Business Loan Plus</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CV%2FCE</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Product__c</picklist>
+        <values>
+            <fullName>Commercial Vehicle Loan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Construction Equipment Loan</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Proof_of_Address__c</picklist>
+        <values>
+            <fullName>Driving Licence</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MNREGA Job Card</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Others</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Passport</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UID %28Aadhaar%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Voter Identity Card</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RBI_Defaulter_List_Status__c</picklist>
+        <values>
+            <fullName>Not Verified</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Verified</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Religion__c</picklist>
+        <values>
+            <fullName>Buddhist</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Christian</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hindu</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Jain</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Muslim</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sikh</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Zoroastrian</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Residential_Status__c</picklist>
+        <values>
+            <fullName>Foreign National</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non-Resident Indian</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Person of Indian Origin</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Resident Indian</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Salutation__c</picklist>
+        <values>
+            <fullName>Dr%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>M%2Fs%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mr%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mrs%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ms%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prof%2E</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type_Of_Profession__c</picklist>
+        <values>
+            <fullName>Architect</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CA%2FCS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Doctor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Engineer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lawyer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Others</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Working_in_a_bank_as_director_Sr_Office__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

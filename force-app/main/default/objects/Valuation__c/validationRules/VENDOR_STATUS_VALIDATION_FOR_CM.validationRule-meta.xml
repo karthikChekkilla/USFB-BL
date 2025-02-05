@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VENDOR_STATUS_VALIDATION_FOR_CM</fullName>
+    <active>true</active>
+    <description>CM won&apos;t be able to edit the Vendor Status</description>
+    <errorConditionFormula>AND( NOT( ISNEW() ) , $UserRole.Name = &apos;Credit Manager&apos;, ISCHANGED( Vendor_Status__c ))</errorConditionFormula>
+    <errorDisplayField>Vendor_Status__c</errorDisplayField>
+    <errorMessage>You can not update Vendor status</errorMessage>
+</ValidationRule>

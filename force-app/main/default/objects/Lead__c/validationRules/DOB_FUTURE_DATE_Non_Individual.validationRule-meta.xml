@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DOB_FUTURE_DATE_Non_Individual</fullName>
+    <active>true</active>
+    <description>DOB is required if the constitution is a Sole Proprietorship or individual</description>
+    <errorConditionFormula>IF(AND(NOT(ISPICKVAL( Constitution__c , &apos;Individual&apos;)),
+NOT(ISPICKVAL( Constitution__c , &apos;Sole Proprietorship&apos;)),
+ Date_of_Birth_Incorporation__c &gt;  TODAY() )
+, true, false)</errorConditionFormula>
+    <errorDisplayField>Date_of_Birth_Incorporation__c</errorDisplayField>
+    <errorMessage>Future date not allowed</errorMessage>
+</ValidationRule>

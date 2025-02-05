@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+	<apiVersion>57.0</apiVersion>
+	<isExposed>true</isExposed>
+	<masterLabel>DisplayUBDocuments</masterLabel>
+	<targets>
+		<target>lightning__RecordPage</target>
+		<target>lightning__AppPage</target>
+		<target>lightning__Tab</target>
+		<target>lightningCommunity__Page</target>
+		<target>lightningCommunity__Default</target>
+	</targets>
+	<targetConfigs>
+		<targetConfig targets="lightningCommunity__Default">
+            <property
+                name="objectApiName"
+                type="String"
+                label="Object Name"
+                description="Automatically bind the page's object name to the component variable"
+                default="{!objectApiName}" />
+            <property
+                name="recordId"
+                type="String"
+                label="Record Id"
+                description="Pass the page's record id to the component variable"
+                default="{!recordId}" />
+                 <property
+                  name="metadata"
+                  type="String"
+                  label="Metadata Name"
+                  description="Please Specify Metadata Name."
+                  default=""/>
+                  
+		</targetConfig>
+        <targetConfig targets="lightning__RecordPage,lightning__AppPage">
+            <supportedFormFactors>    
+                <supportedFormFactor type="Small" />
+                <supportedFormFactor type="Large" />
+            </supportedFormFactors>
+
+             <property
+                  name="metadata"
+                  type="String"
+                  label="Metadata Name"
+                  description="Please Specify Metadata Name."
+                  default=""/>
+
+
+                  <property
+                  name="PDD"
+                  type="String"
+                  label="Post Disbursal"
+                  description="Please Specify PDD"
+                  default=""/>
+
+                  <property
+                  name="hideNewButton"
+                  type="String"
+                  label="Hide New Button ?"
+                  description="Please Specify as Yes/No"
+                  default=""/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

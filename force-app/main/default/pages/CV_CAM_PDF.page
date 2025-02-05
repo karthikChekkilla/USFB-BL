@@ -1,0 +1,2218 @@
+<apex:page showHeader="false"  renderAs="pdf" standardStylesheets="true" applyHtmlTag="false" controller="CAM_PDFController">
+    <head>
+        
+        <style > 
+            .tb-div{
+            border: 1px solid black;border-collapse: collapse;text-align:center;
+            }
+            .bg {
+            background-color: #fee7ff; /* Replace with your desired color */
+            } 
+            table{
+            border: 1px solid black;border-collapse: collapse;text-align:center; width:100%; table-layout: fixed !important; 
+            }
+            .td-15{
+            font-size : 14px;border: 1px solid black;border-collapse: collapse;width:15%;  overflow: hidden;white-space: normal; text-overflow: ellipsis;
+            }
+            .td-35{
+            font-size : 14px;border: 1px solid black;border-collapse: collapse;width:35%;  overflow: hidden;white-space: normal; text-overflow: ellipsis;
+            }
+            .align-center{
+            align-content: center;
+            }
+            .text-align{
+            text-align: center;
+            }
+            .title{
+            font-size : 15px;border: 1px solid black;border-collapse: collapse;text-align:center; background-color: #d58fd9; 
+            }
+            .page-break {
+            page-break-inside:avoid;
+            }
+        </style>
+    </head>
+    <apex:form >
+        <apex:pageBlock >
+            <body class="page-break">
+                <div class="text-align">
+                    <!-- <apex:image id="Utkarshlogo" value="{!$Resource.Utkarshlogo}" width="60" height="60"/> -->
+                </div>
+                <h2 style="color:purple;text-align:center">
+                    Utkarsh Small Finance Bank
+                </h2>
+                <br/>
+                <hr style="color:red"/>
+                <br/>
+                <div class="tb-div bg" >
+                    <h4>
+                        CREDIT APPRAISAL MEMO-Wheels   
+                        
+                    </h4>
+                    
+                    <div class="title">
+                        <b>Sourcing Details </b>
+                    </div>
+                    
+                    <br/>
+                    
+                    <table >
+                        <tr>
+                            <th style="border: 1px solid black;border-collapse: collapse;background-color:gray; color:white;width :15%"></th>
+                            <th style="border: 1px solid black;border-collapse: collapse;background-color:gray; color:white; width :35%"></th>
+                            <th style="border: 1px solid black;border-collapse: collapse;background-color:gray; color:white; width :15%"></th>
+                            <th style="border: 1px solid black;border-collapse: collapse;background-color:gray; color:white; width :35%"></th>
+                        </tr>
+                        
+                        <tr style="height:15px;border-collapse: collapse;">
+                            <td class = "td-15">
+                                Login Date
+                            </td>
+                            
+                            <td class = "td-35">
+                                <apex:outputText value="{!loginDate}"/>
+                            </td>
+                            
+                            <td class = "td-15">
+                                Application Id
+                                
+                            </td>
+                            
+                            <td class = "td-35">
+                                <apex:outputText value="{!loanApplicationObj.Name}"/>
+                            </td>
+                            
+                        </tr>
+                        
+                        <tr style="height:15px;border-collapse: collapse;">
+                            <td class = "td-15">
+                                Sourcing Channel 
+                            </td>
+                            
+                            <td class = "td-35">
+                                <apex:outputText value="{!loanApplicationObj.Lead__r.Sourcing__c}"/> 
+                            </td>
+                            
+                            <td class = "td-15">
+                                Sourcing Channel 
+                                
+                            </td>
+                            
+                            <td class = "td-35">
+                                <apex:outputText value="{!loanApplicationObj.Lead__r.Sourcing__c}"/> 
+                            </td>
+                            
+                        </tr>
+                        
+                        <tr style="height:15px;border-collapse: collapse;">
+                            <td class = "td-15">
+                                Product
+                            </td>
+                            
+                            <td class = "td-35">
+                                <apex:outputText value="{!loanApplicationObj.Product__c}"/> 
+                            </td>
+                            
+                            <td class = "td-15">
+                                Sub Product 
+                            </td>
+                            
+                            <td class = "td-35">
+                                <apex:outputText value="{!loanApplicationObj.Lead__r.Product_Sub_Type__c}"/> 
+                            </td>
+                            
+                        </tr>
+                        
+                        <tr style="height:15px;border-collapse: collapse;">
+                            <td class = "td-15">
+                                Lead Generator Code 
+                            </td>
+                            
+                            <td class = "td-35">
+                                <apex:outputText value="{!loanApplicationObj.Lead__r.Lead_Generator_Code__c}"/> 
+                            </td>
+                            
+                            <td class = "td-15">
+                                DSA Name 
+                                
+                            </td>
+                            
+                            <td class = "td-35">
+                                <apex:outputText value="{!loanApplicationObj.DSA_Name__c}"/> 
+                            </td>
+                            
+                        </tr>
+                        
+                        <tr style="height:15px;border-collapse: collapse;">
+                            <td class = "td-15">
+                                Lead Convertor Code 
+                            </td>
+                            
+                            <td class = "td-35">
+                                <apex:outputText value="{!loanApplicationObj.Ro_RM__r.EmployeeNumber}"/> 
+                            </td>
+                            
+                            <td class = "td-15">
+                                RM name
+                            </td>
+                            
+                            <td class = "td-35">
+                                <apex:outputText value="{!loanApplicationObj.RM_Name__c}"/> 
+                            </td>
+                            
+                        </tr>
+                        
+                        <tr style="height:15px;border-collapse: collapse;">
+                            <td class = "td-15">
+                                Application Type
+                            </td>
+                            <td class = "td-35">
+                                <apex:outputText value="{!loanApplicationObj.Application_Type__c}"/> 
+                            </td>
+                            <td class = "td-15">
+                                Customer Category
+                            </td>
+                            <td class = "td-35">
+                                <apex:outputText value="{!loanApplicationObj.CB_Customer_Category__c}"/> 
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <br/>
+                
+                <!-- Total Exposure  Started -->   
+                <div  class="tb-div bg">
+                    <div class="title">
+                        <b> Total Exposure </b> 
+                    </div>
+                    
+                    <br/>
+                    <table>
+                        <tr>
+                            <th style="border: 1px solid black;border-collapse: collapse;background-color:gray; color:white;width :15%"></th>
+                            <th style="border: 1px solid black;border-collapse: collapse;background-color:gray; color:white; width :35%"></th>
+                            <th style="border: 1px solid black;border-collapse: collapse;background-color:gray; color:white; width :15%"></th>
+                            <th style="border: 1px solid black;border-collapse: collapse;background-color:gray; color:white; width :35%"></th>
+                        </tr>
+                        
+                        <tr style="height:15px;border-collapse: collapse;">
+                            <td class = "td-15">
+                                Total Combined Exposure Amt.
+                            </td>
+                            
+                            <td class = "td-35">
+                                <!--  <apex:outputText value="{!lafrecord.Name}"/> -->
+                            </td>
+                            
+                            <td class = "td-15">
+                                Total No. of vehicles /Equipment exposure 
+                                
+                            </td>
+                        </tr>    
+                        
+                        
+                    </table>         
+                </div>
+                <br/>
+                <!-- Total Exposure  Ended -->
+                
+                <!-- Asset Details 1 Started-->   
+                <apex:outputPanel rendered="{!newVehicleList.size > 0}">
+                    <apex:variable var="index" value="{!0}"/>
+                    <apex:repeat value="{!newVehicleList}" var="newVehicle">
+                        <apex:variable var="index" value="{!index + 1}"/>
+                        <div class="title">
+                            <b>Vehicle {!index} Details </b>
+                        </div>
+                        
+                        <br/>
+                        <div class="tb-div bg">   
+                            <table >
+                                <tr>
+                                    <th style="border: 1px solid black;border-collapse: collapse;background-color:gray; color:white;width :15%"></th>
+                                    <th style="border: 1px solid black;border-collapse: collapse;background-color:gray; color:white; width :35%"></th>
+                                    <th style="border: 1px solid black;border-collapse: collapse;background-color:gray; color:white; width :15%"></th>
+                                    <th style="border: 1px solid black;border-collapse: collapse;background-color:gray; color:white; width :35%"></th>
+                                </tr>
+                                
+                                <tr style="height:15px;border-collapse: collapse;">
+                                    <td class = "td-15">
+                                        Asset Classification 
+                                    </td>
+                                    
+                                    <td class = "td-35">
+                                        <apex:outputText value="{!newVehicle.Vehicle_Master__r.Vehicle_Classification__c}"/>
+                                    </td>
+                                    
+                                    <td class = "td-15">
+                                        Manufacturer
+                                        
+                                    </td>
+                                    
+                                    <td class = "td-35">
+                                        <!--   <apex:outputText value="{0,date,dd-MM-yyyy}"> <apex:param value="{!lafrecord.createdDate}" /> </apex:outputText> -->
+                                    </td>
+                                    
+                                </tr>
+                                
+                                <tr style="height:15px;border-collapse: collapse;">
+                                    <td class = "td-15">
+                                        Vehicle Model 
+                                    </td>
+                                    
+                                    <td class = "td-35">
+                                        <apex:outputText value="{!newVehicle.Model__c}"/>
+                                    </td>
+                                    
+                                    <td class = "td-15">
+                                        Variant 
+                                    </td>
+                                    
+                                    <td class = "td-35">
+                                        <apex:outputText value="{!newVehicle.Variant__c}"/> 
+                                    </td>
+                                    
+                                </tr>
+                                
+                                <tr style="height:15px;border-collapse: collapse;">
+                                    <td class = "td-15">
+                                        Dealer Name
+                                    </td>
+                                    
+                                    <td class = "td-35">
+                                        <apex:outputText value="{!newVehicle.Dealer__r.Name}"/> 
+                                    </td>
+                                    
+                                    <td class = "td-15">
+                                        Dealer Code  
+                                        
+                                    </td>
+                                    
+                                    <td class = "td-35">
+                                        <apex:outputText value="{!newVehicle.Dealer__r.Dealer_Code__c}"/> 
+                                    </td>
+                                    
+                                </tr>
+                                
+                                <tr style="height:15px;border-collapse: collapse;">
+                                    <td class = "td-15">
+                                        Asset Cost 
+                                    </td>
+                                    
+                                    <td class = "td-35">
+                                        <apex:outputText value="{!newVehicle.Vehicle_Cost__c}"/> 
+                                    </td>
+                                    
+                                    <td class = "td-15">
+                                        Asset Type 
+                                    </td>
+                                    
+                                    <td class = "td-35">
+                                        <apex:outputText value="{!newVehicle.Vehicle_Master__r.Vehicle_Type__c}"/> 
+                                    </td>
+                                    
+                                </tr>
+                                
+                                <tr style="height:15px;border-collapse: collapse;">
+                                    <td class = "td-15">
+                                        <b>No of Units</b>  
+                                    </td>
+                                    
+                                    <td class = "td-35">
+                                        <apex:outputText value=""/> 
+                                    </td>
+                                    
+                                    <td class = "td-15">
+                                        
+                                    </td>
+                                    
+                                    <td class = "td-35">
+                                        <apex:outputText value=""/> 
+                                    </td>
+                                    
+                                </tr>
+                                
+                                <tr style="height:15px;border-collapse: collapse;">
+                                    <td class = "td-15">
+                                        Insurance 
+                                    </td>
+                                    
+                                    <td class = "td-35">
+                                        <apex:outputText value="{!newVehicle.Asset_Insurance_Premium__c}"/> 
+                                    </td>
+                                    
+                                    <td class = "td-15">
+                                        RTO  
+                                    </td>
+                                    
+                                    <td class = "td-35">
+                                        <apex:outputText value="{!newVehicle.RTO_Value__c}"/> 
+                                    </td>
+                                    
+                                </tr>
+                                
+                                <tr style="height:15px;border-collapse: collapse;">
+                                    <td class = "td-15">
+                                        Loan Amount /Credit facility Amount  
+                                    </td>
+                                    
+                                    <td class = "td-35">
+                                        <apex:outputText value="{!newVehicle.Credit_Facility_Amount__c}"/> 
+                                    </td>
+                                    
+                                    <td class = "td-15">
+                                        Margin Money   
+                                    </td>
+                                    
+                                    <td class = "td-35">
+                                        <apex:outputText value="{!newVehicle.Margin_Money__c}"/> 
+                                    </td>
+                                    
+                                </tr>
+                                
+                                <tr style="height:15px;border-collapse: collapse;">
+                                    <td class = "td-15">
+                                        Tenure  
+                                    </td>
+                                    
+                                    <td class = "td-35">
+                                        <apex:outputText value="{!newVehicle.Tenure__c}"/> 
+                                    </td>
+                                    
+                                    <td class = "td-15">
+                                        Advance EMI   
+                                    </td>
+                                    
+                                    <td class = "td-35">
+                                        <apex:outputText value="{!newVehicle.Advance_EMI__c}"/> 
+                                    </td>
+                                    
+                                </tr>
+                                
+                                <tr style="height:15px;border-collapse: collapse;">
+                                    <td class = "td-15">
+                                        EMI Amount  
+                                    </td>
+                                    
+                                    <td class = "td-35">
+                                        <apex:outputText value="{!newVehicle.EMI__c}"/> 
+                                    </td>
+                                    
+                                    <td class = "td-15">
+                                        Interest Rate   
+                                    </td>
+                                    
+                                    <td class = "td-35">
+                                        <apex:outputText value="{!newVehicle.ROI__c}"/> 
+                                    </td>
+                                    
+                                </tr>
+                                
+                                <tr style="height:15px;border-collapse: collapse;">
+                                    <td class = "td-15">
+                                        Processing Fees
+                                    </td>
+                                    
+                                    <td class = "td-35">
+                                        <apex:outputText value=""/> 
+                                    </td>
+                                    
+                                    <td class = "td-15">
+                                        Subvention   
+                                    </td>
+                                    
+                                    <td class = "td-35">
+                                        <apex:outputText value="{!newVehicle.Subvention__c}"/> 
+                                    </td>
+                                    
+                                </tr>
+                                
+                                <tr style="height:15px;border-collapse: collapse;">
+                                    <td class = "td-15">
+                                        Plough Back Amount
+                                    </td>
+                                    
+                                    <td class = "td-35">
+                                        <apex:outputText value="{!newVehicle.Plough_Black_Amount__c}"/> 
+                                    </td>
+                                    
+                                    <td class = "td-15">
+                                        Plough Back %   
+                                    </td>
+                                    
+                                    <td class = "td-35">
+                                        <apex:outputText value="{!newVehicle.Plough_Back__c}"/> 
+                                    </td>
+                                    
+                                </tr>
+                                
+                                <tr style="height:15px;border-collapse: collapse;">
+                                    <td class = "td-15">
+                                        Life Insurance
+                                    </td>
+                                    
+                                    <td class = "td-35">
+                                        <apex:outputText value="{!newVehicle.Asset_Insurance_Premium__c}"/> 
+                                    </td>
+                                    
+                                    <td class = "td-15">
+                                        Sanction Loan Amount   
+                                    </td>
+                                    
+                                    <td class = "td-35">
+                                        <apex:outputText value="{!newVehicle.Funding_Limit__c}"/> 
+                                    </td>
+                                    
+                                </tr>
+                                
+                                <tr style="height:15px;border-collapse: collapse;">
+                                    <td class = "td-15">
+                                        Eligible LTV 
+                                    </td>
+                                    
+                                    <td class = "td-35">
+                                        <apex:outputText value="{!newVehicle.Eligible_LTV__c}"/> 
+                                    </td>
+                                    
+                                    <td class = "td-15">
+                                        Actual LTV %   
+                                    </td>
+                                    
+                                    <td class = "td-35">
+                                        <apex:outputText value="{!newVehicle.Actual_LTV__c}"/> 
+                                    </td>
+                                    
+                                </tr>
+                                
+                                <tr style="height:15px;border-collapse: collapse;">
+                                    <td class = "td-15">
+                                        Asset Category 
+                                    </td>
+                                    
+                                    <td class = "td-35">
+                                        <apex:outputText value="{!newVehicle.Vehicle_Master__r.Vehicle_Category__c}"/> 
+                                    </td>
+                                    
+                                    <td class = "td-15">
+                                        Registrable/Non Registrable   
+                                    </td>
+                                    
+                                    <td class = "td-35">
+                                        <apex:outputText value="{!newVehicle.Vehicle_Master__r.Registrable__c}"/> 
+                                    </td>
+                                    
+                                </tr>
+                                
+                                
+                            </table>
+                        </div>
+                    </apex:repeat>
+                </apex:outputPanel>
+                <br/>
+                <!-- Asset Details 1 Ended -->
+                
+                <!-- Asset Details 2 Started-->  
+                <apex:outputPanel rendered="{!UsedVehicleList.size > 0}">
+                    <apex:variable var="index" value="{!0}"/>
+                    <apex:repeat value="{!UsedVehicleList}" var="oldVehicle">  
+                        <apex:variable var="index" value="{!index + 1}"/>
+                        <div class="title">
+                            <b>Vehicle {!index} Details : Refinance /Used</b>
+                        </div>
+                        
+                        <br/>
+                        <div class="tb-div bg">   
+                            <table >
+                                <tr>
+                                    <th style="border: 1px solid black;border-collapse: collapse;background-color:gray; color:white;width :15%"></th>
+                                    <th style="border: 1px solid black;border-collapse: collapse;background-color:gray; color:white; width :35%"></th>
+                                    <th style="border: 1px solid black;border-collapse: collapse;background-color:gray; color:white; width :15%"></th>
+                                    <th style="border: 1px solid black;border-collapse: collapse;background-color:gray; color:white; width :35%"></th>
+                                </tr>
+                                
+                                <tr style="height:15px;border-collapse: collapse;">
+                                    <td class = "td-15">
+                                        Asset Classification  
+                                    </td>
+                                    
+                                    <td class = "td-35">
+                                        <apex:outputText value="{!oldVehicle.Vehicle_Master__r.Vehicle_Classification__c}"/> 
+                                    </td>
+                                    
+                                    <td class = "td-15">
+                                        Manufacturer
+                                        
+                                    </td>
+                                    
+                                    <td class = "td-35">
+                                        <!--   <apex:outputText value="{0,date,dd-MM-yyyy}"> <apex:param value="{!lafrecord.createdDate}" /> </apex:outputText> -->
+                                    </td>
+                                    
+                                </tr>
+                                
+                                <tr style="height:15px;border-collapse: collapse;">
+                                    <td class = "td-15">
+                                        Vehicle  Model 
+                                    </td>
+                                    
+                                    <td class = "td-35">
+                                        <apex:outputText value="{!oldVehicle.Model__c}"/>
+                                    </td>
+                                    
+                                    <td class = "td-15">
+                                        Variant 
+                                        
+                                    </td>
+                                    
+                                    <td class = "td-35">
+                                        <apex:outputText value="{!oldVehicle.Variant__c}"/> 
+                                    </td>
+                                    
+                                </tr>
+                                
+                                <tr style="height:15px;border-collapse: collapse;">
+                                    <td class = "td-15">
+                                        Asset Cost Lower of Grid , IDV and Valuation
+                                    </td>
+                                    
+                                    <td class = "td-35">
+                                        <apex:outputText value="{!oldVehicle.Vehicle_Cost__c}"/> 
+                                    </td>
+                                    
+                                    <td class = "td-15">
+                                        Asset Type  
+                                        
+                                    </td>
+                                    
+                                    <td class = "td-35">
+                                        <apex:outputText value="{!oldVehicle.Vehicle_Master__r.Vehicle_Type__c}"/> 
+                                    </td>
+                                    
+                                </tr>
+                                
+                                <tr style="height:15px;border-collapse: collapse;">
+                                    <td class = "td-15">
+                                        Body Type 
+                                    </td>
+                                    
+                                    <td class = "td-35">
+                                        <apex:outputText value="{!oldVehicle.Body_Type__c}"/> 
+                                    </td>
+                                    
+                                    <td class = "td-15">
+                                        Asset Category 
+                                    </td>
+                                    
+                                    <td class = "td-35">
+                                        <apex:outputText value="{!oldVehicle.Vehicle_Master__r.Vehicle_Category__c}"/> 
+                                    </td>
+                                    
+                                </tr>
+                                
+                                <tr style="height:15px;border-collapse: collapse;">
+                                    <td class = "td-15">
+                                        Registrable/Non Registrable
+                                    </td>
+                                    
+                                    <td class = "td-35">
+                                        <apex:outputText value="{!oldVehicle.Vehicle_Master__r.Registrable__c}"/> 
+                                    </td>
+                                    
+                                    <td class = "td-15">
+                                        Vahan Check Status (Applicable only for Used Vehicle)
+                                    </td>
+                                    
+                                    <td class = "td-35">
+                                        <apex:outputText value=""/> 
+                                    </td>
+                                    
+                                </tr>
+                                
+                                <tr style="height:15px;border-collapse: collapse;">
+                                    <td class = "td-15">
+                                        Vehicle No
+                                    </td>
+                                    
+                                    <td class = "td-35">
+                                        <apex:outputText value="{!oldVehicle.Registration_Number__c}"/> 
+                                    </td>
+                                    
+                                    <td class = "td-15">
+                                        Name of the Owner  
+                                    </td>
+                                    
+                                    <td class = "td-35">
+                                        <apex:outputText value="{!oldVehicle.Owner_Name__c}"/> 
+                                    </td>
+                                    
+                                </tr>
+                                
+                                <tr style="height:15px;border-collapse: collapse;">
+                                    <td class = "td-15">
+                                        Chassis No   
+                                    </td>
+                                    
+                                    <td class = "td-35">
+                                        <apex:outputText value="{!oldVehicle.Chassis_Number__c}"/> 
+                                    </td>
+                                    
+                                    <td class = "td-15">
+                                        Engine No   
+                                    </td>
+                                    
+                                    <td class = "td-35">
+                                        <apex:outputText value="{!oldVehicle.Engine_Number__c}"/> 
+                                    </td>
+                                    
+                                </tr>
+                                
+                                <tr style="height:15px;border-collapse: collapse;">
+                                    <td class = "td-15">
+                                        Year of Manufacturer   
+                                    </td>
+                                    
+                                    <td class = "td-35">
+                                        <apex:outputText value="{!oldVehicle.Manufactured_Month_Year__c}"/> 
+                                    </td>
+                                    
+                                    <td class = "td-15">
+                                        Owner serial No    
+                                    </td>
+                                    
+                                    <td class = "td-35">
+                                        <apex:outputText value="{!oldVehicle.Owner_Serial_Number__c}"/> 
+                                    </td>
+                                    
+                                </tr>
+                                
+                                <tr style="height:15px;border-collapse: collapse;">
+                                    <td class = "td-15">
+                                        Fitness Valid Up To  
+                                    </td>
+                                    
+                                    <td class = "td-35">
+                                        <apex:outputText value="{!oldVehicle.Fitness_Validity__c}"/> 
+                                    </td>
+                                    
+                                    <td class = "td-15">
+                                        Insurance Valid up to   
+                                    </td>
+                                    
+                                    <td class = "td-35">
+                                        <apex:outputText value="{!oldVehicle.Insurance_Expiry_Date__c}"/> 
+                                    </td>
+                                    
+                                </tr>
+                                
+                                <tr style="height:15px;border-collapse: collapse;">
+                                    <td class = "td-15">
+                                        IDV
+                                    </td>
+                                    
+                                    <td class = "td-35">
+                                        <apex:outputText value="{!oldVehicle.IDV__c}"/> 
+                                    </td>
+                                    
+                                    <td class = "td-15">
+                                        
+                                    </td>
+                                    
+                                    <td class = "td-35">
+                                        <apex:outputText value=""/> 
+                                    </td>
+                                    
+                                </tr>
+                                
+                                <tr style="height:15px;border-collapse: collapse;">
+                                    <td class = "td-15">
+                                        Valuation Amount 
+                                    </td>
+                                    
+                                    <td class = "td-35">
+                                        <apex:outputText value=""/> 
+                                    </td>
+                                    
+                                    <td class = "td-15">
+                                        Life Insurance Amount    
+                                    </td>
+                                    
+                                    <td class = "td-35">
+                                        <apex:outputText value=""/> 
+                                    </td>
+                                    
+                                </tr>
+                                
+                                <tr style="height:15px;border-collapse: collapse;">
+                                    <td class = "td-15">
+                                        Tenure 
+                                    </td>
+                                    
+                                    <td class = "td-35">
+                                        <apex:outputText value="{!oldVehicle.Tenure__c}"/> 
+                                    </td>
+                                    
+                                    <td class = "td-15">
+                                        Advance EMI   
+                                    </td>
+                                    
+                                    <td class = "td-35">
+                                        <apex:outputText value="{!oldVehicle.Advance_EMI__c}"/> 
+                                    </td>
+                                    
+                                </tr>
+                                
+                                <tr style="height:15px;border-collapse: collapse;">
+                                    <td class = "td-15">
+                                        EMI Amount 
+                                    </td>
+                                    
+                                    <td class = "td-35">
+                                        <apex:outputText value="{!oldVehicle.EMI__c}"/> 
+                                    </td>
+                                    
+                                    <td class = "td-15">
+                                        Interest Rate   
+                                    </td>
+                                    
+                                    <td class = "td-35">
+                                        <apex:outputText value="{!oldVehicle.ROI__c}"/> 
+                                    </td>
+                                    
+                                </tr>
+                                
+                                <tr style="height:15px;border-collapse: collapse;">
+                                    <td class = "td-15">
+                                        Processing Fees   
+                                    </td>
+                                    
+                                    <td class = "td-35">
+                                        <apex:outputText value=""/> 
+                                    </td>
+                                    
+                                    <td class = "td-15">
+                                        Total Loan Amount    
+                                    </td>
+                                    
+                                    <td class = "td-35">
+                                        <apex:outputText value=""/> 
+                                    </td> 
+                                    
+                                </tr>
+                                
+                                
+                            </table>
+                        </div>
+                        <br/>
+                    </apex:repeat>   
+                </apex:outputPanel>
+                <!-- Asset Details 2 Ended -->   
+                
+                <!-- Applicant Details Started--> 
+                 <apex:outputPanel rendered="{!primaryApplicantList.size > 0}">
+                <apex:repeat value="{!primaryApplicantList}" var="primaryApplicant">
+                    
+                    <div class="title">
+                        <b>Applicant's Details</b>
+                    </div>
+                    
+                    <br/>
+                    <div class="tb-div bg">   
+                        <table >
+                            <tr>
+                                <th style="border: 1px solid black;border-collapse: collapse;background-color:gray; color:white;width :15%"></th>
+                                <th style="border: 1px solid black;border-collapse: collapse;background-color:gray; color:white; width :35%"></th>
+                                <th style="border: 1px solid black;border-collapse: collapse;background-color:gray; color:white; width :15%"></th>
+                                <th style="border: 1px solid black;border-collapse: collapse;background-color:gray; color:white; width :35%"></th>
+                            </tr>
+                            
+                            <tr style="height:15px;border-collapse: collapse;">
+                                <td class = "td-15">
+                                    Constitution   
+                                </td>
+                                
+                                <td colspan="3" class = "td-35">
+                                    <apex:outputText value="{!primaryApplicant.Constitution__c}"/>
+                                </td>
+                            </tr>
+                            
+                            <tr style="height:15px;border-collapse: collapse;">
+                                <td class = "td-15">
+                                    Name of Applicant  
+                                </td>
+                                
+                                <td class = "td-35">
+                                    <apex:outputText value="{!primaryApplicant.Name}"/>
+                                </td>
+                                
+                                <td class = "td-15">
+                                    Date Of Birth/Incorporation  
+                                </td>
+                                
+                                <td class = "td-35">
+                                    <apex:outputText value="{!primaryApplicant.Date_Of_Incorporation__c}"/> 
+                                </td>
+                                
+                            </tr>
+                            
+                            <tr style="height:15px;border-collapse: collapse;">
+                                <td class = "td-15">
+                                    Residential Status 
+                                </td>
+                                
+                                <td class = "td-35">
+                                    <apex:outputText value="{!primaryApplicant.Residential_Status__c}"/> 
+                                </td>
+                                
+                                <td class = "td-15">
+                                    Education   
+                                </td>
+                                
+                                <td class = "td-35">
+                                    <apex:outputText value="{!primaryApplicant.Education__c}"/> 
+                                </td>
+                                
+                            </tr>
+                            
+                            <tr style="height:15px;border-collapse: collapse;">
+                                <td class = "td-15">
+                                    CIBIL Score 
+                                </td>
+                                
+                                <td class = "td-35">
+                                    <apex:outputText value="{!primaryApplicant.Cibil_Verification__r.Cibil_Score__c}"/> 
+                                </td>
+                                
+                                <td class = "td-15">
+                                    Existing Customer 
+                                </td>
+                                
+                                <td class = "td-35">
+                                    <apex:outputText value="{!primaryApplicant.BL_Customer_Type__c}"/> 
+                                </td>
+                                
+                            </tr>
+                            
+                            <tr style="height:15px;border-collapse: collapse;">
+                                <td class = "td-15">
+                                    Credit Score 
+                                </td>
+                                
+                                <td class = "td-35">
+                                    <apex:outputText value=""/> 
+                                </td>
+                                
+                                <td class = "td-15">
+                                    CBS Dedupe Status
+                                </td>
+                                
+                                <td class = "td-35">
+                                    <apex:outputText value="{!primaryApplicant.Dedupe_Verification__r.Dedupe_Status__c}"/> 
+                                </td>
+                                
+                            </tr>
+                            
+                            <tr style="height:15px;border-collapse: collapse;">
+                                <td class = "td-15">
+                                    CFR Status 
+                                </td>
+                                
+                                <td class = "td-35">
+                                    <apex:outputText value="{!primaryApplicant.CFR_Verification__r.CFR_Status__c}"/> 
+                                </td>
+                                
+                                <td class = "td-15">
+                                    RBI Defaulter List Status
+                                </td>
+                                
+                                <td class = "td-35">
+                                    <apex:outputText value="{!primaryApplicant.RBI_Defaulter_List_Status__c}"/> 
+                                </td>
+                                
+                            </tr>
+                            
+                            
+                        </table>
+                    </div>
+                    <br/>
+                    <!-- Applicant Details Ended -->   
+                    
+                    <!-- Occupation Details Started-->   
+                    <div Style="text-align:left;">
+                        <b>Occupation Details</b>
+                    </div>
+                    
+                    <br/>
+                    
+                    <div class="tb-div bg">   
+                        <table >
+                            <tr>
+                                <th style="border: 1px solid black;border-collapse: collapse;background-color:gray; color:white;width :15%"></th>
+                                <th style="border: 1px solid black;border-collapse: collapse;background-color:gray; color:white; width :35%"></th>
+                                <th style="border: 1px solid black;border-collapse: collapse;background-color:gray; color:white; width :15%"></th>
+                                <th style="border: 1px solid black;border-collapse: collapse;background-color:gray; color:white; width :35%"></th>
+                            </tr>
+                            
+                            <tr style="height:15px;border-collapse: collapse;">
+                                <td class = "td-15">
+                                    Occupation Type   
+                                </td>
+                                
+                                <td colspan="3" class = "td-35">
+                                    <apex:outputText value="{!primaryApplicant.Occupation_Type__c}"/>
+                                </td>
+                            </tr>
+                            
+                            <tr style="height:15px;border-collapse: collapse;">
+                                <td class = "td-15">
+                                    Entity Name  
+                                </td>
+                                
+                                <td colspan="3" class = "td-35">
+                                    <apex:outputText value="{!primaryApplicant.Entity_Name__c}"/>
+                                </td>
+                            </tr>
+                            
+                            <tr style="height:15px;border-collapse: collapse;">
+                                <td class = "td-15">
+                                    Details of Authorised Signatory/ Partner/ Directors/ Trustees/Karta 
+                                </td>
+                                
+                                <td class = "td-35">
+                                    <apex:outputText value=""/> 
+                                </td>
+                                
+                                <td class = "td-15">
+                                    Shareholding Pattern    
+                                </td>
+                                
+                                <td class = "td-35">
+                                    <apex:outputText value=""/> 
+                                </td>
+                                
+                            </tr>
+                            
+                            <tr style="height:15px;border-collapse: collapse;">
+                                <td class = "td-15">
+                                    No of years at Current Job  
+                                </td>
+                                
+                                <td colspan="3" class = "td-35">
+                                    <apex:outputText value="{!primaryApplicant.No_of_years_at_current_job__c}"/>
+                                </td>
+                                
+                            </tr>
+                            
+                            <tr style="height:15px;border-collapse: collapse;">
+                                <td class = "td-15">
+                                    Total work experience   
+                                </td>
+                                
+                                <td colspan="3" class = "td-35">
+                                    <apex:outputText value="{!primaryApplicant.Total_Work_Experience__c}"/>
+                                </td>
+                                
+                            </tr>
+                            
+                        </table>
+                    </div>
+                    <br/>
+                    <!-- Applicant Details Ended --> 
+                    <hr/>
+                    <br/>
+                </apex:repeat>
+                </apex:outputPanel>
+                
+                
+                <!-- Co-Applicant Details Started--> 
+                  <apex:outputPanel rendered="{!coApplicantList.size > 0}">
+                <apex:variable var="index" value="{!0}"/>
+                <apex:repeat value="{!coApplicantList}" var="coApplicant">
+                    <apex:variable var="index" value="{!index + 1}"/>
+                    <div class="title">
+                        <b>Co-applicant's {!index} Details</b>
+                    </div>
+                    
+                    <br/>
+                    
+                    <div class="tb-div bg">   
+                        <table >
+                            <tr>
+                                <th style="border: 1px solid black;border-collapse: collapse;background-color:gray; color:white;width :15%"></th>
+                                <th style="border: 1px solid black;border-collapse: collapse;background-color:gray; color:white; width :35%"></th>
+                                <th style="border: 1px solid black;border-collapse: collapse;background-color:gray; color:white; width :15%"></th>
+                                <th style="border: 1px solid black;border-collapse: collapse;background-color:gray; color:white; width :35%"></th>
+                            </tr>
+                            
+                            <tr style="height:15px;border-collapse: collapse;">
+                                <td class = "td-15">
+                                    Constitution   
+                                </td>
+                                
+                                <td colspan="3" class = "td-35">
+                                    <apex:outputText value="{!coApplicant.Constitution__c}"/>
+                                </td>
+                                
+                                
+                            </tr>
+                            
+                            <tr style="height:15px;border-collapse: collapse;">
+                                <td class = "td-15">
+                                    Name of Applicant  
+                                </td>
+                                
+                                <td class = "td-35">
+                                    <apex:outputText value="{!coApplicant.Name}"/>
+                                    <apex:outputText value=""/>
+                                </td>
+                                
+                                <td class = "td-15">
+                                    Date Of Birth/Incorporation  
+                                    
+                                </td>
+                                
+                                <td class = "td-35">
+                                    <apex:outputText value="{!coApplicant.Date_Of_Incorporation__c}"/> 
+                                </td>
+                                
+                            </tr>
+                            
+                            <tr style="height:15px;border-collapse: collapse;">
+                                <td class = "td-15">
+                                    Relationship with the applicant  
+                                </td>
+                                
+                                <td class = "td-35">
+                                    <apex:outputText value=""/> 
+                                </td>
+                                
+                                <td class = "td-15">
+                                    
+                                    
+                                </td>
+                                
+                                <td class = "td-35">
+                                    <apex:outputText value=""/> 
+                                </td>
+                                
+                            </tr>
+                            
+                            <tr style="height:15px;border-collapse: collapse;">
+                                <td class = "td-15">
+                                    Residential Status 
+                                </td>
+                                
+                                <td class = "td-35">
+                                    <apex:outputText value="{!coApplicant.Residential_Status__c}"/> 
+                                </td>
+                                
+                                <td class = "td-15">
+                                    Education  
+                                </td>
+                                
+                                <td class = "td-35">
+                                    <apex:outputText value="{!coApplicant.Education__c}"/> 
+                                </td>
+                                
+                            </tr>
+                            
+                            <tr style="height:15px;border-collapse: collapse;">
+                                <td class = "td-15">
+                                    CIBIL Score 
+                                </td>
+                                
+                                <td class = "td-35">
+                                    <apex:outputText value="{!coApplicant.Cibil_Verification__r.Cibil_Score__c}"/> 
+                                </td>
+                                
+                                <td class = "td-15">
+                                    Existing Customer  
+                                </td>
+                                
+                                <td class = "td-35">
+                                    <apex:outputText value="{!coApplicant.BL_Customer_Type__c}"/> 
+                                </td>
+                                
+                            </tr>
+                             <tr style="height:15px;border-collapse: collapse;">
+                                 <td class = "td-15">
+                                    CBS Dedupe Status
+                                </td>
+                                
+                                <td class = "td-35">
+                                    <apex:outputText value="{!coApplicant.Dedupe_Verification__r.Dedupe_Status__c}"/> 
+                                </td>
+                                         
+                                <td class = "td-15">
+                                     CFR Status 
+                                </td>
+                                
+                                <td class = "td-35">
+                                    <apex:outputText value="{!coApplicant.CFR_Verification__r.CFR_Status__c}"/> 
+                                </td>
+                                
+                            </tr>
+                            
+                            <tr style="height:15px;border-collapse: collapse;">
+                              
+                                <td class = "td-15">
+                                    RBI Defaulter List Status
+                                </td>
+                                
+                                <td class = "td-35">
+                                    <apex:outputText value="{!coApplicant.RBI_Defaulter_List_Status__c}"/> 
+                                </td>
+                                
+                                 <td class = "td-15">
+                                   
+                                </td>
+                                
+                                <td class = "td-35">
+                                    <apex:outputText value=""/> 
+                                </td>
+                                
+                            </tr>
+                            
+                        </table>
+                    </div>
+                    <br/>
+                    
+                    <div Style="text-align:left;">
+                        <b>Occupation Details</b>
+                    </div>
+                    
+                    <br/>
+                    
+                    <div class="tb-div bg">   
+                        <table >
+                            <tr>
+                                <th style="border: 1px solid black;border-collapse: collapse;background-color:gray; color:white;width :15%"></th>
+                                <th style="border: 1px solid black;border-collapse: collapse;background-color:gray; color:white; width :35%"></th>
+                                <th style="border: 1px solid black;border-collapse: collapse;background-color:gray; color:white; width :15%"></th>
+                                <th style="border: 1px solid black;border-collapse: collapse;background-color:gray; color:white; width :35%"></th>
+                            </tr>
+                            
+                            <tr style="height:15px;border-collapse: collapse;">
+                                <td class = "td-15">
+                                    Occupation Type   
+                                </td>
+                                
+                                <td colspan="3" class = "td-35">
+                                    <apex:outputText value="{!coApplicant.Occupation_Type__c}"/> 
+                                </td>
+                                
+                                
+                                
+                            </tr>
+                            
+                            <tr style="height:15px;border-collapse: collapse;">
+                                <td class = "td-15">
+                                    Entity Name  
+                                </td>
+                                
+                                <td colspan="3" class = "td-35">
+                                    <apex:outputText value="{!coApplicant.Entity_Name__c}"/> 
+                                    <apex:outputText value=""/>
+                                </td>
+                                
+                            </tr>
+                            
+                            <tr style="height:15px;border-collapse: collapse;">
+                                <td class = "td-15">
+                                    Details of Authorised Signatory/ Partner/ Directors/ Trustees/Karta 
+                                </td>
+                                
+                                <td class = "td-35">
+                                    <apex:outputText value=""/> 
+                                </td>
+                                
+                                <td class = "td-15">
+                                    Shareholding Pattern    
+                                    
+                                </td>
+                                
+                                <td class = "td-35">
+                                    <apex:outputText value=""/> 
+                                </td>
+                                
+                            </tr>
+                            
+                            <tr style="height:15px;border-collapse: collapse;">
+                                <td class = "td-15">
+                                    No of years at Current Job  
+                                </td>
+                                
+                                <td colspan="3" class = "td-35">
+                                    <apex:outputText value="{!coApplicant.No_of_years_at_current_job__c}"/> 
+                                </td>
+                                
+                            </tr>
+                            
+                            <tr style="height:15px;border-collapse: collapse;">
+                                <td class = "td-15">
+                                    Total work experience   
+                                </td>
+                                
+                                <td colspan="3" class = "td-35">
+                                    <apex:outputText value="{!coApplicant.Total_Work_Experience__c}"/>  
+                                </td>      
+                            </tr>
+                            
+                        </table>
+                    </div>
+                    <br/>
+                </apex:repeat>
+               
+                <div Style="text-align:left;">
+                    <b>Internal Due Diligence</b>
+                </div>
+                
+                <br/>
+                
+                <div class="tb-div bg">   
+                    <table >
+                        <tr>
+                            <th style="border: 1px solid black;border-collapse: collapse;background-color:gray; color:white;width :15%"></th>
+                            <th style="border: 1px solid black;border-collapse: collapse;background-color:gray; color:white; width :35%"></th>
+                            <th style="border: 1px solid black;border-collapse: collapse;background-color:gray; color:white; width :15%"></th>
+                            <th style="border: 1px solid black;border-collapse: collapse;background-color:gray; color:white; width :35%"></th>
+                        </tr>
+                        
+                        <tr style="height:15px;border-collapse: collapse;">
+                            <td class = "td-15">
+                                FI Status Residence   
+                            </td>
+                            
+                            <td class = "td-35">
+                                <apex:outputText rendered="{!applicantActivityFI.size>0}" value="{!applicantActivityFI[0].Result__c}"/>
+                            </td>
+                            
+                            <td class = "td-15">
+                                
+                            </td>
+                            
+                            <td class = "td-35">
+                                <!--  <apex:outputText value="{!lafrecord.Name}"/> -->
+                            </td>
+                        </tr>
+                        
+                        <tr style="height:15px;border-collapse: collapse;">
+                            <td class = "td-15">
+                                FI Status Office    
+                            </td>
+                            
+                            <td class = "td-35">
+                                <apex:outputText rendered="{!applicantActivityOffice.size>0}" value="{!applicantActivityOffice[0].Result__c}"/>
+                            </td>
+                            
+                            <td class = "td-15">
+                                
+                            </td>
+                            
+                            <td class = "td-35">
+                                <!--  <apex:outputText value="{!lafrecord.Name}"/> -->
+                            </td>
+                        </tr>
+                        
+                        <tr style="height:15px;border-collapse: collapse;">
+                            <td class = "td-15">
+                                Internal De-dupe Status 
+                            </td>
+                            
+                            <td class = "td-35">
+                                <apex:outputText value="{!internalDedupeStatus}"/> 
+                            </td>
+                            
+                            <td class = "td-15">
+                                
+                            </td>
+                            
+                            <td class = "td-35">
+                                <apex:outputText value=""/> 
+                            </td>
+                            
+                        </tr>
+                        
+                        
+                        
+                        <!--<tr style="height:15px;border-collapse: collapse;">
+                            <td class = "td-15">
+                                CBS Dedupe Status  
+                            </td>
+                            
+                            <td class = "td-35">
+                                <apex:outputText value=""/> 
+                            </td>
+                            
+                            <td class = "td-15">
+                                
+                            </td>
+                            
+                            <td class = "td-35">
+                                <apex:outputText value=""/> 
+                            </td>
+                        </tr>-->
+                        
+                        <tr style="height:15px;border-collapse: collapse;">
+                            <td class = "td-15">
+                                RCU Status  
+                            </td>
+                            
+                            <td class = "td-35">
+                                <apex:outputText rendered="{!applicantActivityRCU.size>0}" value="{!applicantActivityRCU[0].Result__c}"/> 
+                            </td>
+                            
+                            <td class = "td-15">
+                                
+                            </td>
+                            
+                            <td class = "td-35">
+                                <apex:outputText value=""/> 
+                            </td>
+                            
+                        </tr>
+                        
+                        <!--<tr style="height:15px;border-collapse: collapse;">
+                            <td class = "td-15">
+                                CFR Check  
+                            </td>
+                            
+                            <td class = "td-35">
+                                <apex:outputText value=""/> 
+                            </td>
+                            
+                            <td class = "td-15">
+                                
+                            </td>
+                            
+                            <td class = "td-35">
+                                <apex:outputText value=""/> 
+                            </td>
+                            
+                        </tr>-->
+                        
+                       <!-- <tr style="height:15px;border-collapse: collapse;">
+                            <td class = "td-15">
+                                RBI Defaulter List   
+                            </td>
+                            
+                            <td class = "td-35">
+                                <apex:outputText value=""/> 
+                            </td>
+                            
+                            <td class = "td-15">
+                                
+                            </td>
+                            
+                            <td class = "td-35">
+                                <apex:outputText value=""/> 
+                            </td>
+                            
+                        </tr>-->
+                        
+                        <tr style="height:15px;border-collapse: collapse;">
+                            <td colspan="3" class="td-15">
+                                Is applicant or his relative working in a bank as director/Sr. Officer.   
+                            </td>
+                            <td class = "td-35">
+                                <apex:outputText value="{!IsDirectorSrOfficer}"/> 
+                            </td>
+                        </tr>
+                        
+                    </table>
+                </div>
+                </apex:outputPanel>
+                <!-- Co-Applicant Details Ended --> 
+                
+                 <!-- Guarantor Details Started--> 
+                  <apex:outputPanel rendered="{!guarantorApplicantList.size > 0}">
+                <apex:variable var="index" value="{!0}"/>
+                <apex:repeat value="{!guarantorApplicantList}" var="coApplicant">
+                    <apex:variable var="index" value="{!index + 1}"/>
+                    <div class="title">
+                        <b>Guarantor's {!index} Details</b>
+                    </div>
+                    
+                    <br/>
+                    
+                    <div class="tb-div bg">   
+                        <table >
+                            <tr>
+                                <th style="border: 1px solid black;border-collapse: collapse;background-color:gray; color:white;width :15%"></th>
+                                <th style="border: 1px solid black;border-collapse: collapse;background-color:gray; color:white; width :35%"></th>
+                                <th style="border: 1px solid black;border-collapse: collapse;background-color:gray; color:white; width :15%"></th>
+                                <th style="border: 1px solid black;border-collapse: collapse;background-color:gray; color:white; width :35%"></th>
+                            </tr>
+                            
+                            <tr style="height:15px;border-collapse: collapse;">
+                                <td class = "td-15">
+                                    Constitution   
+                                </td>
+                                
+                                <td colspan="3" class = "td-35">
+                                    <apex:outputText value="{!coApplicant.Constitution__c}"/>
+                                </td>
+                                
+                                
+                            </tr>
+                            
+                            <tr style="height:15px;border-collapse: collapse;">
+                                <td class = "td-15">
+                                    Name of Applicant  
+                                </td>
+                                
+                                <td class = "td-35">
+                                    <apex:outputText value="{!coApplicant.Name}"/>
+                                    <apex:outputText value=""/>
+                                </td>
+                                
+                                <td class = "td-15">
+                                    Date Of Birth/Incorporation  
+                                    
+                                </td>
+                                
+                                <td class = "td-35">
+                                    <apex:outputText value="{!coApplicant.Date_Of_Incorporation__c}"/> 
+                                </td>
+                                
+                            </tr>
+                            
+                            <tr style="height:15px;border-collapse: collapse;">
+                                <td class = "td-15">
+                                    Relationship with the applicant  
+                                </td>
+                                
+                                <td class = "td-35">
+                                    <apex:outputText value=""/> 
+                                </td>
+                                
+                                <td class = "td-15">
+                                    
+                                    
+                                </td>
+                                
+                                <td class = "td-35">
+                                    <apex:outputText value=""/> 
+                                </td>
+                                
+                            </tr>
+                            
+                            <tr style="height:15px;border-collapse: collapse;">
+                                <td class = "td-15">
+                                    Residential Status 
+                                </td>
+                                
+                                <td class = "td-35">
+                                    <apex:outputText value="{!coApplicant.Residential_Status__c}"/> 
+                                </td>
+                                
+                                <td class = "td-15">
+                                    Education  
+                                </td>
+                                
+                                <td class = "td-35">
+                                    <apex:outputText value="{!coApplicant.Education__c}"/> 
+                                </td>
+                                
+                            </tr>
+                            
+                            <tr style="height:15px;border-collapse: collapse;">
+                                <td class = "td-15">
+                                    CIBIL Score 
+                                </td>
+                                
+                                <td class = "td-35">
+                                    <apex:outputText value="{!coApplicant.Cibil_Verification__r.Cibil_Score__c}"/> 
+                                </td>
+                                
+                                <td class = "td-15">
+                                    Existing Customer  
+                                </td>
+                                
+                                <td class = "td-35">
+                                    <apex:outputText value="{!coApplicant.BL_Customer_Type__c}"/> 
+                                </td>
+                                
+                            </tr>
+                             <tr style="height:15px;border-collapse: collapse;">
+                                 <td class = "td-15">
+                                    CBS Dedupe Status
+                                </td>
+                                
+                                <td class = "td-35">
+                                    <apex:outputText value="{!coApplicant.Dedupe_Verification__r.Dedupe_Status__c}"/> 
+                                </td>
+                                         
+                                <td class = "td-15">
+                                     CFR Status 
+                                </td>
+                                
+                                <td class = "td-35">
+                                    <apex:outputText value="{!coApplicant.CFR_Verification__r.CFR_Status__c}"/> 
+                                </td>
+                                
+                            </tr>
+                            
+                            <tr style="height:15px;border-collapse: collapse;">
+                              
+                                <td class = "td-15">
+                                    RBI Defaulter List Status
+                                </td>
+                                
+                                <td class = "td-35">
+                                    <apex:outputText value="{!coApplicant.RBI_Defaulter_List_Status__c}"/> 
+                                </td>
+                                
+                                 <td class = "td-15">
+                                   
+                                </td>
+                                
+                                <td class = "td-35">
+                                    <apex:outputText value=""/> 
+                                </td>
+                                
+                            </tr>
+                            
+                        </table>
+                    </div>
+                    <br/>
+                    
+                    <div Style="text-align:left;">
+                        <b>Occupation Details</b>
+                    </div>
+                    
+                    <br/>
+                    
+                    <div class="tb-div bg">   
+                        <table >
+                            <tr>
+                                <th style="border: 1px solid black;border-collapse: collapse;background-color:gray; color:white;width :15%"></th>
+                                <th style="border: 1px solid black;border-collapse: collapse;background-color:gray; color:white; width :35%"></th>
+                                <th style="border: 1px solid black;border-collapse: collapse;background-color:gray; color:white; width :15%"></th>
+                                <th style="border: 1px solid black;border-collapse: collapse;background-color:gray; color:white; width :35%"></th>
+                            </tr>
+                            
+                            <tr style="height:15px;border-collapse: collapse;">
+                                <td class = "td-15">
+                                    Occupation Type   
+                                </td>
+                                
+                                <td colspan="3" class = "td-35">
+                                    <apex:outputText value="{!coApplicant.Occupation_Type__c}"/> 
+                                </td>
+                                
+                                
+                                
+                            </tr>
+                            
+                            <tr style="height:15px;border-collapse: collapse;">
+                                <td class = "td-15">
+                                    Entity Name  
+                                </td>
+                                
+                                <td colspan="3" class = "td-35">
+                                    <apex:outputText value="{!coApplicant.Entity_Name__c}"/> 
+                                    <apex:outputText value=""/>
+                                </td>
+                                
+                            </tr>
+                            
+                            <tr style="height:15px;border-collapse: collapse;">
+                                <td class = "td-15">
+                                    Details of Authorised Signatory/ Partner/ Directors/ Trustees/Karta 
+                                </td>
+                                
+                                <td class = "td-35">
+                                    <apex:outputText value=""/> 
+                                </td>
+                                
+                                <td class = "td-15">
+                                    Shareholding Pattern    
+                                    
+                                </td>
+                                
+                                <td class = "td-35">
+                                    <apex:outputText value=""/> 
+                                </td>
+                                
+                            </tr>
+                            
+                            <tr style="height:15px;border-collapse: collapse;">
+                                <td class = "td-15">
+                                    No of years at Current Job  
+                                </td>
+                                
+                                <td colspan="3" class = "td-35">
+                                    <apex:outputText value="{!coApplicant.No_of_years_at_current_job__c}"/> 
+                                </td>
+                                
+                            </tr>
+                            
+                            <tr style="height:15px;border-collapse: collapse;">
+                                <td class = "td-15">
+                                    Total work experience   
+                                </td>
+                                
+                                <td colspan="3" class = "td-35">
+                                    <apex:outputText value="{!coApplicant.Total_Work_Experience__c}"/>  
+                                </td>      
+                            </tr>
+                            
+                        </table>
+                    </div>
+                    <br/>
+                </apex:repeat>
+                
+                <div Style="text-align:left;">
+                    <b>Internal Due Diligence</b>
+                </div>
+                
+                <br/>
+                
+                <div class="tb-div bg">   
+                    <table >
+                        <tr>
+                            <th style="border: 1px solid black;border-collapse: collapse;background-color:gray; color:white;width :15%"></th>
+                            <th style="border: 1px solid black;border-collapse: collapse;background-color:gray; color:white; width :35%"></th>
+                            <th style="border: 1px solid black;border-collapse: collapse;background-color:gray; color:white; width :15%"></th>
+                            <th style="border: 1px solid black;border-collapse: collapse;background-color:gray; color:white; width :35%"></th>
+                        </tr>
+                        
+                        <tr style="height:15px;border-collapse: collapse;">
+                            <td class = "td-15">
+                                FI Status Residence   
+                            </td>
+                            
+                            <td class = "td-35">
+                                <apex:outputText rendered="{!applicantActivityFI.size>0}" value="{!applicantActivityFI[0].Result__c}"/>
+                            </td>
+                            
+                            <td class = "td-15">
+                                
+                            </td>
+                            
+                            <td class = "td-35">
+                                <!--  <apex:outputText value="{!lafrecord.Name}"/> -->
+                            </td>
+                        </tr>
+                        
+                        <tr style="height:15px;border-collapse: collapse;">
+                            <td class = "td-15">
+                                FI Status Office    
+                            </td>
+                            
+                            <td class = "td-35">
+                                <apex:outputText rendered="{!applicantActivityOffice.size>0}" value="{!applicantActivityOffice[0].Result__c}"/>
+                            </td>
+                            
+                            <td class = "td-15">
+                                
+                            </td>
+                            
+                            <td class = "td-35">
+                                <!--  <apex:outputText value="{!lafrecord.Name}"/> -->
+                            </td>
+                        </tr>
+                        
+                        <tr style="height:15px;border-collapse: collapse;">
+                            <td class = "td-15">
+                                Internal De-dupe Status 
+                            </td>
+                            
+                            <td class = "td-35">
+                                <apex:outputText value="{!internalDedupeStatus}"/> 
+                            </td>
+                            
+                            <td class = "td-15">
+                                
+                            </td>
+                            
+                            <td class = "td-35">
+                                <apex:outputText value=""/> 
+                            </td>
+                            
+                        </tr>
+                        
+                        
+                        
+                        <!--<tr style="height:15px;border-collapse: collapse;">
+                            <td class = "td-15">
+                                CBS Dedupe Status  
+                            </td>
+                            
+                            <td class = "td-35">
+                                <apex:outputText value=""/> 
+                            </td>
+                            
+                            <td class = "td-15">
+                                
+                            </td>
+                            
+                            <td class = "td-35">
+                                <apex:outputText value=""/> 
+                            </td>
+                        </tr>-->
+                        
+                        <tr style="height:15px;border-collapse: collapse;">
+                            <td class = "td-15">
+                                RCU Status  
+                            </td>
+                            
+                            <td class = "td-35">
+                                <apex:outputText rendered="{!applicantActivityRCU.size>0}" value="{!applicantActivityRCU[0].Result__c}"/> 
+                            </td>
+                            
+                            <td class = "td-15">
+                                
+                            </td>
+                            
+                            <td class = "td-35">
+                                <apex:outputText value=""/> 
+                            </td>
+                            
+                        </tr>
+                        
+                        <!--<tr style="height:15px;border-collapse: collapse;">
+                            <td class = "td-15">
+                                CFR Check  
+                            </td>
+                            
+                            <td class = "td-35">
+                                <apex:outputText value=""/> 
+                            </td>
+                            
+                            <td class = "td-15">
+                                
+                            </td>
+                            
+                            <td class = "td-35">
+                                <apex:outputText value=""/> 
+                            </td>
+                            
+                        </tr>-->
+                        
+                       <!-- <tr style="height:15px;border-collapse: collapse;">
+                            <td class = "td-15">
+                                RBI Defaulter List   
+                            </td>
+                            
+                            <td class = "td-35">
+                                <apex:outputText value=""/> 
+                            </td>
+                            
+                            <td class = "td-15">
+                                
+                            </td>
+                            
+                            <td class = "td-35">
+                                <apex:outputText value=""/> 
+                            </td>
+                            
+                        </tr>-->
+                        
+                        <tr style="height:15px;border-collapse: collapse;">
+                            <td colspan="3" class="td-15">
+                                Is applicant or his relative working in a bank as director/Sr. Officer.   
+                            </td>
+                            <td class = "td-35">
+                                <apex:outputText value="{!IsDirectorSrOfficer}"/> 
+                            </td>
+                        </tr>
+                        
+                    </table>
+                </div>
+                 </apex:outputPanel>     
+                <!-- Guarantor Details Ended --> 
+                
+                <br/>
+                <hr/>
+                <!-- Deviation Response Section Started-->
+                
+                <div class="title">
+                    <b> Deviation  Response (Incase of Multiple ID  to be checked by Techmatrix Team) </b> 
+                </div>
+                <div  class="tb-div bg">
+                    <br/>
+                    <table>
+                        <tr>
+                            <th style="border: 1px solid black;border-collapse: collapse;background-color:gray; color:white;width :15%"></th>
+                            <th style="border: 1px solid black;border-collapse: collapse;background-color:gray; color:white; width :35%"></th>
+                            <th style="border: 1px solid black;border-collapse: collapse;background-color:gray; color:white; width :15%"></th>
+                            <th style="border: 1px solid black;border-collapse: collapse;background-color:gray; color:white; width :35%"></th>
+                        </tr>
+                        
+                        <tr style="height:15px;border-collapse: collapse;">
+                            <td class = "td-15">
+                                Recommendation   
+                            </td>
+                            
+                            <td class = "td-35">
+                                <!--  <apex:outputText value="{!applicantrecord.name}"/> -->
+                                <apex:outputText value=""/>
+                            </td>
+                            
+                            <td class = "td-15">
+                                Eligibility calculated method  
+                            </td>
+                            
+                            <td class = "td-35">
+                                <apex:outputText value=""/> 
+                            </td>
+                            
+                        </tr>
+                        
+                        <tr style="height:15px;border-collapse: collapse;">
+                            <td class = "td-15">
+                                Eligible LTV as per BRE   
+                            </td>
+                            
+                            <td class = "td-35">
+                                <!--  <apex:outputText value="{!applicantrecord.name}"/> -->
+                                <apex:outputText value=""/>
+                            </td>
+                            
+                            <td class = "td-15">
+                                Actual LTV 
+                            </td>
+                            
+                            <td class = "td-35">
+                                <apex:outputText value=""/> 
+                            </td>
+                            
+                        </tr>
+                        
+                        <tr style="height:15px;border-collapse: collapse;">
+                            <td class = "td-15">
+                                Eligible Tenure  
+                            </td>
+                            
+                            <td class = "td-35">
+                                <!--  <apex:outputText value="{!applicantrecord.name}"/> -->
+                                <apex:outputText value=""/>
+                            </td>
+                            
+                            <td class = "td-15">
+                                Actual Tenure  
+                                
+                            </td>
+                            
+                            <td class = "td-35">
+                                <apex:outputText value=""/> 
+                            </td>
+                            
+                        </tr>
+                        
+                        
+                    </table>         
+                </div>
+                <br/><br/> <br/><br/>    
+                <!-- Deviation Response Section Ended-->
+                
+                <!-- Ratios Section Started-->
+                
+                <div class="title">
+                    <b> Ratios(Applicable as per customer Category ) </b> 
+                </div>
+                <div  class="tb-div bg">
+                    <br/>
+                    <table>
+                        <tr>
+                            <th style="border: 1px solid black;border-collapse: collapse;background-color:gray; color:white;width :15%"></th>
+                            <th style="border: 1px solid black;border-collapse: collapse;background-color:gray; color:white; width :15%"></th>
+                            <th style="border: 1px solid black;border-collapse: collapse;background-color:gray; color:white; width :15%"></th>
+                            <th style="border: 1px solid black;border-collapse: collapse;background-color:gray; color:white; width :15%"></th>
+                            <th style="border: 1px solid black;border-collapse: collapse;background-color:gray; color:white; width :15%"></th>
+                            <th style="border: 1px solid black;border-collapse: collapse;background-color:gray; color:white; width :15%"></th>
+                        </tr>
+                        
+                        <tr style="height:15px;border-collapse: collapse;">
+                            <td class = "td-15">
+                                DSCR   
+                            </td>
+                            
+                            <td class = "td-35">
+                                <apex:outputText rendered="{!financialAssessment != null}" value="{!financialAssessment.DSCR_should_be_1__c}"/>
+                            </td>
+                            
+                            <td class = "td-15">
+                                TOL/TNW  
+                            </td>
+                            
+                            <td class = "td-35">
+                                <apex:outputText rendered="{!financialAssessment != null}" value="{!financialAssessment.TOL_TNW__c}"/> 
+                            </td>
+                            
+                             <td class = "td-15">
+                                Current Ratio   
+                            </td>
+                            
+                            <td class = "td-35">
+                                <apex:outputText rendered="{!financialAssessment != null}" value="{!financialAssessment.Current_Ratio__c}"/>
+                            </td>
+                            
+                        </tr>                   
+                    </table> 
+                    <br/>
+                         <table>
+                        <tr>
+                            <th style="border: 1px solid black;border-collapse: collapse;background-color:gray; color:white;width :15%"></th>
+                            <th style="border: 1px solid black;border-collapse: collapse;background-color:gray; color:white; width :35%"></th>
+                            <th style="border: 1px solid black;border-collapse: collapse;background-color:gray; color:white; width :15%"></th>
+                            <th style="border: 1px solid black;border-collapse: collapse;background-color:gray; color:white; width :35%"></th>
+                        </tr>  
+                        
+                        <tr style="height:15px;border-collapse: collapse;">
+                            <td class = "td-15">
+                                Risk
+                            </td>
+                            
+                            <td class = "td-35">
+                                <apex:outputText value="{!loanApplicationObj.Risk__c}"/>
+                            </td>
+                            
+                            <td class = "td-15">
+                                Strength
+                            </td>
+                            
+                            <td class = "td-35">
+                                <apex:outputText value="{!loanApplicationObj.Strength__c}"/>
+                            </td>
+                            
+                        </tr>
+                        
+                        
+                    </table>         
+                </div>
+                <br/>    
+                <!-- Ratios Response Section Ended--> 
+                
+                <!-- DEVIATIONS Section Started-->
+                
+                <div class="title">
+                    <b> DEVIATIONS </b> 
+                </div>
+                <div  class="tb-div bg">
+                    <br/>
+                    <table>
+                        <tr>
+                            <th style="border: 1px solid black;border-collapse: collapse;background-color:gray; color:white;width :15%"></th>
+                            <th style="border: 1px solid black;border-collapse: collapse;background-color:gray; color:white; width :15%"></th>
+                            <th style="border: 1px solid black;border-collapse: collapse;background-color:gray; color:white; width :15%"></th>
+                            <th style="border: 1px solid black;border-collapse: collapse;background-color:gray; color:white; width :15%"></th>
+                            <th style="border: 1px solid black;border-collapse: collapse;background-color:gray; color:white; width :15%"></th>
+                            <th style="border: 1px solid black;border-collapse: collapse;background-color:gray; color:white; width :15%"></th>
+                        </tr>
+                        
+                        <tr style="height:15px;border-collapse: collapse;">
+                            <td class = "td-15">
+                                <b>Deviation Description</b>   
+                            </td>
+                            
+                            <td class = "td-15">
+                                <b>Deviation Type</b>  
+                            </td>
+                            
+                             <td class = "td-15">
+                                 <b>Deviation Approving Authority</b> 
+                             </td>
+                                                                
+                            <td class = "td-15">
+                                <b>Mitigants</b>   
+                            </td>
+                            
+                            <td class = "td-15">
+                                <b>Decision</b>   
+                            </td>
+                            
+                            <td class = "td-15">
+                                <b>Approved/ Rejected By</b>  
+                            </td>
+                        </tr>
+                          <apex:outputPanel rendered="{!deviationSanctionList.size > 0}">
+                        <apex:repeat value="{!deviationSanctionList}" var="deviationObj">
+                            <tr style="height:15px;border-collapse: collapse;">
+                                <td class = "td-35">
+                                    <apex:outputText value="{!deviationObj.Deviation_Description__c}"/>
+                                </td>
+                                <td class = "td-35">
+                                    <apex:outputText value="{!deviationObj.Deviation_Type__c}"/>
+                                </td>
+                                <td class = "td-35">
+                                    <apex:outputText value="{!deviationObj.Approving_Authority__c}"/>
+                                </td>
+                                <td class = "td-35">
+                                    <apex:outputText value="{!deviationObj.Mitigants__c}"/>
+                                </td>
+                                <td class = "td-35">
+                                    <apex:outputText value="{!deviationObj.Decision__c}"/> 
+                                </td>
+                                <td class = "td-35">
+                                    <apex:outputText value="{!deviationObj.Approved_Rejected_By__c}"/> 
+                                </td>
+                            </tr>
+                        </apex:repeat>     
+                              </apex:outputPanel>
+                    </table>         
+                </div>
+                <br/><br/>      
+                <!-- DEVIATIONS Response Section Ended-->   
+                
+                <!-- Decision Sheet Section Started-->
+                Decision Sheet
+                <div  class="tb-div bg">
+                    <br/>
+                    <table>
+                        <tr>
+                            <th style="border: 1px solid black;border-collapse: collapse;background-color:gray; color:white;width :25%"></th>
+                            <th style="border: 1px solid black;border-collapse: collapse;background-color:gray; color:white; width :25%"></th>
+                            <th style="border: 1px solid black;border-collapse: collapse;background-color:gray; color:white; width :25%"></th>
+                            <th style="border: 1px solid black;border-collapse: collapse;background-color:gray; color:white; width :25%"></th>
+                        </tr>
+                        
+                        <tr style="height:15px;border-collapse: collapse;">
+                            <td class = "td-15">
+                                <b>Reason/Special Condition</b>   
+                            </td>
+                            
+                            <td class = "td-15">
+                                <b>Reason Comments</b>   
+                            </td>
+                            
+                            <td class = "td-15">
+                                <b>Reason Created By</b>   
+                            </td>
+                            
+                            <td class = "td-15">
+                                <b>Reason Date</b> 
+                            </td>
+                            
+                        </tr>
+                          <apex:outputPanel rendered="{!deviationDecisionSheet.size > 0}">
+                        <apex:repeat value="{!deviationDecisionSheet}" var="decisionObj">
+							<tr style="height:15px;border-collapse: collapse;">
+                            
+                            <td class = "td-35">
+                                <apex:outputText value="{!decisionObj.Reason_Special_Condition__c}"/> 
+                            </td>
+                            <td class = "td-35">
+                                 <apex:outputText value="{!decisionObj.Reason_Comments__c}"/>
+                            </td>
+                            <td class = "td-35">
+                                <apex:outputText value="{!decisionObj.CreatedBy.Name}"/> 
+                            </td>
+                            <td class = "td-35">
+                                <apex:outputText value="{!decisionObj.CreatedDate}"/>  
+                            </td>
+                            
+                        </tr>
+                        </apex:repeat>
+                        </apex:outputPanel>
+                    </table>         
+                </div>
+                <br/>    
+                <!-- Decision Sheet Section Ended--> 
+                
+                <!-- Notepad Section Started-->
+                
+                <div class="title">
+                    <b> NOTEPAD </b> 
+                </div>
+                <div  class="tb-div bg">
+                    <table>
+                      
+                        <tr style="height:35px;border-collapse: collapse;">
+                            <td class = "td-15">
+                                Decisioning Status   
+                            </td>
+                            
+                            <td class = "td-35">
+                                <apex:outputText value="{!decisioningStatus}"/>
+                            </td>
+                        </tr>  
+                        
+                        <tr style="height:75px;border-collapse: collapse;">
+                            <td class = "td-15">
+                                Decisioning Comments  
+                            </td>
+                            
+                            <td class = "td-35">
+                                <apex:outputText value=""/> 
+                            </td>
+                         </tr>   
+                        
+                    </table> 
+                    <br/>
+                    </div>
+                
+                  <div  class="tb-div bg">
+                        <table>                    
+                        <tr style="height:15px;border-collapse: collapse;">
+                            <td class = "td-15">
+                                Recommending Officer Name 
+                            </td>
+                            
+                            <td class = "td-35">
+                                <apex:outputText value="{!recommendedOfficerName}"/>
+                            </td>
+                            
+                            <td class = "td-15">
+                                Decisioning Officer  Name 
+                            </td>
+                            
+                            <td class = "td-35">
+                                <apex:outputText value="{!decisioningOfficeName}"/> 
+                            </td>
+                            
+                        </tr>
+                        
+                        <tr style="height:15px;border-collapse: collapse;">
+                            <td class = "td-15">
+                                Recommending Officer Signature  
+                            </td>
+                            
+                            <td class = "td-35">
+                                <apex:outputText value="{!recommendedOfficerSignature}"/>
+                            </td>
+                            
+                            <td class = "td-15">
+                                Decisioning Officer Signature 
+                            </td>
+                            
+                            <td class = "td-35">
+                                <apex:outputText value="{!decisioningOfficerSignature}"/> 
+                            </td>
+                            
+                        </tr>
+                        
+                        <tr style="height:15px;border-collapse: collapse;">
+                            <td class = "td-15">
+                                Recommending Date   
+                            </td>
+                            
+                            <td class = "td-35">
+                                <apex:outputText value="{!formattedDate}"/>
+                            </td>
+                            
+                            <td class = "td-15">
+                                Decisioning Date  
+                            </td>
+                            
+                            <td class = "td-35">
+                                <apex:outputText value=""/> 
+                            </td>
+                            
+                        </tr>
+                        <tr style="height:15px;border-collapse: collapse;">
+                            <td colspan="4" class = "td-15">
+                                ***END OF REPORT***   
+                            </td>
+                            
+                        </tr>
+                      </table>    
+                  </div>    
+                
+                <br/>    
+                <!-- Notepad Section Ended-->                
+            </body>
+        </apex:pageBlock>
+    </apex:form>
+    
+</apex:page>

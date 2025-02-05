@@ -1,0 +1,662 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BL_LeMS_Lead</fullName>
+    <active>true</active>
+    <description>Business Loan LeMS Lead</description>
+    <label>BL LeMS Lead</label>
+    <picklistValues>
+        <picklist>Account_Type__c</picklist>
+        <values>
+            <fullName>Corporate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Individual</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Application_Type__c</picklist>
+        <values>
+            <fullName>Unsecured Business Loan</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>BL_Cancellation_Reasons__c</picklist>
+        <values>
+            <fullName>Cancellation due to high ROI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Change in Applicant%2FCo-Applicant%2FGuarantor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer not Interested</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Duplicate Record</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Post PD Query not Resolved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wrong Data Entry</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>BL_Cancellation_Source__c</picklist>
+        <values>
+            <fullName>Bank Induced</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Induced</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>BL_Repayment_Mode__c</picklist>
+        <values>
+            <fullName>NACH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SI from USFB</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>CB_Customer_Category__c</picklist>
+        <values>
+            <fullName>FTU%2FFTB</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Institutional Strategic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>One Vehicle Owner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Retail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Strategic</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Campaign_Type__c</picklist>
+        <values>
+            <fullName>Not Applicable</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Cancel_Reason__c</picklist>
+        <values>
+            <fullName>Any other reasons not covered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Change in Applicant%2C Co- Applicant or Guarantor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Credit Decline</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer withdrawal Application</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Duplicate Lead</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FFR%2C Expansion %26 Bouncing Norms</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>False Information given by Borrower</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fast Expansion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>High DPD or OD for Close relative as per defined Group</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ID stuck in System</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Negative findings during PD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other reason</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Political Links</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Poor CIBIL History</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Poor Repayment History</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Query not resolved in 15 days</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RCU Declined</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ROI Issue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Third Party Funding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wrong data entry</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Cancel_Sub_Reason__c</picklist>
+        <values>
+            <fullName>1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Constitution__c</picklist>
+        <values>
+            <fullName>Govt Body%2FStatutory Body</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HUF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Individual</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Limited Liability Partnership</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Others</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partnership</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Private Ltd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Public Ltd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Section 25 Company</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Society</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sole Proprietorship</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trust</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Customer_Type__c</picklist>
+        <values>
+            <fullName>Existing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Department__c</picklist>
+        <values>
+            <fullName>Assets</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Liabilities</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Micro Banking</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Gender__c</picklist>
+        <values>
+            <fullName>Female</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Male</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transgender</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Is_Moratorium_required__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>LOB__c</picklist>
+        <values>
+            <fullName>BL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CV</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Lead_Nature__c</picklist>
+        <values>
+            <fullName>COLD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HOT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WARM</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Lead_Source__c</picklist>
+        <values>
+            <fullName>ATM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Branch Walk-in</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Campaign</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cross-Sell</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DSA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Direct</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Home Market</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing Activity- BTL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing Channel- ATL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Outbound Activity-Branch</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Social Media</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Website</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Whatsapp</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Lead_Stage__c</picklist>
+        <values>
+            <fullName>Consent Pending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Converted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Lead_Status__c</picklist>
+        <values>
+            <fullName>Active</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Cancelled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rejected</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Moratorium_Period__c</picklist>
+        <values>
+            <fullName>1 Month</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2 Months</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Platform__c</picklist>
+        <values>
+            <fullName>Other Sources</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Product_Category__c</picklist>
+        <values>
+            <fullName>Business Loan</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Business Loan Plus</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Product_Name__c</picklist>
+        <values>
+            <fullName>129</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>266</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Product_Sub_Type__c</picklist>
+        <values>
+            <fullName>Car Loan%2C Tractor Loan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Commercial Vehicle Loan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Construction Equipment Loan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Three Wheeler Loan</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Product_Vertical__c</picklist>
+        <values>
+            <fullName>MSME</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Reject_Reason__c</picklist>
+        <values>
+            <fullName>Any Other Reasons</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer not Interested</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Derogatory CIBIL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FI Negative by Agency</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Policy Norms not met</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RCU Negative</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>System Reject</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Reject_Sub_Reason__c</picklist>
+        <values>
+            <fullName>Age norms not met</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Any other reasons</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Asking for Higher funding - Ltv %2F Loan amount</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Asking for lower Roi</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CIBIL score below acceptable range</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client withdrawal due to change in the plan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Complete Documents not provided by the client</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Credit PD Negative</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer denied the consent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Document Decline</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Document does not complete by client</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Duplicate Record</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Experience norms not met</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FFR Norms not met</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FI Negative</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Financial norms not met %28Captive Profile%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet Expansion Not As Per Norms</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Insufficient Credit History</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Out of GEO Limit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Poor Repayment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Profile Decline</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Recent OD and High DPD in the current running accounts%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SUB %2F SMA %2F High DPD %2F account in the closed loan of CV %2F CE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sanction Letter Expired</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Salutation__c</picklist>
+        <values>
+            <fullName>Dr%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>M%2Fs%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mr%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mrs%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ms%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prof%2E</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Sourcing__c</picklist>
+        <values>
+            <fullName>Branch %28MB%2FGB%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Business Channel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Direct Sales Team</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

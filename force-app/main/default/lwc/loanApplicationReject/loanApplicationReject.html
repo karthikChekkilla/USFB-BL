@@ -1,0 +1,64 @@
+<template>
+    <template if:true={showSpinner}>
+        <lightning-spinner alternative-text="Loading"></lightning-spinner>
+    </template>
+    <template if:true={rejectSectionCV}>
+        <div>
+            <!--<section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+                aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open slds-backdrop slds-backdrop_open">
+                <div class="slds-modal__container customModal">-->
+                    <lightning-modal-header label="Reject Loan Application"></lightning-modal-header>
+                    <lightning-modal-body>
+                        <lightning-record-edit-form density="comfy" onsubmit={handleSubmit} object-api-name="Loan_Application__c"
+                            record-id={recordId} onsuccess={handleSuccess}>
+                            <lightning-messages> </lightning-messages>
+                            <lightning-input-field required="true" field-name="Reject_Reason__c" value=""> </lightning-input-field>
+                            <lightning-input-field required="true" field-name="Reject_Sub_Reason__c" value="">
+                            </lightning-input-field>
+                            <lightning-input-field field-name="Comment__c" class="commentCls" value=""> </lightning-input-field>
+                            <div class="slds-var-m-top_medium slds-var-m-right_medium slds-m-bottom_x-small slds-text-align_right">
+                                <lightning-button variant="brand" type="submit" label="Save"></lightning-button>
+                                &nbsp; &nbsp;
+                                <lightning-button variant="brand" onclick={closeQuickAction} label="Cancel"> </lightning-button>
+                            </div>
+            
+                        </lightning-record-edit-form>
+                    </lightning-modal-body>
+               <!-- </div>
+            </section>-->
+        
+        </div>
+    </template>
+    <template if:true={rejectSectionBL}>
+        <!--<section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+            aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open slds-backdrop slds-backdrop_open">
+            <div class="slds-modal__container customModal">-->
+                <lightning-modal-header label="Reject Loan Application"></lightning-modal-header>
+                <lightning-modal-body>
+                    <template if:true={rejectReasons}>
+                        <lightning-combobox required class="reasons" name="Rejection Reason" label='Rejection Reason'
+                            onchange={handleReasons} options={rejectReasons} placeholder="Select Rejection Reason">
+                        </lightning-combobox>
+                    </template>
+                    <template if:true={rejectSubReasons}>
+                        <lightning-combobox required class="sub-reasons" name="Rejection Sub Reason" label='Rejection Sub Reason'
+                            onchange={handleSubReasons} options={rejectSubReasons} placeholder="Select Rejection Sub Reason">
+                        </lightning-combobox>
+                    </template>
+                    <!--Commented as part of USFBL-479 by Lakshya Verma on 03-10-2024 started-->
+                    <!--<lightning-combobox required  class="reject-type" name="Rejection Type" label='Rejection Type'  onchange={handleRejectType} options={rejectTypeOptions} placeholder="Select Rejection Type"></lightning-combobox>
+                                -->
+                    <!--Commented as part of USFBL-479 by Lakshya Verma on 03-10-2024 Ended-->
+                    <lightning-textarea required onchange={onchangeComments} class="comments;" name="comment" label="Comment" value="">
+                    </lightning-textarea>
+                    </lightning-modal-body>
+                    <lightning-modal-footer>
+                        <lightning-button variant="brand" label="Save" onclick={handelSave} class="slds-m-left_x-small">
+                    </lightning-button>
+                    <lightning-button variant="brand" label="Cancel" onclick={closeQuickAction} class="slds-m-left_x-small">
+                    </lightning-button>
+                </lightning-modal-footer>
+            <!--</div>
+        </section>-->
+        </template>
+</template>

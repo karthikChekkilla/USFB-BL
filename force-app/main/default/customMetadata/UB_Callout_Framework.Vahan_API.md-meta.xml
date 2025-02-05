@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Vahan API</label>
+    <protected>false</protected>
+    <values>
+        <field>Active__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>Auth_Token_c__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Body__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Certificate_Name__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Class_Name__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Endpoint__c</field>
+        <value xsi:type="xsd:string">https://apiuat.utkarsh.bank/vahaan/v1.0.0/rc-advanced</value>
+    </values>
+    <values>
+        <field>Extra_Param_s__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>HTTP_Method__c</field>
+        <value xsi:type="xsd:string">POST</value>
+    </values>
+    <values>
+        <field>HeaderParams__c</field>
+        <value xsi:type="xsd:string">x-karza-key:3qZQkZKDwXDCXsJo
+Content-Type:application/json
+partnerID:Techmatrix
+Accept:application/json</value>
+    </values>
+    <values>
+        <field>Host__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Mock_Response__c</field>
+        <value xsi:type="xsd:string">{&quot;requestId&quot;:&quot;aec20a18-c5c5-4a90-b19c-8ee718304d7c&quot;,&quot;result&quot;:{&quot;seatingCapacity&quot;:&quot;5&quot;,&quot;taxPaidUpto&quot;:&quot;25-Jun-2035&quot;,&quot;vehicleClassDescription&quot;:&quot;Motor Car(LMV)&quot;,&quot;grossVehicleWeight&quot;:&quot;1690&quot;,&quot;unladenWeight&quot;:&quot;1309&quot;,&quot;permanentAddress&quot;:&quot;K-401,LA LAGUNE  GOLF COURSE ROAD, SIKANDERPUR GHOSI ,DLF QE, NEAR SUN CITY SEC-54, Gurgaon-122002&quot;,&quot;ownerSerialNumber&quot;:&quot;1&quot;,&quot;statusAsOn&quot;:null,&quot;wheelbase&quot;:&quot;2519&quot;,&quot;registrationDate&quot;:&quot;26-06-2020&quot;,&quot;fatherName&quot;:&quot;ANIL KUMAR AHUJA&quot;,&quot;financier&quot;:&quot;&quot;,&quot;registrationNumber&quot;:&quot;HR26EH6125&quot;,&quot;chassisNumber&quot;:&quot;MAJAXXMRKALA12851&quot;,&quot;numberOfCylinders&quot;:&quot;4&quot;,&quot;bodyTypeDescription&quot;:&quot;RIGID&quot;,&quot;makerDescription&quot;:&quot;FORD INDIA PVT LTD&quot;,&quot;sleeperCapacity&quot;:&quot;0&quot;,&quot;fuelDescription&quot;:&quot;DIESEL&quot;,&quot;makerModel&quot;:&quot;ECOSPORT 1.5D SPORTS BLACKROOF&quot;,&quot;cubicCapacity&quot;:&quot;1498.00&quot;,&quot;color&quot;:&quot;ABSOLUTE BLACK&quot;,&quot;ownerName&quot;:&quot;VARUN AHUJA&quot;,&quot;normsDescription&quot;:&quot;BHARAT STAGE VI&quot;,&quot;standingCapacity&quot;:&quot;0&quot;,&quot;insuranceUpto&quot;:&quot;09-06-2024&quot;,&quot;engineNumber&quot;:&quot;LA12851&quot;,&quot;presentAddress&quot;:&quot;K-401,LA LAGUNE  GOLF COURSE ROAD, SIKANDERPUR GHOSI ,DLF QE, NEAR SUN CITY SEC-54, Gurgaon-122002&quot;,&quot;insurancePolicyNumber&quot;:&quot;2302101357089200000&quot;,&quot;registeredAt&quot;:&quot;SDM GURUGRAM, Haryana&quot;,&quot;fitnessUpto&quot;:&quot;25-06-2035&quot;,&quot;manufacturedMonthYear&quot;:&quot;03-2020&quot;,&quot;insuranceCompany&quot;:&quot;HDFC ERGO General Insurance Company Ltd&quot;,&quot;pucNumber&quot;:&quot;MH00401140002322&quot;,&quot;pucExpiryDate&quot;:&quot;09-06-2024&quot;,&quot;blackListStatus&quot;:&quot;&quot;,&quot;nationalPermitIssuedBy&quot;:null,&quot;nationalPermitNumber&quot;:&quot;&quot;,&quot;nationalPermitExpiryDate&quot;:null,&quot;statePermitNumber&quot;:&quot;&quot;,&quot;statePermitType&quot;:null,&quot;statePermitIssuedDate&quot;:null,&quot;statePermitExpiryDate&quot;:null,&quot;nonUseFrom&quot;:null,&quot;nocDetails&quot;:&quot;&quot;,&quot;nonUseTo&quot;:null,&quot;stateCd&quot;:null,&quot;vehicleCatgory&quot;:&quot;LMV&quot;,&quot;rcStatus&quot;:&quot;ACTIVE&quot;,&quot;stautsMessage&quot;:null,&quot;rcMobileNo&quot;:&quot;&quot;,&quot;rcNonUseStatus&quot;:null,&quot;blackListInfo&quot;:[]},&quot;statusCode&quot;:101,&quot;clientData&quot;:{&quot;caseId&quot;:&quot;123456&quot;}}</value>
+    </values>
+    <values>
+        <field>Named_Credential__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Timeout_Time__c</field>
+        <value xsi:type="xsd:double">120000.0</value>
+    </values>
+    <values>
+        <field>URL_Parameters__c</field>
+        <value xsi:nil="true"/>
+    </values>
+</CustomMetadata>

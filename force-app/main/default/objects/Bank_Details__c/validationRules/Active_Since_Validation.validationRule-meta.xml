@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Active_Since_Validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>Active_Since__c &gt; TODAY()</errorConditionFormula>
+    <errorDisplayField>Active_Since__c</errorDisplayField>
+    <errorMessage>Future date not allowed</errorMessage>
+</ValidationRule>

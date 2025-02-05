@@ -1,0 +1,33 @@
+<template>
+
+    <template if:true={isSpinner}>
+        <div class="exampleHolder">
+            <lightning-spinner alternative-text="Loading" size="xx-small"></lightning-spinner>
+        </div>
+    </template>
+
+    <template if:true={recordId}>
+        <template if:true={isConfirmModel}>
+            <lightning-modal-header label="Are you sure?"></lightning-modal-header>
+            <lightning-modal-footer>
+                <lightning-button variant="brand" label="Yes" onclick={updateLead} ></lightning-button>
+                &nbsp; &nbsp;
+                <lightning-button label="No" onclick={closeQuickAction} ></lightning-button>
+            </lightning-modal-footer>
+        </template>
+
+        <template if:true={isValidation}>
+                <lightning-modal-header  label="Error" class="my-modal-header"></lightning-modal-header>
+                <lightning-modal-body> 
+                
+                    <lightning-formatted-rich-text value={validationMsg}></lightning-formatted-rich-text>
+                
+                </lightning-modal-body>
+                <lightning-modal-footer>
+                    <lightning-button variant="destructive" label="OK" onclick={closeQuickAction} class="slds-m-left_x-small"></lightning-button>
+                </lightning-modal-footer>
+        </template>
+    </template>
+
+    <!-- </template> -->
+</template>

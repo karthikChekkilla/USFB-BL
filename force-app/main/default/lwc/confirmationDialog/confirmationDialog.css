@@ -1,0 +1,12 @@
+.custom-modal__footer{
+	background: white !important;
+	text-align: center !important;
+	border-top-style: none !important;
+}
+.body-style{
+	padding-left: 2rem;
+	padding-right: 2rem;
+}
+.slds-modal__content{
+    overflow: initial;
+}

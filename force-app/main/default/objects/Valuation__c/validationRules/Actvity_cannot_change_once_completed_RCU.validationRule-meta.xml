@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Actvity_cannot_change_once_completed_RCU</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF(AND(NOT($Setup.Bypass_Validations__c.Bypass_Validation__c),
+$UserRole.Name = &apos;Credit Manager&apos;,
+RecordType_Name__c != &apos;RCU&apos;, NOT(ISNEW()) , Is_Read_Only__c = false ), true, false)</errorConditionFormula>
+    <errorMessage>You cannot change the activity once completed</errorMessage>
+</ValidationRule>

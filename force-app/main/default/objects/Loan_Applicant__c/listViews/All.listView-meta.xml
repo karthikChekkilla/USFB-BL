@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>Applicant_Type__c</columns>
+    <columns>Application__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>RECORDTYPE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Pan_Number__c</field>
+        <operation>equals</operation>
+        <value>AAHPO7310C</value>
+    </filters>
+    <label>All</label>
+</ListView>

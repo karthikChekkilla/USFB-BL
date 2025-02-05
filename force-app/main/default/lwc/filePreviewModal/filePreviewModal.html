@@ -1,0 +1,74 @@
+<template>
+    <template if:true={showSpinner}>
+        <lightning-spinner alternative-text="Loading"></lightning-spinner>
+    </template>
+    <!--<template if:true={showPreviewModal}>-->
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container" style="max-width:60rem !important; width: 100% !important">
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+                        <lightning-icon icon-name="utility:close"
+                            alternative-text="close"
+                            variant="inverse"
+                            size="small" ></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Document Preview</h2>
+            </header>
+            <template if:true={filesList}>
+                <lightning-card >
+                    <div class="slds-m-around_small slds-m-bottom_small">
+                        <lightning-datatable key-field="Id" hide-checkbox-column="true" data={filesList} columns={columns} onrowaction={handleRowAction}
+                            onrowselection={getSelectedAction} style="display: block;" 
+                            ></lightning-datatable>
+                    </div>
+                    <!--<template for:each={filesList} for:item="file">
+                        <div key={file.Id} class="slds-box">
+                            <div class="slds-grid slds-wrap">
+                                <div class="slds-col slds-large-size_4-of-12 slds-medium-size_4-of-12 slds-size_12-of-12">
+                                    <p><strong>{file.Parent_Document__r.Document_Type__c}</strong></p>
+                                </div>
+                                <div class="slds-col slds-large-size_4-of-12 slds-medium-size_4-of-12 slds-size_12-of-12">
+                                    <lightning-button label="View" 
+                                    variant="brand"
+                                    data-id={file.Document_Preview_Url__c}
+                                    onclick={previewHandler}
+                                    ></lightning-button>
+                                </div>
+                                <template if:true={deleteVisible}>
+                                    <div class="slds-col slds-large-size_4-of-12 slds-medium-size_4-of-12 slds-size_12-of-12">
+                                        <lightning-button label="Delete" 
+                                        variant="brand"
+                                        data-id={file.Id}
+                                        onclick={deleteHandler}
+                                        ></lightning-button>
+                                    </div>
+                                </template>
+                            </div>
+                        </div>
+                    </template>-->
+                </lightning-card>
+            </template>
+            <template if:false={filesList}>
+                No Documents Found!!
+            </template>
+            <!-- Modal/Popup Box LWC body starts here -->
+               <!-- <div class="slds-modal__content slds-p-around_small body">
+                    <template if:true={filePreviewUrl}>-->
+                        <!--<div class="slds-modal__content slds-p-around_small body" >
+                            <iframe src={filePreviewUrl} id="fraDisabled" width="100%" style="min-height:25rem;" class="iFrame" ></iframe>-->
+                            <!--<embed type="application/pdf" height="100" width="100%" src={siteUrl} />
+                            <object data={siteUrl} height="100" width="100%"></object>-->
+                        <!--</div>
+                    </template>-->
+                    <!--<template if:false={filePreviewUrl}>
+                        <div class="slds-align_absolute-center" style="height:2rem">
+                            <b>No Documents Found!!</b>
+                        </div>
+                    </template>-->
+               <!-- </div>-->
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    <!--</template>-->
+</template>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Address_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Address Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Permanent Address</fullName>
+                <default>false</default>
+                <label>Permanent Address</label>
+            </value>
+            <value>
+                <fullName>Residence Address</fullName>
+                <default>false</default>
+                <label>Residence Address</label>
+            </value>
+            <value>
+                <fullName>Office Address</fullName>
+                <default>false</default>
+                <label>Office Address</label>
+            </value>
+            <value>
+                <fullName>Branch / Regional Office</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Branch / Regional Office</label>
+            </value>
+            <value>
+                <fullName>Corporate Office</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Corporate Office</label>
+            </value>
+            <value>
+                <fullName>Not Categorized</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Not Categorized</label>
+            </value>
+            <value>
+                <fullName>Others</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Others</label>
+            </value>
+            <value>
+                <fullName>Plant / Factory Address</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Plant / Factory Address</label>
+            </value>
+            <value>
+                <fullName>Registered Office</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Registered Office</label>
+            </value>
+            <value>
+                <fullName>Warehouse</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Warehouse</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Udyam_Registration_Application_Date</fullName>
+    <active>true</active>
+    <errorConditionFormula>If(AND(NOT(isBlank(BL_Udyam_Registration_Application_Date__c)),
+BL_Udyam_Registration_Application_Date__c &gt; TODAY()), true, false)</errorConditionFormula>
+    <errorDisplayField>BL_Udyam_Registration_Application_Date__c</errorDisplayField>
+    <errorMessage>Future date not allowed for udhyam application registration date.</errorMessage>
+</ValidationRule>

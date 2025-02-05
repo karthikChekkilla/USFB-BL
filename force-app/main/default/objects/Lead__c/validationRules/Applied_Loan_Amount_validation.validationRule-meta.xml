@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Applied_Loan_Amount_validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF( RecordType.DeveloperName == &apos;LeMS_Lead&apos; &amp;&amp; ISNEW(),
+false,
+AND(
+NOT($Setup.Bypass_Validations__c.Bypass_Validation__c),
+OR(
+ISBLANK(Amount__c), Amount__c  &lt;= 0 )))</errorConditionFormula>
+    <errorDisplayField>Amount__c</errorDisplayField>
+    <errorMessage>Applied Loan Amount can&apos;t be 0 or less than 0.</errorMessage>
+</ValidationRule>

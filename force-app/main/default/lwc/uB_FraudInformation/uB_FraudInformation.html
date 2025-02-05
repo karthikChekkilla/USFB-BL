@@ -1,0 +1,14 @@
+<template>
+    <template if:true={showFraudInfo}>
+        <div class="slds-align_absolute-center">
+            <h3 class="slds-text-heading_medium slds-p-around_small slds-hyphenate" style="color:red"><b>Fraud Information Found</b></h3>
+        </div>
+        <template if:true={fraudList}>
+            <lightning-datatable data={fraudList} columns={columns} key-field="Id" hide-checkbox-column min-column-width="100px">
+        </lightning-datatable>
+        </template>
+        <template if:true={error}>
+            {error}
+        </template>
+    </template>
+</template>

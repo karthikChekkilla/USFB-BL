@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BL</fullName>
+    <active>true</active>
+    <label>BL</label>
+    <picklistValues>
+        <picklist>Loan_Offer_Review_Status__c</picklist>
+        <values>
+            <fullName>Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Approval Required</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rejected</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sent for Apporval</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Repayment_Mode__c</picklist>
+        <values>
+            <fullName>ACH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PDC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Standing Instructions</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Stage__c</picklist>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disbursement Checker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disbursement Maker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Documents Review</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>E-Nach Pending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Negotiation</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>PDD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pre-Disbursal Document Collection</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Active</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disbursed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inactive</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

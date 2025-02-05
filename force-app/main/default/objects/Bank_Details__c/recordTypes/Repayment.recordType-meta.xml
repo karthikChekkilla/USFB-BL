@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Repayment</fullName>
+    <active>true</active>
+    <label>Repayment</label>
+    <picklistValues>
+        <picklist>Account_Type__c</picklist>
+        <values>
+            <fullName>Current</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Saving</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Payment_Mode__c</picklist>
+        <values>
+            <fullName>Cheque</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NEFT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RTGS</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Salutation__c</fullName>
+    <externalId>false</externalId>
+    <label>Salutation</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Constitution__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetName>Salutation</valueSetName>
+        <valueSettings>
+            <controllingFieldValue>Limited Liability Partnership</controllingFieldValue>
+            <controllingFieldValue>Others</controllingFieldValue>
+            <controllingFieldValue>Partnership</controllingFieldValue>
+            <controllingFieldValue>Public Ltd</controllingFieldValue>
+            <controllingFieldValue>Trust</controllingFieldValue>
+            <controllingFieldValue>Society</controllingFieldValue>
+            <controllingFieldValue>HUF</controllingFieldValue>
+            <controllingFieldValue>Section 25 Company</controllingFieldValue>
+            <controllingFieldValue>Govt Body/Statutory Body</controllingFieldValue>
+            <valueName>M/s.</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Individual</controllingFieldValue>
+            <controllingFieldValue>Sole Proprietorship</controllingFieldValue>
+            <valueName>Mr.</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Individual</controllingFieldValue>
+            <controllingFieldValue>Sole Proprietorship</controllingFieldValue>
+            <valueName>Ms.</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Individual</controllingFieldValue>
+            <controllingFieldValue>Sole Proprietorship</controllingFieldValue>
+            <valueName>Mrs.</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Individual</controllingFieldValue>
+            <controllingFieldValue>Sole Proprietorship</controllingFieldValue>
+            <valueName>Dr.</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Individual</controllingFieldValue>
+            <controllingFieldValue>Sole Proprietorship</controllingFieldValue>
+            <valueName>Prof.</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

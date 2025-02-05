@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Phone_Number_10_digits</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF( RecordType.DeveloperName == &apos;LeMS_Lead&apos; &amp;&amp; ISNEW(),
+false,
+NOT($Setup.Bypass_Validations__c.Bypass_Validation__c)
+&amp;&amp;
+NOT(REGEX( Mobile_Number__c , &quot;^[6-9]{1}[0-9]{9}$&quot;))
+)</errorConditionFormula>
+    <errorDisplayField>Mobile_Number__c</errorDisplayField>
+    <errorMessage>Invalid Mobile Number</errorMessage>
+</ValidationRule>

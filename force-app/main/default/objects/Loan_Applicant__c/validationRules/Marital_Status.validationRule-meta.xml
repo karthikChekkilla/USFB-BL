@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Marital_Status</fullName>
+    <active>true</active>
+    <errorConditionFormula>if(AND( Record_Type_Name__c = &apos;BL Individual&apos;, 
+							NOT(ISBLANK(Text(Marital_Status__c))),
+ISPICKVAL(Marital_Status__c, &apos;Married&apos;),
+OR(ISBLANK(Name_of_Spouse__c),
+ISBLANK(Date_of_birth_of_Spouse__c) )),
+true, false)</errorConditionFormula>
+    <errorMessage>In case of Married Status Name of spouse, Date of birth of spouse is mandatory.</errorMessage>
+</ValidationRule>

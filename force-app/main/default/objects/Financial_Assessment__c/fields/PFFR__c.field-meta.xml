@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PFFR__c</fullName>
+    <externalId>false</externalId>
+    <formula>(Free_Fleet__c +  Free_Fleet_Instalment_or_principle_expos__c + Deemed_Free_Calculation__c )/( Existing_Fleet__c + Proposed_Fleet__c )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>PFFR</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

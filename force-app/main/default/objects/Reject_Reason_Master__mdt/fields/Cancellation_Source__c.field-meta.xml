@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cancellation_Source__c</fullName>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Cancellation Source</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Bank Induced</fullName>
+                <default>true</default>
+                <label>Bank Induced</label>
+            </value>
+            <value>
+                <fullName>Customer Induced</fullName>
+                <default>false</default>
+                <label>Customer Induced</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

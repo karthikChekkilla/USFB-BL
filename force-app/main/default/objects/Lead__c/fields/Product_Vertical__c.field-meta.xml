@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Vertical__c</fullName>
+    <externalId>false</externalId>
+    <label>Product Vertical</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Product_Category__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Wheels</fullName>
+                <default>false</default>
+                <label>Wheels</label>
+            </value>
+            <value>
+                <fullName>Retail Assets</fullName>
+                <default>false</default>
+                <label>Retail Assets</label>
+            </value>
+            <value>
+                <fullName>MSME</fullName>
+                <default>false</default>
+                <label>MSME</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>New CV</controllingFieldValue>
+            <controllingFieldValue>Used CV</controllingFieldValue>
+            <controllingFieldValue>New CE</controllingFieldValue>
+            <controllingFieldValue>Used CE</controllingFieldValue>
+            <valueName>Wheels</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Business Loan</controllingFieldValue>
+            <valueName>MSME</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sherlock_Verification__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <label>Sherlock Verification</label>
+    <referenceTo>Verification__c</referenceTo>
+    <relationshipLabel>Loan Applicants (Sherlock Verification)</relationshipLabel>
+    <relationshipName>Loan_Applicants4</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

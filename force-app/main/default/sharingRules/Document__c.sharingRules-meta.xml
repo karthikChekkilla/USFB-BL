@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingOwnerRules>
+        <fullName>DSA_Documents_for_CPA</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>DSA Documents for CPA</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>Committee</roleAndSubordinatesInternal>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>Business_Head</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Portal_User_Documents</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Portal User Documents</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>Committee</roleAndSubordinatesInternal>
+        </sharedTo>
+        <sharedFrom>
+            <portalRole>UtkarshBankPartnerUser</portalRole>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Shared_with_DSA</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Shared with DSA</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>Committee</roleAndSubordinatesInternal>
+        </sharedTo>
+        <sharedFrom>
+            <portalRole>AUserPartnerPersonAccount</portalRole>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

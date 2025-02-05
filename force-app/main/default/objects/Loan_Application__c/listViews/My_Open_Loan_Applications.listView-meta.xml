@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Open_Loan_Applications</fullName>
+    <columns>NAME</columns>
+    <columns>Record_Type_Name__c</columns>
+    <columns>Branch__c</columns>
+    <columns>Loan_Application_Status__c</columns>
+    <columns>Loan_Application_Stage__c</columns>
+    <columns>BL_Product_Name__c</columns>
+    <columns>Owner_Full_Name__c</columns>
+    <columns>Lead_Created_Date__c</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>IsBranchHasCurrentUser__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Shared_with_Managers__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>My Loan Applications</label>
+</ListView>

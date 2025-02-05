@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Approving_Authority__c</fullName>
+    <externalId>false</externalId>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <label>Approving Authority</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>National Credit Manager</fullName>
+                <default>true</default>
+                <label>National Credit Manager</label>
+            </value>
+            <value>
+                <fullName>Credit Head</fullName>
+                <default>false</default>
+                <label>Credit Head</label>
+            </value>
+            <value>
+                <fullName>Zonal Credit Manager</fullName>
+                <default>false</default>
+                <label>Zonal Credit Manager</label>
+            </value>
+            <value>
+                <fullName>Regional Credit Manager</fullName>
+                <default>false</default>
+                <label>Regional Credit Manager</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

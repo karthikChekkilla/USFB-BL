@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Category__c</fullName>
+    <externalId>false</externalId>
+    <label>Product Category</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>CV-New</fullName>
+                <default>false</default>
+                <label>CV-New</label>
+            </value>
+            <value>
+                <fullName>CE-New</fullName>
+                <default>false</default>
+                <label>CE-New</label>
+            </value>
+            <value>
+                <fullName>CV-Used</fullName>
+                <default>false</default>
+                <label>CV-Used</label>
+            </value>
+            <value>
+                <fullName>CE-Used</fullName>
+                <default>false</default>
+                <label>CE-Used</label>
+            </value>
+            <value>
+                <fullName>Business Loan</fullName>
+                <default>false</default>
+                <label>Business Loan</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

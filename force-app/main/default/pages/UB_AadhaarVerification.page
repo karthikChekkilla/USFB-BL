@@ -1,0 +1,22 @@
+<apex:page sidebar="false" showHeader="false">
+    <!-- This loads the JavaScript file needed to use Lightning Components for Visualforce-->
+    <meta name="viewport"  content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <apex:slds />
+    <apex:includeLightning />   
+    
+    <!-- div tag act as locator while calling Lightning.createComponent -->    
+    <div id="lightning" />    
+    <script>    
+    $Lightning.use("c:UB_InitiateOtpVerification", function() {
+        //get loan Application Id from URL
+        var recordId = "{!$CurrentPage.parameters.id}";        
+        $Lightning.createComponent
+        ("c:UB_InitiateOtpVerificationPublicLink",         
+         { "recordId" : recordId },          
+         "lightning",      
+         function(cmp) {             
+             // do some stuff             
+         });        
+    });    
+    </script>     
+</apex:page>

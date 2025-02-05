@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RestrictUserToUpdateName</fullName>
+    <active>true</active>
+    <description>Restrict User To Update Name</description>
+    <errorConditionFormula>AND(ISNEW() == false , ISCHANGED(Name) )</errorConditionFormula>
+    <errorMessage>You don&apos;t have permission to change the name.</errorMessage>
+</ValidationRule>

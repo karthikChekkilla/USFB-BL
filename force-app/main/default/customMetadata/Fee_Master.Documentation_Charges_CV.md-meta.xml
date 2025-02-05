@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Documentation Charges_CV</label>
+    <protected>false</protected>
+    <values>
+        <field>Amount_Value__c</field>
+        <value xsi:type="xsd:double">1100.0</value>
+    </values>
+    <values>
+        <field>Calculation_Type__c</field>
+        <value xsi:type="xsd:string">Amount</value>
+    </values>
+    <values>
+        <field>Fee_Name__c</field>
+        <value xsi:type="xsd:string">Documentation Charges</value>
+    </values>
+    <values>
+        <field>GST_Percentage__c</field>
+        <value xsi:type="xsd:double">18.0</value>
+    </values>
+    <values>
+        <field>IsActive__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>LOB_Sub_Type__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>LOB__c</field>
+        <value xsi:type="xsd:string">CV</value>
+    </values>
+    <values>
+        <field>Percentage_Of__c</field>
+        <value xsi:type="xsd:string">Loan_Amount__c</value>
+    </values>
+    <values>
+        <field>Stage__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Vehicle_Classification__c</field>
+        <value xsi:nil="true"/>
+    </values>
+</CustomMetadata>

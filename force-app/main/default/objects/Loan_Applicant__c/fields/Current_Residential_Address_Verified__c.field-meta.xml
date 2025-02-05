@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Current_Residential_Address_Verified__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Current Residential Address Verified</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Current Residential Address Verified via TVR</inlineHelpText>
+    <label>Current Residential Address Verified</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

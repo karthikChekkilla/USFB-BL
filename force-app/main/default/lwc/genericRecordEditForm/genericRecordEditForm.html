@@ -1,0 +1,119 @@
+<template>
+    <template if:true={showSpinner}>
+		<lightning-spinner alternative-text="Loading" size="large"></lightning-spinner>
+	</template>
+    <template if:true={isShow}>
+        <lightning-record-edit-form record-id={editRecordId} object-api-name={objectName}
+			record-type-id={selectedRecordTypeId} onsuccess={handleRecordSaveSuccess} onsubmit={handleSubmit}
+			onerror={handleError} density="comfy">
+            <template if:false={isRedFlagModal}>
+                <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+					aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open slds-modal_large">
+                    <div class="slds-modal__container">
+                        <header class="slds-modal__header">
+                            <lightning-button-icon icon-name="utility:close" onclick={handleClose}
+								alternative-text="close" variant="bare-inverse" class="slds-modal__close">
+							</lightning-button-icon>
+                            <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">{newOrEdit}
+								{objectLabel}</h2>
+                        </header>
+                        <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1"
+							style="min-height:400px;">
+                            <template if:true={isShowRecordType}>
+                                <lightning-radio-group name="radioGroup" label="Entity Type"
+									onchange={handleRecordTypeChange} options={recordTypeOptions}
+									value={selectedRecordTypeId} type="button" variant="label-inline">
+								</lightning-radio-group>
+                            </template>
+
+                            <template for:each={sectionWithfields} for:item="section">
+                                <div key={section.Id} if:true={section.isShow}>
+                                    <h3 class="label slds-truncate slds-p-around_x-small slds-theme_shade">
+										<span class="slds-truncate" title={section.MasterLabel}>{section.MasterLabel}</span>
+									</h3>
+                                    <lightning-layout multiple-rows>
+                                        <template for:each={section.Section_Fields__r} for:item="field">
+                                            <lightning-layout-item padding="horizontal-medium" size="12"
+												small-device-size="6" medium-device-size="6" large-device-size="6"
+												key={field.Id} if:true={field.isShow}>
+                                                <template lwc:if={field.isPicklist}>
+													<lightning-combobox name={field.label} label={field.label}
+														value={field.value} placeholder="--Select--"
+														options={field.options} required={field.is_Required__c}
+														onchange={handleChange}></lightning-combobox>
+												</template>
+                                                <template lwc:else>
+                                                    <template if:true={field.isDate}>
+                                                        <lightning-input type="date" name={field.Field_API_Name__c}
+															disabled={field.is_Ready_Only__c} onchange={handleOnChange}
+															required={field.is_Required__c} value={field.value}
+															label={field.Label} date-style="short"></lightning-input>
+                                                        <div style="display:none;">
+															<lightning-input-field field-name={field.Field_API_Name__c}
+																disabled={field.is_Ready_Only__c}
+																onchange={handleOnChange}
+																required={field.is_Required__c} value={field.value}
+																date-style="short"></lightning-input-field>
+														</div>
+                                                    </template>
+                                                    <template if:false={field.isDate}>
+														<lightning-input-field field-name={field.Field_API_Name__c}
+															disabled={field.is_Ready_Only__c} onchange={handleOnChange}
+															required={field.is_Required__c} value={field.value}
+															date-style="short"></lightning-input-field>
+													</template>
+                                                </template>
+                                            </lightning-layout-item>
+                                        </template>
+                                    </lightning-layout>
+                                </div>
+                            </template>
+                        </div>
+
+                        <footer class="slds-modal__footer">
+							<lightning-button variant="netural" label="Cancel" title="Cancel" onclick={handleClose}>
+							</lightning-button>
+							&nbsp;&nbsp;&nbsp;&nbsp;
+							<lightning-button variant="brand" label="Save" title="Save" type="submit"
+								disabled={isDisabled} onclick={handleSaveClick}>
+							</lightning-button>
+						</footer>
+                    </div>
+                </section>
+                <div class="slds-backdrop slds-backdrop_open"></div>
+            </template>
+
+            <template if:true={isRedFlagModal}>
+				<section role="dialog" tabindex="-1" aria-labelledby="modal-heading-02" aria-modal="true"
+					aria-describedby="modal-content-id-2" class="slds-modal slds-fade-in-open">
+					<div class="slds-modal__container">
+						<!-- modal header start -->
+						<header class="slds-modal__header">
+							<button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={handleClose}>
+            <lightning-icon icon-name="utility:close"
+                alternative-text="close"
+                variant="inverse"
+                size="small" ></lightning-icon>
+            <span class="slds-assistive-text">Close</span>
+            </button>
+							<h2 id="modal-heading-02" class="slds-text-heading_medium slds-hyphenate">{newOrEdit}
+								{objectLabel}</h2>
+						</header>
+						<!-- modal body start -->
+						<div class="slds-modal__content slds-p-around_medium" id="modal-content-id-2">
+							<h1 class="slds-text-heading_medium slds-text-align_center slds-text-color_error">Red Flag
+								customer do you wish to proceed?</h1>
+						</div>
+						<!-- modal footer start-->
+						<footer class="slds-modal__footer">
+							<button class="slds-button slds-button_neutral" onclick={handleClose}>No</button>
+							<button class="slds-button slds-button_destructive" onclick={saveredFlag}>Yes</button>
+						</footer>
+					</div>
+				</section>
+
+				<div class="slds-backdrop slds-backdrop_open"></div>
+			</template>
+        </lightning-record-edit-form>
+    </template>
+</template>

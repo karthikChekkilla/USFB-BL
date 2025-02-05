@@ -1,0 +1,63 @@
+<template>
+   <!-- <template if:true={disburseStatus}>
+        <lightning-card  variant="Narrow">
+            <p class="slds-p-horizontal_small slds-align_absolute-center">
+               <b> {disbursementMsg}</b>
+            </p>
+        </lightning-card>
+    </template>
+    <template if:false={disburseStatus}> -->
+        <lightning-record-edit-form record-id={recordId} object-api-name="Disbursement__c" density="comfy"
+                            onsuccess={handleSuccess} onsubmit={handleSubmit} onerror={handleError}>
+        <lightning-layout multiple-rows>
+            <lightning-layout-item size="12" padding="around-small" small-device-size="6" medium-device-size="6" large-device-size="6" >
+                <div class="custom-box">
+                    <!--<lightning-input onchange={handleChange} required type="currency" value={disburseData.Loan_Amount__c} 
+                    variant="standard" name="loanAmount" label="Loan Amount" placeholder="Loan Amount"></lightning-input>-->
+                    <lightning-input-field field-name="Loan_Amount__c" required onchange={handleChange} class="loan-amount">
+                                            </lightning-input-field>
+                </div>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" padding="around-small" small-device-size="6" medium-device-size="6" large-device-size="6" >
+                <div class="custom-box">
+                    <!--<lightning-input onchange={handleChange} required type="number" value={disburseData.Tenure__c} 
+                    variant="standard" name="tenure" label="Tenure" placeholder="Tenure"></lightning-input>-->
+                    <lightning-input-field field-name="Tenure__c" required onchange={handleChange} class="tenure">
+                                            </lightning-input-field>
+                </div>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" padding="around-small" small-device-size="6" medium-device-size="6" large-device-size="6" >
+                <div class="custom-box">
+                    <!--<lightning-input onchange={handleChange} required type="number" value={disburseData.ROI__c} 
+                    variant="standard" name="roi" label="ROI" placeholder="ROI"></lightning-input>-->
+                    <lightning-input-field field-name="ROI__c" required onchange={handleChange} class="roi">
+                                            </lightning-input-field>
+                </div>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" padding="around-small" small-device-size="6" medium-device-size="6" large-device-size="6" >
+                <div class="custom-box">
+                    <!--<lightning-input onchange={handleChange} required type="currency" value={disburseData.Processing_Fee__c} 
+                    variant="standard" name="fees" label="Processing Fee" placeholder="Processing Fee"></lightning-input>-->
+                    <lightning-input-field field-name="Processing_Fee__c" class="processing-fee" required onchange={handleChange}>
+                                            </lightning-input-field>
+                </div>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" padding="around-small" small-device-size="6" medium-device-size="6" large-device-size="6" >
+                <div class="custom-box">
+                    <!--<lightning-input onchange={handleChange} required type="currency" value={disburseData.Insurance_Amount__c} 
+                    variant="standard" name="insuranceamount" label="Insurance Amount" placeholder="Insurance Amount"></lightning-input>-->
+                    <lightning-input-field field-name="Insurance_Amount__c" class="insurance-amount" required onchange={handleChange}>
+                                            </lightning-input-field>
+                </div>
+            </lightning-layout-item>
+        </lightning-layout>
+        <!--<footer class="slds-modal__footer">-->
+            <div class="slds-m-around_small slds-text-align_center">
+                <lightning-button variant="brand" label="Submit" title="Save" onclick={handleSave} disabled={readonlyField}></lightning-button>
+                &nbsp; &nbsp;
+             
+            </div>
+        <!--</footer>-->
+        </lightning-record-edit-form>
+   <!-- </template>-->
+</template>

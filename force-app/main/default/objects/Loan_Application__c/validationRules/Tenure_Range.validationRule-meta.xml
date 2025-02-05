@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tenure_Range</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF(AND(NOT($Setup.Bypass_Validations__c.Bypass_Validation__c),  NOT(ISPICKVAL(LOB__c, &apos;BL&apos;)),
+OR(Loan_Period__c &lt; 12 ,Loan_Period__c &gt; 80) ),true, false)</errorConditionFormula>
+    <errorMessage>Tenure month can not be less than 12 and higher than 80.</errorMessage>
+</ValidationRule>

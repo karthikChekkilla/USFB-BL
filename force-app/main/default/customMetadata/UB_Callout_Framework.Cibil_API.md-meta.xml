@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Cibil_API</label>
+    <protected>false</protected>
+    <values>
+        <field>Active__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>Auth_Token_c__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Body__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Certificate_Name__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Class_Name__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Endpoint__c</field>
+        <value xsi:type="xsd:string">https://apiuat.utkarsh.bank/cibil/v1.0.0/getcibilbase64</value>
+    </values>
+    <values>
+        <field>Extra_Param_s__c</field>
+        <value xsi:type="xsd:string">memberRefNo:BP0340
+gstStateCode:01
+enquiryMemberUserId:BP03409999_UATC2CNPE
+enquiryPassword:qrcdmf&amp;duWo0bte
+serviceCode:CN2CAS0016</value>
+    </values>
+    <values>
+        <field>HTTP_Method__c</field>
+        <value xsi:type="xsd:string">POST</value>
+    </values>
+    <values>
+        <field>HeaderParams__c</field>
+        <value xsi:type="xsd:string">member-ref-id:BP0340
+cust-ref-id:17235682
+apikey:l71fa2ddd30239468fb2e1f77981a8263f
+Content-Type:application/json
+Partnerid:Techmatrix
+Accept:application/json</value>
+    </values>
+    <values>
+        <field>Host__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Mock_Response__c</field>
+        <value xsi:type="xsd:string">{
+        &quot;controlData&quot;: {
+            &quot;success&quot;: true
+        },
+        &quot;consumerCreditData&quot;: [
+            {
+                &quot;tuefHeader&quot;: {
+                    &quot;headerType&quot;: &quot;TUEF&quot;,
+                    &quot;version&quot;: &quot;12&quot;,
+                    &quot;memberRefNo&quot;: &quot;5667892&quot;,
+                    &quot;enquiryMemberUserId&quot;: &quot;XXXXX&quot;,
+                    &quot;subjectReturnCode&quot;: &quot;1&quot;,
+                    &quot;enquiryControlNumber&quot;: &quot;002156688475&quot;,
+                    &quot;dateProcessed&quot;: &quot;29032022&quot;,
+                    &quot;timeProcessed&quot;: &quot;173608&quot;
+                },
+                &quot;names&quot;: [
+                    {
+                        &quot;index&quot;: &quot;N01&quot;,
+                        &quot;name&quot;: &quot;PRANAY BISWAS MR&quot;,
+                        &quot;birthDate&quot;: &quot;02011967&quot;,
+                        &quot;gender&quot;: &quot;2&quot;
+                    }
+                ],
+                &quot;ids&quot;: [
+                    {
+                        &quot;index&quot;: &quot;I01&quot;,
+                        &quot;idType&quot;: &quot;01&quot;,
+                        &quot;idNumber&quot;: &quot;XXXXXXXXXX&quot;
+                    },
+                    {
+                        &quot;index&quot;: &quot;I02&quot;,
+                        &quot;idType&quot;: &quot;03&quot;,
+                        &quot;idNumber&quot;: &quot;XXXXXXXXXX&quot;
+                    }
+                ],
+                &quot;telephones&quot;: [
+                    {
+                        &quot;index&quot;: &quot;T01&quot;,
+                        &quot;telephoneNumber&quot;: &quot;9007797775&quot;,
+                        &quot;telephoneType&quot;: &quot;01&quot;
+                    },
+                    {
+                        &quot;index&quot;: &quot;T02&quot;,
+                        &quot;telephoneNumber&quot;: &quot;9007797775&quot;,
+                        &quot;telephoneType&quot;: &quot;01&quot;
+                    }
+                ],
+                &quot;emails&quot;: [
+                    {
+                        &quot;index&quot;: &quot;C01&quot;,
+                        &quot;emailID&quot;: &quot;ABC@GMAIL.COM&quot;
+                    }
+                ],
+                &quot;employment&quot;: [
+                    {
+                        &quot;index&quot;: &quot;E01&quot;,
+                        &quot;accountType&quot;: &quot;10&quot;,
+                        &quot;dateReported&quot;: &quot;30092020&quot;,
+                        &quot;occupationCode&quot;: &quot;01&quot;
+                    }
+                ],
+                &quot;scores&quot;: [
+                    {
+                        &quot;scoreName&quot;: &quot;CIBILTUSC3&quot;,
+                        &quot;scoreCardName&quot;: &quot;08&quot;,
+                        &quot;scoreCardVersion&quot;: &quot;10&quot;,
+                        &quot;scoreDate&quot;: &quot;29032022&quot;,
+                        &quot;score&quot;: &quot;00665&quot;
+                    }
+                ],
+                &quot;addresses&quot;: [
+                    {
+                        &quot;index&quot;: &quot;A01&quot;,
+                        &quot;line1&quot;: &quot;20 RAMKRISHNA ROAD NEW BARRACKPUR&quot;,
+                        &quot;line5&quot;: &quot;KOLKATA&quot;,
+                        &quot;stateCode&quot;: &quot;19&quot;,
+                        &quot;pinCode&quot;: &quot;700131&quot;,
+                        &quot;addressCategory&quot;: &quot;03&quot;,
+                        &quot;residenceCode&quot;: &quot;01&quot;,
+                        &quot;dateReported&quot;: &quot;06102020&quot;,
+                        &quot;enquiryEnriched&quot;: &quot;Y&quot;
+                    },
+                    {
+                        &quot;index&quot;: &quot;A02&quot;,
+                        &quot;line1&quot;: &quot;271 KALI BARI BARRACKPORE&quot;,
+                        &quot;stateCode&quot;: &quot;19&quot;,
+                        &quot;pinCode&quot;: &quot;700131&quot;,
+                        &quot;addressCategory&quot;: &quot;02&quot;,
+                        &quot;residenceCode&quot;: &quot;01&quot;,
+                        &quot;dateReported&quot;: &quot;24092020&quot;,
+                        &quot;enquiryEnriched&quot;: &quot;Y&quot;
+                    }
+                ],
+                &quot;accounts&quot;: [
+                    {
+                        &quot;index&quot;: &quot;T001&quot;,
+                        &quot;memberShortName&quot;: &quot;NOT DISCLOSED&quot;,
+                        &quot;accountType&quot;: &quot;02&quot;,
+                        &quot;ownershipIndicator&quot;: &quot;3&quot;,
+                        &quot;dateOpened&quot;: &quot;11032015&quot;,
+                        &quot;lastPaymentDate&quot;: &quot;02092020&quot;,
+                        &quot;dateReported&quot;: &quot;30092020&quot;,
+                        &quot;highCreditAmount&quot;: &quot;1317000&quot;,
+                        &quot;currentBalance&quot;: &quot;1278189&quot;,
+                        &quot;paymentHistory&quot;: &quot;DBTDBTDBTDBTDBTDBTDBTDBTDBTDBTDBTDBTDBTDBTDBTDBTDBTDBTDBTDBTDBTDBTDBTDBTDBTDBTDBTDBTSUBSUBSUBSUBSUBSUBSUBSUB&quot;,
+                        &quot;paymentStartDate&quot;: &quot;01092020&quot;,
+                        &quot;paymentEndDate&quot;: &quot;01102017&quot;,
+                        &quot;collateralType&quot;: &quot;01&quot;,
+                        &quot;interestRate&quot;: &quot;9.0&quot;,
+                        &quot;paymentTenure&quot;: &quot;300&quot;,
+                        &quot;emiAmount&quot;: &quot;12154&quot;,
+                        &quot;paymentFrequency&quot;: &quot;03&quot;,
+                        &quot;actualPaymentAmount&quot;: &quot;633542&quot;,
+                        &quot;cibilRemarksDate&quot;: &quot;21102020&quot;,
+                        &quot;cibilRemarksCode&quot;: &quot;TL1999&quot;
+                    },
+                    {
+                        &quot;index&quot;: &quot;T002&quot;,
+                        &quot;memberShortName&quot;: &quot;NOT DISCLOSED&quot;,
+                        &quot;accountType&quot;: &quot;02&quot;,
+                        &quot;ownershipIndicator&quot;:&quot;4&quot;,
+                        &quot;dateOpened&quot;: &quot;09042002&quot;,
+                        &quot;lastPaymentDate&quot;: &quot;30042006&quot;,
+                        &quot;dateClosed&quot;: &quot;30042006&quot;,
+                        &quot;dateReported&quot;: &quot;31052009&quot;,
+                        &quot;highCreditAmount&quot;: &quot;190000&quot;,
+                        &quot;currentBalance&quot;: &quot;0&quot;,
+                        &quot;paymentHistory&quot;: &quot;058120090060030060030000060030000000037000000000000006000000000000000000120090090&quot;,
+                        &quot;paymentStartDate&quot;: &quot;01042006&quot;,
+                        &quot;paymentEndDate&quot;: &quot;01022004&quot;
+                    },
+                    {
+                        &quot;index&quot;: &quot;T003&quot;,
+                        &quot;memberShortName&quot;: &quot;NOT DISCLOSED&quot;,
+                        &quot;accountType&quot;: &quot;10&quot;,
+                        &quot;ownershipIndicator&quot;: &quot;1&quot;,
+                        &quot;dateOpened&quot;: &quot;27032015&quot;,
+                        &quot;lastPaymentDate&quot;: &quot;12062020&quot;,
+                        &quot;dateReported&quot;: &quot;30092020&quot;,
+                        &quot;highCreditAmount&quot;: &quot;95262&quot;,
+                        &quot;currentBalance&quot;: &quot;63262&quot;,
+                        &quot;paymentHistory&quot;: &quot;000000000000208208208208208208208208208208208208208208208208208208208208176148118086058026028022028028026028&quot;,
+                        &quot;paymentStartDate&quot;: &quot;01092020&quot;,
+                        &quot;paymentEndDate&quot;: &quot;01102017&quot;,
+                        &quot;creditFacilityStatus&quot;: &quot;02&quot;
+                    }
+                ],
+                &quot;enquiries&quot;: [
+                    {
+                        &quot;index&quot;: &quot;I001&quot;,
+                        &quot;enquiryDate&quot;: &quot;29032022&quot;,
+                        &quot;memberShortName&quot;: &quot;TRG MEMBER&quot;,
+                        &quot;enquiryPurpose&quot;: &quot;08&quot;,
+                        &quot;enquiryAmount&quot;: &quot;49500&quot;
+                    },
+                    {
+                        &quot;index&quot;: &quot;I002&quot;,
+                        &quot;enquiryDate&quot;: &quot;31102020&quot;,
+                        &quot;memberShortName&quot;: &quot;NOT DISCLOSED&quot;,
+                        &quot;enquiryPurpose&quot;: &quot;02&quot;,
+                        &quot;enquiryAmount&quot;: &quot;1000000&quot;
+                    }
+                ]
+            }
+        ],
+        &quot;consumerSummaryData&quot;: {
+            &quot;accountSummary&quot;: {
+                &quot;totalAccounts&quot;: &quot;9&quot;,
+                &quot;overdueAccounts&quot;:&quot; 0&quot;,
+                &quot;zeroBalanceAccounts&quot;: &quot;7&quot;,
+                &quot;highCreditAmount&quot;: &quot;2571622&quot;,
+                &quot;currentBalance&quot;: &quot;1341451&quot;,
+                &quot;overdueBalance&quot;: &quot;0&quot;,
+                &quot;recentDateOpened&quot;: &quot;27032015&quot;,
+                &quot;oldestDateOpened&quot;: &quot;30122014&quot;
+                },
+                &quot;inquirySummary&quot;: {
+                &quot;totalInquiry&quot;: &quot;34&quot;,
+                &quot;inquiryPast30Days&quot;: &quot;1&quot;,
+                &quot;inquiryPast12Months&quot;: &quot;0&quot;,
+                &quot;inquiryPast24Months&quot;: &quot;15&quot;,
+                &quot;recentInquiryDate&quot;: &quot;29032022&quot;
+            }
+        }
+    }</value>
+    </values>
+    <values>
+        <field>Named_Credential__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Timeout_Time__c</field>
+        <value xsi:type="xsd:double">120000.0</value>
+    </values>
+    <values>
+        <field>URL_Parameters__c</field>
+        <value xsi:nil="true"/>
+    </values>
+</CustomMetadata>

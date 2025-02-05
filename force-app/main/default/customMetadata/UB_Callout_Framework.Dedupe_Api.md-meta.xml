@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Dedupe Api</label>
+    <protected>false</protected>
+    <values>
+        <field>Active__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>Auth_Token_c__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Body__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Certificate_Name__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Class_Name__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Endpoint__c</field>
+        <value xsi:type="xsd:string">https://apiuat.utkarsh.bank/cbsuciddedupecheck/v1.0.0/idc/v2/customer/deDupe</value>
+    </values>
+    <values>
+        <field>Extra_Param_s__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>HTTP_Method__c</field>
+        <value xsi:type="xsd:string">GET</value>
+    </values>
+    <values>
+        <field>HeaderParams__c</field>
+        <value xsi:type="xsd:string">partnerID:SFDC
+Accept:application/json
+Content-Type:application/json</value>
+    </values>
+    <values>
+        <field>Host__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Mock_Response__c</field>
+        <value xsi:type="xsd:string">{
+  &quot;ResponseMessage&quot;: {
+    &quot;Header&quot;: {
+      &quot;MTI&quot;: &quot;9205&quot;,
+      &quot;PC&quot;: &quot;100000&quot;,
+      &quot;TDT&quot;: &quot;20240402073424&quot;,
+      &quot;SSIC&quot;: &quot;CBX&quot;
+    },
+    &quot;Payload&quot;: {
+      &quot;Status&quot;: &quot;Match Found&quot;,
+      &quot;DECUST&quot;: {
+        &quot;Record&quot;: {
+          &quot;cif&quot;: &quot;999983511&quot;,
+          &quot;fatherName&quot;: &quot;PAWAN KUMAR&quot;,
+          &quot;hid&quot;: &quot;1&quot;,
+          &quot;clientName&quot;: &quot;ANJALI  .&quot;,
+          &quot;address1&quot;: &quot;UTKARSH TOWER&quot;,
+          &quot;matchCriteria&quot;: &quot;PID&quot;,
+          &quot;motherName&quot;: &quot;KAMLESH&quot;,
+          &quot;phone3&quot;: &quot;9311230818&quot;,
+          &quot;dateOfBirth&quot;: &quot;1995-07-21&quot;,
+          &quot;source&quot;: &quot;intellect&quot;,
+          &quot;spouseName&quot;: &quot;0&quot;,
+          &quot;responseId&quot;: &quot;R2917703697904495&quot;,
+          &quot;ucid&quot;: &quot;19570969&quot;
+        }
+      },
+      &quot;matchFlag&quot;: &quot;true&quot;,
+      &quot;ErrorMsg&quot;: &quot;&quot;,
+      &quot;RESPONSE_ID&quot;: &quot;R2917703697904495&quot;,
+      &quot;ErrorCode&quot;: &quot;0&quot;
+    }
+  }
+}</value>
+    </values>
+    <values>
+        <field>Named_Credential__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Timeout_Time__c</field>
+        <value xsi:type="xsd:double">120000.0</value>
+    </values>
+    <values>
+        <field>URL_Parameters__c</field>
+        <value xsi:type="xsd:string">CLIENT_TYPE:I
+systemIndicatorCode:CBX
+USERID:DIGOBUSR
+SOURCE:Intellect
+OPENING_DATE:
+CLIENT_NAME:
+AADHAAR:
+MIDDLE_NAME:
+MOTHER_NAME:
+FATHER_NAME:</value>
+    </values>
+</CustomMetadata>

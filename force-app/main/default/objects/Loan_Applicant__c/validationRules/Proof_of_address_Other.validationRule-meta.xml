@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Proof_of_address_Other</fullName>
+    <active>true</active>
+    <errorConditionFormula>if(AND( NOT(ISBLANK(Text(Proof_of_Address__c))),ISPICKVAL(Proof_of_Address__c, &apos;Others&apos;),
+							ISBLANK(Proof_Of_Address_Name__c)), 
+			true, false)</errorConditionFormula>
+    <errorDisplayField>Proof_Of_Address_Name__c</errorDisplayField>
+    <errorMessage>Proof of address name is required.</errorMessage>
+</ValidationRule>

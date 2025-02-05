@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Expenses_Viability_CV__c</fullName>
+    <externalId>false</externalId>
+    <formula>Fuel_Cost_c_h_g__c + Tyre_Cost_I_J_c_k__c  +  CleanerOperator_Salary__c +  Drivers_Salary__c + Permit_Cost__c + Tax_Expense__c + Misc_Exps__c + Maintenance_Cost__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Total Expenses</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

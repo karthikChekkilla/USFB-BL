@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <choices>
+        <name>No</name>
+        <choiceText>No</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>No</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Yes</name>
+        <choiceText>Yes</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Yes</stringValue>
+        </value>
+    </choices>
+    <decisions>
+        <name>Check_Applicant_Record_Type</name>
+        <label>Check Applicant Record Type</label>
+        <locationX>380</locationX>
+        <locationY>350</locationY>
+        <defaultConnector>
+            <targetReference>Non_Individual_Record_Screen</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Non Individual Applicant Record</defaultConnectorLabel>
+        <rules>
+            <name>Individual_Applicant_Record</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Fetch_CIBIL_Verification_ID.RecordType.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>BL Individual</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Fetch_Record_Type_IDs</targetReference>
+            </connector>
+            <label>Individual Applicant Record</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Validate CIBIL Verification ID</description>
+        <name>Validate_CIBIL_Verification_ID</name>
+        <label>Validate CIBIL Verification ID</label>
+        <locationX>611</locationX>
+        <locationY>242</locationY>
+        <defaultConnector>
+            <targetReference>Initiate_CIBIL_Verification_Screen</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>CIBIL Verification ID Doesn&apos;t Exists</defaultConnectorLabel>
+        <rules>
+            <name>CIBIL_Verification_ID_Exists</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Fetch_CIBIL_Verification_ID</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Check_Applicant_Record_Type</targetReference>
+            </connector>
+            <label>CIBIL Verification ID Exists</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Validate Verification CIBIL Obligation Record Type ID</description>
+        <name>Validate_Record_Type_ID</name>
+        <label>Validate Record Type ID</label>
+        <locationX>182</locationX>
+        <locationY>566</locationY>
+        <defaultConnector>
+            <targetReference>NoRecordTypeFound</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Obligation Record Type ID Doesn&apos;t Exist</defaultConnectorLabel>
+        <rules>
+            <name>Obligation_Record_Type_ID_Exists</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Fetch_Record_Type_IDs</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>CIBIL_Screen</targetReference>
+            </connector>
+            <label>Obligation Record Type ID Exists</label>
+        </rules>
+    </decisions>
+    <description>BL Create CIBIL Obligation Records under Verification Line Item</description>
+    <environments>Default</environments>
+    <interviewLabel>BL_Create CIBIL Obligation Records {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>BL_Create CIBIL Obligation Records</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordCreates>
+        <description>Create Obligation Verification Line Item Records</description>
+        <name>Create_Obligation_Verification_Line_Item_Records</name>
+        <label>Create Obligation Verification Line Item Records</label>
+        <locationX>50</locationX>
+        <locationY>782</locationY>
+        <connector>
+            <targetReference>Creation_Screen</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>BL_Balance_Tenure_Months__c</field>
+            <value>
+                <elementReference>Balance_Tenure_Months</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>BL_Consider_for_Obligation__c</field>
+            <value>
+                <elementReference>Consider_for_Obligation</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>BL_Current_Outstanding__c</field>
+            <value>
+                <elementReference>Current_Outstanding</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>BL_Loan_Amount__c</field>
+            <value>
+                <elementReference>Loan_Amount</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>BL_Monthly_Installment__c</field>
+            <value>
+                <elementReference>Monthly_Installment</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>BL_Name_of_Lending_Institution__c</field>
+            <value>
+                <elementReference>Name_of_Lending_Institution</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>BL_Purpose_of_Loan__c</field>
+            <value>
+                <elementReference>Purpose_of_Loan</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>BL_ROI__c</field>
+            <value>
+                <elementReference>ROI</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>BL_Tenure_Months__c</field>
+            <value>
+                <elementReference>Tenure_Months</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Loan_Applicant__c</field>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RecordTypeId</field>
+            <value>
+                <elementReference>Fetch_Record_Type_IDs.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Verification__c</field>
+            <value>
+                <elementReference>Fetch_CIBIL_Verification_ID.Cibil_Verification__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Verification_Line_Item__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordLookups>
+        <name>Fetch_CIBIL_Verification_ID</name>
+        <label>Fetch CIBIL Verification ID</label>
+        <locationX>611</locationX>
+        <locationY>134</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Validate_CIBIL_Verification_ID</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Cibil_Verification__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Loan_Applicant__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Fetch Verification Line Item Record Type IDs</description>
+        <name>Fetch_Record_Type_IDs</name>
+        <label>Fetch Record Type IDs</label>
+        <locationX>182</locationX>
+        <locationY>458</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Validate_Record_Type_ID</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>CIBIL_Obligation</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>RecordType</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <screens>
+        <name>CIBIL_Screen</name>
+        <label>CIBIL Screen</label>
+        <locationX>50</locationX>
+        <locationY>674</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Create_Obligation_Verification_Line_Item_Records</targetReference>
+        </connector>
+        <fields>
+            <name>Create_CIBIL_Records</name>
+            <fieldText>Create CIBIL Records</fieldText>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Create_CIBIL_Records_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Name_of_Lending_Institution</name>
+                    <dataType>String</dataType>
+                    <fieldText>Name of Lending Institution</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <isRequired>true</isRequired>
+                </fields>
+                <fields>
+                    <name>Loan_Amount</name>
+                    <dataType>Number</dataType>
+                    <fieldText>Loan Amount(₹)</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <isRequired>true</isRequired>
+                    <scale>2</scale>
+                    <validationRule>
+                        <errorMessage>&lt;p&gt;&lt;span style=&quot;color: rgb(255, 0, 0);&quot;&gt;Kindly provide positive value&lt;/span&gt;&lt;/p&gt;</errorMessage>
+                        <formulaExpression>{!Loan_Amount} &gt;= 0</formulaExpression>
+                    </validationRule>
+                </fields>
+                <fields>
+                    <name>Monthly_Installment</name>
+                    <dataType>Number</dataType>
+                    <fieldText>Monthly Installment</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <isRequired>true</isRequired>
+                    <scale>0</scale>
+                    <validationRule>
+                        <errorMessage>&lt;p&gt;&lt;span style=&quot;color: rgb(255, 0, 0);&quot;&gt;Kindly provide positive value&lt;/span&gt;&lt;/p&gt;</errorMessage>
+                        <formulaExpression>{!Monthly_Installment} &gt;= 0</formulaExpression>
+                    </validationRule>
+                </fields>
+                <fields>
+                    <name>Balance_Tenure_Months</name>
+                    <dataType>Number</dataType>
+                    <fieldText>Balance Tenure (Months)</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <isRequired>true</isRequired>
+                    <scale>0</scale>
+                    <validationRule>
+                        <errorMessage>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(255, 0, 0);&quot;&gt;Kindly provide positive value&lt;/span&gt;&lt;/p&gt;</errorMessage>
+                        <formulaExpression>{!Balance_Tenure_Months} &gt;= 0</formulaExpression>
+                    </validationRule>
+                </fields>
+                <fields>
+                    <name>Consider_for_Obligation</name>
+                    <choiceReferences>Yes</choiceReferences>
+                    <choiceReferences>No</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>Consider for Obligation</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <isRequired>true</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>6</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Create_CIBIL_Records_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Purpose_of_Loan</name>
+                    <dataType>String</dataType>
+                    <fieldText>Purpose of Loan</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <isRequired>true</isRequired>
+                </fields>
+                <fields>
+                    <name>Tenure_Months</name>
+                    <dataType>Number</dataType>
+                    <fieldText>Tenure (Months)</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <isRequired>true</isRequired>
+                    <scale>0</scale>
+                    <validationRule>
+                        <errorMessage>&lt;p&gt;&lt;span style=&quot;color: rgb(255, 0, 0);&quot;&gt;Kindly provide positive value&lt;/span&gt;&lt;/p&gt;</errorMessage>
+                        <formulaExpression>{!Tenure_Months}  &gt;= 0</formulaExpression>
+                    </validationRule>
+                </fields>
+                <fields>
+                    <name>Current_Outstanding</name>
+                    <dataType>Number</dataType>
+                    <fieldText>Current Outstanding</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <isRequired>true</isRequired>
+                    <scale>0</scale>
+                    <validationRule>
+                        <errorMessage>&lt;p&gt;&lt;span style=&quot;color: rgb(255, 0, 0);&quot;&gt;Kindly provide positive value&lt;/span&gt;&lt;/p&gt;</errorMessage>
+                        <formulaExpression>{!Current_Outstanding} &gt;= 0</formulaExpression>
+                    </validationRule>
+                </fields>
+                <fields>
+                    <name>ROI</name>
+                    <dataType>Number</dataType>
+                    <fieldText>ROI(%)</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <isRequired>true</isRequired>
+                    <scale>2</scale>
+                    <validationRule>
+                        <errorMessage>&lt;p&gt;&lt;span style=&quot;color: rgb(253, 1, 1);&quot;&gt;Kindly provide positive value&lt;/span&gt;&lt;/p&gt;</errorMessage>
+                        <formulaExpression>{!ROI} &gt;= 0</formulaExpression>
+                    </validationRule>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>6</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithHeader</regionContainerType>
+        </fields>
+        <nextOrFinishButtonLabel>Submit</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>Creation_Screen</name>
+        <label>Creation Screen</label>
+        <locationX>50</locationX>
+        <locationY>890</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>SuccessfullyCreated</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;color: rgb(15, 176, 101);&quot;&gt;Record successfully created!&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <nextOrFinishButtonLabel>Close</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>Initiate_CIBIL_Verification_Screen</name>
+        <label>Initiate CIBIL Verification Screen</label>
+        <locationX>842</locationX>
+        <locationY>350</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Copy_1_of_SuccessfullyCreated</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;color: rgb(255, 0, 0);&quot;&gt;Kindly initiate CIBIL Verification for the applicant before creating obligation records. &lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <nextOrFinishButtonLabel>Close</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>Non_Individual_Record_Screen</name>
+        <label>Non Individual Record Screen</label>
+        <locationX>578</locationX>
+        <locationY>458</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>NonIndividualErrorScreen</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;color: rgb(250, 0, 0);&quot;&gt;The individual applicant is allowed to create CIBIL obligation records.&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <nextOrFinishButtonLabel>Close</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>NoRecordTypeFound</name>
+        <label>No Record Type Found</label>
+        <locationX>314</locationX>
+        <locationY>674</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Copy_1_of_Copy_1_of_SuccessfullyCreated</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;color: rgb(255, 0, 0);&quot;&gt;Unable to find record type for record creation. Kindly contact your admin for further support!&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <nextOrFinishButtonLabel>Close</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <start>
+        <locationX>485</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Fetch_CIBIL_Verification_ID</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>Loan Applicant Record Id</description>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>60.0</apiVersion>
+    <assignments>
+        <description>This assignment helps to store all the branch IDs on credit profile user.</description>
+        <name>Store_Branch_IDs</name>
+        <label>Store Branch IDs</label>
+        <locationX>446</locationX>
+        <locationY>827</locationY>
+        <assignmentItems>
+            <assignToReference>BranchIDs</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Iterate_User_Branch_Mapping_Records.Branch__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Iterate_User_Branch_Mapping_Records</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>This evaluates different scenarios to decide its actions.</description>
+        <name>Record_Decision</name>
+        <label>Record Decision</label>
+        <locationX>611</locationX>
+        <locationY>287</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Branch_Lookup_Not_Null</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Branch__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Fetch_User_Branch_Mapping_Record</targetReference>
+            </connector>
+            <label>Branch Lookup Not Null</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Validate Branch IDs contains in collection values</description>
+        <name>Validate_Branch_IDs_Duplicate_values</name>
+        <label>Validate Branch IDs Duplicate values</label>
+        <locationX>358</locationX>
+        <locationY>719</locationY>
+        <defaultConnector>
+            <targetReference>Store_Branch_IDs</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Branch ID Doesn&apos;t Exists</defaultConnectorLabel>
+        <rules>
+            <name>Branch_ID_Exists</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>BranchIDs</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <elementReference>Iterate_User_Branch_Mapping_Records.Branch__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Iterate_User_Branch_Mapping_Records</targetReference>
+            </connector>
+            <label>Branch ID Exists</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Validate if the branch record- Branch User IDs contain the current triggering record ID.</description>
+        <name>Validate_Branch_Record</name>
+        <label>Validate Branch Record</label>
+        <locationX>380</locationX>
+        <locationY>503</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Record_ID_Exists</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Fetch_User_Branch_Mapping_Record</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Iterate_User_Branch_Mapping_Records</targetReference>
+            </connector>
+            <label>Record ID Exists</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Validate Null Check for BranchIDs</description>
+        <name>Validate_Null_Check_for_BranchIDs</name>
+        <label>Validate Null Check for BranchIDs</label>
+        <locationX>182</locationX>
+        <locationY>1103</locationY>
+        <defaultConnectorLabel>Null</defaultConnectorLabel>
+        <rules>
+            <name>Not_Null</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>BranchIDs</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_User_Record</targetReference>
+            </connector>
+            <label>Not Null</label>
+        </rules>
+    </decisions>
+    <description>This flow will be evaluated before deleting the User Branch Mapping Object records.</description>
+    <environments>Default</environments>
+    <formulas>
+        <description>Updated Branch IDs of credit profile users of the User record except triggered record ID.</description>
+        <name>UpdatedBranchIDs</name>
+        <dataType>String</dataType>
+        <expression>{!BranchIDs}</expression>
+    </formulas>
+    <interviewLabel>UB_User Branch Mapping Before Delete Flow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>UB_User Branch Mapping Before Delete Flow</label>
+    <loops>
+        <description>Iterate over User Branch Mapping Records to store User IDs.</description>
+        <name>Iterate_User_Branch_Mapping_Records</name>
+        <label>Iterate User Branch Mapping Records</label>
+        <locationX>182</locationX>
+        <locationY>611</locationY>
+        <collectionReference>Fetch_User_Branch_Mapping_Record</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Validate_Branch_IDs_Duplicate_values</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Validate_Null_Check_for_BranchIDs</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <description>Fetch User Branch Mapping Records to update Branch User IDs field on Branch Object</description>
+        <name>Fetch_User_Branch_Mapping_Record</name>
+        <label>Fetch User Branch Mapping Record</label>
+        <locationX>380</locationX>
+        <locationY>395</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Validate_Branch_Record</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>User_Profile__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Credit</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>lob__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>CV</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>User__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.User__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>User_Branch_Mapping__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <description>Update User record by removing the triggering record ID from the list of Branch IDs.</description>
+        <name>Update_User_Record</name>
+        <label>Update User Record</label>
+        <locationX>50</locationX>
+        <locationY>1211</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Branch_IDs__c</field>
+            <value>
+                <elementReference>UpdatedBranchIDs</elementReference>
+            </value>
+        </inputAssignments>
+        <object>User</object>
+    </recordUpdates>
+    <start>
+        <locationX>485</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Record_Decision</targetReference>
+        </connector>
+        <object>User_Branch_Mapping__c</object>
+        <recordTriggerType>Delete</recordTriggerType>
+        <triggerType>RecordBeforeDelete</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>Store all Branch IDs on User object.</description>
+        <name>BranchIDs</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

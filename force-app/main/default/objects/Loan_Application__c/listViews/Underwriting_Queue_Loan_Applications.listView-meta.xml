@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Underwriting_Queue_Loan_Applications</fullName>
+    <columns>NAME</columns>
+    <columns>Loan_Application_Stage__c</columns>
+    <columns>Loan_Application_Status__c</columns>
+    <columns>Branch__c</columns>
+    <columns>Amount__c</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <columns>LAST_UPDATE</columns>
+    <filterScope>Queue</filterScope>
+    <filters>
+        <field>IsBranchHasCurrentUser__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>Underwriting Queue Loan Applications</label>
+    <queue>BL_Credit_Manager_Queue</queue>
+    <sharedTo>
+        <role>BL_Branch_Credit_Manager</role>
+    </sharedTo>
+</ListView>

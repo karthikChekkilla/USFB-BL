@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Individual</fullName>
+        <default>false</default>
+        <label>Individual</label>
+    </customValue>
+    <customValue>
+        <fullName>Sole Proprietorship</fullName>
+        <default>false</default>
+        <label>Sole Proprietorship</label>
+    </customValue>
+    <customValue>
+        <fullName>Partnership</fullName>
+        <default>false</default>
+        <label>Partnership</label>
+    </customValue>
+    <customValue>
+        <fullName>Public Ltd</fullName>
+        <default>false</default>
+        <label>Public Ltd</label>
+    </customValue>
+    <customValue>
+        <fullName>Trust</fullName>
+        <default>false</default>
+        <label>Trust</label>
+    </customValue>
+    <customValue>
+        <fullName>Society</fullName>
+        <default>false</default>
+        <label>Society</label>
+    </customValue>
+    <customValue>
+        <fullName>HUF</fullName>
+        <default>false</default>
+        <label>HUF</label>
+    </customValue>
+    <customValue>
+        <fullName>Section 25 Company</fullName>
+        <default>false</default>
+        <label>Section 25 Company</label>
+    </customValue>
+    <customValue>
+        <fullName>Govt Body/Statutory Body</fullName>
+        <default>false</default>
+        <label>Govt Body/Statutory Body</label>
+    </customValue>
+    <customValue>
+        <fullName>Limited Liability Partnership</fullName>
+        <default>false</default>
+        <label>Limited Liability Partnership</label>
+    </customValue>
+    <customValue>
+        <fullName>Others</fullName>
+        <default>false</default>
+        <label>Others</label>
+    </customValue>
+    <customValue>
+        <fullName>Private Ltd</fullName>
+        <default>false</default>
+        <label>Private Ltd</label>
+    </customValue>
+    <customValue>
+        <fullName>LLP</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>LLP</label>
+    </customValue>
+    <customValue>
+        <fullName>Proprietor</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Proprietor</label>
+    </customValue>
+    <customValue>
+        <fullName>Private Ltd/Ltd</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Private Ltd/Ltd</label>
+    </customValue>
+    <masterLabel>Constitution</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

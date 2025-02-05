@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DOI_Validation</fullName>
+    <active>true</active>
+    <description>DOI is required if the constitution should not have  a Sole Proprietorship or individual</description>
+    <errorConditionFormula>AND(
+  ISBLANK(  Date_Of_Incorporation__c  ),
+  NOT($Setup.Bypass_Validations__c.Bypass_Validation__c), 
+  NOT(ISPICKVAL( Constitution__c , &apos;Individual&apos;)),
+  NOT(ISPICKVAL(Constitution__c , &apos;Sole Proprietorship&apos;))
+  
+  )</errorConditionFormula>
+    <errorDisplayField>Date_Of_Incorporation__c</errorDisplayField>
+    <errorMessage>Please fill in the Date Of Incorporation</errorMessage>
+</ValidationRule>

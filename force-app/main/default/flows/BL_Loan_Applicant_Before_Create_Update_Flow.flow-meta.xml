@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <assignments>
+        <description>Remove Consent Verification</description>
+        <name>Remove_Consent_Verification</name>
+        <label>Remove Consent Verification</label>
+        <locationX>72</locationX>
+        <locationY>911</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Consent_Verification__c</assignToReference>
+            <operator>Assign</operator>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Consent_Received__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Standard_Name_Assignment</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Remove PAN Verification</description>
+        <name>Remove_PAN_Verification</name>
+        <label>Remove PAN Verification</label>
+        <locationX>72</locationX>
+        <locationY>611</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.PAN_Verification__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Mobile_Number_Updated</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Update Name field based on Individual/Non Individual</description>
+        <name>Standard_Name_Assignment</name>
+        <label>Standard Name Assignment</label>
+        <locationX>50</locationX>
+        <locationY>1187</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Name</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>FullName</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <decisions>
+        <description>Check Loan Application LOB</description>
+        <name>Loan_Application_LOB</name>
+        <label>Loan Application LOB</label>
+        <locationX>281</locationX>
+        <locationY>287</locationY>
+        <defaultConnectorLabel>CV/CE</defaultConnectorLabel>
+        <rules>
+            <name>Business_Loan</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Loan_Application__r.LOB__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>BL</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Record_Created_Updated</targetReference>
+            </connector>
+            <label>Business Loan</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Verify if the loan applicant&apos;s mobile number is updated.</description>
+        <name>Mobile_Number_Updated</name>
+        <label>Mobile Number Updated?</label>
+        <locationX>204</locationX>
+        <locationY>803</locationY>
+        <defaultConnector>
+            <targetReference>Standard_Name_Assignment</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record__Prior.Mobile__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.Mobile__c</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Mobile__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Remove_Consent_Verification</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Verify if the PAN number is updated.</description>
+        <name>PAN_Number_Updated</name>
+        <label>PAN Number Updated?</label>
+        <locationX>204</locationX>
+        <locationY>503</locationY>
+        <defaultConnector>
+            <targetReference>Mobile_Number_Updated</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>PAN_Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Pan_Number__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Pan_Number__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.Pan_Number__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Remove_PAN_Verification</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Decide whether records are created or updated.</description>
+        <name>Record_Created_Updated</name>
+        <label>Record Created/Updated</label>
+        <locationX>50</locationX>
+        <locationY>395</locationY>
+        <defaultConnector>
+            <targetReference>PAN_Number_Updated</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Record Updated</defaultConnectorLabel>
+        <rules>
+            <name>Record_Created</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>IsRecordCreated</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record</leftValueReference>
+                <operator>EqualTo</operator>
+            </conditions>
+            <connector>
+                <targetReference>Standard_Name_Assignment</targetReference>
+            </connector>
+            <label>Record Created</label>
+        </rules>
+    </decisions>
+    <description>Business Loan related changes.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>FullName</name>
+        <dataType>String</dataType>
+        <expression>IF(
+	CONTAINS({!$Record.RecordType.DeveloperName}, &apos;Non&apos;), 
+	{!$Record.Entity_Name__c}, 
+	IF(
+	ISBLANK({!$Record.Middle_Name__c}), 
+		{!$Record.First_Name__c}+&quot; &quot;+{!$Record.Last_Name__c}, 
+		{!$Record.First_Name__c}+&quot; &quot;+{!$Record.Middle_Name__c}+&quot; &quot;+{!$Record.Last_Name__c}
+	)
+)</expression>
+    </formulas>
+    <formulas>
+        <description>Checks whether the record is created.</description>
+        <name>IsRecordCreated</name>
+        <dataType>Boolean</dataType>
+        <expression>ISNEW()</expression>
+    </formulas>
+    <interviewLabel>BL_Loan Applicant Before Create/Update {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>BL_Loan Applicant Before Create/Update Flow</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>155</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Loan_Application_LOB</targetReference>
+        </connector>
+        <object>Loan_Applicant__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>Update Loan Applicant Record Variable</description>
+        <name>UpdateLoanApplicant</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Loan_Applicant__c</objectType>
+    </variables>
+</Flow>

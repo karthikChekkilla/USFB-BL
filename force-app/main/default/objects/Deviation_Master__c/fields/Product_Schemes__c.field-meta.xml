@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Schemes__c</fullName>
+    <externalId>false</externalId>
+    <label>Product Schemes</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>FTU &amp; FTB</fullName>
+                <default>false</default>
+                <label>FTU &amp; FTB</label>
+            </value>
+            <value>
+                <fullName>Retail</fullName>
+                <default>false</default>
+                <label>Retail</label>
+            </value>
+            <value>
+                <fullName>Strategic</fullName>
+                <default>false</default>
+                <label>Strategic</label>
+            </value>
+            <value>
+                <fullName>Institutional Strategic</fullName>
+                <default>false</default>
+                <label>Institutional Strategic</label>
+            </value>
+            <value>
+                <fullName>Captive Retail</fullName>
+                <default>false</default>
+                <label>Captive Retail</label>
+            </value>
+            <value>
+                <fullName>Captive Strategic</fullName>
+                <default>false</default>
+                <label>Captive Strategic</label>
+            </value>
+            <value>
+                <fullName>Banking Surrogate</fullName>
+                <default>false</default>
+                <label>Banking Surrogate</label>
+            </value>
+            <value>
+                <fullName>CPM</fullName>
+                <default>false</default>
+                <label>CPM</label>
+            </value>
+            <value>
+                <fullName>GPR</fullName>
+                <default>false</default>
+                <label>GPR</label>
+            </value>
+            <value>
+                <fullName>GPM</fullName>
+                <default>false</default>
+                <label>GPM</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

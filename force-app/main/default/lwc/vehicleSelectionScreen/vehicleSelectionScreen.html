@@ -1,0 +1,258 @@
+<template>
+    <template if:true={isShowModal}>
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+            aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open slds-backdrop slds-backdrop_open slds-modal_large">
+            <div class="slds-modal__container">
+                <template if:true={isLoading}>
+                    <div class="slds-spinner_container">
+                        <div class="slds-spinner--brand  slds-spinner slds-spinner--small slds-is-relative" role="alert">
+                          <span class="slds-assistive-text">Loading...</span>
+                          <div class="slds-spinner__dot-a"></div>
+                          <div class="slds-spinner__dot-b"></div>
+                        </div>
+                    </div>        
+                </template>
+                <!-- modal header start -->
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={handleCloseMethod}>
+                        <lightning-icon icon-name="utility:close"
+                            alternative-text="close"
+                            variant="inverse"
+                            size="small" ></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Add Proposed Vehicle Details</h2>
+                </header>
+                <lightning-card variant="narrow" class="slds-scrollable">
+                    <lightning-record-edit-form object-api-name="Vehicle__c" record-type-id={vehicleRecordTypeId} density="comfy" record-id={vehicleId} onsubmit={handleSubmit}>
+                        <template if:true={isUsedProduct}>
+                            <lightning-layout vertical-align="start" class="slds-grid slds-wrap">
+                                <lightning-layout-item size="4" class="slds-col slds-size_5-of-12 slds-p-around_small">
+                                    <lightning-input-field field-name="Registration_Number__c" brand="submit" name="registrationNumber" onchange={handleChangeEvent} required> </lightning-input-field>
+                                </lightning-layout-item>
+                                <div class="slds-p-top_x-large">
+                                    <lightning-layout-item size="2" class="slds-col slds-size_1-of-12 slds-p-around_xxx-small">
+                                        <lightning-button icon-name="utility:travel_and_places"  class="slds-p-around_x-small" variant="brand" onclick={handleSearch} label="Fetch Vahan Details"></lightning-button>    
+                                    </lightning-layout-item>
+                                </div>
+                                <lightning-layout-item size="3" class="slds-col slds-size_2-of-12 slds-p-around_large">
+                                    <div class="slds-grid slds-p-around_small">
+                                        <div class="slds-col slds-align_absolute-center">
+                                            <lightning-input-field variant='label-hidden' field-name="Update_Vahan_Details__c" name="updateVahanDetails" onchange={handleChangeEvent}> </lightning-input-field>
+                                        </div>
+                                        <div class="slds-col">Update Vahan Details</div>
+                                    </div>
+                                </lightning-layout-item>
+                            </lightning-layout>
+                        </template>
+                        <lightning-accordion class="example-accordion" allow-multiple-sections-open active-section-name={activeSection}>
+                            <template if:true={isUsedProduct}>
+                                <lightning-accordion-section name="B" label="Vahan Information">
+                                    <lightning-layout vertical-align="start" class="slds-grid slds-wrap">
+                                        <lightning-layout-item size="6" class="slds-col slds-size_6-of-12 slds-p-around_xx-small">
+                                            <lightning-input-field field-name="Owner_Name__c" value={vahanDetails.Owner_Name__c} readonly={isReadOnly}> </lightning-input-field>
+                                        </lightning-layout-item>
+                                        <lightning-layout-item size="6" class="slds-col slds-size_6-of-12 slds-p-around_xx-small">
+                                            <lightning-input-field field-name="Father_Name__c" value={vahanDetails.Father_Name__c} readonly={isReadOnly}> </lightning-input-field>
+                                        </lightning-layout-item>
+                                        <lightning-layout-item size="6" class="slds-col slds-size_6-of-12 slds-p-around_xx-small">
+                                            <lightning-input-field field-name="Manufactured_Month_Year__c" value={vahanDetails.Manufactured_Month_Year__c} readonly={isReadOnly}> </lightning-input-field>
+                                        </lightning-layout-item>
+                                        <lightning-layout-item size="6" class="slds-col slds-size_6-of-12 slds-p-around_xx-small">
+                                            <lightning-input-field field-name="Date_of_Registration__c" value={vahanDetails.Date_of_Registration__c} readonly={isReadOnly}> </lightning-input-field>
+                                        </lightning-layout-item>
+                                        <lightning-layout-item size="6" class="slds-col slds-size_6-of-12 slds-p-around_xx-small">
+                                            <lightning-input-field field-name="Chassis_Number__c" value={vahanDetails.Chassis_Number__c} readonly={isReadOnly}> </lightning-input-field>
+                                        </lightning-layout-item>
+                                        <lightning-layout-item size="6" class="slds-col slds-size_6-of-12 slds-p-around_xx-small">
+                                            <lightning-input-field field-name="Engine_Number__c" value={vahanDetails.Engine_Number__c} readonly={isReadOnly}> </lightning-input-field>
+                                        </lightning-layout-item>
+                                        <lightning-layout-item size="6" class="slds-col slds-size_6-of-12 slds-p-around_xx-small">
+                                            <lightning-input-field field-name="RTO_Name__c" value={vahanDetails.RTO_Name__c} readonly={isReadOnly}> </lightning-input-field>
+                                        </lightning-layout-item>
+                                        <lightning-layout-item size="6" class="slds-col slds-size_6-of-12 slds-p-around_xx-small">
+                                            <lightning-input-field field-name="State_Code__c" value={vahanDetails.State_Code__c} readonly={isReadOnly}> </lightning-input-field>
+                                        </lightning-layout-item>
+                                        <lightning-layout-item size="6" class="slds-col slds-size_6-of-12 slds-p-around_xx-small">
+                                            <lightning-input-field field-name="Owner_Serial_Number__c" value={vahanDetails.Owner_Serial_Number__c} readonly={isReadOnly}> </lightning-input-field>
+                                        </lightning-layout-item>
+                                        <lightning-layout-item size="6" class="slds-col slds-size_6-of-12 slds-p-around_xx-small">
+                                            <lightning-input-field field-name="Financer__c" value={vahanDetails.Financer__c} readonly={isReadOnly}> </lightning-input-field>
+                                        </lightning-layout-item>
+                                        <lightning-layout-item size="6" class="slds-col slds-size_6-of-12 slds-p-around_xx-small">
+                                            <lightning-input-field field-name="NOC_Details__c" value={vahanDetails.NOC_Details__c} readonly={isReadOnly}> </lightning-input-field>
+                                        </lightning-layout-item>
+                                        <lightning-layout-item size="6" class="slds-col slds-size_6-of-12 slds-p-around_xx-small">
+                                            <lightning-input-field field-name="Vehicle_Pollution_Norm_Description__c" value={vahanDetails.Vehicle_Pollution_Norm_Description__c} readonly={isReadOnly}> </lightning-input-field>
+                                        </lightning-layout-item>
+                                        <lightning-layout-item size="6" class="slds-col slds-size_6-of-12 slds-p-around_xx-small">
+                                            <lightning-input-field field-name="National_Permit_Number__c" value={vahanDetails.National_Permit_Number__c} readonly={isReadOnly}> </lightning-input-field>
+                                        </lightning-layout-item>
+                                        <lightning-layout-item size="6" class="slds-col slds-size_6-of-12 slds-p-around_xx-small">
+                                            <lightning-input-field field-name="National_Permit_Issued_By__c" value={vahanDetails.National_Permit_Issued_By__c} readonly={isReadOnly}> </lightning-input-field>
+                                        </lightning-layout-item>
+                                        <lightning-layout-item size="6" class="slds-col slds-size_6-of-12 slds-p-around_xx-small">
+                                            <lightning-input-field field-name="National_Permit_Expiry_Date__c" value={vahanDetails.National_Permit_Expiry_Date__c} readonly={isReadOnly}> </lightning-input-field>
+                                        </lightning-layout-item>
+                                        <lightning-layout-item size="6" class="slds-col slds-size_6-of-12 slds-p-around_xx-small">
+                                            <lightning-input-field field-name="State_Permit_Number__c" value={vahanDetails.State_Permit_Number__c} readonly={isReadOnly}> </lightning-input-field>
+                                        </lightning-layout-item>
+                                        <lightning-layout-item size="6" class="slds-col slds-size_6-of-12 slds-p-around_xx-small">
+                                            <lightning-input-field field-name="State_Permit_Type__c" value={vahanDetails.State_Permit_Type__c} readonly={isReadOnly}> </lightning-input-field>
+                                        </lightning-layout-item>
+                                        <lightning-layout-item size="6" class="slds-col slds-size_6-of-12 slds-p-around_xx-small">
+                                            <lightning-input-field field-name="State_Permit_Issue_Date__c" value={vahanDetails.State_Permit_Issue_Date__c} readonly={isReadOnly}> </lightning-input-field>
+                                        </lightning-layout-item>
+                                        <lightning-layout-item size="6" class="slds-col slds-size_6-of-12 slds-p-around_xx-small">
+                                            <lightning-input-field field-name="State_Permit_Expiry_Date__c" value={vahanDetails.State_Permit_Expiry_Date__c} readonly={isReadOnly}> </lightning-input-field>
+                                        </lightning-layout-item>
+                                        <lightning-layout-item size="6" class="slds-col slds-size_6-of-12 slds-p-around_xx-small">
+                                            <lightning-input-field field-name="Tax_Paid_Upto__c" value={vahanDetails.Tax_Paid_Upto__c} readonly={isReadOnly}> </lightning-input-field>
+                                        </lightning-layout-item>
+                                        <lightning-layout-item size="6" class="slds-col slds-size_6-of-12 slds-p-around_xx-small">
+                                            <lightning-input-field field-name="PUC_Serial_Number__c" value={vahanDetails.PUC_Serial_Number__c} readonly={isReadOnly}> </lightning-input-field>
+                                        </lightning-layout-item>
+                                        <lightning-layout-item size="6" class="slds-col slds-size_6-of-12 slds-p-around_xx-small">
+                                            <lightning-input-field field-name="PUC_Expiry_Date__c" value={vahanDetails.PUC_Expiry_Date__c} readonly={isReadOnly}> </lightning-input-field>
+                                        </lightning-layout-item>
+                                        <lightning-layout-item size="6" class="slds-col slds-size_6-of-12 slds-p-around_xx-small">
+                                            <lightning-input-field field-name="Fitness_Validity__c" value={vahanDetails.Fitness_Validity__c} readonly={isReadOnly}> </lightning-input-field>
+                                        </lightning-layout-item>
+                                        <lightning-layout-item size="6" class="slds-col slds-size_6-of-12 slds-p-around_xx-small">
+                                            <lightning-input-field field-name="Insurance_Company__c" value={vahanDetails.Insurance_Company__c} readonly={isReadOnly}> </lightning-input-field>
+                                        </lightning-layout-item>
+                                        <lightning-layout-item size="6" class="slds-col slds-size_6-of-12 slds-p-around_xx-small">
+                                            <lightning-input-field field-name="Policy_Number__c" value={vahanDetails.Policy_Number__c} readonly={isReadOnly}> </lightning-input-field>
+                                        </lightning-layout-item>
+                                        <lightning-layout-item size="6" class="slds-col slds-size_6-of-12 slds-p-around_xx-small">
+                                            <lightning-input-field field-name="Insurance_Expiry_Date__c" value={vahanDetails.Insurance_Expiry_Date__c} readonly={isReadOnly}> </lightning-input-field>
+                                        </lightning-layout-item>
+                                        <lightning-layout-item size="6" class="slds-col slds-size_6-of-12 slds-p-around_xx-small">
+                                            <lightning-input-field field-name="RC_Mobile_Number__c" value={vahanDetails.RC_Mobile_Number__c} readonly={isReadOnly}> </lightning-input-field>
+                                        </lightning-layout-item>
+                                        <lightning-layout-item size="6" class="slds-col slds-size_6-of-12 slds-p-around_xx-small">
+                                            <lightning-input-field field-name="RC_Status__c" value={vahanDetails.RC_Status__c} readonly={isReadOnly}> </lightning-input-field>
+                                        </lightning-layout-item>
+                                        <lightning-layout-item size="6" class="slds-col slds-size_6-of-12 slds-p-around_xx-small">
+                                            <lightning-input-field field-name="Blacklist_Info__c" value={vahanDetails.Blacklist_Info__c} readonly={isReadOnly}> </lightning-input-field>
+                                        </lightning-layout-item>
+                                        <lightning-layout-item size="6" class="slds-col slds-size_6-of-12 slds-p-around_xx-small">
+                                            <lightning-input-field field-name="Blacklist_Status__c" value={vahanDetails.Blacklist_Status__c} readonly={isReadOnly}> </lightning-input-field>
+                                        </lightning-layout-item>
+                                    </lightning-layout>
+                                </lightning-accordion-section>
+                            </template>
+                            <lightning-accordion-section name="A" label="Vehicle Information">
+                                <lightning-messages></lightning-messages>
+                                <lightning-layout vertical-align="start" class="slds-grid slds-wrap">
+                                    <lightning-layout-item size="6" class="slds-col slds-size_6-of-12 slds-p-around_xx-small">
+                                        <lightning-combobox label="Vehicle Make" name="make" field-name="Make__c" options={makeValues} value={vehicleDetails.make} onchange={handleChangeEvent} required="true"></lightning-combobox>
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size="6" class="slds-col slds-size_6-of-12 slds-p-around_xx-small">
+                                        <lightning-combobox label="Vehicle Model" name="model" field-name="Model__c" options={modelValues} value={vehicleDetails.model} onchange={handleChangeEvent} required="true"></lightning-combobox>
+                                    </lightning-layout-item>
+                                    <template if:false={isUsedProduct}>
+                                        <lightning-layout-item size="6" class="slds-col slds-size_6-of-12 slds-p-around_xx-small">
+                                            <lightning-combobox label="Vehicle Type" name="vehicleType" options={vehicleTypeValues} value={vehicleDetails.type} onchange={handleChangeEvent} required="true"></lightning-combobox>
+                                        </lightning-layout-item>
+                                        <lightning-layout-item size="6" class="slds-col slds-size_6-of-12 slds-p-around_xx-small">
+                                            <lightning-combobox label="Fuel Type" name="fuelType" options={fuelTypeValues} value={vehicleDetails.fuelType} onchange={handleChangeEvent} required="true"></lightning-combobox>
+                                        </lightning-layout-item>
+                                        <lightning-layout-item size="6" class="slds-col slds-size_6-of-12 slds-p-around_xx-small">
+                                            <lightning-combobox label="Body Type" name="bodyType" options={bodyTypeValues} value={vehicleDetails.bodyType} onchange={handleChangeEvent} required="true"></lightning-combobox>
+                                        </lightning-layout-item>
+                                    </template>
+                                    <lightning-layout-item size="6" class="slds-col slds-size_6-of-12 slds-p-around_xxx-small">
+                                        <lightning-input-field field-name="ROI__c" onchange={handleChangeEvent} min="0.0" step="0.01" required> </lightning-input-field>
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size="6" class="slds-col slds-size_6-of-12 slds-p-around_xxx-small">
+                                        <lightning-input-field field-name="Vehicle_Cost__c" name="cost" onchange={handleChangeEvent} required> </lightning-input-field>
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size="6" class="slds-col slds-size_6-of-12 slds-p-around_xxx-small">
+                                        <lightning-input-field field-name="Funding_Limit__c" name="fundingLimit" onchange={handleChangeEvent} required> </lightning-input-field>
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size="6" class="slds-col slds-size_6-of-12 slds-p-around_xxx-small">
+                                        <lightning-input-field field-name="Tenure__c" name="tenure" onchange={handleChangeEvent} required> </lightning-input-field>
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size="6" class="slds-col slds-size_6-of-12 slds-p-around_xxx-small">
+                                        <lightning-input-field field-name="Number_Of_Vehicles__c" name="numberOfVehicles" onchange={handleChangeEvent} required> </lightning-input-field>
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size="6" class="slds-col slds-size_6-of-12 slds-p-around_xxx-small">
+                                        <lightning-input-field field-name="Body_Funding__c" name="bodyFunding" onchange={handleChangeEvent}> </lightning-input-field>
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size="6" class="slds-col slds-size_6-of-12 slds-p-around_xxx-small">
+                                        <lightning-input-field field-name="Body_Funding_Amount_If_Applicable__c" name="bodyFundingAmt" onchange={handleChangeEvent}> </lightning-input-field>
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size="6" class="slds-col slds-size_6-of-12 slds-p-around_xxx-small">
+                                        <lightning-input-field field-name="Number_of_Asset_Unit__c" name="assetUnit" onchange={handleChangeEvent}> </lightning-input-field>
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size="6" class="slds-col slds-size_6-of-12 slds-p-around_xxx-small">
+                                        <lightning-input-field field-name="Number_of_Body_Unit_If_Applicable__c" name="bodyUnitNumber" onchange={handleChangeEvent}> </lightning-input-field>
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size="6" class="slds-col slds-size_6-of-12 slds-p-around_xxx-small">
+                                        <lightning-input-field field-name="RTO_Value__c" name="rtoValue" onchange={handleChangeEvent} required> </lightning-input-field>
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size="6" class="slds-col slds-size_6-of-12 slds-p-around_xxx-small">
+                                        <lightning-input-field field-name="Accessories__c" name="accessories" onchange={handleChangeEvent} required> </lightning-input-field>
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size="6" class="slds-col slds-size_6-of-12 slds-p-around_xxx-small">
+                                        <lightning-input-field field-name="Asset_Insurance_Required__c" name="assetInsurance" onchange={handleChangeEvent}> </lightning-input-field>
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size="6" class="slds-col slds-size_6-of-12 slds-p-around_xxx-small">
+                                        <lightning-input-field field-name="Asset_Insurance_Premium__c" name="assetInsurancePremium" onchange={handleChangeEvent}> </lightning-input-field>
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size="6" class="slds-col slds-size_6-of-12 slds-p-around_xxx-small">
+                                        <lightning-input-field field-name="Total_Cost_of_Asset__c" name="assetTotalCost" onchange={handleChangeEvent} required> </lightning-input-field>
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size="6" class="slds-col slds-size_6-of-12 slds-p-around_xxx-small">
+                                        <lightning-input-field field-name="Margin_Money__c" name="marginMoney" onchange={handleChangeEvent} required> </lightning-input-field>
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size="6" class="slds-col slds-size_6-of-12 slds-p-around_xxx-small">
+                                        <lightning-input-field field-name="Credit_Shield_Required__c" name="creditShieldRequired" onchange={handleChangeEvent}> </lightning-input-field>
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size="6" class="slds-col slds-size_6-of-12 slds-p-around_xxx-small">
+                                        <lightning-input-field field-name="Credit_Shield_Premium__c" name="creditShieldPremium" onchange={handleChangeEvent}> </lightning-input-field>
+                                    </lightning-layout-item>
+                                    <template if:true={isUsedProduct}>
+                                        <lightning-layout-item size="6" class="slds-col slds-size_6-of-12 slds-p-around_xxx-small">
+                                            <lightning-input-field field-name="Body_Maker_Name__c" onchange={handleChangeEvent} required> </lightning-input-field>
+                                        </lightning-layout-item>
+                                        <lightning-layout-item size="6" class="slds-col slds-size_6-of-12 slds-p-around_xxx-small">
+                                            <lightning-input-field field-name="Body_Maker_Address_If_Applicable__c" onchange={handleChangeEvent} required> </lightning-input-field>
+                                        </lightning-layout-item>
+                                        <lightning-layout-item size="6" class="slds-col slds-size_6-of-12 slds-p-around_xxx-small">
+                                            <lightning-input-field field-name="Estimated_Valuation__c" name="estimatedValuation" onchange={handleChangeEvent} required> </lightning-input-field>
+                                        </lightning-layout-item>
+                                    </template>
+                                    <template if:false={isCVProduct}>
+                                        <lightning-layout-item size="6" class="slds-col slds-size_6-of-12 slds-p-around_xxx-small">
+                                            <lightning-input-field field-name="Is_Asset_Registrable__c" onchange={handleChangeEvent}> </lightning-input-field>
+                                        </lightning-layout-item>
+                                        <template if:true={isUsedProduct}>
+                                            <lightning-layout-item size="6" class="slds-col slds-size_6-of-12 slds-p-around_xxx-small">
+                                                <lightning-input-field field-name="Original_Invoice_If_Non_registrable__c" onchange={handleChangeEvent}> </lightning-input-field>
+                                            </lightning-layout-item>
+                                        </template>
+                                    </template>
+                                    <template if:true={isCVProduct}>
+                                        <lightning-layout-item size="6" class="slds-col slds-size_6-of-12 slds-p-around_xxx-small">
+                                            <lightning-input-field field-name="Dealer__c" onchange={handleChangeEvent}> </lightning-input-field>
+                                        </lightning-layout-item>
+                                    </template>
+                                </lightning-layout>
+                            </lightning-accordion-section>
+                        </lightning-accordion>
+                        <footer class="slds-card__footer">
+                            <lightning-button class="slds-p-around_x-small" type="submit" onclick={handleCloseMethod} label="Cancel"></lightning-button>    
+                            <lightning-button class="slds-p-around_x-small" type="submit" variant="brand" label="Save"></lightning-button>
+                        </footer>
+                    </lightning-record-edit-form>
+                </lightning-card>
+                <!--<div id="footer" class="slds-card__footer" style="position:absolute; bottom:40px; left:0px; right:0px; overflow:hidden; background:whitesmoke">
+                    <lightning-button class="slds-p-around_x-small" type="submit" onclick={handleCloseMethod} label="Cancel"></lightning-button>    
+                    <lightning-button class="slds-p-around_x-small" type="submit" variant="brand" label="Save"></lightning-button>
+                </div>-->
+            </div>    
+        </section>
+    </template>
+</template>

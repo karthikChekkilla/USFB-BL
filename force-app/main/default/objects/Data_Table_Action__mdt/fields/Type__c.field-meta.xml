@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type__c</fullName>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Type</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Apex Method</fullName>
+                <default>true</default>
+                <label>Apex Method</label>
+            </value>
+            <value>
+                <fullName>URL Redirection</fullName>
+                <default>false</default>
+                <label>URL Redirection</label>
+            </value>
+            <value>
+                <fullName>Create Record</fullName>
+                <default>false</default>
+                <label>Create Record</label>
+            </value>
+            <value>
+                <fullName>Lightning Component</fullName>
+                <default>false</default>
+                <label>Lightning Component</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

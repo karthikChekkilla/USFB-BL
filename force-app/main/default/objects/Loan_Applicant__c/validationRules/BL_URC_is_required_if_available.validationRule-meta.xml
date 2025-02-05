@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BL_URC_is_required_if_available</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(ISPICKVAL(BL_Udyam_available__c,&apos;Yes&apos;), OR(ISBLANK(BL_URC__c),   ISPICKVAL(BL_Type_of_Enterprise__c,&quot;&quot;)))</errorConditionFormula>
+    <errorMessage>Udyam Registration Certificate Number and Type of Enterprise are mandatory if Udyam available.</errorMessage>
+</ValidationRule>

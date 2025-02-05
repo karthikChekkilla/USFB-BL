@@ -1,0 +1,63 @@
+<!--
+  @description       : 
+  @author            : Zafaruddin
+  @group             : 
+  @last modified on  : 03-05-2024 by Lakshya Verma
+-->
+<template>
+  <template if:false={isReadonly}>
+    <div class=" slds-card__footer slds-no-flex" style="text-align: right;padding-bottom: 0px;margin-bottom: -10px;">
+      <lightning-button class="slds-m-top_xx-large" variant="brand" label={buttonLabel} name={buttonName}
+        onclick={handleClick} disabled={isDisabled}></lightning-button>
+    </div>
+  </template>
+  
+  <template if:true={executeFlow}>
+    <c-product-selection-screen loan-application-id={recordId} onclosecmp={handleClose}></c-product-selection-screen>
+  </template>
+
+  <!--Added by Lakshya Verma Starts-->
+  <template if:true={isShowAddress}>
+    <c-address-component parent-object-name={parentObjectName} parent-object-id={recordId}
+      onclose={handleAddressClose}></c-address-component>
+  </template>
+
+  <template if:true={showDocumentModal}>
+    <section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-01"
+      class="slds-modal slds-fade-in-open slds-modal_medium">
+      <div class="slds-modal__container modal-width">
+        <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" onclick={handleClose}>
+          <h1 class="slds-text-heading_medium">X</h1>
+          <span class="slds-assistive-text">Cancel and close</span>
+        </button>
+        <div class="slds-modal__content slds-p-around_medium">
+          <lightning-flow flow-api-name='Document_Information' flow-input-variables={inputVariables}
+            onstatuschange={handleStatusChange}>
+          </lightning-flow>
+        </div>
+      </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+  </template>
+  <!--Added by Lakshya Verma Starts-->
+
+  <!--Added by Mohit Starts-->
+  <template lwc:if={showScreenFlow}>
+    <section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-01"
+      class="slds-modal slds-fade-in-open slds-modal_medium">
+      <div class="slds-modal__container modal-width">
+        <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" onclick={handleClose}>
+          <h1 class="slds-text-heading_medium">x</h1>
+          <span class="slds-assistive-text">Cancel and close</span>
+        </button>
+        <div class="slds-modal__content slds-p-around_medium">
+          <lightning-flow flow-api-name={flowApiName} flow-input-variables={inputVariables}
+            onstatuschange={handleScreenFlowChange}></lightning-flow>
+        </div>
+      </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+  </template>
+  <!--Added by Mohit Ends-->
+
+</template>

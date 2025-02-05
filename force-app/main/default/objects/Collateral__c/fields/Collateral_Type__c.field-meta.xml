@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Collateral_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Collateral Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Assignment_LIC_Paper</fullName>
+                <default>false</default>
+                <label>Assignment-LIC/Paper</label>
+            </value>
+            <value>
+                <fullName>Creation of charge</fullName>
+                <default>false</default>
+                <label>Creation of charge</label>
+            </value>
+            <value>
+                <fullName>Hypothecation</fullName>
+                <default>false</default>
+                <label>Hypothecation</label>
+            </value>
+            <value>
+                <fullName>Lien Marketing – Security Document</fullName>
+                <default>false</default>
+                <label>Lien Marketing – Security Document</label>
+            </value>
+            <value>
+                <fullName>Lien Marketing – Shares/Deb</fullName>
+                <default>false</default>
+                <label>Lien Marketing – Shares/Deb</label>
+            </value>
+            <value>
+                <fullName>Lien Marketing – Deposit – Other Bank</fullName>
+                <default>false</default>
+                <label>Lien Marketing – Deposit – Other Bank</label>
+            </value>
+            <value>
+                <fullName>Lien Marketing – Deposit – Our Bank</fullName>
+                <default>false</default>
+                <label>Lien Marketing – Deposit – Our Bank</label>
+            </value>
+            <value>
+                <fullName>Mortgage</fullName>
+                <default>false</default>
+                <label>Mortgage</label>
+            </value>
+            <value>
+                <fullName>Pledge</fullName>
+                <default>false</default>
+                <label>Pledge</label>
+            </value>
+            <value>
+                <fullName>Precious Metal and Jewel Collateral</fullName>
+                <default>false</default>
+                <label>Precious Metal and Jewel Collateral</label>
+            </value>
+            <value>
+                <fullName>Securities</fullName>
+                <default>false</default>
+                <label>Securities</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

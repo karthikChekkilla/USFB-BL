@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Branch_Cannot_Editable</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF( AND( ISPICKVAL(LOB__c , &apos;BL&apos;) , NOT(ISBLANK(PRIORVALUE(Branch__c) )), 
+								IsChanged(Branch__c)
+							)
+, true,
+false)</errorConditionFormula>
+    <errorDisplayField>Branch__c</errorDisplayField>
+    <errorMessage>You cannot change the branch.</errorMessage>
+</ValidationRule>

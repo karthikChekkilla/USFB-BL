@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BL_PSL_Sub_Category__c</fullName>
+    <externalId>false</externalId>
+    <label>PSL Sub-Category</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Loan against warehouse receipt</fullName>
+                <default>false</default>
+                <label>Loan against warehouse receipt</label>
+            </value>
+            <value>
+                <fullName>Consumer loans</fullName>
+                <default>false</default>
+                <label>Consumer loans</label>
+            </value>
+            <value>
+                <fullName>Personal Loans</fullName>
+                <default>false</default>
+                <label>Personal Loans</label>
+            </value>
+            <value>
+                <fullName>Two Whealer loans</fullName>
+                <default>false</default>
+                <label>Two Whealer loans</label>
+            </value>
+            <value>
+                <fullName>Car / Sumo loans</fullName>
+                <default>false</default>
+                <label>Car / Sumo loans</label>
+            </value>
+            <value>
+                <fullName>Gold Loans</fullName>
+                <default>false</default>
+                <label>Gold Loans</label>
+            </value>
+            <value>
+                <fullName>Transport Vehicles(beyond fleet of 10)</fullName>
+                <default>false</default>
+                <label>Transport Vehicles(beyond fleet of 10)</label>
+            </value>
+            <value>
+                <fullName>Bus loans(NTBU)</fullName>
+                <default>false</default>
+                <label>Bus loans(NTBU)</label>
+            </value>
+            <value>
+                <fullName>Trading advances (Non Priority)</fullName>
+                <default>false</default>
+                <label>Trading advances (Non Priority)</label>
+            </value>
+            <value>
+                <fullName>large Enterprises- Mfg</fullName>
+                <default>false</default>
+                <label>large Enterprises- Mfg</label>
+            </value>
+            <value>
+                <fullName>Large Enterprises-Service</fullName>
+                <default>false</default>
+                <label>Large Enterprises-Service</label>
+            </value>
+            <value>
+                <fullName>Real Estate Adv- Secured By resd Mort</fullName>
+                <default>false</default>
+                <label>Real Estate Adv- Secured By resd Mort</label>
+            </value>
+            <value>
+                <fullName>Commercial Real Estate Property</fullName>
+                <default>false</default>
+                <label>Commercial Real Estate Property</label>
+            </value>
+            <value>
+                <fullName>Cmrc Real Estate to Blds/ Land Dev/Colonizers</fullName>
+                <default>false</default>
+                <label>Cmrc Real Estate to Blds/ Land Dev/Colonizers</label>
+            </value>
+            <value>
+                <fullName>Commercial real Estate for Infra Development</fullName>
+                <default>false</default>
+                <label>Commercial real Estate for Infra Development</label>
+            </value>
+            <value>
+                <fullName>Commercial real Estate- others(NTBU)</fullName>
+                <default>false</default>
+                <label>Commercial real Estate- others(NTBU)</label>
+            </value>
+            <value>
+                <fullName>Housing Loans(Purchase and Construction)</fullName>
+                <default>false</default>
+                <label>Housing Loans(Purchase and Construction)</label>
+            </value>
+            <value>
+                <fullName>Housing Loans for repairs</fullName>
+                <default>false</default>
+                <label>Housing Loans for repairs</label>
+            </value>
+            <value>
+                <fullName>Staff Housing Loans</fullName>
+                <default>false</default>
+                <label>Staff Housing Loans</label>
+            </value>
+            <value>
+                <fullName>OD againt Salary- Staff</fullName>
+                <default>false</default>
+                <label>OD againt Salary- Staff</label>
+            </value>
+            <value>
+                <fullName>OD againt Salary- other than Staff</fullName>
+                <default>false</default>
+                <label>OD againt Salary- other than Staff</label>
+            </value>
+            <value>
+                <fullName>Loans against Deposit/Security/NSCs/KVPs</fullName>
+                <default>false</default>
+                <label>Loans against Deposit/Security/NSCs/KVPs</label>
+            </value>
+            <value>
+                <fullName>Bill Purchased</fullName>
+                <default>false</default>
+                <label>Bill Purchased</label>
+            </value>
+            <value>
+                <fullName>Other Non Priority</fullName>
+                <default>false</default>
+                <label>Other Non Priority</label>
+            </value>
+            <value>
+                <fullName>Others</fullName>
+                <default>false</default>
+                <label>Others</label>
+            </value>
+            <value>
+                <fullName>Non PSL Agriculture and Allied Activity (9100)</fullName>
+                <default>false</default>
+                <label>Non PSL Agriculture and Allied Activity (9100)</label>
+            </value>
+            <value>
+                <fullName>Non PSL Housing Loans (9400)</fullName>
+                <default>false</default>
+                <label>Non PSL Housing Loans (9400)</label>
+            </value>
+            <value>
+                <fullName>Non Priority Sector Lending</fullName>
+                <default>false</default>
+                <label>Non Priority Sector Lending</label>
+            </value>
+            <value>
+                <fullName>Farm Credit</fullName>
+                <default>false</default>
+                <label>Farm Credit</label>
+            </value>
+            <value>
+                <fullName>Agriculture Infrastructure</fullName>
+                <default>false</default>
+                <label>Agriculture Infrastructure</label>
+            </value>
+            <value>
+                <fullName>Ancillary Activities</fullName>
+                <default>false</default>
+                <label>Ancillary Activities</label>
+            </value>
+            <value>
+                <fullName>Micro Enterprises</fullName>
+                <default>false</default>
+                <label>Micro Enterprises</label>
+            </value>
+            <value>
+                <fullName>Small Enterprises</fullName>
+                <default>false</default>
+                <label>Small Enterprises</label>
+            </value>
+            <value>
+                <fullName>Medium Enterprises</fullName>
+                <default>false</default>
+                <label>Medium Enterprises</label>
+            </value>
+            <value>
+                <fullName>Pre Shipment Export Credit</fullName>
+                <default>false</default>
+                <label>Pre Shipment Export Credit</label>
+            </value>
+            <value>
+                <fullName>Post Shipment Export Credit</fullName>
+                <default>false</default>
+                <label>Post Shipment Export Credit</label>
+            </value>
+            <value>
+                <fullName>Education Loans upto 10 Lakh</fullName>
+                <default>false</default>
+                <label>Education Loans upto 10 Lakh</label>
+            </value>
+            <value>
+                <fullName>Purchase/ Construction of a dwelling unit at Metro</fullName>
+                <default>false</default>
+                <label>Purchase/ Construction of a dwelling unit at Metro</label>
+            </value>
+            <value>
+                <fullName>Purchase/ Construction of a dwelling unit at Other</fullName>
+                <default>false</default>
+                <label>Purchase/ Construction of a dwelling unit at Other</label>
+            </value>
+            <value>
+                <fullName>Repair to damaged dwelling unit at Metro Centres</fullName>
+                <default>false</default>
+                <label>Repair to damaged dwelling unit at Metro Centres</label>
+            </value>
+            <value>
+                <fullName>Bank Loans to government agency for construction</fullName>
+                <default>false</default>
+                <label>Bank Loans to government agency for construction</label>
+            </value>
+            <value>
+                <fullName>Bank Loans for Housing projects for construction</fullName>
+                <default>false</default>
+                <label>Bank Loans for Housing projects for construction</label>
+            </value>
+            <value>
+                <fullName>Bank loans upto a limit of 15 crore per borrower</fullName>
+                <default>false</default>
+                <label>Bank loans upto a limit of 15 crore per borrower</label>
+            </value>
+            <value>
+                <fullName>Bank loans Upto a limit of 5 crore per borrower</fullName>
+                <default>false</default>
+                <label>Bank loans Upto a limit of 5 crore per borrower</label>
+            </value>
+            <value>
+                <fullName>Loans upto 50000 per borrower to individuals</fullName>
+                <default>false</default>
+                <label>Loans upto 50000 per borrower to individuals</label>
+            </value>
+            <value>
+                <fullName>Loans to distress persons</fullName>
+                <default>false</default>
+                <label>Loans to distress persons</label>
+            </value>
+            <value>
+                <fullName>Other Non-PSL (9600)</fullName>
+                <default>false</default>
+                <label>Other Non-PSL (9600)</label>
+            </value>
+            <value>
+                <fullName>NHome Loan Plus</fullName>
+                <default>false</default>
+                <label>NHome Loan Plus</label>
+            </value>
+            <value>
+                <fullName>Non PSL MSME (9200)</fullName>
+                <default>false</default>
+                <label>Non PSL MSME (9200)</label>
+            </value>
+            <value>
+                <fullName>Non PSL Education Loans (9300)</fullName>
+                <default>false</default>
+                <label>Non PSL Education Loans (9300)</label>
+            </value>
+            <value>
+                <fullName>Personal Loans (9500)</fullName>
+                <default>false</default>
+                <label>Personal Loans (9500)</label>
+            </value>
+            <value>
+                <fullName>FASTAG</fullName>
+                <default>false</default>
+                <label>FASTAG</label>
+            </value>
+            <value>
+                <fullName>Gold Loans to Farmers for Agriculture Purpose</fullName>
+                <default>false</default>
+                <label>Gold Loans to Farmers for Agriculture Purpose</label>
+            </value>
+            <value>
+                <fullName>Crop Loans</fullName>
+                <default>false</default>
+                <label>Crop Loans</label>
+            </value>
+            <value>
+                <fullName>Tractor Loans</fullName>
+                <default>false</default>
+                <label>Tractor Loans</label>
+            </value>
+            <value>
+                <fullName>Loan for Agriculture Equipmnets</fullName>
+                <default>false</default>
+                <label>Loan for Agriculture Equipmnets</label>
+            </value>
+            <value>
+                <fullName>Vehicle Loans for transporting agriculture input</fullName>
+                <default>false</default>
+                <label>Vehicle Loans for transporting agriculture input</label>
+            </value>
+            <value>
+                <fullName>Agriculture loand for Land Development</fullName>
+                <default>false</default>
+                <label>Agriculture loand for Land Development</label>
+            </value>
+            <value>
+                <fullName>Plnttn hoctl dairy, fisheries, poultry, piggery</fullName>
+                <default>false</default>
+                <label>Plnttn hoctl dairy, fisheries, poultry, piggery</label>
+            </value>
+            <value>
+                <fullName>Agri Finc to farmers for Pre/post harvest(NTBU)</fullName>
+                <default>false</default>
+                <label>Agri Finc to farmers for Pre/post harvest(NTBU)</label>
+            </value>
+            <value>
+                <fullName>Direct AgriFin to other for Pre/Post harv(NTBU)</fullName>
+                <default>false</default>
+                <label>Direct AgriFin to other for Pre/Post harv(NTBU)</label>
+            </value>
+            <value>
+                <fullName>Loans to food &amp; Agro based processing units</fullName>
+                <default>false</default>
+                <label>Loans to food &amp; Agro based processing units</label>
+            </value>
+            <value>
+                <fullName>Cr for fin of fertilizers/pesicides,seeds(NTBU)</fullName>
+                <default>false</default>
+                <label>Cr for fin of fertilizers/pesicides,seeds(NTBU)</label>
+            </value>
+            <value>
+                <fullName>Loans/Limit fin CattleFeed,PoultryFeed(NTBU)</fullName>
+                <default>false</default>
+                <label>Loans/Limit fin CattleFeed,PoultryFeed(NTBU)</label>
+            </value>
+            <value>
+                <fullName>Loans/limits to artiyas/commission agents</fullName>
+                <default>false</default>
+                <label>Loans/limits to artiyas/commission agents</label>
+            </value>
+            <value>
+                <fullName>Const/running of cold strg,Gdws etc &amp; not an SME</fullName>
+                <default>false</default>
+                <label>Const/running of cold strg,Gdws etc &amp; not an SME</label>
+            </value>
+            <value>
+                <fullName>General Credit Card(GCC)</fullName>
+                <default>false</default>
+                <label>General Credit Card(GCC)</label>
+            </value>
+            <value>
+                <fullName>OD in Basic Banking Deposit A/C(PMJDY)</fullName>
+                <default>false</default>
+                <label>OD in Basic Banking Deposit A/C(PMJDY)</label>
+            </value>
+            <value>
+                <fullName>Small Mfg Entrp (Invt In P &amp; M upto Rs5.00 Cr)</fullName>
+                <default>false</default>
+                <label>Small Mfg Entrp (Invt In P &amp; M upto Rs5.00 Cr)</label>
+            </value>
+            <value>
+                <fullName>Micro Mfg Entrp (Invt In P &amp; M upto Rs25.00 Lac)</fullName>
+                <default>false</default>
+                <label>Micro Mfg Entrp (Invt In P &amp; M upto Rs25.00 Lac)</label>
+            </value>
+            <value>
+                <fullName>Small service Entrp(Invt In P&amp;M upto Rs2.00 Cr)</fullName>
+                <default>false</default>
+                <label>Small service Entrp(Invt In P&amp;M upto Rs2.00 Cr)</label>
+            </value>
+            <value>
+                <fullName>Micro Srvc Entrps (Invt In P &amp; M upto Rs10 L)</fullName>
+                <default>false</default>
+                <label>Micro Srvc Entrps (Invt In P &amp; M upto Rs10 L)</label>
+            </value>
+            <value>
+                <fullName>Small Rd&amp;Water Transport(Fleet of not excdg 10)</fullName>
+                <default>false</default>
+                <label>Small Rd&amp;Water Transport(Fleet of not excdg 10)</label>
+            </value>
+            <value>
+                <fullName>Khadi &amp; Village Industries Sector</fullName>
+                <default>false</default>
+                <label>Khadi &amp; Village Industries Sector</label>
+            </value>
+            <value>
+                <fullName>Retail Traders dealing in essential commodities</fullName>
+                <default>false</default>
+                <label>Retail Traders dealing in essential commodities</label>
+            </value>
+            <value>
+                <fullName>Private Retail traders upto Rs20.00 Lac</fullName>
+                <default>false</default>
+                <label>Private Retail traders upto Rs20.00 Lac</label>
+            </value>
+            <value>
+                <fullName>Small Business(NTBU)</fullName>
+                <default>false</default>
+                <label>Small Business(NTBU)</label>
+            </value>
+            <value>
+                <fullName>Professional &amp; Self Employed(NTBU)</fullName>
+                <default>false</default>
+                <label>Professional &amp; Self Employed(NTBU)</label>
+            </value>
+            <value>
+                <fullName>Medical Practitioners(NTBU)</fullName>
+                <default>false</default>
+                <label>Medical Practitioners(NTBU)</label>
+            </value>
+            <value>
+                <fullName>Other Service Enterprises(NTBU)</fullName>
+                <default>false</default>
+                <label>Other Service Enterprises(NTBU)</label>
+            </value>
+            <value>
+                <fullName>Loans/Limits upto Rs 50,000</fullName>
+                <default>false</default>
+                <label>Loans/Limits upto Rs 50,000</label>
+            </value>
+            <value>
+                <fullName>Loans to distressed farmers(Debt Swap/Relief)</fullName>
+                <default>false</default>
+                <label>Loans to distressed farmers(Debt Swap/Relief)</label>
+            </value>
+            <value>
+                <fullName>Education Loans for studies in India</fullName>
+                <default>false</default>
+                <label>Education Loans for studies in India</label>
+            </value>
+            <value>
+                <fullName>Education Loans for studies in abroad</fullName>
+                <default>false</default>
+                <label>Education Loans for studies in abroad</label>
+            </value>
+            <value>
+                <fullName>Housing Loans(for purchase and Const)</fullName>
+                <default>false</default>
+                <label>Housing Loans(for purchase and Const)</label>
+            </value>
+            <value>
+                <fullName>Loans to SHGs</fullName>
+                <default>false</default>
+                <label>Loans to SHGs</label>
+            </value>
+            <value>
+                <fullName>DRI Advances</fullName>
+                <default>false</default>
+                <label>DRI Advances</label>
+            </value>
+            <value>
+                <fullName>Medium Enterprises- Mfg</fullName>
+                <default>false</default>
+                <label>Medium Enterprises- Mfg</label>
+            </value>
+            <value>
+                <fullName>Medium Enterprises-Service</fullName>
+                <default>false</default>
+                <label>Medium Enterprises-Service</label>
+            </value>
+            <value>
+                <fullName>JLG Loans</fullName>
+                <default>false</default>
+                <label>JLG Loans</label>
+            </value>
+            <value>
+                <fullName>PSL (Priority Sector Lending)</fullName>
+                <default>false</default>
+                <label>PSL (Priority Sector Lending)</label>
+            </value>
+            <value>
+                <fullName>Priority Sector Lending-Direct Agriculture</fullName>
+                <default>false</default>
+                <label>Priority Sector Lending-Direct Agriculture</label>
+            </value>
+            <value>
+                <fullName>Home Loan Plus</fullName>
+                <default>false</default>
+                <label>Home Loan Plus</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

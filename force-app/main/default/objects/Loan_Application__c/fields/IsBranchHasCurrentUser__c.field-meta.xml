@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IsBranchHasCurrentUser__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(OR((AND($Profile.Name == &apos;Credit&apos;,NOT(ISPICKVAL(LOB__c, &quot;BL&quot;)))),(AND(ISPICKVAL(LOB__c, &quot;BL&quot;),($Profile.Name == &apos;Credit&apos; || $Profile.Name == &apos;Operations&apos; || $Profile.Name == &apos;RCU&apos;)))),CONTAINS($User.Branch_IDs__c,Branch__r.Id), true)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>IsBranchHasCurrentUser</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

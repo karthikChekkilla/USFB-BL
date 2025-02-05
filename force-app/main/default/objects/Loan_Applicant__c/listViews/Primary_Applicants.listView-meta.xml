@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Primary_Applicants</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>Pan_Number__c</columns>
+    <columns>Loan_Application__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Applicant_Type__c</field>
+        <operation>equals</operation>
+        <value>Applicant</value>
+    </filters>
+    <label>Primary Applicants</label>
+</ListView>

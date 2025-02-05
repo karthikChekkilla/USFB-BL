@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Gst_Applicable</fullName>
+    <active>true</active>
+    <errorConditionFormula>if(AND( NOT(ISBLANK(Text(BL_GST_Applicable__c))),
+							ISPICKVAL(BL_GST_Applicable__c, &apos;Yes&apos;),
+							ISBLANK(GST_Registration_Number__c)), 
+			true, false)</errorConditionFormula>
+    <errorDisplayField>GST_Registration_Number__c</errorDisplayField>
+    <errorMessage>GST Registration Number Is required</errorMessage>
+</ValidationRule>

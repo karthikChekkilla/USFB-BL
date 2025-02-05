@@ -1,0 +1,24 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 07-15-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-spinner alternative-text="Loading" size="medium" if:true={showSpinner}></lightning-spinner>
+
+    <lightning-modal-header label="Generate CAM"></lightning-modal-header>
+
+    <div slot="footer">
+        <div class="slds-var-m-top_medium slds-var-m-right_medium slds-m-bottom_x-small slds-text-align_center">
+            <lightning-button variant="brand" type="submit" label="View PDF" onclick={handleSubmit}></lightning-button>
+            &nbsp; &nbsp;
+            <lightning-button  onclick={closeQuickAction} label="Cancel"> </lightning-button>
+        </div>
+
+    </div>
+
+
+    
+</template>

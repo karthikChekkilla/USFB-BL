@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Leegality Api</label>
+    <protected>false</protected>
+    <values>
+        <field>Active__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>Auth_Token_c__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Body__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Certificate_Name__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Class_Name__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Endpoint__c</field>
+        <value xsi:type="xsd:string">https://apiuat.utkarsh.bank/esign/v1.0.0/sign/request</value>
+    </values>
+    <values>
+        <field>Extra_Param_s__c</field>
+        <value xsi:type="xsd:string">InquiryCode:123
+ProcessCode:SFDC_CV</value>
+    </values>
+    <values>
+        <field>HTTP_Method__c</field>
+        <value xsi:type="xsd:string">POST</value>
+    </values>
+    <values>
+        <field>HeaderParams__c</field>
+        <value xsi:type="xsd:string">X-Auth-Token:ey0kuE1Gaj1u6NOKtnCZU3jyomE1e7kZ
+Content-Type:application/json
+partnerid:Techmatrix
+Accept:application/json</value>
+    </values>
+    <values>
+        <field>Host__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Mock_Response__c</field>
+        <value xsi:type="xsd:string">{
+    &quot;data&quot;: {
+        &quot;documentId&quot;: &quot;zAaoF6h&quot;,
+        &quot;irn&quot;: null,
+        &quot;invitees&quot;: [
+            {
+                &quot;name&quot;: &quot;Varun Ahuja&quot;,
+                &quot;email&quot;: &quot;varun.a@techmatrixconsulting.com&quot;,
+                &quot;phone&quot;: null,
+                &quot;signUrl&quot;: &quot;https://sandbox.leegality.com/sign/5cd68160-d0df-4786-85ed-5333e673ec88&quot;,
+                &quot;active&quot;: true,
+                &quot;expiryDate&quot;: &quot;2024-06-22T18:29:59Z&quot;
+            },
+            {
+                &quot;name&quot;: null,
+                &quot;email&quot;: null,
+                &quot;phone&quot;: null,
+                &quot;signUrl&quot;: null,
+                &quot;active&quot;: false,
+                &quot;expiryDate&quot;: null
+            },
+            {
+                &quot;name&quot;: null,
+                &quot;email&quot;: null,
+                &quot;phone&quot;: null,
+                &quot;signUrl&quot;: null,
+                &quot;active&quot;: false,
+                &quot;expiryDate&quot;: null
+            },
+            {
+                &quot;name&quot;: &quot;Abhishek Gupta&quot;,
+                &quot;email&quot;: &quot;abhishek.gupta1@utkarsh.bank&quot;,
+                &quot;phone&quot;: null,
+                &quot;signUrl&quot;: &quot;https://sandbox.leegality.com/sign/5707f040-42dd-426b-9ea8-4e496edf34ed&quot;,
+                &quot;active&quot;: false,
+                &quot;expiryDate&quot;: &quot;2024-06-22T18:29:59Z&quot;
+            }
+        ]
+    },
+    &quot;messages&quot;: [
+        {
+            &quot;code&quot;: &quot;simpleWorkFlow.success&quot;,
+            &quot;message&quot;: &quot;Invitations sent successfully.&quot;
+        }
+    ],
+    &quot;status&quot;: 1
+}</value>
+    </values>
+    <values>
+        <field>Named_Credential__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Timeout_Time__c</field>
+        <value xsi:type="xsd:double">120000.0</value>
+    </values>
+    <values>
+        <field>URL_Parameters__c</field>
+        <value xsi:nil="true"/>
+    </values>
+</CustomMetadata>

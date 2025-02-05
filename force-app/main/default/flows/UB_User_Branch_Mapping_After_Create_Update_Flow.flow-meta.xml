@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>49.0</apiVersion>
+    <assignments>
+        <description>This assignment helps to store all the branch IDs under each credit profile user.</description>
+        <name>Store_Branch_IDs</name>
+        <label>Store Branch IDs</label>
+        <locationX>578</locationX>
+        <locationY>1163</locationY>
+        <assignmentItems>
+            <assignToReference>BranchIDs</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Iterate_User_Branch_Mapping_Records.Branch__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Iterate_User_Branch_Mapping_Records</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>This evaluates different scenarios to decide its actions.</description>
+        <name>Record_Decision</name>
+        <label>Record Decision</label>
+        <locationX>402</locationX>
+        <locationY>323</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Branch_Lookup_Not_Null</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Branch__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Validate_Branch_ID_Exists_on_User</targetReference>
+            </connector>
+            <label>Branch Lookup Not Null</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>The record is inserted/updated.</description>
+        <name>Record_inserted_updated</name>
+        <label>Record inserted/updated</label>
+        <locationX>314</locationX>
+        <locationY>539</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Record_Inserted</name>
+            <conditionLogic>1 AND (2 OR 3)</conditionLogic>
+            <conditions>
+                <leftValueReference>RecordCreated</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.User__r.Profile.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Credit</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.User__r.Profile.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>RCU</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Fetch_User_Branch_Mapping_Records</targetReference>
+            </connector>
+            <label>Record Inserted</label>
+        </rules>
+        <rules>
+            <name>Record_Updated</name>
+            <conditionLogic>1 AND 2 AND ( 3 OR 4)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.User__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>RecordCreated</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.User__r.Profile.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Credit</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.User__r.Profile.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>RCU</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Fetch_User_Branch_Mapping_Records</targetReference>
+            </connector>
+            <label>Record Updated</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Validate if the Branch ID contains in the collection values</description>
+        <name>Validate_Branch_ID_Duplicate_values</name>
+        <label>Validate Branch ID Duplicate values</label>
+        <locationX>490</locationX>
+        <locationY>1055</locationY>
+        <defaultConnector>
+            <targetReference>Store_Branch_IDs</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>User ID Doesn&apos;t Exists</defaultConnectorLabel>
+        <rules>
+            <name>Branch_ID_Exists</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>BranchIDs</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <elementReference>Iterate_User_Branch_Mapping_Records.Branch__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Iterate_User_Branch_Mapping_Records</targetReference>
+            </connector>
+            <label>Branch ID Exists</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Validate Branch ID Exists on User object.</description>
+        <name>Validate_Branch_ID_Exists_on_User</name>
+        <label>Validate Branch ID Exists on User</label>
+        <locationX>50</locationX>
+        <locationY>431</locationY>
+        <defaultConnector>
+            <targetReference>Record_inserted_updated</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Branch ID Doesn&apos;t Exists</defaultConnectorLabel>
+        <rules>
+            <name>Branch_ID_Exists_on_User</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.User__r.Branch_IDs__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <elementReference>$Record.User__c</elementReference>
+                </rightValue>
+            </conditions>
+            <label>Branch ID Exists on User</label>
+        </rules>
+    </decisions>
+    <description>This flow will be evaluated after creating or updating User Branch Mapping Object records.</description>
+    <environments>Default</environments>
+    <formulas>
+        <description>Assign all Branch IDs to user object.</description>
+        <name>AssignBranchIDs</name>
+        <dataType>String</dataType>
+        <expression>{!BranchIDs}</expression>
+    </formulas>
+    <formulas>
+        <description>Returns true if record is created.</description>
+        <name>RecordCreated</name>
+        <dataType>Boolean</dataType>
+        <expression>ISNEW()</expression>
+    </formulas>
+    <interviewLabel>User Branch Mapping {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>User Branch Mapping After Create/Update Flow</label>
+    <loops>
+        <description>Iterate over User Branch Mapping Records to store User IDs.</description>
+        <name>Iterate_User_Branch_Mapping_Records</name>
+        <label>Iterate User Branch Mapping Records</label>
+        <locationX>314</locationX>
+        <locationY>947</locationY>
+        <collectionReference>Fetch_User_Branch_Mapping_Records</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Validate_Branch_ID_Duplicate_values</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Update_User_Record</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <description>Fetch all branch related User Branch Mapping Records to evaluate.</description>
+        <name>Fetch_User_Branch_Mapping_Records</name>
+        <label>Fetch User Branch Mapping Records</label>
+        <locationX>314</locationX>
+        <locationY>839</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Iterate_User_Branch_Mapping_Records</targetReference>
+        </connector>
+        <filterLogic>2 AND (3 OR 1 OR 5) AND 4</filterLogic>
+        <filters>
+            <field>User_Profile__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Credit</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>User__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.User__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>User_Profile__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>RCU</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Id</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>User_Profile__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Sales</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>User_Branch_Mapping__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <description>Update User IDs on parent Branch object record.</description>
+        <name>Update_User_Record</name>
+        <label>Update User Record</label>
+        <locationX>314</locationX>
+        <locationY>1439</locationY>
+        <inputAssignments>
+            <field>Branch_IDs__c</field>
+            <value>
+                <elementReference>AssignBranchIDs</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record.User__r</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>276</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Record_Decision</targetReference>
+        </connector>
+        <object>User_Branch_Mapping__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>Store all Branch Ids of the current user.</description>
+        <name>BranchIDs</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

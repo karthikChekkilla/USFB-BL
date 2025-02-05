@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BL_Sub_Sub_Category__c</fullName>
+    <externalId>false</externalId>
+    <label>Sub-Sub Category</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Investment in Plant &amp; Machinery or Equipment is upto 1 crore and turnover is upto 5 crore (2150)</fullName>
+                <default>false</default>
+                <label>Investment in Plant &amp; Machinery or Equipment is upto 1 crore and turnover is upto 5 crore (2150)</label>
+            </value>
+            <value>
+                <fullName>Investment in Plant &amp; Machinery or Equipment is &gt; 1 crore but does not exceed 10 crore and(2230)</fullName>
+                <default>false</default>
+                <label>Investment in Plant &amp; Machinery or Equipment is &gt; 1 crore but does not exceed 10 crore and(2230)</label>
+            </value>
+            <value>
+                <fullName>Post Shipment Export Credit (3200)</fullName>
+                <default>false</default>
+                <label>Post Shipment Export Credit (3200)</label>
+            </value>
+            <value>
+                <fullName>Purchase/ Construction of a dwelling unit at Other Centres [upto 25 Lakh] (5200)</fullName>
+                <default>false</default>
+                <label>Purchase/ Construction of a dwelling unit at Other Centres [upto 25 Lakh] (5200)</label>
+            </value>
+            <value>
+                <fullName>Repair to damaged dwelling unit at Metro Centres upto 10 Lakh and other Centres upto 6 Lakh(5300)</fullName>
+                <default>false</default>
+                <label>Repair to damaged dwelling unit at Metro Centres upto 10 Lakh and other Centres upto 6 Lakh(5300)</label>
+            </value>
+            <value>
+                <fullName>Bank Loans to government agency for construction of dwelling units for slum subject to a ceil(5400)</fullName>
+                <default>false</default>
+                <label>Bank Loans to government agency for construction of dwelling units for slum subject to a ceil(5400)</label>
+            </value>
+            <value>
+                <fullName>Loans upto 50000 per borrower to individuals and their SHG/JLG provided the individual borro(8100)</fullName>
+                <default>false</default>
+                <label>Loans upto 50000 per borrower to individuals and their SHG/JLG provided the individual borro(8100)</label>
+            </value>
+            <value>
+                <fullName>Loans to distress persons (8200)</fullName>
+                <default>false</default>
+                <label>Loans to distress persons (8200)</label>
+            </value>
+            <value>
+                <fullName>Crop loans to farmers, Medium and long-term loans for agriculture and allied activities, Loans(9120)</fullName>
+                <default>false</default>
+                <label>Crop loans to farmers, Medium and long-term loans for agriculture and allied activities, Loans(9120)</label>
+            </value>
+            <value>
+                <fullName>Bank Loans to government agency for construction of dwelling units for slum above1 million/u (9440)</fullName>
+                <default>false</default>
+                <label>Bank Loans to government agency for construction of dwelling units for slum above1 million/u (9440)</label>
+            </value>
+            <value>
+                <fullName>TReDS (2340)</fullName>
+                <default>false</default>
+                <label>TReDS (2340)</label>
+            </value>
+            <value>
+                <fullName>Loans to Co-operative Societies</fullName>
+                <default>false</default>
+                <label>Loans to Co-operative Societies</label>
+            </value>
+            <value>
+                <fullName>Loan to Manufacturing Enterprises [Investment upto 25 Lakh]</fullName>
+                <default>false</default>
+                <label>Loan to Manufacturing Enterprises [Investment upto 25 Lakh]</label>
+            </value>
+            <value>
+                <fullName>Overdraft upto 5000 in PMJDY accounts</fullName>
+                <default>false</default>
+                <label>Overdraft upto 5000 in PMJDY accounts</label>
+            </value>
+            <value>
+                <fullName>Loan to Manufacturing Enterprises [Investment &gt; 5 Cr to 10 Cr.]</fullName>
+                <default>false</default>
+                <label>Loan to Manufacturing Enterprises [Investment &gt; 5 Cr to 10 Cr.]</label>
+            </value>
+            <value>
+                <fullName>Loan for Plant tissue culture Agri Biotechnology</fullName>
+                <default>false</default>
+                <label>Loan for Plant tissue culture Agri Biotechnology</label>
+            </value>
+            <value>
+                <fullName>Production of Bio-Pesticide Bio Fertilisers, Vermi Composting</fullName>
+                <default>false</default>
+                <label>Production of Bio-Pesticide Bio Fertilisers, Vermi Composting</label>
+            </value>
+            <value>
+                <fullName>Loan for Food Agro Processing (Up to 100 Cr.)</fullName>
+                <default>false</default>
+                <label>Loan for Food Agro Processing (Up to 100 Cr.)</label>
+            </value>
+            <value>
+                <fullName>Advances to Khadi &amp; Village Industries Sector [KVI]</fullName>
+                <default>false</default>
+                <label>Advances to Khadi &amp; Village Industries Sector [KVI]</label>
+            </value>
+            <value>
+                <fullName>Loan to Service Enterprises [Investment &gt; 10 Lakh to 2 Cr.]</fullName>
+                <default>false</default>
+                <label>Loan to Service Enterprises [Investment &gt; 10 Lakh to 2 Cr.]</label>
+            </value>
+            <value>
+                <fullName>Crop Loans</fullName>
+                <default>false</default>
+                <label>Crop Loans</label>
+            </value>
+            <value>
+                <fullName>Loan for Investment Credit</fullName>
+                <default>false</default>
+                <label>Loan for Investment Credit</label>
+            </value>
+            <value>
+                <fullName>Loan for Allied Activities</fullName>
+                <default>false</default>
+                <label>Loan for Allied Activities</label>
+            </value>
+            <value>
+                <fullName>Other Agriculture Loans</fullName>
+                <default>false</default>
+                <label>Other Agriculture Loans</label>
+            </value>
+            <value>
+                <fullName>Loans for construction of storage facilities (Warehouses, market yards,godowns), cold storage</fullName>
+                <default>false</default>
+                <label>Loans for construction of storage facilities (Warehouses, market yards,godowns), cold storage</label>
+            </value>
+            <value>
+                <fullName>Loan for Soil conservation and watershed</fullName>
+                <default>false</default>
+                <label>Loan for Soil conservation and watershed</label>
+            </value>
+            <value>
+                <fullName>Seed Production</fullName>
+                <default>false</default>
+                <label>Seed Production</label>
+            </value>
+            <value>
+                <fullName>Loan for setting up Agri Clinics &amp; Agri Business Centres</fullName>
+                <default>false</default>
+                <label>Loan for setting up Agri Clinics &amp; Agri Business Centres</label>
+            </value>
+            <value>
+                <fullName>Loan to Service Enterprises [Investment upto 10 Lakh]</fullName>
+                <default>false</default>
+                <label>Loan to Service Enterprises [Investment upto 10 Lakh]</label>
+            </value>
+            <value>
+                <fullName>Loan to Manufacturing Enterprises [Investment &gt; 25 Lakh to 5 Cr.]</fullName>
+                <default>false</default>
+                <label>Loan to Manufacturing Enterprises [Investment &gt; 25 Lakh to 5 Cr.]</label>
+            </value>
+            <value>
+                <fullName>Loan to Service Enterprises [Investment &gt; 2 Cr to 5 Cr.]</fullName>
+                <default>false</default>
+                <label>Loan to Service Enterprises [Investment &gt; 2 Cr to 5 Cr.]</label>
+            </value>
+            <value>
+                <fullName>TReDS (2160)</fullName>
+                <default>false</default>
+                <label>TReDS (2160)</label>
+            </value>
+            <value>
+                <fullName>TReDS (2240)</fullName>
+                <default>false</default>
+                <label>TReDS (2240)</label>
+            </value>
+            <value>
+                <fullName>Investment in Plant &amp; Machinery or Equipment is &gt; 10 crore but does not exceed 50 crore an(2330)</fullName>
+                <default>false</default>
+                <label>Investment in Plant &amp; Machinery or Equipment is &gt; 10 crore but does not exceed 50 crore an(2330)</label>
+            </value>
+            <value>
+                <fullName>Education Loans upto 10 Lakh (4100)</fullName>
+                <default>false</default>
+                <label>Education Loans upto 10 Lakh (4100)</label>
+            </value>
+            <value>
+                <fullName>Purchase/ Construction of a dwelling unit at Metro Centres [upto 35 Lakh] (5100)</fullName>
+                <default>false</default>
+                <label>Purchase/ Construction of a dwelling unit at Metro Centres [upto 35 Lakh] (5100)</label>
+            </value>
+            <value>
+                <fullName>Bank loans Upto a limit of 5 crore per borrower for building school, health care facilities(7100)</fullName>
+                <default>false</default>
+                <label>Bank loans Upto a limit of 5 crore per borrower for building school, health care facilities(7100)</label>
+            </value>
+            <value>
+                <fullName>Bank Loans for Housing projects for construction of houses for Economically Weaker Section (EWS)5500</fullName>
+                <default>false</default>
+                <label>Bank Loans for Housing projects for construction of houses for Economically Weaker Section (EWS)5500</label>
+            </value>
+            <value>
+                <fullName>Bank loans upto a limit of 15 crore per borrower for renewable energy (6100)</fullName>
+                <default>false</default>
+                <label>Bank loans upto a limit of 15 crore per borrower for renewable energy (6100)</label>
+            </value>
+            <value>
+                <fullName>Non PSL Education Loans above 10 Lakh (9310)</fullName>
+                <default>false</default>
+                <label>Non PSL Education Loans above 10 Lakh (9310)</label>
+            </value>
+            <value>
+                <fullName>Purchase/Construction of a dwelling unit at Other Centres above 25 Lakh (9420)</fullName>
+                <default>false</default>
+                <label>Purchase/Construction of a dwelling unit at Other Centres above 25 Lakh (9420)</label>
+            </value>
+            <value>
+                <fullName>Corporate farmers, Farmer Producer Organisations (1150)</fullName>
+                <default>false</default>
+                <label>Corporate farmers, Farmer Producer Organisations (1150)</label>
+            </value>
+            <value>
+                <fullName>Pre Shipment Export Credit (3100)</fullName>
+                <default>false</default>
+                <label>Pre Shipment Export Credit (3100)</label>
+            </value>
+            <value>
+                <fullName>Loans to farmers against pledge of agriculture product, Includes NWR for a period exceeding 12(9110)</fullName>
+                <default>false</default>
+                <label>Loans to farmers against pledge of agriculture product, Includes NWR for a period exceeding 12(9110)</label>
+            </value>
+            <value>
+                <fullName>Loans above 5 crore per borrowing entity to FPOs/FPCs (9130)</fullName>
+                <default>false</default>
+                <label>Loans above 5 crore per borrowing entity to FPOs/FPCs (9130)</label>
+            </value>
+            <value>
+                <fullName>Non PSL MSME (9210)</fullName>
+                <default>false</default>
+                <label>Non PSL MSME (9210)</label>
+            </value>
+            <value>
+                <fullName>Purchase/ Construction of a dwelling unit at Metro Centres above 35 Lakh (9410)</fullName>
+                <default>false</default>
+                <label>Purchase/ Construction of a dwelling unit at Metro Centres above 35 Lakh (9410)</label>
+            </value>
+            <value>
+                <fullName>Repair to damaged dwelling unit at Metro Centres above 10 Lakh and other Centres above 6L(9430)</fullName>
+                <default>false</default>
+                <label>Repair to damaged dwelling unit at Metro Centres above 10 Lakh and other Centres above 6L(9430)</label>
+            </value>
+            <value>
+                <fullName>Personal Loans (9510)</fullName>
+                <default>false</default>
+                <label>Personal Loans (9510)</label>
+            </value>
+            <value>
+                <fullName>Other Non-PSL (9610)</fullName>
+                <default>false</default>
+                <label>Other Non-PSL (9610)</label>
+            </value>
+            <value>
+                <fullName>Wholesale and retail trade (Udyam registration mandatory) (2170)</fullName>
+                <default>false</default>
+                <label>Wholesale and retail trade (Udyam registration mandatory) (2170)</label>
+            </value>
+            <value>
+                <fullName>Wholesale and retail trade (Udyam registration mandatory) (2250)</fullName>
+                <default>false</default>
+                <label>Wholesale and retail trade (Udyam registration mandatory) (2250)</label>
+            </value>
+            <value>
+                <fullName>Wholesale and retail trade (Udyam registration mandatory) (2350)</fullName>
+                <default>false</default>
+                <label>Wholesale and retail trade (Udyam registration mandatory) (2350)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

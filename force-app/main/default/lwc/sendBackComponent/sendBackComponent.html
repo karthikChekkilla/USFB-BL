@@ -1,0 +1,18 @@
+<template>
+    <lightning-modal-header label="Send Back Loan Application"></lightning-modal-header>
+			<lightning-modal-body>
+			
+				<div class="slds-var-m-top_medium slds-var-m-right_medium slds-m-bottom_x-small">
+                    <lightning-combobox label="Select Stage" options={stageOptions} value={selectedStage} onchange={handleStageChange}></lightning-combobox>
+							   <lightning-textarea label="Send Back Reason" value={sendBackReason} onchange={handleSendBackReasonChange}></lightning-textarea>
+					<div class="slds-m-top_small slds-align_absolute-center">
+					<lightning-button label="Send Back" variant="brand" onclick={handleSendBack}></lightning-button>
+					&nbsp; &nbsp;
+					<!-- <lightning-button variant="brand" onclick={closeQuickAction} label="Cancel"> </lightning-button> -->
+					</div>
+				</div>
+			</lightning-modal-body>
+    <!-- <lightning-combobox label="Select Stage" options={stageOptions} value={selectedStage} onchange={handleStageChange}></lightning-combobox>
+    <lightning-textarea label="Send Back Reason" value={sendBackReason} onchange={handleSendBackReasonChange}></lightning-textarea>
+    <lightning-button label="Send Back" onclick={handleSendBack}></lightning-button> -->
+</template>

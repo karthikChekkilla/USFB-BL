@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MobileNumber_Validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(NOT($Setup.Bypass_Validations__c.Bypass_Validation__c),
+    ISBLANK(Mobile__c),
+    NOT(ISNEW())
+  
+)</errorConditionFormula>
+    <errorDisplayField>Mobile__c</errorDisplayField>
+    <errorMessage>Mobile Number should be 10 Digit starting with 6,7,8,9</errorMessage>
+</ValidationRule>

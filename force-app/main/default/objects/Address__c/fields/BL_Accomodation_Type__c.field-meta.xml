@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BL_Accomodation_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Accomodation Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Others</fullName>
+                <default>false</default>
+                <label>Others</label>
+            </value>
+            <value>
+                <fullName>Company Provided</fullName>
+                <default>false</default>
+                <label>Company Provided</label>
+            </value>
+            <value>
+                <fullName>On Rent</fullName>
+                <default>false</default>
+                <label>On Rent</label>
+            </value>
+            <value>
+                <fullName>Own Flat</fullName>
+                <default>false</default>
+                <label>Own Flat</label>
+            </value>
+            <value>
+                <fullName>Own Independent House</fullName>
+                <default>false</default>
+                <label>Own Independent House</label>
+            </value>
+            <value>
+                <fullName>Joint Family</fullName>
+                <default>false</default>
+                <label>Joint Family</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

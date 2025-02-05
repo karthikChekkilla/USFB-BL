@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DOB_Validation</fullName>
+    <active>true</active>
+    <description>DOB is required if the constitution is a Sole Proprietorship or individual</description>
+    <errorConditionFormula>AND( 
+ISBLANK(  Date_of_Birth__c  ) ,
+NOT($Setup.Bypass_Validations__c.Bypass_Validation__c),
+OR(
+ ISPICKVAL( Constitution__c , &apos;Individual&apos;) ,
+ ISPICKVAL( Constitution__c , &apos;Sole Proprietorship&apos;)
+  )
+)</errorConditionFormula>
+    <errorDisplayField>Date_of_Birth__c</errorDisplayField>
+    <errorMessage>Please fill in the Date of Birth</errorMessage>
+</ValidationRule>

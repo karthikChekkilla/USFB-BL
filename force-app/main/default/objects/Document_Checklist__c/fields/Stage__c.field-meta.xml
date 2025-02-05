@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Stage__c</fullName>
+    <externalId>false</externalId>
+    <label>Stage</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Consent Pending</fullName>
+                <default>false</default>
+                <label>Consent Pending</label>
+            </value>
+            <value>
+                <fullName>Document Verification</fullName>
+                <default>false</default>
+                <label>Document Verification</label>
+            </value>
+            <value>
+                <fullName>Disbursal In Progress</fullName>
+                <default>false</default>
+                <label>Disbursal In Progress</label>
+            </value>
+            <value>
+                <fullName>Pre-Disbursal Document Collection</fullName>
+                <default>false</default>
+                <label>Pre-Disbursal Document Collection</label>
+            </value>
+            <value>
+                <fullName>Credit Due Deliquency</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Credit Due Deliquency</label>
+            </value>
+            <value>
+                <fullName>Credit Due Diligence</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Credit Due Diligence</label>
+            </value>
+            <value>
+                <fullName>Customer Due Diligence</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Customer Due Diligence</label>
+            </value>
+            <value>
+                <fullName>Others</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Others</label>
+            </value>
+            <value>
+                <fullName>Post Disbursement</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Post Disbursement</label>
+            </value>
+            <value>
+                <fullName>Pre Disbursement</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Pre Disbursement</label>
+            </value>
+            <value>
+                <fullName>Pre Login</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Pre Login</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

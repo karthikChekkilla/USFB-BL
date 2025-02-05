@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FI_Type__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( RecordType.Name = &apos;Residence FI&apos;,&apos;Residence&apos;, 
+IF(RecordType.Name = &apos;Office FI&apos;,&apos;Business&apos;,
+IF(RecordType.Name = &apos;Property Valuation&apos;,&apos;Property&apos;,&apos;&apos;)
+ )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>FI Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

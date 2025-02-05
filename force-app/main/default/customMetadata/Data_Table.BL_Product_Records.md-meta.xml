@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>BL_Product_Records</label>
+    <protected>false</protected>
+    <values>
+        <field>Default_Fields__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Default_Page_Size__c</field>
+        <value xsi:type="xsd:double">10.0</value>
+    </values>
+    <values>
+        <field>Object_API_Name__c</field>
+        <value xsi:type="xsd:string">Product__c</value>
+    </values>
+    <values>
+        <field>Paging_Picklist_Values__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Show_Checkboxes__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>Show_Pagination__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>Show_Paging_Picklist__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>Show_Search__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>Sort_By__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Sort_Direction__c</field>
+        <value xsi:type="xsd:string">ASC</value>
+    </values>
+    <values>
+        <field>Table_Key_Field_API_Name__c</field>
+        <value xsi:type="xsd:string">Id</value>
+    </values>
+    <values>
+        <field>Treat_Checkboxes_As_Radio__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+</CustomMetadata>

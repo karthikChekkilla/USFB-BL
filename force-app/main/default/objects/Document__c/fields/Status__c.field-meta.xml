@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status__c</fullName>
+    <externalId>false</externalId>
+    <label>Status</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Not Uploaded</fullName>
+                <default>true</default>
+                <label>Not Uploaded</label>
+            </value>
+            <value>
+                <fullName>Uploaded</fullName>
+                <default>false</default>
+                <label>Uploaded</label>
+            </value>
+            <value>
+                <fullName>Submitted to CPA</fullName>
+                <default>false</default>
+                <label>Submitted to CPA</label>
+            </value>
+            <value>
+                <fullName>CPA Acknowledged</fullName>
+                <default>false</default>
+                <label>CPA Acknowledged</label>
+            </value>
+            <value>
+                <fullName>CM Acknowledged</fullName>
+                <default>false</default>
+                <label>CM Acknowledged</label>
+            </value>
+            <value>
+                <fullName>RCU Acknowledged</fullName>
+                <default>false</default>
+                <label>RCU Acknowledged</label>
+            </value>
+            <value>
+                <fullName>Pending</fullName>
+                <default>false</default>
+                <label>Pending</label>
+            </value>
+            <value>
+                <fullName>Completed</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Completed</label>
+            </value>
+            <value>
+                <fullName>Not Received</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Not Received</label>
+            </value>
+            <value>
+                <fullName>OTC</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>OTC</label>
+            </value>
+            <value>
+                <fullName>PDD</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>PDD</label>
+            </value>
+            <value>
+                <fullName>Query Raised</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Query Raised</label>
+            </value>
+            <value>
+                <fullName>RCU Verified</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>RCU Verified</label>
+            </value>
+            <value>
+                <fullName>Verified</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Verified</label>
+            </value>
+            <value>
+                <fullName>Waived Off</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Waived Off</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

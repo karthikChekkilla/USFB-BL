@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Read_Only</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( NOT( ISCHANGED( IsReadOnly__c ) ), IsReadOnly__c,
+NOT(ISCHANGED( Manager_IDs__c )),
+NOT($Setup.Bypass_Validations__c.Bypass_Validation__c),
+AND(NOT(User_Role__c = &apos;Credit Manager&apos;),
+NOT(User_Role__c = &apos;BL Relationship Manager&apos;),NOT(User_Role__c = &apos;BL_Relationship Officer&apos;) ) ,
+NOT(CONTAINS($UserRole.DeveloperName, &quot;CPC_Agents_Checker&quot;)),
+NOT(CONTAINS(Record_Type_Name__c, &quot;BL Disbursement Initiated&quot;)),
+NOT(AND(CONTAINS(Manager_IDs__c ,$User.Id), ISCHANGED(OwnerId)))
+)</errorConditionFormula>
+    <errorMessage>You don&apos;t have access to Edit application</errorMessage>
+</ValidationRule>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Udyam_PSL</fullName>
+    <active>true</active>
+    <label>Udyam PSL</label>
+    <picklistValues>
+        <picklist>BL_Consider_for_Obligation__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>PSL_Category__c</picklist>
+        <values>
+            <fullName>Non-PSL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PSL</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>PSL_Sub_Category__c</picklist>
+        <values>
+            <fullName>Manufacture of food products</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>PSL_Sub_Sub_Category__c</picklist>
+        <values>
+            <fullName>Manufacture of other food products n%2Ee%2Ec%2E</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

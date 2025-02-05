@@ -1,0 +1,27 @@
+<template>
+    <template if:true={recordId}>
+        <template if:true={isConfirmModel}>
+        <div>
+            <lightning-modal-header label="Convert Lead"></lightning-modal-header>
+            <lightning-modal-body> Would you like to convert lead?</lightning-modal-body>
+            <lightning-modal-footer>
+                <lightning-button label="Yes" onclick={yes} ></lightning-button>
+                <lightning-button label="No" onclick={no} ></lightning-button>
+            </lightning-modal-footer>
+        </div>
+        </template>
+
+        <template if:true={isValidation}>
+        <lightning-modal-header label="Errors"></lightning-modal-header>
+                <lightning-modal-body> 
+                
+                    <lightning-formatted-rich-text value={validationMsg}></lightning-formatted-rich-text>
+                
+                </lightning-modal-body>
+                <lightning-modal-footer>
+                    <lightning-button label="ok" onclick={no} ></lightning-button>
+                </lightning-modal-footer>
+        </template>
+    </template>
+
+ </template>

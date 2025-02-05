@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Employer_Detail__c</fullName>
+    <externalId>false</externalId>
+    <label>Employer Detail</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Public Sector(PSU)</fullName>
+                <default>false</default>
+                <label>Public Sector(PSU)</label>
+            </value>
+            <value>
+                <fullName>Central Government(CTG)</fullName>
+                <default>false</default>
+                <label>Central Government(CTG)</label>
+            </value>
+            <value>
+                <fullName>State Government(STG)</fullName>
+                <default>false</default>
+                <label>State Government(STG)</label>
+            </value>
+            <value>
+                <fullName>Multinational(MNC)</fullName>
+                <default>false</default>
+                <label>Multinational(MNC)</label>
+            </value>
+            <value>
+                <fullName>Public Ltd Co(PUB)</fullName>
+                <default>false</default>
+                <label>Public Ltd Co(PUB)</label>
+            </value>
+            <value>
+                <fullName>Pvt Ltd/Ltd(PVT)</fullName>
+                <default>false</default>
+                <label>Pvt Ltd/Ltd(PVT)</label>
+            </value>
+            <value>
+                <fullName>Partnership(PAR)</fullName>
+                <default>false</default>
+                <label>Partnership(PAR)</label>
+            </value>
+            <value>
+                <fullName>Proprietorship(POR)</fullName>
+                <default>false</default>
+                <label>Proprietorship(POR)</label>
+            </value>
+            <value>
+                <fullName>Others(OTR)</fullName>
+                <default>false</default>
+                <label>Others(OTR)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

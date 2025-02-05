@@ -1,0 +1,245 @@
+<template>
+	<lightning-card variant="Narrow" title={title}>
+		<lightning-spinner alternative-text="Loading" size="medium" if:true={showSpinner}></lightning-spinner>
+		<!--<template lwc:if={showNewButton}>
+			<div class="slds-float_right slds-m-left_xx-small">
+				<lightning-button variant="brand" label="New" title="Primary action" onclick={handleClick} disabled={isreadonly} ></lightning-button>
+			</div>
+		</template>-->
+		<template if:false={readOnly}>
+			<template if:true={showSubmitButton}>
+				<template if:true={relatedRecords}>
+					<template for:each={relatedRecords.headerActions} for:item="action">
+						<template if:true={action.isEnable}>
+							<lightning-button class="slds-p-right_medium" name={action.name} key={action.name}
+								label={action.label} slot="actions" onclick={handleheaderAction}
+								data-error-message={action.errorMessage} data-success-message={action.successMessage}
+								data-type={action.type} data-s-object-a-p-i-name={action.sObjectAPIName}
+								data-default-values={action.defaultValues} data-link={action.link}
+								data-is-show-modal={action.isShowModal}></lightning-button>
+						</template>
+					</template>
+				</template>
+			</template>
+		</template>
+		<lightning-layout multiple-rows>
+			<lightning-layout-item size="12" small-device-size="12" medium-device-size="12" large-device-size="12">
+				<template if:true={relatedRecords}>
+					<c-generic-data-table-l-w-c result={relatedRecords} btns={rowAction}
+						onselected={handleTableSelection} onrowselectionevent={handleRowSelection}>
+					</c-generic-data-table-l-w-c>
+				</template>
+			</lightning-layout-item>
+			<lightning-layout-item size="12" small-device-size="12" medium-device-size="12" large-device-size="12">
+				<template if:true={isShowAddress}>
+					<c-address-component parent-object-name={objectApiName} parent-object-id={recordId}
+						record-id={addressId} onclose={handleAddressClose}></c-address-component>
+				</template>
+			</lightning-layout-item>
+		</lightning-layout>
+	</lightning-card>
+	<template if:true={showVehicleScreen}>
+		<c-vehicle-selection-screen loan-application-id={recordId} product-id={childRecordId}
+			product-category={productCategory} vehicle-record-type-id={vehicleRecordTypeId} onclosecmp={closeScreen}
+			vehicle-id={vehicleId}>
+		</c-vehicle-selection-screen>
+	</template>
+
+	<template if:true={showProductScreen}>
+		<c-product-selection-screen loan-application-id={recordId} record-id={childRecordId} onclosecmp={closeScreen}>
+		</c-product-selection-screen>
+	</template>
+
+	<template if:true={showModal}>
+		<c-upload-document onclosemodal={closeModal} document-id={childRecordId}></c-upload-document>
+	</template>
+
+	<template lwc:if={showScreenFlow}>
+		<section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-01"
+			class="slds-modal slds-fade-in-open slds-modal_medium">
+			<div class="slds-modal__container modal-width">
+				<button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" onclick={closeScreen}>
+			  <h1 class="slds-text-heading_medium">x</h1>
+			  <span class="slds-assistive-text">Cancel and close</span>
+			</button>
+				<div class="slds-modal__content slds-p-around_medium">
+					<lightning-flow flow-api-name={flowApiName} flow-input-variables={inputVariables}
+						onstatuschange={handleFlowStatusChange}></lightning-flow>
+				</div>
+			</div>
+		</section>
+		<div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+	</template>
+
+	<template lwc:if={isVendorCall}>
+		<section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-01"
+			class="slds-modal slds-fade-in-open slds-modal_medium">
+			<div class="slds-modal__container modal-width">
+				<button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"  onclick={handleCloseVendor}>
+                        <h1 class="slds-text-heading_medium">X</h1>
+                        <span class="slds-assistive-text">Cancel and close</span>
+                    </button>
+				<div class="slds-modal__content slds-p-around_medium">
+					<lightning-flow flow-api-name='Vendor_Screen_Flow' flow-input-variables={vendorInputVariables}
+						onstatuschange={handleStatusChangeVendor}>
+					</lightning-flow>
+				</div>
+			</div>
+		</section>
+		<div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+	</template>
+
+	<template lwc:if={submitDecision}>
+		<section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-01"
+			class="slds-modal slds-fade-in-open slds-modal_small">
+			<div class="slds-modal__container modal-width">
+				<button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"  onclick={handleSubmitDecision}>
+                        <h1 class="slds-text-heading_medium">X</h1>
+                        <span class="slds-assistive-text">Cancel and close</span>
+                    </button>
+				<div class="slds-modal__content slds-p-around_medium">
+					<lightning-flow flow-api-name='Submit_Decision' flow-input-variables={inputVariables}
+						onstatuschange={handleStatusSubmitDecision}>
+					</lightning-flow>
+				</div>
+			</div>
+		</section>
+		<div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+	</template>
+
+	<template if:true={showAadhaarScreen}>
+		<section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+			aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open slds-backdrop slds-backdrop_open">
+			<div class="slds-modal__container customModal">
+				<div class="slds-modal__container customModal">
+					<!-- modal header start -->
+					<header class="slds-modal__header">
+						<button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"  onclick={closeScreen}>
+							<h1 class="slds-text-heading_medium">x</h1>
+							<span class="slds-assistive-text">Cancel and close</span>
+						</button>
+						<h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Initiate Aadhaar
+							Verification</h2>
+					</header>
+					<lightning-card>
+						<lightning-spinner alternative-text="Loading" size="medium" if:true={showSpinner}>
+						</lightning-spinner>
+						<div class="slds-grid slds-gutters">
+							<div class="slds-col">
+								<span>
+									<div class="slds-form slds-form_stacked">
+										<div class="slds-p-horizontal_x-small">
+											<lightning-input type="text" label="Aadhaar Number" name="aadhaarNumber" max-length ="12" onchange={handleChangeEvent}></lightning-input>
+										</div>
+									</div>
+								</span>
+							</div>
+						</div>
+						<div slot="footer">
+							<lightning-button class="slds-p-around_x-small" label="Cancel" slot="actions"
+								onclick={closeScreen}></lightning-button>
+							<lightning-button class="slds-p-around_x-small" label="Save" variant="brand" slot="actions"
+								onclick={handleSaveMethod}></lightning-button>
+						</div>
+					</lightning-card>
+				</div>
+			</div>
+		</section>
+	</template>
+
+	<template if:true={showPerfiosFileUpload}>
+		<section role="dialog" tabindex="-1" aria-labelledby="modal-heading-02" aria-modal="true"
+			aria-describedby="modal-content-id-2" class="slds-modal slds-fade-in-open slds-backdrop slds-backdrop_open">
+			<div class="slds-modal__container customModal">
+				<div class="slds-modal__container customModal">
+					<!-- modal header start -->
+					<header class="slds-modal__header">
+						<button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"  onclick={closeScreen}>
+							<h1 class="slds-text-heading_medium">x</h1>
+							<span class="slds-assistive-text">Cancel and close</span>
+						</button>
+						<h2 id="modal-heading-02" class="slds-text-heading_medium slds-hyphenate">Initiate Perfios
+							Verification</h2>
+					</header>
+					<lightning-card>
+						<lightning-spinner alternative-text="Loading" size="medium" if:true={showSpinner}>
+						</lightning-spinner>
+						<div class="slds-grid slds-gutters">
+							<div class="slds-col">
+								<span>
+							         <lightning-layout multiple-rows="true">
+                                       <lightning-layout-item size="6" padding="horizontal-large">
+                                        <div class="custom-box">
+		                                 <lightning-file-upload
+								        label="Upload Bank Statement"
+								        name="fileUploader"
+								        accept={acceptedFormats}
+								        record-id={childRecordId}
+								        onuploadfinished={handleUploadFinished}
+								       
+								    >
+								       </lightning-file-upload>
+		                             </div>
+                             	</lightning-layout-item>
+	                                <lightning-layout-item size="4" padding="horizontal-large">
+		                             <div class="custom-box">
+			                          <lightning-input type="password" label="Password" name="password" onchange={handleChangeEvent}>
+			                         </lightning-input>
+		                             </div>
+	                              </lightning-layout-item>
+                                </lightning-layout>
+								</span>
+							</div>
+						</div>
+						<div slot="footer">
+							<lightning-button class="slds-p-around_x-small" label="Cancel" slot="actions"
+								onclick={closeScreen}></lightning-button>
+							<lightning-button class="slds-p-around_x-small" label="Save" variant="brand" slot="actions"
+								onclick={handleUploadMethod}></lightning-button>
+						</div>
+					</lightning-card>
+				</div>
+			</div>
+		</section>
+	</template>
+
+	<template if:true={loanOfferReview}>
+		<section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-01"
+			class="slds-modal slds-fade-in-open slds-modal_medium">
+			<div class="slds-modal__container modal-width">
+				<button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"  onclick={handleClose}>
+                        <h1 class="slds-text-heading_medium">X</h1>
+                        <span class="slds-assistive-text">Cancel and close</span>
+                    </button>
+				<div class="slds-modal__content slds-p-around_medium">
+					<c-ub-disbursement-screen loan-application-id={recordId} record-id={childRecordId}
+						onmodalclick={handleCloseDisbursement}></c-ub-disbursement-screen>
+				</div>
+			</div>
+		</section>
+		<div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+	</template>
+
+	<template if:true={generateLetter}>
+		<section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-01"
+			class="slds-modal slds-fade-in-open slds-modal_small">
+			<div class="slds-modal__container modal-width">
+				<button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"  onclick={handleClose}>
+                        <h1 class="slds-text-heading_medium">X</h1>
+                        <span class="slds-assistive-text">Cancel and close</span>
+                    </button>
+				<div class="slds-modal__content slds-p-around_medium">
+					<c-ub-generate-disburse-letter loan-application-id={recordId} record-id={childRecordId}
+						onmodalclick={handleCloseDisbursement}></c-ub-generate-disburse-letter>
+				</div>
+			</div>
+		</section>
+		<div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+	</template>
+	<!--//added by lakshya verma USFBL-454 on 30-sept started-->
+	<template if:true={showPreviewModal}>
+		<c-file-preview-modal dms-document-id={childRecordId}
+			onclosemodal={closePreviewModal} object-name={objectApiName} application-id="" lead-id="" ></c-file-preview-modal>
+	</template>
+	<!--//added by lakshya verma USFBL-454 on 30-sept ended-->
+</template>

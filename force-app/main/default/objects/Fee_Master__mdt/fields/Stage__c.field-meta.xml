@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Stage__c</fullName>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Stage</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>KYC Validation &amp; Dedupe Pending</fullName>
+                <default>true</default>
+                <label>KYC Validation &amp; Dedupe Pending</label>
+            </value>
+            <value>
+                <fullName>CIBIL Initiation</fullName>
+                <default>false</default>
+                <label>CIBIL Initiation</label>
+            </value>
+            <value>
+                <fullName>Document Verification</fullName>
+                <default>false</default>
+                <label>Document Verification</label>
+            </value>
+            <value>
+                <fullName>DDE</fullName>
+                <default>false</default>
+                <label>DDE</label>
+            </value>
+            <value>
+                <fullName>LAF Generation &amp; Consent</fullName>
+                <default>false</default>
+                <label>LAF Generation &amp; Consent</label>
+            </value>
+            <value>
+                <fullName>Assigned to Credit</fullName>
+                <default>false</default>
+                <label>Assigned to Credit</label>
+            </value>
+            <value>
+                <fullName>PD in Progress</fullName>
+                <default>false</default>
+                <label>PD in Progress</label>
+            </value>
+            <value>
+                <fullName>Credit Assessment</fullName>
+                <default>false</default>
+                <label>Credit Assessment</label>
+            </value>
+            <value>
+                <fullName>Recommended for Approval</fullName>
+                <default>false</default>
+                <label>Recommended for Approval</label>
+            </value>
+            <value>
+                <fullName>Disbursal In Progress</fullName>
+                <default>false</default>
+                <label>Disbursal In Progress</label>
+            </value>
+            <value>
+                <fullName>Partially Disbursed</fullName>
+                <default>false</default>
+                <label>Partially Disbursed</label>
+            </value>
+            <value>
+                <fullName>Disbursed</fullName>
+                <default>false</default>
+                <label>Disbursed</label>
+            </value>
+            <value>
+                <fullName>Closed</fullName>
+                <default>false</default>
+                <label>Closed</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

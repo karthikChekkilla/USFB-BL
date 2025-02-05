@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Hire_Cost__c</fullName>
+    <externalId>false</externalId>
+    <formula>(No_of_trips_per_month__c  *  Distance_in_KM__c  *  Avg_Load_per_trip__c  *  Rate_per_ton_per_km__c)
+-
+(((No_of_trips_per_month__c * Distance_in_KM__c )* ( Cost_of_Fuel_per_litre__c / Fuel_Avg_in_LtrHr__c ))
++
+(ROUND(( No_of_trips_per_month__c  *  Distance_in_KM__c  *  Cost_of_1_tyre__c  *  No_of_tyres__c )/ Life_of_new_tyres_in_Km__c ,0))
++
++ Drivers_Salary__c + CleanerOperator_Salary__c + Taxes_Permit__c + Maintenance_Cost__c +Misc_Exps__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Total Hire Cost</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

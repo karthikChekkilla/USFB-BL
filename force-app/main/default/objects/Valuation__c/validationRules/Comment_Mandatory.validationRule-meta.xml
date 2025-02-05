@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Comment_Mandatory</fullName>
+    <active>true</active>
+    <description>On result change</description>
+    <errorConditionFormula>AND(NOT(ISPICKVAL(Result__c,&apos;&apos;)), ISCHANGED(Result__c), ISBLANK( Comment__c )  )</errorConditionFormula>
+    <errorDisplayField>Comment__c</errorDisplayField>
+    <errorMessage>Please add comments</errorMessage>
+</ValidationRule>

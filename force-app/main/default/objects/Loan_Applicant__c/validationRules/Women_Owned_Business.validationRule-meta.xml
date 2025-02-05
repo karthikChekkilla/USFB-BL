@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Women_Owned_Business</fullName>
+    <active>true</active>
+    <errorConditionFormula>If(AND( Record_Type_Name__c = &apos;BL Non Individual&apos;,
+NOT(ISBLANK(Text(BL_Women_Owned_Buisness__c))),
+ISPICKVAL(BL_Women_Owned_Buisness__c, &apos;Yes&apos;),
+OR(ISBLANK(BL_Shareholding_of_Women__c),
+ISBLANK(TEXT(BL_Women_Involved_Actively_In_Business__c)),
+ISBLANK(TEXT(BL_Women_as__c)) )),
+true, false)</errorConditionFormula>
+    <errorMessage>In case of Women owned business below fields are required.
+* Actively involved in Business
+* Women as
+* Shareholding of Women</errorMessage>
+</ValidationRule>

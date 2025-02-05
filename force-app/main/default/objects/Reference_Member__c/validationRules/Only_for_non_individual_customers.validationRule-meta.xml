@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Only_for_non_individual_customers</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF(   AND(ISNEW(),  Loan_Applicant__r.Record_Type_Name__c = &apos;Individual&apos; ) , true, false)</errorConditionFormula>
+    <errorMessage>References/Members can be added only for Non-Individual customers.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead_Source__c</fullName>
+    <externalId>false</externalId>
+    <label>Lead Source</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Direct</fullName>
+                <default>false</default>
+                <label>Direct</label>
+            </value>
+            <value>
+                <fullName>Branch Walk-in</fullName>
+                <default>false</default>
+                <label>Branch Walk-in</label>
+            </value>
+            <value>
+                <fullName>Social Media</fullName>
+                <default>false</default>
+                <label>Social Media</label>
+            </value>
+            <value>
+                <fullName>Whatsapp</fullName>
+                <default>false</default>
+                <label>Whatsapp</label>
+            </value>
+            <value>
+                <fullName>Website</fullName>
+                <default>false</default>
+                <label>Website</label>
+            </value>
+            <value>
+                <fullName>ATM</fullName>
+                <default>false</default>
+                <label>ATM</label>
+            </value>
+            <value>
+                <fullName>Cross-Sell</fullName>
+                <default>false</default>
+                <label>Cross-Sell</label>
+            </value>
+            <value>
+                <fullName>Outbound Activity-Branch</fullName>
+                <default>false</default>
+                <label>Outbound Activity-Branch</label>
+            </value>
+            <value>
+                <fullName>Home Market</fullName>
+                <default>false</default>
+                <label>Home Market</label>
+            </value>
+            <value>
+                <fullName>DSA</fullName>
+                <default>false</default>
+                <label>DSA</label>
+            </value>
+            <value>
+                <fullName>Campaign</fullName>
+                <default>false</default>
+                <label>Campaign</label>
+            </value>
+            <value>
+                <fullName>Marketing Activity- BTL</fullName>
+                <default>false</default>
+                <label>Marketing Activity- BTL</label>
+            </value>
+            <value>
+                <fullName>Marketing Channel- ATL</fullName>
+                <default>false</default>
+                <label>Marketing Channel- ATL</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Approving_Authority__c</fullName>
+    <externalId>false</externalId>
+    <label>Approving Authority</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>RCM</fullName>
+                <default>false</default>
+                <label>RCM</label>
+            </value>
+            <value>
+                <fullName>ZCM</fullName>
+                <default>false</default>
+                <label>ZCM</label>
+            </value>
+            <value>
+                <fullName>NCM</fullName>
+                <default>false</default>
+                <label>NCM</label>
+            </value>
+            <value>
+                <fullName>Credit Head</fullName>
+                <default>false</default>
+                <label>Credit Head</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

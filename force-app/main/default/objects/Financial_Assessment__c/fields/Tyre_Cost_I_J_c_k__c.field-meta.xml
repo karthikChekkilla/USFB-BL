@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tyre_Cost_I_J_c_k__c</fullName>
+    <externalId>false</externalId>
+    <formula>(No_of_tyres__c * Cost_of_1_tyre__c  *  Monthly_Running_In_KM__c )/Life_of_new_tyres_in_Km__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Tyre Cost (I*J*c) / (k)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

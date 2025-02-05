@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Industry_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Industry Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Coal</fullName>
+                <default>false</default>
+                <label>Coal</label>
+            </value>
+            <value>
+                <fullName>OIL</fullName>
+                <default>false</default>
+                <label>OIL</label>
+            </value>
+            <value>
+                <fullName>Automobile</fullName>
+                <default>false</default>
+                <label>Automobile</label>
+            </value>
+            <value>
+                <fullName>Retail Jewellery</fullName>
+                <default>false</default>
+                <label>Retail Jewellery</label>
+            </value>
+            <value>
+                <fullName>Fisheries / Poultry</fullName>
+                <default>false</default>
+                <label>Fisheries / Poultry</label>
+            </value>
+            <value>
+                <fullName>Transportation/logistics</fullName>
+                <default>false</default>
+                <label>Transportation/logistics</label>
+            </value>
+            <value>
+                <fullName>Textiles/Garment</fullName>
+                <default>false</default>
+                <label>Textiles/Garment</label>
+            </value>
+            <value>
+                <fullName>Fertilizer/Chemicals/seeds/pesticides</fullName>
+                <default>false</default>
+                <label>Fertilizer/Chemicals/seeds/pesticides</label>
+            </value>
+            <value>
+                <fullName>Petrol Pump</fullName>
+                <default>false</default>
+                <label>Petrol Pump</label>
+            </value>
+            <value>
+                <fullName>Furniture/timber</fullName>
+                <default>false</default>
+                <label>Furniture/timber</label>
+            </value>
+            <value>
+                <fullName>Cement/Paint</fullName>
+                <default>false</default>
+                <label>Cement/Paint</label>
+            </value>
+            <value>
+                <fullName>IT/Software/BPO</fullName>
+                <default>false</default>
+                <label>IT/Software/BPO</label>
+            </value>
+            <value>
+                <fullName>Printing/Publishing</fullName>
+                <default>false</default>
+                <label>Printing/Publishing</label>
+            </value>
+            <value>
+                <fullName>Electronics/Computer Hardware</fullName>
+                <default>false</default>
+                <label>Electronics/Computer Hardware</label>
+            </value>
+            <value>
+                <fullName>Contractor</fullName>
+                <default>false</default>
+                <label>Contractor</label>
+            </value>
+            <value>
+                <fullName>Broking</fullName>
+                <default>false</default>
+                <label>Broking</label>
+            </value>
+            <value>
+                <fullName>Engineering Goods</fullName>
+                <default>false</default>
+                <label>Engineering Goods</label>
+            </value>
+            <value>
+                <fullName>media/Entertainment</fullName>
+                <default>false</default>
+                <label>media/Entertainment</label>
+            </value>
+            <value>
+                <fullName>Travel/Tour Agency</fullName>
+                <default>false</default>
+                <label>Travel/Tour Agency</label>
+            </value>
+            <value>
+                <fullName>Issue &amp; Portfolio Management</fullName>
+                <default>false</default>
+                <label>Issue &amp; Portfolio Management</label>
+            </value>
+            <value>
+                <fullName>Advertising Agency</fullName>
+                <default>false</default>
+                <label>Advertising Agency</label>
+            </value>
+            <value>
+                <fullName>Pharmaceutical</fullName>
+                <default>false</default>
+                <label>Pharmaceutical</label>
+            </value>
+            <value>
+                <fullName>Construction</fullName>
+                <default>false</default>
+                <label>Construction</label>
+            </value>
+            <value>
+                <fullName>Marble / Granite</fullName>
+                <default>false</default>
+                <label>Marble / Granite</label>
+            </value>
+            <value>
+                <fullName>Hospital/Nursing Home /Clinic</fullName>
+                <default>false</default>
+                <label>Hospital/Nursing Home /Clinic</label>
+            </value>
+            <value>
+                <fullName>Consultancy</fullName>
+                <default>false</default>
+                <label>Consultancy</label>
+            </value>
+            <value>
+                <fullName>Restaurant</fullName>
+                <default>false</default>
+                <label>Restaurant</label>
+            </value>
+            <value>
+                <fullName>Hotels / Resort</fullName>
+                <default>false</default>
+                <label>Hotels / Resort</label>
+            </value>
+            <value>
+                <fullName>Steel / Hardware</fullName>
+                <default>false</default>
+                <label>Steel / Hardware</label>
+            </value>
+            <value>
+                <fullName>Agricultural Commodities</fullName>
+                <default>false</default>
+                <label>Agricultural Commodities</label>
+            </value>
+            <value>
+                <fullName>Fast Moving Consumer Goods ( FMCG)</fullName>
+                <default>false</default>
+                <label>Fast Moving Consumer Goods ( FMCG)</label>
+            </value>
+            <value>
+                <fullName>Education</fullName>
+                <default>false</default>
+                <label>Education</label>
+            </value>
+            <value>
+                <fullName>Forex Dealer / Bullion</fullName>
+                <default>false</default>
+                <label>Forex Dealer / Bullion</label>
+            </value>
+            <value>
+                <fullName>Consumer Durables</fullName>
+                <default>false</default>
+                <label>Consumer Durables</label>
+            </value>
+            <value>
+                <fullName>Dairy/Food Processing</fullName>
+                <default>false</default>
+                <label>Dairy/Food Processing</label>
+            </value>
+            <value>
+                <fullName>Leasing &amp; Hire Purchase</fullName>
+                <default>false</default>
+                <label>Leasing &amp; Hire Purchase</label>
+            </value>
+            <value>
+                <fullName>Term Lending Institution</fullName>
+                <default>false</default>
+                <label>Term Lending Institution</label>
+            </value>
+            <value>
+                <fullName>NBFC</fullName>
+                <default>false</default>
+                <label>NBFC</label>
+            </value>
+            <value>
+                <fullName>Chit Fund</fullName>
+                <default>false</default>
+                <label>Chit Fund</label>
+            </value>
+            <value>
+                <fullName>Money Lender</fullName>
+                <default>false</default>
+                <label>Money Lender</label>
+            </value>
+            <value>
+                <fullName>Shroff</fullName>
+                <default>false</default>
+                <label>Shroff</label>
+            </value>
+            <value>
+                <fullName>Housing Finance</fullName>
+                <default>false</default>
+                <label>Housing Finance</label>
+            </value>
+            <value>
+                <fullName>Auto Finance</fullName>
+                <default>false</default>
+                <label>Auto Finance</label>
+            </value>
+            <value>
+                <fullName>Others</fullName>
+                <default>false</default>
+                <label>Others</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

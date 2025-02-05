@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Disbursement_Compact_Layout</fullName>
+    <fields>Name</fields>
+    <fields>Loan_Application__c</fields>
+    <fields>Vehicle__c</fields>
+    <fields>Loan_Amount__c</fields>
+    <fields>Status__c</fields>
+    <fields>Current_Owner__c</fields>
+    <fields>Stage__c</fields>
+    <label>Disbursement Compact Layout</label>
+</CompactLayout>

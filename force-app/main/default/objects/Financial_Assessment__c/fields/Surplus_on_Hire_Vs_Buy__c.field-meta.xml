@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Surplus_on_Hire_Vs_Buy__c</fullName>
+    <externalId>false</externalId>
+    <formula>((No_of_trips_per_month__c  *  Distance_in_KM__c  *  Avg_Load_per_trip__c  *  Rate_per_ton_per_km__c)
+-
+(((No_of_trips_per_month__c * Distance_in_KM__c )* ( Cost_of_Fuel_per_litre__c / Fuel_Avg_in_LtrHr__c ))
++
+(ROUND(( No_of_trips_per_month__c  *  Distance_in_KM__c  *  Cost_of_1_tyre__c  *  No_of_tyres__c )/ Life_of_new_tyres_in_Km__c ,0))
++
++ Drivers_Salary__c + CleanerOperator_Salary__c + Taxes_Permit__c + Maintenance_Cost__c +Misc_Exps__c))
+-
+((Buy_No_of_trips_per_month__c * Buy_Distance_in_KM__c * Buy_Avg_Load_per_trip__c * Buy_Rate_per_ton_per_km__c)-
+((( Buy_No_of_trips_per_month__c * Buy_Distance_in_KM__c )*( Buy_Cost_of_Fuel_per_litre__c / Buy_Fuel_Avg_in_LtrHr__c))+ Buy_Tyres_Cost__c+ Buy_CleanerOperator_Salary__c + Buy_Drivers_Salary__c + Buy_Taxes_Permit__c +  Buy_Maintenance_Cost__c + Buy_Misc_Exps__c + Buy_Proposed_Emi__c))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Surplus on Hire Vs Buy</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

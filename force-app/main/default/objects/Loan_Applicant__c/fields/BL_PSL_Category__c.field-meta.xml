@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BL_PSL_Category__c</fullName>
+    <externalId>false</externalId>
+    <label>PSL Category</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Non-PSL</fullName>
+                <default>false</default>
+                <label>Non-PSL</label>
+            </value>
+            <value>
+                <fullName>MSME</fullName>
+                <default>false</default>
+                <label>MSME</label>
+            </value>
+            <value>
+                <fullName>Export Credit</fullName>
+                <default>false</default>
+                <label>Export Credit</label>
+            </value>
+            <value>
+                <fullName>Education Loans</fullName>
+                <default>false</default>
+                <label>Education Loans</label>
+            </value>
+            <value>
+                <fullName>Housing Loan</fullName>
+                <default>false</default>
+                <label>Housing Loan</label>
+            </value>
+            <value>
+                <fullName>Agriculture</fullName>
+                <default>false</default>
+                <label>Agriculture</label>
+            </value>
+            <value>
+                <fullName>Renewable Energy</fullName>
+                <default>false</default>
+                <label>Renewable Energy</label>
+            </value>
+            <value>
+                <fullName>Social Infrastructure</fullName>
+                <default>false</default>
+                <label>Social Infrastructure</label>
+            </value>
+            <value>
+                <fullName>Others</fullName>
+                <default>false</default>
+                <label>Others</label>
+            </value>
+            <value>
+                <fullName>PSL</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>PSL</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

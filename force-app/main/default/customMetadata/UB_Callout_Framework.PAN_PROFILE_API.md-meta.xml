@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>PAN PROFILE API</label>
+    <protected>false</protected>
+    <values>
+        <field>Active__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>Auth_Token_c__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Body__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Certificate_Name__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Class_Name__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Endpoint__c</field>
+        <value xsi:type="xsd:string">https://apiuat.utkarsh.bank/pan/v1.0.0/pan-profile</value>
+    </values>
+    <values>
+        <field>Extra_Param_s__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>HTTP_Method__c</field>
+        <value xsi:type="xsd:string">POST</value>
+    </values>
+    <values>
+        <field>HeaderParams__c</field>
+        <value xsi:type="xsd:string">x-karza-key:3qZQkZKDwXDCXsJo
+Content-Type:application/json
+Partnerid:Techmatrix
+Accept:application/json</value>
+    </values>
+    <values>
+        <field>Host__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Mock_Response__c</field>
+        <value xsi:type="xsd:string">{
+    &quot;requestId&quot;: &quot;89150461-cbcc-4a30-94ba-dd09b7a42718&quot;,
+    &quot;result&quot;: {
+        &quot;pan&quot;: &quot;AIOPR7501B&quot;,
+        &quot;name&quot;: &quot;NITIN MAHADEV RANDIVE&quot;,
+        &quot;firstName&quot;: &quot;NITIN&quot;,
+        &quot;middleName&quot;: &quot;MAHADEV&quot;,
+        &quot;lastName&quot;: &quot;RANDIVE&quot;,
+        &quot;gender&quot;: &quot;male&quot;,
+        &quot;dob&quot;: &quot;1972-05-01&quot;,
+        &quot;address&quot;: {
+            &quot;buildingName&quot;: &quot;rao colony&quot;,
+            &quot;locality&quot;: &quot;&quot;,
+            &quot;streetName&quot;: &quot;talegoan dabhade&quot;,
+            &quot;pinCode&quot;: &quot;410506&quot;,
+            &quot;city&quot;: &quot;PUNE&quot;,
+            &quot;state&quot;: &quot;MAHARASHTRA&quot;,
+            &quot;country&quot;: &quot;INDIA&quot;
+        },
+        &quot;aadhaarLinked&quot;: true,
+        &quot;profileMatch&quot;: [
+            {
+                &quot;parameter&quot;: &quot;name&quot;,
+                &quot;matchScore&quot;: 0.837962962962963,
+                &quot;matchResult&quot;: true
+            },
+            {
+                &quot;parameter&quot;: &quot;dob&quot;,
+                &quot;matchScore&quot;: 1.0,
+                &quot;matchResult&quot;: true
+            }
+        ],
+        &quot;aadhaarMatch&quot;: null
+    },
+    &quot;statusCode&quot;: 101,
+    &quot;clientData&quot;: {
+        &quot;caseId&quot;: &quot;123456&quot;
+    }
+}</value>
+    </values>
+    <values>
+        <field>Named_Credential__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Timeout_Time__c</field>
+        <value xsi:type="xsd:double">120000.0</value>
+    </values>
+    <values>
+        <field>URL_Parameters__c</field>
+        <value xsi:nil="true"/>
+    </values>
+</CustomMetadata>
