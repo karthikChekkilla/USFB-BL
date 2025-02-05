@@ -1,0 +1,46 @@
+name: Salesforce CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Salesforce CLI
+        uses: forcedotcom/sfdx-action@v1
+        with:
+          version: 'latest'
+
+      - name: Authenticate to Salesforce
+        run: |
+          echo "Authenticating to Salesforce"
+          sfdx auth:jwt:grant --clientid ${{ secrets.SF_CLIENT_ID }} --jwtkeyfile ./secrets/server.key --username ${{ secrets.SF_USERNAME }} --setdefaultdevhubusername
+
+      - name: Install dependencies
+        run: |
+          echo "Installing dependencies"
+          npm install
+
+      - name: Deploy to Salesforce
+        run: |
+          echo "Deploying to Salesforce"
+          sfdx force:source:deploy -p force-app -u ${{ secrets.SF_USERNAME }} --testlevel RunLocalTests --checkonly --json
+
+      - name: Push code to Salesforce
+        run: |
+          echo "Pushing code to Salesforce"
+          sfdx force:source:push -u ${{ secrets.SF_USERNAME }} --json
+
+      - name: Run tests
+        run: |
+          echo "Running tests"
+          sfdx force:apex:test:run -u ${{ secrets.SF_USERNAME }} --resultformat human --wait 10
